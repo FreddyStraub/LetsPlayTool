@@ -10,18 +10,13 @@ using System.Windows.Forms;
 
 namespace LetsPlayTool
 {
-    public partial class Form1 : Bunifu.Framework.UI.BunifuForm
+    public partial class Form1 : Form
     {
         
 
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -34,6 +29,13 @@ namespace LetsPlayTool
 
             MinimaizeAnimation.Start();
         }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            MaximaizeAnimation.Start();
+
+        }
+
 
         #region Move Form
 
@@ -56,6 +58,9 @@ namespace LetsPlayTool
 
         #endregion
 
+
+        #region general Animations
+
         /// <summary>
         /// Minimaize Animation
         /// </summary>
@@ -73,9 +78,33 @@ namespace LetsPlayTool
             }
         }
 
-        private void Form1_Activated(object sender, EventArgs e)
+        /// <summary>
+        /// Maximaize Animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MaximaizeAnimation_Tick(object sender, EventArgs e)
         {
-            Opacity = 1;
+
+
+            WindowState = FormWindowState.Normal;
+
+
+            if (Opacity == 1)
+            {
+                MaximaizeAnimation.Stop();
+
+
+            }
+            else
+            {
+                Opacity = Opacity + 0.1;
+
+            }
+
         }
+
+
+        #endregion
     }
 }
