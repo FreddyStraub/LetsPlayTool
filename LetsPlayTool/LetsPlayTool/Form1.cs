@@ -34,6 +34,7 @@ namespace LetsPlayTool
         {
             MaximaizeAnimation.Start();
 
+
         }
 
 
@@ -105,6 +106,63 @@ namespace LetsPlayTool
         }
 
 
+
         #endregion
+
+
+        int slide = 0;
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+
+            ShowPanelsAnimation.Start();
+
+        }
+
+
+
+        private void ShowPanelsAnimation_Tick(object sender, EventArgs e)
+        {
+
+            ShowPanelsAnimation.Stop();
+            switch (slide)
+            {
+
+                case 0:
+
+                    ShowPanelAnimator.Show(panelTimer);
+                    panelTimer.BringToFront();
+
+                    break;
+                case 1:
+
+                    ShowPanelAnimator.Show(panelOrdner);
+                    panelOrdner.BringToFront();
+
+                    break;
+
+                case 2:
+                    ShowPanelAnimator.Show(panelMarker);
+                    panelMarker.BringToFront();
+
+                    break;
+                case 3:
+                    ShowPanelAnimator.Show(panelÜberwachung);
+                    panelÜberwachung.BringToFront();
+
+                    break;
+                case 4:
+                    ShowPanelAnimator.Show(panelSoundÜberwachung);
+                    panelSoundÜberwachung.BringToFront();
+
+                    break;
+            }
+
+            if (slide < 4)
+            {
+                slide++;
+                ShowPanelsAnimation.Start();
+            }
+        }
     }
 }
