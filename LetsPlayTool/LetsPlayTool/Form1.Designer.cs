@@ -1,6 +1,6 @@
 ﻿namespace LetsPlayTool
 {
-    partial class frmMain
+    partial class Form1
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -30,14 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.MinimaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.MaximaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.panelTimer = new System.Windows.Forms.Panel();
-            this.bPause = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelOrdner = new System.Windows.Forms.Panel();
             this.lbCPUAuslastung = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panelTimer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bPause)).BeginInit();
             this.panelOrdner.SuspendLayout();
             this.panelMarker.SuspendLayout();
             this.panelÜberwachung.SuspendLayout();
@@ -85,6 +83,7 @@
             this.HeaderBar.Name = "HeaderBar";
             this.HeaderBar.Size = new System.Drawing.Size(445, 59);
             this.HeaderBar.TabIndex = 0;
+            this.HeaderBar.Paint += new System.Windows.Forms.PaintEventHandler(this.HeaderBar_Paint);
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
             this.HeaderBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
             // 
@@ -132,29 +131,14 @@
             // panelTimer
             // 
             this.panelTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTimer.Controls.Add(this.bPause);
             this.panelTimer.Controls.Add(this.bunifuCustomLabel1);
             this.ShowPanelAnimator.SetDecoration(this.panelTimer, BunifuAnimatorNS.DecorationType.None);
             this.panelTimer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTimer.Location = new System.Drawing.Point(0, 59);
             this.panelTimer.Name = "panelTimer";
-            this.panelTimer.Size = new System.Drawing.Size(445, 171);
+            this.panelTimer.Size = new System.Drawing.Size(445, 133);
             this.panelTimer.TabIndex = 1;
             this.panelTimer.Visible = false;
-            // 
-            // bPause
-            // 
-            this.bPause.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ShowPanelAnimator.SetDecoration(this.bPause, BunifuAnimatorNS.DecorationType.None);
-            this.bPause.Image = ((System.Drawing.Image)(resources.GetObject("bPause.Image")));
-            this.bPause.ImageActive = null;
-            this.bPause.Location = new System.Drawing.Point(359, 95);
-            this.bPause.Name = "bPause";
-            this.bPause.Size = new System.Drawing.Size(58, 58);
-            this.bPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bPause.TabIndex = 2;
-            this.bPause.TabStop = false;
-            this.bPause.Zoom = 10;
             // 
             // bunifuCustomLabel1
             // 
@@ -162,7 +146,7 @@
             this.ShowPanelAnimator.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Windows Command Prompt", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(9, 16);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(7, 32);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(433, 76);
             this.bunifuCustomLabel1.TabIndex = 0;
@@ -181,9 +165,9 @@
             this.panelOrdner.Controls.Add(this.lbOrdner);
             this.ShowPanelAnimator.SetDecoration(this.panelOrdner, BunifuAnimatorNS.DecorationType.None);
             this.panelOrdner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelOrdner.Location = new System.Drawing.Point(0, 230);
+            this.panelOrdner.Location = new System.Drawing.Point(0, 192);
             this.panelOrdner.Name = "panelOrdner";
-            this.panelOrdner.Size = new System.Drawing.Size(445, 171);
+            this.panelOrdner.Size = new System.Drawing.Size(445, 133);
             this.panelOrdner.TabIndex = 2;
             this.panelOrdner.Visible = false;
             // 
@@ -191,11 +175,11 @@
             // 
             this.lbCPUAuslastung.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbCPUAuslastung, BunifuAnimatorNS.DecorationType.None);
-            this.lbCPUAuslastung.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPUAuslastung.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPUAuslastung.ForeColor = System.Drawing.Color.White;
-            this.lbCPUAuslastung.Location = new System.Drawing.Point(92, 116);
+            this.lbCPUAuslastung.Location = new System.Drawing.Point(92, 106);
             this.lbCPUAuslastung.Name = "lbCPUAuslastung";
-            this.lbCPUAuslastung.Size = new System.Drawing.Size(37, 18);
+            this.lbCPUAuslastung.Size = new System.Drawing.Size(34, 17);
             this.lbCPUAuslastung.TabIndex = 7;
             this.lbCPUAuslastung.Text = "80%";
             // 
@@ -203,11 +187,11 @@
             // 
             this.lbCPU.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbCPU, BunifuAnimatorNS.DecorationType.None);
-            this.lbCPU.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPU.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPU.ForeColor = System.Drawing.Color.White;
-            this.lbCPU.Location = new System.Drawing.Point(38, 116);
+            this.lbCPU.Location = new System.Drawing.Point(38, 106);
             this.lbCPU.Name = "lbCPU";
-            this.lbCPU.Size = new System.Drawing.Size(43, 18);
+            this.lbCPU.Size = new System.Drawing.Size(40, 17);
             this.lbCPU.TabIndex = 6;
             this.lbCPU.Text = "CPU:";
             // 
@@ -227,11 +211,11 @@
             // 
             this.lbBSpeicher.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicher, BunifuAnimatorNS.DecorationType.None);
-            this.lbBSpeicher.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBSpeicher.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicher.ForeColor = System.Drawing.Color.White;
             this.lbBSpeicher.Location = new System.Drawing.Point(92, 73);
             this.lbBSpeicher.Name = "lbBSpeicher";
-            this.lbBSpeicher.Size = new System.Drawing.Size(172, 18);
+            this.lbBSpeicher.Size = new System.Drawing.Size(156, 17);
             this.lbBSpeicher.TabIndex = 4;
             this.lbBSpeicher.Text = "Belegter Speicher:";
             // 
@@ -251,11 +235,11 @@
             // 
             this.lbFSpeicher.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicher, BunifuAnimatorNS.DecorationType.None);
-            this.lbFSpeicher.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFSpeicher.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicher.ForeColor = System.Drawing.Color.White;
             this.lbFSpeicher.Location = new System.Drawing.Point(92, 44);
             this.lbFSpeicher.Name = "lbFSpeicher";
-            this.lbFSpeicher.Size = new System.Drawing.Size(154, 18);
+            this.lbFSpeicher.Size = new System.Drawing.Size(140, 17);
             this.lbFSpeicher.TabIndex = 2;
             this.lbFSpeicher.Text = "Freier Speicher:";
             // 
@@ -263,11 +247,11 @@
             // 
             this.lbPath.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbPath, BunifuAnimatorNS.DecorationType.None);
-            this.lbPath.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPath.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPath.ForeColor = System.Drawing.Color.White;
             this.lbPath.Location = new System.Drawing.Point(92, 12);
             this.lbPath.Name = "lbPath";
-            this.lbPath.Size = new System.Drawing.Size(249, 18);
+            this.lbPath.Size = new System.Drawing.Size(226, 17);
             this.lbPath.TabIndex = 1;
             this.lbPath.Text = "D:\\OpenTools V2.0\\Aufnahme";
             // 
@@ -275,11 +259,11 @@
             // 
             this.lbOrdner.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbOrdner, BunifuAnimatorNS.DecorationType.None);
-            this.lbOrdner.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOrdner.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOrdner.ForeColor = System.Drawing.Color.White;
             this.lbOrdner.Location = new System.Drawing.Point(12, 12);
             this.lbOrdner.Name = "lbOrdner";
-            this.lbOrdner.Size = new System.Drawing.Size(74, 18);
+            this.lbOrdner.Size = new System.Drawing.Size(68, 17);
             this.lbOrdner.TabIndex = 0;
             this.lbOrdner.Text = "Ordner:";
             // 
@@ -290,9 +274,9 @@
             this.panelMarker.Controls.Add(this.lbMarker);
             this.ShowPanelAnimator.SetDecoration(this.panelMarker, BunifuAnimatorNS.DecorationType.None);
             this.panelMarker.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMarker.Location = new System.Drawing.Point(0, 401);
+            this.panelMarker.Location = new System.Drawing.Point(0, 325);
             this.panelMarker.Name = "panelMarker";
-            this.panelMarker.Size = new System.Drawing.Size(445, 170);
+            this.panelMarker.Size = new System.Drawing.Size(445, 132);
             this.panelMarker.TabIndex = 6;
             this.panelMarker.Visible = false;
             // 
@@ -301,10 +285,10 @@
             this.listMarker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.listMarker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ShowPanelAnimator.SetDecoration(this.listMarker, BunifuAnimatorNS.DecorationType.None);
-            this.listMarker.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listMarker.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listMarker.ForeColor = System.Drawing.Color.White;
             this.listMarker.FormattingEnabled = true;
-            this.listMarker.ItemHeight = 18;
+            this.listMarker.ItemHeight = 17;
             this.listMarker.Items.AddRange(new object[] {
             "00:20:25:15",
             "",
@@ -313,18 +297,18 @@
             "01:23:80:21"});
             this.listMarker.Location = new System.Drawing.Point(94, 12);
             this.listMarker.Name = "listMarker";
-            this.listMarker.Size = new System.Drawing.Size(323, 144);
+            this.listMarker.Size = new System.Drawing.Size(323, 136);
             this.listMarker.TabIndex = 1;
             // 
             // lbMarker
             // 
             this.lbMarker.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbMarker, BunifuAnimatorNS.DecorationType.None);
-            this.lbMarker.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarker.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarker.ForeColor = System.Drawing.Color.White;
             this.lbMarker.Location = new System.Drawing.Point(12, 12);
             this.lbMarker.Name = "lbMarker";
-            this.lbMarker.Size = new System.Drawing.Size(76, 18);
+            this.lbMarker.Size = new System.Drawing.Size(70, 17);
             this.lbMarker.TabIndex = 0;
             this.lbMarker.Text = "Marker:";
             // 
@@ -339,9 +323,9 @@
             this.panelÜberwachung.Controls.Add(this.lbSkype);
             this.ShowPanelAnimator.SetDecoration(this.panelÜberwachung, BunifuAnimatorNS.DecorationType.None);
             this.panelÜberwachung.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelÜberwachung.Location = new System.Drawing.Point(0, 571);
+            this.panelÜberwachung.Location = new System.Drawing.Point(0, 457);
             this.panelÜberwachung.Name = "panelÜberwachung";
-            this.panelÜberwachung.Size = new System.Drawing.Size(445, 170);
+            this.panelÜberwachung.Size = new System.Drawing.Size(445, 132);
             this.panelÜberwachung.TabIndex = 7;
             this.panelÜberwachung.Visible = false;
             // 
@@ -349,11 +333,11 @@
             // 
             this.lbTeamspeakStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbTeamspeakStatus, BunifuAnimatorNS.DecorationType.None);
-            this.lbTeamspeakStatus.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeamspeakStatus.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamspeakStatus.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lbTeamspeakStatus.Location = new System.Drawing.Point(228, 41);
             this.lbTeamspeakStatus.Name = "lbTeamspeakStatus";
-            this.lbTeamspeakStatus.Size = new System.Drawing.Size(17, 18);
+            this.lbTeamspeakStatus.Size = new System.Drawing.Size(16, 17);
             this.lbTeamspeakStatus.TabIndex = 5;
             this.lbTeamspeakStatus.Text = "?";
             // 
@@ -361,11 +345,11 @@
             // 
             this.lbDiscordSMStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbDiscordSMStatus, BunifuAnimatorNS.DecorationType.None);
-            this.lbDiscordSMStatus.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiscordSMStatus.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscordSMStatus.ForeColor = System.Drawing.Color.Red;
             this.lbDiscordSMStatus.Location = new System.Drawing.Point(228, 73);
             this.lbDiscordSMStatus.Name = "lbDiscordSMStatus";
-            this.lbDiscordSMStatus.Size = new System.Drawing.Size(37, 18);
+            this.lbDiscordSMStatus.Size = new System.Drawing.Size(34, 17);
             this.lbDiscordSMStatus.TabIndex = 4;
             this.lbDiscordSMStatus.Text = "Off";
             // 
@@ -373,11 +357,11 @@
             // 
             this.lbSkypeStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbSkypeStatus, BunifuAnimatorNS.DecorationType.None);
-            this.lbSkypeStatus.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSkypeStatus.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSkypeStatus.ForeColor = System.Drawing.Color.Lime;
             this.lbSkypeStatus.Location = new System.Drawing.Point(228, 12);
             this.lbSkypeStatus.Name = "lbSkypeStatus";
-            this.lbSkypeStatus.Size = new System.Drawing.Size(64, 18);
+            this.lbSkypeStatus.Size = new System.Drawing.Size(58, 17);
             this.lbSkypeStatus.TabIndex = 3;
             this.lbSkypeStatus.Text = "Online";
             // 
@@ -385,11 +369,11 @@
             // 
             this.lbDiscordSM.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbDiscordSM, BunifuAnimatorNS.DecorationType.None);
-            this.lbDiscordSM.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiscordSM.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscordSM.ForeColor = System.Drawing.Color.White;
             this.lbDiscordSM.Location = new System.Drawing.Point(12, 73);
             this.lbDiscordSM.Name = "lbDiscordSM";
-            this.lbDiscordSM.Size = new System.Drawing.Size(205, 18);
+            this.lbDiscordSM.Size = new System.Drawing.Size(186, 17);
             this.lbDiscordSM.TabIndex = 2;
             this.lbDiscordSM.Text = "Discord Streamermode:";
             // 
@@ -397,11 +381,11 @@
             // 
             this.lbTeamSpeak.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbTeamSpeak, BunifuAnimatorNS.DecorationType.None);
-            this.lbTeamSpeak.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeamSpeak.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamSpeak.ForeColor = System.Drawing.Color.White;
             this.lbTeamSpeak.Location = new System.Drawing.Point(11, 41);
             this.lbTeamSpeak.Name = "lbTeamSpeak";
-            this.lbTeamSpeak.Size = new System.Drawing.Size(103, 18);
+            this.lbTeamSpeak.Size = new System.Drawing.Size(94, 17);
             this.lbTeamSpeak.TabIndex = 1;
             this.lbTeamSpeak.Text = "Teamspeak:";
             // 
@@ -409,11 +393,11 @@
             // 
             this.lbSkype.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbSkype, BunifuAnimatorNS.DecorationType.None);
-            this.lbSkype.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSkype.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSkype.ForeColor = System.Drawing.Color.White;
             this.lbSkype.Location = new System.Drawing.Point(12, 12);
             this.lbSkype.Name = "lbSkype";
-            this.lbSkype.Size = new System.Drawing.Size(61, 18);
+            this.lbSkype.Size = new System.Drawing.Size(56, 17);
             this.lbSkype.TabIndex = 0;
             this.lbSkype.Text = "Skype:";
             // 
@@ -424,9 +408,9 @@
             this.panelSoundÜberwachung.Controls.Add(this.lbSound);
             this.ShowPanelAnimator.SetDecoration(this.panelSoundÜberwachung, BunifuAnimatorNS.DecorationType.None);
             this.panelSoundÜberwachung.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSoundÜberwachung.Location = new System.Drawing.Point(0, 741);
+            this.panelSoundÜberwachung.Location = new System.Drawing.Point(0, 589);
             this.panelSoundÜberwachung.Name = "panelSoundÜberwachung";
-            this.panelSoundÜberwachung.Size = new System.Drawing.Size(445, 170);
+            this.panelSoundÜberwachung.Size = new System.Drawing.Size(445, 132);
             this.panelSoundÜberwachung.TabIndex = 8;
             this.panelSoundÜberwachung.Visible = false;
             // 
@@ -435,10 +419,10 @@
             this.listSoundüberwachung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.listSoundüberwachung.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ShowPanelAnimator.SetDecoration(this.listSoundüberwachung, BunifuAnimatorNS.DecorationType.None);
-            this.listSoundüberwachung.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listSoundüberwachung.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listSoundüberwachung.ForeColor = System.Drawing.Color.White;
             this.listSoundüberwachung.FormattingEnabled = true;
-            this.listSoundüberwachung.ItemHeight = 18;
+            this.listSoundüberwachung.ItemHeight = 17;
             this.listSoundüberwachung.Items.AddRange(new object[] {
             "Chrome",
             "Minecraft 1.9",
@@ -446,18 +430,18 @@
             "Windows Media Player"});
             this.listSoundüberwachung.Location = new System.Drawing.Point(11, 41);
             this.listSoundüberwachung.Name = "listSoundüberwachung";
-            this.listSoundüberwachung.Size = new System.Drawing.Size(382, 126);
+            this.listSoundüberwachung.Size = new System.Drawing.Size(382, 119);
             this.listSoundüberwachung.TabIndex = 2;
             // 
             // lbSound
             // 
             this.lbSound.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbSound, BunifuAnimatorNS.DecorationType.None);
-            this.lbSound.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSound.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSound.ForeColor = System.Drawing.Color.White;
             this.lbSound.Location = new System.Drawing.Point(12, 12);
             this.lbSound.Name = "lbSound";
-            this.lbSound.Size = new System.Drawing.Size(393, 18);
+            this.lbSound.Size = new System.Drawing.Size(356, 17);
             this.lbSound.TabIndex = 0;
             this.lbSound.Text = "Diese Programme könnten Sound verursachen:\r\n";
             // 
@@ -473,7 +457,7 @@
             animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
             animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
             animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.Padding = new System.Windows.Forms.Padding(0);
             animation2.RotateCoeff = 0F;
             animation2.RotateLimit = 0F;
             animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
@@ -488,12 +472,12 @@
             this.ShowPanelsAnimation.Interval = 150;
             this.ShowPanelsAnimation.Tick += new System.EventHandler(this.ShowPanelsAnimation_Tick);
             // 
-            // frmMain
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(445, 911);
+            this.ClientSize = new System.Drawing.Size(445, 724);
             this.Controls.Add(this.panelSoundÜberwachung);
             this.Controls.Add(this.panelÜberwachung);
             this.Controls.Add(this.panelMarker);
@@ -502,7 +486,7 @@
             this.Controls.Add(this.HeaderBar);
             this.ShowPanelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmMain";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Form1_Activated);
@@ -512,7 +496,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panelTimer.ResumeLayout(false);
             this.panelTimer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bPause)).EndInit();
             this.panelOrdner.ResumeLayout(false);
             this.panelOrdner.PerformLayout();
             this.panelMarker.ResumeLayout(false);
@@ -534,7 +517,6 @@
         private System.Windows.Forms.Timer MaximaizeAnimation;
         private System.Windows.Forms.Panel panelTimer;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuImageButton bPause;
         private System.Windows.Forms.Panel panelOrdner;
         private System.Windows.Forms.Label lbBSpeicherMB;
         private System.Windows.Forms.Label lbBSpeicher;

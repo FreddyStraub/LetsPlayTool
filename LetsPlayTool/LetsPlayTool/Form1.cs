@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace LetsPlayTool
 {
-    public partial class frmMain : Form
+    public partial class Form1 : Form
     {
         
 
-        public frmMain()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -163,6 +163,11 @@ namespace LetsPlayTool
                 slide++;
                 ShowPanelsAnimation.Start();
             }
+        }
+
+        private void HeaderBar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
