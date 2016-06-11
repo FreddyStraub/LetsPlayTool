@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.MinimaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.MaximaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.panelTimer = new System.Windows.Forms.Panel();
@@ -62,19 +60,29 @@
             this.lbSound = new System.Windows.Forms.Label();
             this.ShowPanelAnimator = new BunifuAnimatorNS.Animator(this.components);
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
+            this.bSettings = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bOpenPrograms = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbGPU = new System.Windows.Forms.Label();
             this.HeaderBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panelTimer.SuspendLayout();
             this.panelOrdner.SuspendLayout();
             this.panelMarker.SuspendLayout();
             this.panelÜberwachung.SuspendLayout();
             this.panelSoundÜberwachung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderBar
             // 
             this.HeaderBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.HeaderBar.Controls.Add(this.bSettings);
+            this.HeaderBar.Controls.Add(this.bOpenPrograms);
             this.HeaderBar.Controls.Add(this.bunifuImageButton2);
             this.HeaderBar.Controls.Add(this.bunifuImageButton1);
             this.ShowPanelAnimator.SetDecoration(this.HeaderBar, BunifuAnimatorNS.DecorationType.None);
@@ -83,40 +91,8 @@
             this.HeaderBar.Name = "HeaderBar";
             this.HeaderBar.Size = new System.Drawing.Size(445, 59);
             this.HeaderBar.TabIndex = 0;
-            this.HeaderBar.Paint += new System.Windows.Forms.PaintEventHandler(this.HeaderBar_Paint);
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
             this.HeaderBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ShowPanelAnimator.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(359, 12);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(35, 35);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 2;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ShowPanelAnimator.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(400, 12);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(35, 35);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // MinimaizeAnimation
             // 
@@ -130,6 +106,7 @@
             // 
             // panelTimer
             // 
+            this.panelTimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTimer.Controls.Add(this.bunifuCustomLabel1);
             this.ShowPanelAnimator.SetDecoration(this.panelTimer, BunifuAnimatorNS.DecorationType.None);
@@ -144,17 +121,20 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Windows Command Prompt", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Windows Command Prompt", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(7, 32);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(22, 29);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(433, 76);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(395, 70);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "00:00:00:00";
             // 
             // panelOrdner
             // 
+            this.panelOrdner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelOrdner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOrdner.Controls.Add(this.label1);
+            this.panelOrdner.Controls.Add(this.lbGPU);
             this.panelOrdner.Controls.Add(this.lbCPUAuslastung);
             this.panelOrdner.Controls.Add(this.lbCPU);
             this.panelOrdner.Controls.Add(this.lbBSpeicherMB);
@@ -269,6 +249,7 @@
             // 
             // panelMarker
             // 
+            this.panelMarker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelMarker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMarker.Controls.Add(this.listMarker);
             this.panelMarker.Controls.Add(this.lbMarker);
@@ -314,6 +295,7 @@
             // 
             // panelÜberwachung
             // 
+            this.panelÜberwachung.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelÜberwachung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelÜberwachung.Controls.Add(this.lbTeamspeakStatus);
             this.panelÜberwachung.Controls.Add(this.lbDiscordSMStatus);
@@ -403,6 +385,7 @@
             // 
             // panelSoundÜberwachung
             // 
+            this.panelSoundÜberwachung.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelSoundÜberwachung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSoundÜberwachung.Controls.Add(this.listSoundüberwachung);
             this.panelSoundÜberwachung.Controls.Add(this.lbSound);
@@ -430,7 +413,7 @@
             "Windows Media Player"});
             this.listSoundüberwachung.Location = new System.Drawing.Point(11, 41);
             this.listSoundüberwachung.Name = "listSoundüberwachung";
-            this.listSoundüberwachung.Size = new System.Drawing.Size(382, 119);
+            this.listSoundüberwachung.Size = new System.Drawing.Size(429, 68);
             this.listSoundüberwachung.TabIndex = 2;
             // 
             // lbSound
@@ -449,28 +432,112 @@
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation1;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
             // 
-            this.ShowPanelsAnimation.Interval = 150;
+            this.ShowPanelsAnimation.Interval = 120;
             this.ShowPanelsAnimation.Tick += new System.EventHandler(this.ShowPanelsAnimation_Tick);
+            // 
+            // bSettings
+            // 
+            this.bSettings.BackColor = System.Drawing.Color.Transparent;
+            this.ShowPanelAnimator.SetDecoration(this.bSettings, BunifuAnimatorNS.DecorationType.None);
+            this.bSettings.Image = ((System.Drawing.Image)(resources.GetObject("bSettings.Image")));
+            this.bSettings.ImageActive = null;
+            this.bSettings.Location = new System.Drawing.Point(53, 12);
+            this.bSettings.Name = "bSettings";
+            this.bSettings.Size = new System.Drawing.Size(35, 35);
+            this.bSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bSettings.TabIndex = 4;
+            this.bSettings.TabStop = false;
+            this.bSettings.Zoom = 5;
+            this.bSettings.Click += new System.EventHandler(this.bSettings_Click);
+            // 
+            // bOpenPrograms
+            // 
+            this.bOpenPrograms.BackColor = System.Drawing.Color.Transparent;
+            this.ShowPanelAnimator.SetDecoration(this.bOpenPrograms, BunifuAnimatorNS.DecorationType.None);
+            this.bOpenPrograms.Image = ((System.Drawing.Image)(resources.GetObject("bOpenPrograms.Image")));
+            this.bOpenPrograms.ImageActive = null;
+            this.bOpenPrograms.Location = new System.Drawing.Point(12, 12);
+            this.bOpenPrograms.Name = "bOpenPrograms";
+            this.bOpenPrograms.Size = new System.Drawing.Size(35, 35);
+            this.bOpenPrograms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bOpenPrograms.TabIndex = 3;
+            this.bOpenPrograms.TabStop = false;
+            this.bOpenPrograms.Zoom = 5;
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ShowPanelAnimator.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(359, 12);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(35, 35);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 2;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ShowPanelAnimator.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(400, 12);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(35, 35);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 1;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(200, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "80%";
+            // 
+            // lbGPU
+            // 
+            this.lbGPU.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbGPU, BunifuAnimatorNS.DecorationType.None);
+            this.lbGPU.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGPU.ForeColor = System.Drawing.Color.White;
+            this.lbGPU.Location = new System.Drawing.Point(146, 106);
+            this.lbGPU.Name = "lbGPU";
+            this.lbGPU.Size = new System.Drawing.Size(40, 17);
+            this.lbGPU.TabIndex = 8;
+            this.lbGPU.Text = "CPU:";
             // 
             // Form1
             // 
@@ -486,14 +553,14 @@
             this.Controls.Add(this.HeaderBar);
             this.ShowPanelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(445, 724);
+            this.MinimumSize = new System.Drawing.Size(445, 724);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.HeaderBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panelTimer.ResumeLayout(false);
             this.panelTimer.PerformLayout();
             this.panelOrdner.ResumeLayout(false);
@@ -504,6 +571,10 @@
             this.panelÜberwachung.PerformLayout();
             this.panelSoundÜberwachung.ResumeLayout(false);
             this.panelSoundÜberwachung.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,6 +612,10 @@
         private System.Windows.Forms.Label lbSound;
         private BunifuAnimatorNS.Animator ShowPanelAnimator;
         private System.Windows.Forms.Timer ShowPanelsAnimation;
+        private Bunifu.Framework.UI.BunifuImageButton bOpenPrograms;
+        private Bunifu.Framework.UI.BunifuImageButton bSettings;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbGPU;
     }
 }
 

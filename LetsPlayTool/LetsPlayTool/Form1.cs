@@ -95,7 +95,6 @@ namespace LetsPlayTool
             {
                 MaximaizeAnimation.Stop();
 
-
             }
             else
             {
@@ -165,8 +164,11 @@ namespace LetsPlayTool
             }
         }
 
-        private void HeaderBar_Paint(object sender, PaintEventArgs e)
+        private void bSettings_Click(object sender, EventArgs e)
         {
+            frmEinstellungen frmEinstellungen = new frmEinstellungen();
+            frmEinstellungen.ShowDialog();
+
 
         }
     }

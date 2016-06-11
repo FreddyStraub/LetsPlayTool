@@ -49,16 +49,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Einstellungen_Tabs\AllgemeinesTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\AllgemeinesTab.Designer.cs">
+      <DependentUpon>AllgemeinesTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\MarkerTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\MarkerTab.Designer.cs">
+      <DependentUpon>MarkerTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\Überwachung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\Überwachung.Designer.cs">
+      <DependentUpon>Überwachung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\ProgrammeTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\ProgrammeTab.Designer.cs">
+      <DependentUpon>ProgrammeTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\TimerTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\TimerTab.Designer.cs">
+      <DependentUpon>TimerTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEinstellungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEinstellungen.Designer.cs">
+      <DependentUpon>frmEinstellungen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Einstellungen_Tabs\AllgemeinesTab.resx">
+      <DependentUpon>AllgemeinesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\MarkerTab.resx">
+      <DependentUpon>MarkerTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\Überwachung.resx">
+      <DependentUpon>Überwachung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\ProgrammeTab.resx">
+      <DependentUpon>ProgrammeTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\TimerTab.resx">
+      <DependentUpon>TimerTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEinstellungen.resx">
+      <DependentUpon>frmEinstellungen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +122,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Unbenannt-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
