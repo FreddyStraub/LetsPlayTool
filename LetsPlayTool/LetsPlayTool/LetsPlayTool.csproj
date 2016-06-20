@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Einstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\AllgemeinesTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +94,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimerProfil.cs" />
     <EmbeddedResource Include="Einstellungen_Tabs\AllgemeinesTab.resx">
       <DependentUpon>AllgemeinesTab.cs</DependentUpon>
     </EmbeddedResource>
