@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbSpeicherort = new System.Windows.Forms.TextBox();
+            this.bBrowse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.ddFormat = new Bunifu.Framework.UI.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkShift = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label4 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkAlt = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkStrg = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bAufnhameStop = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bKey = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbSpeicherort
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(94, 37);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(516, 25);
-            this.textBox1.TabIndex = 0;
+            this.tbSpeicherort.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tbSpeicherort.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSpeicherort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSpeicherort.ForeColor = System.Drawing.Color.White;
+            this.tbSpeicherort.Location = new System.Drawing.Point(94, 37);
+            this.tbSpeicherort.Multiline = true;
+            this.tbSpeicherort.Name = "tbSpeicherort";
+            this.tbSpeicherort.ReadOnly = true;
+            this.tbSpeicherort.Size = new System.Drawing.Size(516, 25);
+            this.tbSpeicherort.TabIndex = 0;
             // 
-            // button1
+            // bBrowse
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(616, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 25);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bBrowse.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBrowse.ForeColor = System.Drawing.Color.White;
+            this.bBrowse.Location = new System.Drawing.Point(616, 37);
+            this.bBrowse.Name = "bBrowse";
+            this.bBrowse.Size = new System.Drawing.Size(30, 25);
+            this.bBrowse.TabIndex = 1;
+            this.bBrowse.Text = "...";
+            this.bBrowse.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bunifuDropdown1);
+            this.groupBox1.Controls.Add(this.ddFormat);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.tbSpeicherort);
+            this.groupBox1.Controls.Add(this.bBrowse);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 54);
             this.groupBox1.Name = "groupBox1";
@@ -90,21 +90,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marker";
             // 
-            // bunifuDropdown1
+            // ddFormat
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[] {
+            this.ddFormat.BackColor = System.Drawing.Color.Transparent;
+            this.ddFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddFormat.ForeColor = System.Drawing.Color.White;
+            this.ddFormat.Items = new string[] {
         "Textdatei (.txt)",
         "Audiodatei (.wav)"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(94, 101);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bunifuDropdown1.selectedIndex = 0;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(217, 26);
-            this.bunifuDropdown1.TabIndex = 18;
+            this.ddFormat.Location = new System.Drawing.Point(94, 101);
+            this.ddFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ddFormat.Name = "ddFormat";
+            this.ddFormat.NomalColor = System.Drawing.Color.DodgerBlue;
+            this.ddFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.ddFormat.selectedIndex = 0;
+            this.ddFormat.Size = new System.Drawing.Size(217, 26);
+            this.ddFormat.TabIndex = 18;
             // 
             // label6
             // 
@@ -119,13 +120,13 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox3);
+            this.groupBox2.Controls.Add(this.checkShift);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox2);
+            this.groupBox2.Controls.Add(this.checkAlt);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox1);
+            this.groupBox2.Controls.Add(this.checkStrg);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.bAufnhameStop);
+            this.groupBox2.Controls.Add(this.bKey);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(1, 156);
             this.groupBox2.Name = "groupBox2";
@@ -144,19 +145,19 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Shift";
             // 
-            // bunifuCheckbox3
+            // checkShift
             // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox3.Checked = true;
-            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(172, 86);
-            this.bunifuCheckbox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
-            this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox3.TabIndex = 15;
+            this.checkShift.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkShift.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkShift.Checked = true;
+            this.checkShift.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkShift.ForeColor = System.Drawing.Color.White;
+            this.checkShift.Location = new System.Drawing.Point(172, 86);
+            this.checkShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkShift.Name = "checkShift";
+            this.checkShift.Size = new System.Drawing.Size(20, 20);
+            this.checkShift.TabIndex = 15;
             // 
             // label4
             // 
@@ -168,19 +169,19 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Alt";
             // 
-            // bunifuCheckbox2
+            // checkAlt
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = true;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(105, 86);
-            this.bunifuCheckbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 13;
+            this.checkAlt.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkAlt.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkAlt.Checked = true;
+            this.checkAlt.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkAlt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAlt.ForeColor = System.Drawing.Color.White;
+            this.checkAlt.Location = new System.Drawing.Point(105, 86);
+            this.checkAlt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkAlt.Name = "checkAlt";
+            this.checkAlt.Size = new System.Drawing.Size(20, 20);
+            this.checkAlt.TabIndex = 13;
             // 
             // label3
             // 
@@ -192,19 +193,19 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Strg";
             // 
-            // bunifuCheckbox1
+            // checkStrg
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(28, 86);
-            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 11;
+            this.checkStrg.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkStrg.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkStrg.Checked = true;
+            this.checkStrg.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkStrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkStrg.ForeColor = System.Drawing.Color.White;
+            this.checkStrg.Location = new System.Drawing.Point(28, 86);
+            this.checkStrg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkStrg.Name = "checkStrg";
+            this.checkStrg.Size = new System.Drawing.Size(20, 20);
+            this.checkStrg.TabIndex = 11;
             // 
             // label2
             // 
@@ -216,31 +217,31 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Hotkey um einen Marker zu setzen";
             // 
-            // bAufnhameStop
+            // bKey
             // 
-            this.bAufnhameStop.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAufnhameStop.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bAufnhameStop.BorderRadius = 0;
-            this.bAufnhameStop.ButtonText = "Num0";
-            this.bAufnhameStop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAufnhameStop.Iconcolor = System.Drawing.Color.Transparent;
-            this.bAufnhameStop.Iconimage = null;
-            this.bAufnhameStop.Iconimage_right = null;
-            this.bAufnhameStop.Iconimage_right_Selected = null;
-            this.bAufnhameStop.Iconimage_Selected = null;
-            this.bAufnhameStop.IsTab = false;
-            this.bAufnhameStop.Location = new System.Drawing.Point(262, 68);
-            this.bAufnhameStop.Name = "bAufnhameStop";
-            this.bAufnhameStop.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStop.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAufnhameStop.OnHoverTextColor = System.Drawing.Color.White;
-            this.bAufnhameStop.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.bAufnhameStop.selected = false;
-            this.bAufnhameStop.Size = new System.Drawing.Size(133, 57);
-            this.bAufnhameStop.TabIndex = 5;
-            this.bAufnhameStop.Textcolor = System.Drawing.Color.White;
-            this.bAufnhameStop.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bKey.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bKey.BorderRadius = 0;
+            this.bKey.ButtonText = "Num0";
+            this.bKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bKey.Iconcolor = System.Drawing.Color.Transparent;
+            this.bKey.Iconimage = null;
+            this.bKey.Iconimage_right = null;
+            this.bKey.Iconimage_right_Selected = null;
+            this.bKey.Iconimage_Selected = null;
+            this.bKey.IsTab = false;
+            this.bKey.Location = new System.Drawing.Point(259, 66);
+            this.bKey.Name = "bKey";
+            this.bKey.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bKey.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bKey.OnHoverTextColor = System.Drawing.Color.White;
+            this.bKey.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.bKey.selected = false;
+            this.bKey.Size = new System.Drawing.Size(133, 57);
+            this.bKey.TabIndex = 5;
+            this.bKey.Textcolor = System.Drawing.Color.White;
+            this.bKey.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // label1
             // 
@@ -286,20 +287,20 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbSpeicherort;
+        private System.Windows.Forms.Button bBrowse;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox checkStrg;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuFlatButton bAufnhameStop;
+        private Bunifu.Framework.UI.BunifuFlatButton bKey;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
+        private Bunifu.Framework.UI.BunifuCheckbox checkShift;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuCheckbox checkAlt;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown ddFormat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
     }

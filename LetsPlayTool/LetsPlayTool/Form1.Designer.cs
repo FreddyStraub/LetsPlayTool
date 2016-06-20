@@ -37,6 +37,8 @@
             this.panelTimer = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelOrdner = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbGPU = new System.Windows.Forms.Label();
             this.lbCPUAuslastung = new System.Windows.Forms.Label();
             this.lbCPU = new System.Windows.Forms.Label();
             this.lbBSpeicherMB = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@
             this.bOpenPrograms = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbGPU = new System.Windows.Forms.Label();
             this.HeaderBar.SuspendLayout();
             this.panelTimer.SuspendLayout();
             this.panelOrdner.SuspendLayout();
@@ -150,6 +150,30 @@
             this.panelOrdner.Size = new System.Drawing.Size(445, 133);
             this.panelOrdner.TabIndex = 2;
             this.panelOrdner.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(200, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "80%";
+            // 
+            // lbGPU
+            // 
+            this.lbGPU.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbGPU, BunifuAnimatorNS.DecorationType.None);
+            this.lbGPU.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGPU.ForeColor = System.Drawing.Color.White;
+            this.lbGPU.Location = new System.Drawing.Point(146, 106);
+            this.lbGPU.Name = "lbGPU";
+            this.lbGPU.Size = new System.Drawing.Size(40, 17);
+            this.lbGPU.TabIndex = 8;
+            this.lbGPU.Text = "CPU:";
             // 
             // lbCPUAuslastung
             // 
@@ -514,30 +538,6 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(200, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "80%";
-            // 
-            // lbGPU
-            // 
-            this.lbGPU.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.lbGPU, BunifuAnimatorNS.DecorationType.None);
-            this.lbGPU.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGPU.ForeColor = System.Drawing.Color.White;
-            this.lbGPU.Location = new System.Drawing.Point(146, 106);
-            this.lbGPU.Name = "lbGPU";
-            this.lbGPU.Size = new System.Drawing.Size(40, 17);
-            this.lbGPU.TabIndex = 8;
-            this.lbGPU.Text = "CPU:";
             // 
             // Form1
             // 

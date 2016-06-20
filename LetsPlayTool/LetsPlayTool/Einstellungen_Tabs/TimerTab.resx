@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuFlatButton4.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bZeitEntfernen.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAABPVJREFUeF7t
         2j9uVUkQhXFHhGRmDyyJxQzyIghZDUzKGoYNkIA0GfJ0v/tlM0Jwxri6ur+fdNNS1Tn38cd+d5IkSZIk
@@ -145,7 +145,7 @@
         3T+3RgGRraLyfAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuFlatButton3.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bZeitHinzufügen.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAAE0VJREFUeF7t
         3QvUttlcx3GHDiiMGkpFISUmMimkVCo1DWZNSojKSjlUq5U1TqFopSSTSZQaOq6SiqKjkUMOo3RYRBON
@@ -233,7 +233,7 @@
         HU5c4X8BVAt1rZfl62QAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuFlatButton2.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bProfilLöschen.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAABPVJREFUeF7t
         2j9uVUkQhXFHhGRmDyyJxQzyIghZDUzKGoYNkIA0GfJ0v/tlM0Jwxri6ur+fdNNS1Tn38cd+d5IkSZIk
@@ -260,7 +260,7 @@
         3T+3RgGRraLyfAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuFlatButton1.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bProfilErstellen.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAABtRJREFUeF7t
         3UuuXdUVhWGXgiNwC5AiAa4hhWbQAhDpTJQSwkipG5l+pAmWqBBSSgeSyCIv3jEJccY++y8kxBxdlr3P
@@ -295,7 +295,7 @@
         Ac0NQ3kf1S0UAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuFlatButton5.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bFertig.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAABm5JREFUeF7t
         2sGKpeUVheGeqdHOPRg1w0guRjE3JCheQEtLbqfBSTDkHkLHDFVoHbT763oH0ihW7QR+1lnvA9908631
@@ -328,7 +328,7 @@
         kiRJkiRJkiRJkiRJ0v/Ro0c/A7lhHqx2cflAAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuiOSSwitch2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="switchBlinken.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAA4CAYAAAALrl3YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVHhe7dFbjsIwEERRVjJrnh3DB1eyUAryshuL3JLO

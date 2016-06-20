@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgrammeTab));
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbProgramme = new System.Windows.Forms.ListBox();
             this.bHinzufügen = new Bunifu.Framework.UI.BunifuTileButton();
             this.bEntfernen = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lbProgramme
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 52);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(385, 480);
-            this.listBox1.TabIndex = 0;
+            this.lbProgramme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.lbProgramme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbProgramme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProgramme.ForeColor = System.Drawing.Color.White;
+            this.lbProgramme.FormattingEnabled = true;
+            this.lbProgramme.ItemHeight = 16;
+            this.lbProgramme.Location = new System.Drawing.Point(12, 52);
+            this.lbProgramme.Name = "lbProgramme";
+            this.lbProgramme.Size = new System.Drawing.Size(385, 480);
+            this.lbProgramme.TabIndex = 0;
             // 
             // bHinzufügen
             // 
@@ -106,7 +106,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bEntfernen);
             this.Controls.Add(this.bHinzufügen);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbProgramme);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProgrammeTab";
             this.Text = "ProgrammeTab";
@@ -117,7 +117,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbProgramme;
         private Bunifu.Framework.UI.BunifuTileButton bHinzufügen;
         private Bunifu.Framework.UI.BunifuTileButton bEntfernen;
         private System.Windows.Forms.Label label1;

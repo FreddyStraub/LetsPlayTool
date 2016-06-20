@@ -31,32 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Überwachung));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbAufnahmeordner = new System.Windows.Forms.TextBox();
+            this.bBrowse = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.bunifuiOSSwitch3 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switchGPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuiOSSwitch2 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuiOSSwitch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switchSpeicherplatz = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbDiscord = new System.Windows.Forms.PictureBox();
+            this.pbTeamspeak = new System.Windows.Forms.PictureBox();
+            this.pbSkype = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTeamspeak)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkype)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.tbAufnahmeordner);
+            this.groupBox1.Controls.Add(this.bBrowse);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -77,42 +77,42 @@
             this.label1.Text = "Aufnahmeordner:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // tbAufnahmeordner
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(127, 34);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(486, 25);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbAufnahmeordner.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tbAufnahmeordner.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbAufnahmeordner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAufnahmeordner.ForeColor = System.Drawing.Color.White;
+            this.tbAufnahmeordner.Location = new System.Drawing.Point(127, 34);
+            this.tbAufnahmeordner.Multiline = true;
+            this.tbAufnahmeordner.Name = "tbAufnahmeordner";
+            this.tbAufnahmeordner.ReadOnly = true;
+            this.tbAufnahmeordner.Size = new System.Drawing.Size(486, 25);
+            this.tbAufnahmeordner.TabIndex = 3;
+            this.tbAufnahmeordner.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // bBrowse
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(619, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 25);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bBrowse.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBrowse.ForeColor = System.Drawing.Color.White;
+            this.bBrowse.Location = new System.Drawing.Point(619, 34);
+            this.bBrowse.Name = "bBrowse";
+            this.bBrowse.Size = new System.Drawing.Size(30, 25);
+            this.bBrowse.TabIndex = 4;
+            this.bBrowse.Text = "...";
+            this.bBrowse.UseVisualStyleBackColor = false;
+            this.bBrowse.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.bunifuiOSSwitch3);
+            this.groupBox2.Controls.Add(this.switchGPU);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.bunifuiOSSwitch2);
+            this.groupBox2.Controls.Add(this.switchCPU);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.bunifuiOSSwitch1);
+            this.groupBox2.Controls.Add(this.switchSpeicherplatz);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(13, 94);
             this.groupBox2.Name = "groupBox2";
@@ -132,19 +132,19 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "GPU";
             // 
-            // bunifuiOSSwitch3
+            // switchGPU
             // 
-            this.bunifuiOSSwitch3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuiOSSwitch3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch3.BackgroundImage")));
-            this.bunifuiOSSwitch3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuiOSSwitch3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuiOSSwitch3.Location = new System.Drawing.Point(357, 37);
-            this.bunifuiOSSwitch3.Name = "bunifuiOSSwitch3";
-            this.bunifuiOSSwitch3.OffColor = System.Drawing.Color.Gray;
-            this.bunifuiOSSwitch3.OnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuiOSSwitch3.Size = new System.Drawing.Size(43, 25);
-            this.bunifuiOSSwitch3.TabIndex = 11;
-            this.bunifuiOSSwitch3.Value = true;
+            this.switchGPU.BackColor = System.Drawing.Color.Transparent;
+            this.switchGPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchGPU.BackgroundImage")));
+            this.switchGPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchGPU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchGPU.Location = new System.Drawing.Point(357, 37);
+            this.switchGPU.Name = "switchGPU";
+            this.switchGPU.OffColor = System.Drawing.Color.Gray;
+            this.switchGPU.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchGPU.Size = new System.Drawing.Size(43, 25);
+            this.switchGPU.TabIndex = 11;
+            this.switchGPU.Value = true;
             // 
             // label2
             // 
@@ -156,19 +156,19 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "CPU";
             // 
-            // bunifuiOSSwitch2
+            // switchCPU
             // 
-            this.bunifuiOSSwitch2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuiOSSwitch2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch2.BackgroundImage")));
-            this.bunifuiOSSwitch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuiOSSwitch2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuiOSSwitch2.Location = new System.Drawing.Point(229, 37);
-            this.bunifuiOSSwitch2.Name = "bunifuiOSSwitch2";
-            this.bunifuiOSSwitch2.OffColor = System.Drawing.Color.Gray;
-            this.bunifuiOSSwitch2.OnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuiOSSwitch2.Size = new System.Drawing.Size(43, 25);
-            this.bunifuiOSSwitch2.TabIndex = 9;
-            this.bunifuiOSSwitch2.Value = true;
+            this.switchCPU.BackColor = System.Drawing.Color.Transparent;
+            this.switchCPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchCPU.BackgroundImage")));
+            this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchCPU.Location = new System.Drawing.Point(229, 37);
+            this.switchCPU.Name = "switchCPU";
+            this.switchCPU.OffColor = System.Drawing.Color.Gray;
+            this.switchCPU.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchCPU.Size = new System.Drawing.Size(43, 25);
+            this.switchCPU.TabIndex = 9;
+            this.switchCPU.Value = true;
             // 
             // label3
             // 
@@ -181,26 +181,26 @@
             this.label3.Text = "Speicherplatz";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // bunifuiOSSwitch1
+            // switchSpeicherplatz
             // 
-            this.bunifuiOSSwitch1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuiOSSwitch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch1.BackgroundImage")));
-            this.bunifuiOSSwitch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuiOSSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuiOSSwitch1.Location = new System.Drawing.Point(106, 37);
-            this.bunifuiOSSwitch1.Name = "bunifuiOSSwitch1";
-            this.bunifuiOSSwitch1.OffColor = System.Drawing.Color.Gray;
-            this.bunifuiOSSwitch1.OnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuiOSSwitch1.Size = new System.Drawing.Size(43, 25);
-            this.bunifuiOSSwitch1.TabIndex = 7;
-            this.bunifuiOSSwitch1.Value = true;
-            this.bunifuiOSSwitch1.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch1_OnValueChange);
+            this.switchSpeicherplatz.BackColor = System.Drawing.Color.Transparent;
+            this.switchSpeicherplatz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchSpeicherplatz.BackgroundImage")));
+            this.switchSpeicherplatz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchSpeicherplatz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchSpeicherplatz.Location = new System.Drawing.Point(106, 37);
+            this.switchSpeicherplatz.Name = "switchSpeicherplatz";
+            this.switchSpeicherplatz.OffColor = System.Drawing.Color.Gray;
+            this.switchSpeicherplatz.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchSpeicherplatz.Size = new System.Drawing.Size(43, 25);
+            this.switchSpeicherplatz.TabIndex = 7;
+            this.switchSpeicherplatz.Value = true;
+            this.switchSpeicherplatz.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch1_OnValueChange);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pictureBox3);
-            this.groupBox3.Controls.Add(this.pictureBox2);
-            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.pbDiscord);
+            this.groupBox3.Controls.Add(this.pbTeamspeak);
+            this.groupBox3.Controls.Add(this.pbSkype);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 196);
             this.groupBox3.Name = "groupBox3";
@@ -209,35 +209,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Messenger";
             // 
-            // pictureBox1
+            // pbDiscord
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbDiscord.Image = ((System.Drawing.Image)(resources.GetObject("pbDiscord.Image")));
+            this.pbDiscord.Location = new System.Drawing.Point(10, 241);
+            this.pbDiscord.Name = "pbDiscord";
+            this.pbDiscord.Size = new System.Drawing.Size(70, 70);
+            this.pbDiscord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDiscord.TabIndex = 2;
+            this.pbDiscord.TabStop = false;
             // 
-            // pictureBox2
+            // pbTeamspeak
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(10, 140);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pbTeamspeak.Image = ((System.Drawing.Image)(resources.GetObject("pbTeamspeak.Image")));
+            this.pbTeamspeak.Location = new System.Drawing.Point(10, 140);
+            this.pbTeamspeak.Name = "pbTeamspeak";
+            this.pbTeamspeak.Size = new System.Drawing.Size(70, 70);
+            this.pbTeamspeak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTeamspeak.TabIndex = 1;
+            this.pbTeamspeak.TabStop = false;
             // 
-            // pictureBox3
+            // pbSkype
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(10, 241);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pbSkype.Image = ((System.Drawing.Image)(resources.GetObject("pbSkype.Image")));
+            this.pbSkype.Location = new System.Drawing.Point(10, 42);
+            this.pbSkype.Name = "pbSkype";
+            this.pbSkype.Size = new System.Drawing.Size(70, 70);
+            this.pbSkype.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSkype.TabIndex = 0;
+            this.pbSkype.TabStop = false;
             // 
             // Überwachung
             // 
@@ -256,9 +256,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiscord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTeamspeak)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSkype)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,18 +267,18 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbAufnahmeordner;
+        private System.Windows.Forms.Button bBrowse;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch1;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchSpeicherplatz;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch3;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchGPU;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch2;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchCPU;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbDiscord;
+        private System.Windows.Forms.PictureBox pbTeamspeak;
+        private System.Windows.Forms.PictureBox pbSkype;
     }
 }

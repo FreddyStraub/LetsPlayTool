@@ -36,15 +36,19 @@
             this.bAufnhameStop = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bAufnhameStart = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.switchIErinerrungen = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.tbIErinerrungen = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.bunifuiOSSwitch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuiOSSwitch2 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkÜFensterTimer = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.panelÜFensterSettings = new System.Windows.Forms.Panel();
             this.gbHotkey.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panelÜFensterSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbHotkey
@@ -150,15 +154,30 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bunifuiOSSwitch2);
+            this.groupBox1.Controls.Add(this.panelÜFensterSettings);
+            this.groupBox1.Controls.Add(this.switchÜFenster);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 198);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(671, 85);
+            this.groupBox1.Size = new System.Drawing.Size(671, 109);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Überwachungsfenster";
+            // 
+            // switchÜFenster
+            // 
+            this.switchÜFenster.BackColor = System.Drawing.Color.Transparent;
+            this.switchÜFenster.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchÜFenster.BackgroundImage")));
+            this.switchÜFenster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchÜFenster.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchÜFenster.Location = new System.Drawing.Point(12, 31);
+            this.switchÜFenster.Name = "switchÜFenster";
+            this.switchÜFenster.OffColor = System.Drawing.Color.Gray;
+            this.switchÜFenster.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchÜFenster.Size = new System.Drawing.Size(43, 25);
+            this.switchÜFenster.TabIndex = 6;
+            this.switchÜFenster.Value = true;
             // 
             // label6
             // 
@@ -175,28 +194,42 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.bunifuiOSSwitch1);
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.switchIErinerrungen);
+            this.groupBox2.Controls.Add(this.tbIErinerrungen);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(12, 289);
+            this.groupBox2.Location = new System.Drawing.Point(12, 313);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(671, 252);
+            this.groupBox2.Size = new System.Drawing.Size(671, 228);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Individuelle Erinerrungen";
             // 
-            // richTextBox1
+            // switchIErinerrungen
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 65);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(644, 161);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.switchIErinerrungen.BackColor = System.Drawing.Color.Transparent;
+            this.switchIErinerrungen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchIErinerrungen.BackgroundImage")));
+            this.switchIErinerrungen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchIErinerrungen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchIErinerrungen.Location = new System.Drawing.Point(12, 26);
+            this.switchIErinerrungen.Name = "switchIErinerrungen";
+            this.switchIErinerrungen.OffColor = System.Drawing.Color.Gray;
+            this.switchIErinerrungen.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchIErinerrungen.Size = new System.Drawing.Size(43, 25);
+            this.switchIErinerrungen.TabIndex = 5;
+            this.switchIErinerrungen.Value = true;
+            // 
+            // tbIErinerrungen
+            // 
+            this.tbIErinerrungen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tbIErinerrungen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbIErinerrungen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIErinerrungen.ForeColor = System.Drawing.Color.White;
+            this.tbIErinerrungen.Location = new System.Drawing.Point(12, 63);
+            this.tbIErinerrungen.Name = "tbIErinerrungen";
+            this.tbIErinerrungen.Size = new System.Drawing.Size(644, 157);
+            this.tbIErinerrungen.TabIndex = 4;
+            this.tbIErinerrungen.Text = "";
             // 
             // label7
             // 
@@ -209,33 +242,37 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
             // 
-            // bunifuiOSSwitch1
+            // label4
             // 
-            this.bunifuiOSSwitch1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuiOSSwitch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch1.BackgroundImage")));
-            this.bunifuiOSSwitch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuiOSSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuiOSSwitch1.Location = new System.Drawing.Point(12, 26);
-            this.bunifuiOSSwitch1.Name = "bunifuiOSSwitch1";
-            this.bunifuiOSSwitch1.OffColor = System.Drawing.Color.Gray;
-            this.bunifuiOSSwitch1.OnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuiOSSwitch1.Size = new System.Drawing.Size(43, 25);
-            this.bunifuiOSSwitch1.TabIndex = 5;
-            this.bunifuiOSSwitch1.Value = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Timer anzeigen";
             // 
-            // bunifuiOSSwitch2
+            // checkÜFensterTimer
             // 
-            this.bunifuiOSSwitch2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuiOSSwitch2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuiOSSwitch2.BackgroundImage")));
-            this.bunifuiOSSwitch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuiOSSwitch2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuiOSSwitch2.Location = new System.Drawing.Point(12, 31);
-            this.bunifuiOSSwitch2.Name = "bunifuiOSSwitch2";
-            this.bunifuiOSSwitch2.OffColor = System.Drawing.Color.Gray;
-            this.bunifuiOSSwitch2.OnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuiOSSwitch2.Size = new System.Drawing.Size(43, 25);
-            this.bunifuiOSSwitch2.TabIndex = 6;
-            this.bunifuiOSSwitch2.Value = true;
+            this.checkÜFensterTimer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterTimer.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkÜFensterTimer.Checked = true;
+            this.checkÜFensterTimer.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkÜFensterTimer.ForeColor = System.Drawing.Color.White;
+            this.checkÜFensterTimer.Location = new System.Drawing.Point(4, 13);
+            this.checkÜFensterTimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkÜFensterTimer.Name = "checkÜFensterTimer";
+            this.checkÜFensterTimer.Size = new System.Drawing.Size(20, 20);
+            this.checkÜFensterTimer.TabIndex = 18;
+            // 
+            // panelÜFensterSettings
+            // 
+            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterTimer);
+            this.panelÜFensterSettings.Controls.Add(this.label4);
+            this.panelÜFensterSettings.Location = new System.Drawing.Point(61, 57);
+            this.panelÜFensterSettings.Name = "panelÜFensterSettings";
+            this.panelÜFensterSettings.Size = new System.Drawing.Size(524, 46);
+            this.panelÜFensterSettings.TabIndex = 20;
             // 
             // AllgemeinesTab
             // 
@@ -255,6 +292,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panelÜFensterSettings.ResumeLayout(false);
+            this.panelÜFensterSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,9 +309,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox tbIErinerrungen;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch2;
-        private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch1;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchÜFenster;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchIErinerrungen;
+        private System.Windows.Forms.Panel panelÜFensterSettings;
+        private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterTimer;
+        private System.Windows.Forms.Label label4;
     }
 }
