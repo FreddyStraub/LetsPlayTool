@@ -36,19 +36,19 @@
             this.bAufnhameStop = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bAufnhameStart = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelÜFensterSettings = new System.Windows.Forms.Panel();
+            this.checkÜFensterTimer = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label4 = new System.Windows.Forms.Label();
             this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.switchIErinerrungen = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.tbIErinerrungen = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.checkÜFensterTimer = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.panelÜFensterSettings = new System.Windows.Forms.Panel();
             this.gbHotkey.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panelÜFensterSettings.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbHotkey
@@ -106,7 +106,7 @@
             this.bAufnhameStop.BackColor = System.Drawing.Color.DodgerBlue;
             this.bAufnhameStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bAufnhameStop.BorderRadius = 0;
-            this.bAufnhameStop.ButtonText = "Num0";
+            this.bAufnhameStop.ButtonText = "NumPad0";
             this.bAufnhameStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAufnhameStop.Iconcolor = System.Drawing.Color.Transparent;
             this.bAufnhameStop.Iconimage = null;
@@ -125,6 +125,7 @@
             this.bAufnhameStop.TabIndex = 4;
             this.bAufnhameStop.Textcolor = System.Drawing.Color.White;
             this.bAufnhameStop.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAufnhameStop.Click += new System.EventHandler(this.bAufnhameStop_Click);
             // 
             // bAufnhameStart
             // 
@@ -132,7 +133,7 @@
             this.bAufnhameStart.BackColor = System.Drawing.Color.DodgerBlue;
             this.bAufnhameStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bAufnhameStart.BorderRadius = 0;
-            this.bAufnhameStart.ButtonText = "Num0";
+            this.bAufnhameStart.ButtonText = "NumPad0";
             this.bAufnhameStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAufnhameStart.Iconcolor = System.Drawing.Color.Transparent;
             this.bAufnhameStart.Iconimage = null;
@@ -164,6 +165,38 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Überwachungsfenster";
+            // 
+            // panelÜFensterSettings
+            // 
+            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterTimer);
+            this.panelÜFensterSettings.Controls.Add(this.label4);
+            this.panelÜFensterSettings.Location = new System.Drawing.Point(61, 57);
+            this.panelÜFensterSettings.Name = "panelÜFensterSettings";
+            this.panelÜFensterSettings.Size = new System.Drawing.Size(524, 46);
+            this.panelÜFensterSettings.TabIndex = 20;
+            // 
+            // checkÜFensterTimer
+            // 
+            this.checkÜFensterTimer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterTimer.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkÜFensterTimer.Checked = true;
+            this.checkÜFensterTimer.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkÜFensterTimer.ForeColor = System.Drawing.Color.White;
+            this.checkÜFensterTimer.Location = new System.Drawing.Point(4, 13);
+            this.checkÜFensterTimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkÜFensterTimer.Name = "checkÜFensterTimer";
+            this.checkÜFensterTimer.Size = new System.Drawing.Size(20, 20);
+            this.checkÜFensterTimer.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Timer anzeigen";
             // 
             // switchÜFenster
             // 
@@ -242,38 +275,6 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Timer anzeigen";
-            // 
-            // checkÜFensterTimer
-            // 
-            this.checkÜFensterTimer.BackColor = System.Drawing.Color.DodgerBlue;
-            this.checkÜFensterTimer.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.checkÜFensterTimer.Checked = true;
-            this.checkÜFensterTimer.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.checkÜFensterTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkÜFensterTimer.ForeColor = System.Drawing.Color.White;
-            this.checkÜFensterTimer.Location = new System.Drawing.Point(4, 13);
-            this.checkÜFensterTimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkÜFensterTimer.Name = "checkÜFensterTimer";
-            this.checkÜFensterTimer.Size = new System.Drawing.Size(20, 20);
-            this.checkÜFensterTimer.TabIndex = 18;
-            // 
-            // panelÜFensterSettings
-            // 
-            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterTimer);
-            this.panelÜFensterSettings.Controls.Add(this.label4);
-            this.panelÜFensterSettings.Location = new System.Drawing.Point(61, 57);
-            this.panelÜFensterSettings.Name = "panelÜFensterSettings";
-            this.panelÜFensterSettings.Size = new System.Drawing.Size(524, 46);
-            this.panelÜFensterSettings.TabIndex = 20;
-            // 
             // AllgemeinesTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,16 +285,18 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbHotkey);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "AllgemeinesTab";
             this.Text = "AllgemeinesTab";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AllgemeinesTab_KeyDown);
             this.gbHotkey.ResumeLayout(false);
             this.gbHotkey.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panelÜFensterSettings.ResumeLayout(false);
             this.panelÜFensterSettings.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }

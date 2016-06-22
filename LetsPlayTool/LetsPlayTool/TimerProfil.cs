@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace LetsPlayTool
 {
+    [Serializable]
     public class TimerProfil
     {
 

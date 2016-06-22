@@ -380,6 +380,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimerTab";
             this.Text = "TimerTab";
+            this.Load += new System.EventHandler(this.TimerTab_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

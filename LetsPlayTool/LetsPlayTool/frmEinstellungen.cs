@@ -13,6 +13,10 @@ namespace LetsPlayTool
 {
     public partial class frmEinstellungen : Form
     {
+
+        Einstellungen einstellungen = new Einstellungen();
+
+
         public frmEinstellungen()
         {
             InitializeComponent();
@@ -28,7 +32,24 @@ namespace LetsPlayTool
             Opacity = 0;
             Showanimation.Start();
 
+            einstellungen = einstellungen.load();
+            SetAllSettings();
+
+
             toggle(2);
+        }
+
+        /// <summary>
+        /// Lädt die gespeicherten Einstellungen der Settings-datei.
+        /// </summary>
+        private void SetAllSettings()
+        {
+            at.setSettings(einstellungen.Allgemeines);
+            mt.setSettings(einstellungen.Marker);
+            pt.setSettings(einstellungen.Programme);
+            tt.setSettings(einstellungen.Timer);
+            üt.setSettings(einstellungen.Überwachung);
+
         }
 
 
@@ -90,17 +111,31 @@ namespace LetsPlayTool
         #endregion
 
 
+        //Einzelne Einstellungen Tabs
+        AllgemeinesTab at = new AllgemeinesTab();
+        MarkerTab mt = new MarkerTab();
+        ProgrammeTab pt = new ProgrammeTab();
+        TimerTab tt = new TimerTab();
+        Überwachung üt = new Überwachung();
+
         /// <summary>
         /// Kümmert sich um das anzeigen der einzelnen Menüpunkte
         /// </summary>
         /// <param name="number"></param>
         private void toggle(int number)
         {
-
+            
             bTimer.selected = false;
             bAllgemeines.selected = false;
             bÜberwachung.selected = false;
             bProgramme.selected = false;
+
+            //Einstellungen speichern
+            einstellungen.Allgemeines = at.getSettings();
+            einstellungen.Marker = mt.getSettings();
+            einstellungen.Programme = pt.getSettings();
+            einstellungen.Timer = tt.getSettings();
+            einstellungen.Überwachung = üt.getSettings();
 
             panel1.Controls.Clear();
 
@@ -109,12 +144,17 @@ namespace LetsPlayTool
 
                 case 0: bTimer.selected = true;
 
-                    TimerTab tt = new TimerTab();
+                    #region Tab anzeigen
+
                     tt.TopLevel = false;
                     tt.AutoScroll = true;
 
+                    tt.setSettings(einstellungen.Timer);
+
                     panel1.Controls.Add(tt);
                     tt.Show();
+
+                    #endregion
 
                     break;
 
@@ -122,13 +162,14 @@ namespace LetsPlayTool
 
                     #region Tab anzeigen
 
-                    AllgemeinesTab at = new AllgemeinesTab();
                     at.TopLevel = false;
                     at.AutoScroll = true;
 
                     panel1.Controls.Add(at);
-                    at.Show();
 
+                    at.setSettings(einstellungen.Allgemeines);
+
+                    at.Show();
 
                     #endregion
 
@@ -137,9 +178,10 @@ namespace LetsPlayTool
 
                     #region Tab anzeigen
 
-                    Überwachung üt = new Überwachung();
                     üt.TopLevel = false;
                     üt.AutoScroll = true;
+
+                    üt.setSettings(einstellungen.Überwachung);
 
                     panel1.Controls.Add(üt);
                     üt.Show();
@@ -153,9 +195,10 @@ namespace LetsPlayTool
 
                     #region Tab anzeigen
 
-                    ProgrammeTab pt = new ProgrammeTab();
                     pt.TopLevel = false;
                     pt.AutoScroll = true;
+
+                    pt.setSettings(einstellungen.Programme);
 
                     panel1.Controls.Add(pt);
                     pt.Show();
@@ -170,11 +213,13 @@ namespace LetsPlayTool
 
                     #region Tab anzeigen
 
-                    MarkerTab mt = new MarkerTab();
                     mt.TopLevel = false;
                     mt.AutoScroll = true;
 
+                    mt.setSettings(einstellungen.Marker);
+
                     panel1.Controls.Add(mt);
+
                     mt.Show();
 
 
@@ -190,48 +235,51 @@ namespace LetsPlayTool
 
         }
         
-
         private void bTimer_Click(object sender, EventArgs e)
         {
             toggle(0);
 
         }
-
         private void bOrdner_Click(object sender, EventArgs e)
         {
             toggle(1);
 
         }
-
         private void bMarker_Click(object sender, EventArgs e)
         {
             toggle(2);
         }
-
         private void bÜberwachung_Click(object sender, EventArgs e)
         {
             toggle(3);
         }
-
         private void bProgramme_Click(object sender, EventArgs e)
         {
             toggle(4);
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void bMarker_Click_1(object sender, EventArgs e)
         {
             toggle(5);
         }
 
+        //Animation für Tabswitching:
         private void panel1_ControlAdded(object sender, ControlEventArgs e)
         {
            panel1.Visible = false;
             animator1.Show(panel1);
+
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            Closeanimation.Start();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+
+            einstellungen.save();
+            Closeanimation.Start();
 
         }
     }

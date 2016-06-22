@@ -17,64 +17,37 @@ namespace LetsPlayTool.Einstellungen_Tabs
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        /// <summary>
+        /// Lädt die Einstellungen.
+        /// </summary>
+        /// <param name="Settings"></param>
+        public void setSettings(ÜberwachungTabEinstellungen Settings)
         {
+
+            tbAufnahmeordner.Text = Settings.ÜberwachungOrdner;
+
+            switchCPU.Value = Settings.ÜShowCPU;
+            switchGPU.Value = Settings.ÜShowGPU;
+            switchSpeicherplatz.Value = Settings.ÜShowSpeicherort;
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        /// <summary>
+        /// Gibt die aktuellen ÜberwachungTab Einstellungen zurück
+        /// </summary>
+        /// <returns></returns>
+        public ÜberwachungTabEinstellungen getSettings()
         {
+            ÜberwachungTabEinstellungen newSettings = new ÜberwachungTabEinstellungen();
 
+            newSettings.ÜberwachungOrdner = tbAufnahmeordner.Text;
+
+            newSettings.ÜShowCPU = switchCPU.Value;
+            newSettings.ÜShowGPU = switchGPU.Value;
+            newSettings.ÜShowSpeicherort = switchSpeicherplatz.Value;
+
+            return newSettings;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuiOSSwitch2_OnValueChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

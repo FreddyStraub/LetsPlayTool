@@ -171,5 +171,21 @@ namespace LetsPlayTool
 
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Einstellungen en = new Einstellungen();
+            en.SetStandartValues();
+
+            en.save();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Einstellungen en = new Einstellungen();
+            en.SetStandartValues();
+            en.save();
+        }
     }
 }

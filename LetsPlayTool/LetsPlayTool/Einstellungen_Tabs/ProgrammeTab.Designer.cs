@@ -110,6 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProgrammeTab";
             this.Text = "ProgrammeTab";
+            this.Load += new System.EventHandler(this.ProgrammeTab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

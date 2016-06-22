@@ -56,12 +56,16 @@
     <Compile Include="Einstellungen_Tabs\AllgemeinesTab.Designer.cs">
       <DependentUpon>AllgemeinesTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Einstellungen_Tabs\AllgemeinesTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\MarkerTab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Einstellungen_Tabs\MarkerTab.Designer.cs">
       <DependentUpon>MarkerTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Einstellungen_Tabs\MarkerTabEinstellungen.cs" />
+    <Compile Include="Einstellungen_Tabs\ProgrammeTabEinstellungen.cs" />
+    <Compile Include="Einstellungen_Tabs\TimerTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\Überwachung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +84,7 @@
     <Compile Include="Einstellungen_Tabs\TimerTab.Designer.cs">
       <DependentUpon>TimerTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Einstellungen_Tabs\ÜberwachungTabEinstellungen.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

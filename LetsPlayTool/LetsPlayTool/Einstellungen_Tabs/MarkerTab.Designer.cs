@@ -31,7 +31,7 @@
             this.tbSpeicherort = new System.Windows.Forms.TextBox();
             this.bBrowse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ddFormat = new Bunifu.Framework.UI.BunifuDropdown();
+            this.cbFormat = new Bunifu.Framework.UI.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ddFormat);
+            this.groupBox1.Controls.Add(this.cbFormat);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label1);
@@ -90,22 +90,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marker";
             // 
-            // ddFormat
+            // cbFormat
             // 
-            this.ddFormat.BackColor = System.Drawing.Color.Transparent;
-            this.ddFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddFormat.ForeColor = System.Drawing.Color.White;
-            this.ddFormat.Items = new string[] {
+            this.cbFormat.BackColor = System.Drawing.Color.Transparent;
+            this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormat.ForeColor = System.Drawing.Color.White;
+            this.cbFormat.Items = new string[] {
         "Textdatei (.txt)",
         "Audiodatei (.wav)"};
-            this.ddFormat.Location = new System.Drawing.Point(94, 101);
-            this.ddFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ddFormat.Name = "ddFormat";
-            this.ddFormat.NomalColor = System.Drawing.Color.DodgerBlue;
-            this.ddFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.ddFormat.selectedIndex = 0;
-            this.ddFormat.Size = new System.Drawing.Size(217, 26);
-            this.ddFormat.TabIndex = 18;
+            this.cbFormat.Location = new System.Drawing.Point(94, 101);
+            this.cbFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFormat.Name = "cbFormat";
+            this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
+            this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.cbFormat.selectedIndex = 0;
+            this.cbFormat.Size = new System.Drawing.Size(217, 26);
+            this.cbFormat.TabIndex = 18;
             // 
             // label6
             // 
@@ -223,7 +223,7 @@
             this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
             this.bKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bKey.BorderRadius = 0;
-            this.bKey.ButtonText = "Num0";
+            this.bKey.ButtonText = "NumPad0";
             this.bKey.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bKey.Iconcolor = System.Drawing.Color.Transparent;
             this.bKey.Iconimage = null;
@@ -242,6 +242,7 @@
             this.bKey.TabIndex = 5;
             this.bKey.Textcolor = System.Drawing.Color.White;
             this.bKey.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bKey.Click += new System.EventHandler(this.bKey_Click);
             // 
             // label1
             // 
@@ -276,6 +277,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MarkerTab";
             this.Text = "MarkerTab";
+            this.Load += new System.EventHandler(this.MarkerTab_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -300,7 +302,7 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuCheckbox checkAlt;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuDropdown ddFormat;
+        private Bunifu.Framework.UI.BunifuDropdown cbFormat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
     }

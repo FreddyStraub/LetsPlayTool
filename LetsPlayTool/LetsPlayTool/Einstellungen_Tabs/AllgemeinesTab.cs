@@ -16,5 +16,65 @@ namespace LetsPlayTool.Einstellungen_Tabs
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Lädt die Einstellungen
+        /// </summary>
+        /// <param name="Settings"></param>
+        public void setSettings(AllgemeinesTabEinstellungen Settings)
+        {
+
+            bAufnhameStart.ButtonText = Settings.AufnahmeStartKey.ToString();
+            bAufnhameStop.ButtonText = Settings.AufnahmeStopKey.ToString();
+
+
+            switchÜFenster.Value = Settings.ShowÜFenster;
+            checkÜFensterTimer.Checked = Settings.ShowÜFensterTimer;
+
+            switchIErinerrungen.Value = Settings.ShowIErinerrung;
+            tbIErinerrungen.Text = Settings.Erinerrungen;
+
+        }
+
+        /// <summary>
+        /// Gibt die aktuellen AllgemeinesTab Einstellungen zurück
+        /// </summary>
+        /// <returns></returns>
+        public AllgemeinesTabEinstellungen getSettings()
+        {
+            AllgemeinesTabEinstellungen newSettings = new AllgemeinesTabEinstellungen();
+
+            newSettings.AufnahmeStartKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStart.ButtonText);
+            newSettings.AufnahmeStopKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStop.ButtonText);
+
+            newSettings.ShowÜFenster = switchÜFenster.Value;
+            newSettings.ShowÜFensterTimer = checkÜFensterTimer.Checked;
+
+            newSettings.ShowIErinerrung = switchIErinerrungen.Value;
+            newSettings.Erinerrungen = tbIErinerrungen.Text;
+
+            return newSettings;
+        }
+
+        private void bAufnhameStop_Click(object sender, EventArgs e)
+        {
+            bAufnhameStart.ButtonText = "...";
+        }
+
+        private void AllgemeinesTab_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if(bAufnhameStart.ButtonText == "...")
+            {
+                bAufnhameStart.ButtonText = e.KeyCode.ToString();
+
+            }else if (bAufnhameStop.ButtonText == "...")
+            {
+
+                bAufnhameStop.ButtonText = e.KeyCode.ToString();
+
+            }
+
+        }
     }
 }

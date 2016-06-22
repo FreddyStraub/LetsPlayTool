@@ -64,7 +64,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordnerüberwachung";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
@@ -75,7 +74,6 @@
             this.label1.Size = new System.Drawing.Size(110, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Aufnahmeordner:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbAufnahmeordner
             // 
@@ -89,7 +87,6 @@
             this.tbAufnahmeordner.ReadOnly = true;
             this.tbAufnahmeordner.Size = new System.Drawing.Size(486, 25);
             this.tbAufnahmeordner.TabIndex = 3;
-            this.tbAufnahmeordner.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // bBrowse
             // 
@@ -103,7 +100,6 @@
             this.bBrowse.TabIndex = 4;
             this.bBrowse.Text = "...";
             this.bBrowse.UseVisualStyleBackColor = false;
-            this.bBrowse.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -120,7 +116,6 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Anzeige";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label4
             // 
@@ -179,7 +174,6 @@
             this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Speicherplatz";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // switchSpeicherplatz
             // 
@@ -194,7 +188,6 @@
             this.switchSpeicherplatz.Size = new System.Drawing.Size(43, 25);
             this.switchSpeicherplatz.TabIndex = 7;
             this.switchSpeicherplatz.Value = true;
-            this.switchSpeicherplatz.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch1_OnValueChange);
             // 
             // groupBox3
             // 
