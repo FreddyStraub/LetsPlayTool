@@ -49,5 +49,16 @@ namespace LetsPlayTool.Einstellungen_Tabs
             return newSettings;
         }
 
+        private void bBrowse_Click(object sender, EventArgs e)
+        {
+
+            if(fbdAufnahmeordner.ShowDialog() == DialogResult.OK)
+            {
+
+                tbAufnahmeordner.Text = fbdAufnahmeordner.SelectedPath;
+
+            }
+
+        }
     }
 }

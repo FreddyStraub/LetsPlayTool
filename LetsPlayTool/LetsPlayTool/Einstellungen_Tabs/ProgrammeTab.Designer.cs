@@ -33,6 +33,7 @@
             this.bHinzufügen = new Bunifu.Framework.UI.BunifuTileButton();
             this.bEntfernen = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.opfHinzufügen = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lbProgramme
@@ -45,6 +46,7 @@
             this.lbProgramme.ItemHeight = 16;
             this.lbProgramme.Location = new System.Drawing.Point(12, 52);
             this.lbProgramme.Name = "lbProgramme";
+            this.lbProgramme.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbProgramme.Size = new System.Drawing.Size(385, 480);
             this.lbProgramme.TabIndex = 0;
             // 
@@ -66,6 +68,7 @@
             this.bHinzufügen.Name = "bHinzufügen";
             this.bHinzufügen.Size = new System.Drawing.Size(128, 129);
             this.bHinzufügen.TabIndex = 1;
+            this.bHinzufügen.Click += new System.EventHandler(this.bHinzufügen_Click);
             // 
             // bEntfernen
             // 
@@ -85,6 +88,7 @@
             this.bEntfernen.Name = "bEntfernen";
             this.bEntfernen.Size = new System.Drawing.Size(128, 129);
             this.bEntfernen.TabIndex = 2;
+            this.bEntfernen.Click += new System.EventHandler(this.bEntfernen_Click);
             // 
             // label1
             // 
@@ -96,6 +100,10 @@
             this.label1.Size = new System.Drawing.Size(417, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Programme die durch einen einfachen Klick gestartet werden können.";
+            // 
+            // opfHinzufügen
+            // 
+            this.opfHinzufügen.Multiselect = true;
             // 
             // ProgrammeTab
             // 
@@ -110,7 +118,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProgrammeTab";
             this.Text = "ProgrammeTab";
-            this.Load += new System.EventHandler(this.ProgrammeTab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +129,6 @@
         private Bunifu.Framework.UI.BunifuTileButton bHinzufügen;
         private Bunifu.Framework.UI.BunifuTileButton bEntfernen;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog opfHinzufügen;
     }
 }

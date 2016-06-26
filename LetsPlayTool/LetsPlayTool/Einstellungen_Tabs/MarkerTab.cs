@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LetsPlayTool.Einstellungen_Tabs
@@ -17,16 +10,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             InitializeComponent();
         }
 
-        private void MarkerTab_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bKey_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Lädt die Einstellungen.
         /// </summary>
@@ -34,7 +17,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public void setSettings(MarkerTabEinstellungen Settings)
         {
 
-            bKey.ButtonText = Settings.MarkerKey.ToString();
+            bKey.Text = Settings.MarkerKey.ToString();
             checkAlt.Checked = Settings.MarkerKeyAlt;
             checkShift.Checked = Settings.MarkerKeyShift;
             checkStrg.Checked = Settings.MarkerKeyStrg;
@@ -58,10 +41,24 @@ namespace LetsPlayTool.Einstellungen_Tabs
             newSettings.MarkerKeyStrg = checkStrg.Checked;
             newSettings.MarkerKeyShift = checkShift.Checked;
             newSettings.MarkerKeyAlt = checkAlt.Checked;
-            newSettings.MarkerKey = (Keys)Enum.Parse(typeof(Keys), bKey.ButtonText);
-            
+            newSettings.MarkerKey = (Keys)Enum.Parse(typeof(Keys), bKey.Text);
+
+            newSettings.MarkerFormat = cbFormat.selectedIndex;
+            newSettings.MarkerSpeicherort = tbSpeicherort.Text;
+
             return newSettings;
         }
 
+        private void bBrowse_Click(object sender, EventArgs e)
+        {
+            if(fbdSpeicherort.ShowDialog() == DialogResult.OK)
+            {
+
+                tbSpeicherort.Text = fbdSpeicherort.SelectedPath;
+
+            }
+      
+
+        }
     }
 }

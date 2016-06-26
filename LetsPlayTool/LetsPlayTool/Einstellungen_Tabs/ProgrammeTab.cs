@@ -17,17 +17,14 @@ namespace LetsPlayTool.Einstellungen_Tabs
             InitializeComponent();
         }
 
-        private void ProgrammeTab_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Lädt die Einstellungen
         /// </summary>
         /// <param name="Settings"></param>
         public void setSettings(ProgrammeTabEinstellungen Settings)
         {
+            lbProgramme.Items.Clear();
+
             foreach(string item in Settings.Programme)
             {
                 lbProgramme.Items.Add(item);
@@ -52,6 +49,54 @@ namespace LetsPlayTool.Einstellungen_Tabs
             return newSettings;
 
         }
+        
+        private void bHinzufügen_Click(object sender, EventArgs e)
+        {
+            programmeHinzufügen();
+        }
+        private void bEntfernen_Click(object sender, EventArgs e)
+        {
+            programmeEntfernen();
+        }
+
+        /// <summary>
+        /// Lässt den User Programme zur Liste hinzufügen.
+        /// </summary>
+        public void programmeHinzufügen()
+        {
+
+            if(opfHinzufügen.ShowDialog() == DialogResult.OK)
+            {
+
+                foreach(string programm in opfHinzufügen.FileNames)
+                {
+                    lbProgramme.Items.Add(programm);
+                }
+
+            }
+
+        }
+
+        /// <summary>
+        /// Läst den User Programme von der Liste entfernen.
+        /// </summary>
+        private void programmeEntfernen()
+        {
+            if(lbProgramme.SelectedItems.Count != 0)
+            {
+
+                while(lbProgramme.SelectedItems.Count != 0)
+                {
+
+                    lbProgramme.Items.Remove(lbProgramme.SelectedItems[0]);
+
+                }
+
+            }
+
+
+        }
+
 
     }
 }

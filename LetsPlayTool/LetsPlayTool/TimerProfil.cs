@@ -12,7 +12,7 @@ namespace LetsPlayTool
     {
 
         public string name { get; set; }
-        public List<ListViewItem> Times;
+        public List<ListViewItem> Times = new List<ListViewItem>();
         
         public TimerProfil(string name)
         {

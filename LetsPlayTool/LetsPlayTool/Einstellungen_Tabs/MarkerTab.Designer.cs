@@ -41,9 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkStrg = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bKey = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.bKey = new System.Windows.Forms.Button();
+            this.fbdSpeicherort = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             this.bBrowse.TabIndex = 1;
             this.bBrowse.Text = "...";
             this.bBrowse.UseVisualStyleBackColor = false;
+            this.bBrowse.Click += new System.EventHandler(this.bBrowse_Click);
             // 
             // groupBox1
             // 
@@ -119,6 +121,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bKey);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.checkShift);
             this.groupBox2.Controls.Add(this.label4);
@@ -126,7 +129,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.checkStrg);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.bKey);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(1, 156);
             this.groupBox2.Name = "groupBox2";
@@ -217,33 +219,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Hotkey um einen Marker zu setzen";
             // 
-            // bKey
-            // 
-            this.bKey.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bKey.BorderRadius = 0;
-            this.bKey.ButtonText = "NumPad0";
-            this.bKey.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bKey.Iconcolor = System.Drawing.Color.Transparent;
-            this.bKey.Iconimage = null;
-            this.bKey.Iconimage_right = null;
-            this.bKey.Iconimage_right_Selected = null;
-            this.bKey.Iconimage_Selected = null;
-            this.bKey.IsTab = false;
-            this.bKey.Location = new System.Drawing.Point(259, 66);
-            this.bKey.Name = "bKey";
-            this.bKey.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bKey.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bKey.OnHoverTextColor = System.Drawing.Color.White;
-            this.bKey.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.bKey.selected = false;
-            this.bKey.Size = new System.Drawing.Size(133, 57);
-            this.bKey.TabIndex = 5;
-            this.bKey.Textcolor = System.Drawing.Color.White;
-            this.bKey.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bKey.Click += new System.EventHandler(this.bKey_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -266,6 +241,19 @@
             this.label7.Text = "Marker helfen dir wichtige stellen im Video später beim Schnitt schneller wieder " +
     "zu finden.\r\n";
             // 
+            // bKey
+            // 
+            this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bKey.ForeColor = System.Drawing.Color.White;
+            this.bKey.Location = new System.Drawing.Point(264, 70);
+            this.bKey.Name = "bKey";
+            this.bKey.Size = new System.Drawing.Size(133, 57);
+            this.bKey.TabIndex = 18;
+            this.bKey.Text = "NumPad0";
+            this.bKey.UseVisualStyleBackColor = false;
+            // 
             // MarkerTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,7 +265,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MarkerTab";
             this.Text = "MarkerTab";
-            this.Load += new System.EventHandler(this.MarkerTab_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -296,7 +283,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private Bunifu.Framework.UI.BunifuCheckbox checkStrg;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuFlatButton bKey;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuCheckbox checkShift;
         private System.Windows.Forms.Label label4;
@@ -305,5 +291,7 @@
         private Bunifu.Framework.UI.BunifuDropdown cbFormat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button bKey;
+        private Ookii.Dialogs.VistaFolderBrowserDialog fbdSpeicherort;
     }
 }

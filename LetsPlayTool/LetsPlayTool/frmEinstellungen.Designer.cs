@@ -38,15 +38,15 @@
             this.Closeanimation = new System.Windows.Forms.Timer(this.components);
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTabs = new System.Windows.Forms.Panel();
+            this.bAbbrechen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bSpeichern = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bMarker = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bProgramme = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bÜberwachung = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bAllgemeines = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bTimer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.animator1 = new BunifuAnimatorNS.Animator(this.components);
-            this.bSpeichern = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bAbbrechen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panelAnimator = new BunifuAnimatorNS.Animator(this.components);
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
@@ -58,7 +58,7 @@
             this.HeaderBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.HeaderBar.Controls.Add(this.lbEinstellungen);
             this.HeaderBar.Controls.Add(this.bunifuImageButton1);
-            this.animator1.SetDecoration(this.HeaderBar, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.HeaderBar, BunifuAnimatorNS.DecorationType.None);
             this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderBar.Location = new System.Drawing.Point(0, 0);
             this.HeaderBar.Name = "HeaderBar";
@@ -70,7 +70,7 @@
             // lbEinstellungen
             // 
             this.lbEinstellungen.AutoSize = true;
-            this.animator1.SetDecoration(this.lbEinstellungen, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.lbEinstellungen, BunifuAnimatorNS.DecorationType.None);
             this.lbEinstellungen.Font = new System.Drawing.Font("Windows Command Prompt", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEinstellungen.ForeColor = System.Drawing.Color.White;
             this.lbEinstellungen.Location = new System.Drawing.Point(12, 17);
@@ -82,7 +82,7 @@
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.animator1.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
@@ -113,7 +113,7 @@
             this.bunifuCards1.color = System.Drawing.Color.DodgerBlue;
             this.bunifuCards1.Controls.Add(this.panelTabs);
             this.bunifuCards1.Controls.Add(this.panel1);
-            this.animator1.SetDecoration(this.bunifuCards1, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bunifuCards1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(0, 59);
             this.bunifuCards1.Name = "bunifuCards1";
@@ -132,11 +132,65 @@
             this.panelTabs.Controls.Add(this.bÜberwachung);
             this.panelTabs.Controls.Add(this.bAllgemeines);
             this.panelTabs.Controls.Add(this.bTimer);
-            this.animator1.SetDecoration(this.panelTabs, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.panelTabs, BunifuAnimatorNS.DecorationType.None);
             this.panelTabs.Location = new System.Drawing.Point(0, 0);
             this.panelTabs.Name = "panelTabs";
             this.panelTabs.Size = new System.Drawing.Size(202, 553);
             this.panelTabs.TabIndex = 1;
+            // 
+            // bAbbrechen
+            // 
+            this.bAbbrechen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bAbbrechen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bAbbrechen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bAbbrechen.BorderRadius = 0;
+            this.bAbbrechen.ButtonText = "   Abberechen";
+            this.bAbbrechen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.bAbbrechen, BunifuAnimatorNS.DecorationType.None);
+            this.bAbbrechen.Iconcolor = System.Drawing.Color.Transparent;
+            this.bAbbrechen.Iconimage = null;
+            this.bAbbrechen.Iconimage_right = null;
+            this.bAbbrechen.Iconimage_right_Selected = null;
+            this.bAbbrechen.Iconimage_Selected = null;
+            this.bAbbrechen.IsTab = false;
+            this.bAbbrechen.Location = new System.Drawing.Point(102, 502);
+            this.bAbbrechen.Name = "bAbbrechen";
+            this.bAbbrechen.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bAbbrechen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bAbbrechen.OnHoverTextColor = System.Drawing.Color.White;
+            this.bAbbrechen.selected = false;
+            this.bAbbrechen.Size = new System.Drawing.Size(100, 48);
+            this.bAbbrechen.TabIndex = 7;
+            this.bAbbrechen.Textcolor = System.Drawing.Color.White;
+            this.bAbbrechen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAbbrechen.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // bSpeichern
+            // 
+            this.bSpeichern.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bSpeichern.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bSpeichern.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSpeichern.BorderRadius = 0;
+            this.bSpeichern.ButtonText = "     Speichern";
+            this.bSpeichern.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.bSpeichern, BunifuAnimatorNS.DecorationType.None);
+            this.bSpeichern.Iconcolor = System.Drawing.Color.Transparent;
+            this.bSpeichern.Iconimage = null;
+            this.bSpeichern.Iconimage_right = null;
+            this.bSpeichern.Iconimage_right_Selected = null;
+            this.bSpeichern.Iconimage_Selected = null;
+            this.bSpeichern.IsTab = false;
+            this.bSpeichern.Location = new System.Drawing.Point(1, 502);
+            this.bSpeichern.Name = "bSpeichern";
+            this.bSpeichern.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bSpeichern.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bSpeichern.OnHoverTextColor = System.Drawing.Color.White;
+            this.bSpeichern.selected = false;
+            this.bSpeichern.Size = new System.Drawing.Size(100, 48);
+            this.bSpeichern.TabIndex = 6;
+            this.bSpeichern.Textcolor = System.Drawing.Color.White;
+            this.bSpeichern.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSpeichern.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // bMarker
             // 
@@ -146,7 +200,7 @@
             this.bMarker.BorderRadius = 0;
             this.bMarker.ButtonText = "    Marker";
             this.bMarker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bMarker, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bMarker, BunifuAnimatorNS.DecorationType.None);
             this.bMarker.Iconcolor = System.Drawing.Color.Transparent;
             this.bMarker.Iconimage = null;
             this.bMarker.Iconimage_right = null;
@@ -173,7 +227,7 @@
             this.bProgramme.BorderRadius = 0;
             this.bProgramme.ButtonText = "    Programme";
             this.bProgramme.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bProgramme, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bProgramme, BunifuAnimatorNS.DecorationType.None);
             this.bProgramme.Iconcolor = System.Drawing.Color.Transparent;
             this.bProgramme.Iconimage = null;
             this.bProgramme.Iconimage_right = null;
@@ -200,7 +254,7 @@
             this.bÜberwachung.BorderRadius = 0;
             this.bÜberwachung.ButtonText = "    Überwachung";
             this.bÜberwachung.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bÜberwachung, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bÜberwachung, BunifuAnimatorNS.DecorationType.None);
             this.bÜberwachung.Iconcolor = System.Drawing.Color.Transparent;
             this.bÜberwachung.Iconimage = null;
             this.bÜberwachung.Iconimage_right = null;
@@ -227,7 +281,7 @@
             this.bAllgemeines.BorderRadius = 0;
             this.bAllgemeines.ButtonText = "    Allgemeines";
             this.bAllgemeines.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bAllgemeines, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bAllgemeines, BunifuAnimatorNS.DecorationType.None);
             this.bAllgemeines.Iconcolor = System.Drawing.Color.Transparent;
             this.bAllgemeines.Iconimage = null;
             this.bAllgemeines.Iconimage_right = null;
@@ -254,7 +308,7 @@
             this.bTimer.BorderRadius = 0;
             this.bTimer.ButtonText = "    Timer";
             this.bTimer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bTimer, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.bTimer, BunifuAnimatorNS.DecorationType.None);
             this.bTimer.Iconcolor = System.Drawing.Color.Transparent;
             this.bTimer.Iconimage = null;
             this.bTimer.Iconimage_right = null;
@@ -275,17 +329,17 @@
             // 
             // panel1
             // 
-            this.animator1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(202, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(695, 553);
             this.panel1.TabIndex = 2;
             this.panel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panel1_ControlAdded);
             // 
-            // animator1
+            // panelAnimator
             // 
-            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
-            this.animator1.Cursor = null;
+            this.panelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.panelAnimator.Cursor = null;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 0F;
@@ -301,63 +355,9 @@
             animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
-            this.animator1.DefaultAnimation = animation1;
-            this.animator1.Interval = 5;
-            this.animator1.MaxAnimationTime = 3000;
-            // 
-            // bSpeichern
-            // 
-            this.bSpeichern.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bSpeichern.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bSpeichern.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bSpeichern.BorderRadius = 0;
-            this.bSpeichern.ButtonText = "     Speichern";
-            this.bSpeichern.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bSpeichern, BunifuAnimatorNS.DecorationType.None);
-            this.bSpeichern.Iconcolor = System.Drawing.Color.Transparent;
-            this.bSpeichern.Iconimage = null;
-            this.bSpeichern.Iconimage_right = null;
-            this.bSpeichern.Iconimage_right_Selected = null;
-            this.bSpeichern.Iconimage_Selected = null;
-            this.bSpeichern.IsTab = false;
-            this.bSpeichern.Location = new System.Drawing.Point(1, 502);
-            this.bSpeichern.Name = "bSpeichern";
-            this.bSpeichern.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bSpeichern.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bSpeichern.OnHoverTextColor = System.Drawing.Color.White;
-            this.bSpeichern.selected = false;
-            this.bSpeichern.Size = new System.Drawing.Size(100, 48);
-            this.bSpeichern.TabIndex = 6;
-            this.bSpeichern.Textcolor = System.Drawing.Color.White;
-            this.bSpeichern.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSpeichern.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
-            // 
-            // bAbbrechen
-            // 
-            this.bAbbrechen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAbbrechen.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bAbbrechen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bAbbrechen.BorderRadius = 0;
-            this.bAbbrechen.ButtonText = "   Abberechen";
-            this.bAbbrechen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animator1.SetDecoration(this.bAbbrechen, BunifuAnimatorNS.DecorationType.None);
-            this.bAbbrechen.Iconcolor = System.Drawing.Color.Transparent;
-            this.bAbbrechen.Iconimage = null;
-            this.bAbbrechen.Iconimage_right = null;
-            this.bAbbrechen.Iconimage_right_Selected = null;
-            this.bAbbrechen.Iconimage_Selected = null;
-            this.bAbbrechen.IsTab = false;
-            this.bAbbrechen.Location = new System.Drawing.Point(102, 502);
-            this.bAbbrechen.Name = "bAbbrechen";
-            this.bAbbrechen.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bAbbrechen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAbbrechen.OnHoverTextColor = System.Drawing.Color.White;
-            this.bAbbrechen.selected = false;
-            this.bAbbrechen.Size = new System.Drawing.Size(100, 48);
-            this.bAbbrechen.TabIndex = 7;
-            this.bAbbrechen.Textcolor = System.Drawing.Color.White;
-            this.bAbbrechen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAbbrechen.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            this.panelAnimator.DefaultAnimation = animation1;
+            this.panelAnimator.Interval = 5;
+            this.panelAnimator.MaxAnimationTime = 3000;
             // 
             // frmEinstellungen
             // 
@@ -367,7 +367,7 @@
             this.ClientSize = new System.Drawing.Size(897, 615);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.HeaderBar);
-            this.animator1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(897, 615);
             this.MinimumSize = new System.Drawing.Size(897, 615);
@@ -399,8 +399,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton bProgramme;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton bMarker;
-        private BunifuAnimatorNS.Animator animator1;
         private Bunifu.Framework.UI.BunifuFlatButton bAbbrechen;
         private Bunifu.Framework.UI.BunifuFlatButton bSpeichern;
+        private BunifuAnimatorNS.Animator panelAnimator;
     }
 }

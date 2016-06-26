@@ -27,6 +27,8 @@ namespace LetsPlayTool
 
             string pfad = EinstellungenPfad + "\\Settings";
 
+            System.IO.File.Delete(pfad);
+
             FileStream FS = new FileStream(pfad, FileMode.Create);
             BinaryFormatter BF = new BinaryFormatter();
 

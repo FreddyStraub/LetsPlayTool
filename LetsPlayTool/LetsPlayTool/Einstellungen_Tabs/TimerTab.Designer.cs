@@ -193,6 +193,7 @@
             this.bProfilErstellen.TabIndex = 6;
             this.bProfilErstellen.Textcolor = System.Drawing.Color.White;
             this.bProfilErstellen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bProfilErstellen.Click += new System.EventHandler(this.bProfilErstellen_Click);
             // 
             // lbProfiles
             // 
@@ -210,6 +211,7 @@
             this.lbProfiles.Name = "lbProfiles";
             this.lbProfiles.Size = new System.Drawing.Size(279, 320);
             this.lbProfiles.TabIndex = 5;
+            this.lbProfiles.SelectedIndexChanged += new System.EventHandler(this.lbProfiles_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -380,7 +382,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimerTab";
             this.Text = "TimerTab";
-            this.Load += new System.EventHandler(this.TimerTab_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

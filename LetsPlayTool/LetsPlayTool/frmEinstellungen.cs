@@ -14,9 +14,8 @@ namespace LetsPlayTool
     public partial class frmEinstellungen : Form
     {
 
-        Einstellungen einstellungen = new Einstellungen();
-
-
+        Einstellungen einstellungen;
+        
         public frmEinstellungen()
         {
             InitializeComponent();
@@ -29,11 +28,13 @@ namespace LetsPlayTool
 
         private void frmEinstellungen_Load(object sender, EventArgs e)
         {
+            einstellungen = new Einstellungen();
+
             Opacity = 0;
             Showanimation.Start();
 
-            einstellungen = einstellungen.load();
-            SetAllSettings();
+            einstellungen = einstellungen.load(); //Lädt die Einstellungen.
+            SetAllSettings(); //Setzt die geladen Einstellungen in den Tabs.
 
 
             toggle(2);
@@ -52,6 +53,20 @@ namespace LetsPlayTool
 
         }
 
+        /// <summary>
+        /// Speichert die Eingestellten Dateien komplett.
+        /// </summary>
+        private void getAllSettings()
+        {
+
+            einstellungen.Allgemeines = at.getSettings();
+            einstellungen.Marker = mt.getSettings();
+            einstellungen.Programme = pt.getSettings();
+            einstellungen.Timer = tt.getSettings();
+            einstellungen.Überwachung = üt.getSettings();
+
+
+        }
 
         #region Move Form
 
@@ -76,6 +91,7 @@ namespace LetsPlayTool
         #endregion
 
         #region General Animations
+
         private void Showanimation_Tick(object sender, EventArgs e)
         {
 
@@ -94,7 +110,6 @@ namespace LetsPlayTool
             }
 
         }
-
         private void Closeanimation_Tick(object sender, EventArgs e)
         {
             Opacity = Opacity - 0.1;
@@ -129,6 +144,7 @@ namespace LetsPlayTool
             bAllgemeines.selected = false;
             bÜberwachung.selected = false;
             bProgramme.selected = false;
+            bMarker.selected = false;
 
             //Einstellungen speichern
             einstellungen.Allgemeines = at.getSettings();
@@ -136,6 +152,7 @@ namespace LetsPlayTool
             einstellungen.Programme = pt.getSettings();
             einstellungen.Timer = tt.getSettings();
             einstellungen.Überwachung = üt.getSettings();
+
 
             panel1.Controls.Clear();
 
@@ -235,6 +252,7 @@ namespace LetsPlayTool
 
         }
         
+        //Tabs
         private void bTimer_Click(object sender, EventArgs e)
         {
             toggle(0);
@@ -266,7 +284,7 @@ namespace LetsPlayTool
         private void panel1_ControlAdded(object sender, ControlEventArgs e)
         {
            panel1.Visible = false;
-            animator1.Show(panel1);
+            panelAnimator.Show(panel1);
 
         }
 
@@ -274,13 +292,16 @@ namespace LetsPlayTool
         {
             Closeanimation.Start();
         }
-
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+
+            getAllSettings();
 
             einstellungen.save();
             Closeanimation.Start();
 
         }
+
+
     }
 }

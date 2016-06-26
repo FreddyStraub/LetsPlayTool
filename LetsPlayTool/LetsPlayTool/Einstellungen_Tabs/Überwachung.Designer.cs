@@ -44,6 +44,7 @@
             this.pbDiscord = new System.Windows.Forms.PictureBox();
             this.pbTeamspeak = new System.Windows.Forms.PictureBox();
             this.pbSkype = new System.Windows.Forms.PictureBox();
+            this.fbdAufnahmeordner = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -100,6 +101,7 @@
             this.bBrowse.TabIndex = 4;
             this.bBrowse.Text = "...";
             this.bBrowse.UseVisualStyleBackColor = false;
+            this.bBrowse.Click += new System.EventHandler(this.bBrowse_Click);
             // 
             // groupBox2
             // 
@@ -273,5 +275,6 @@
         private System.Windows.Forms.PictureBox pbDiscord;
         private System.Windows.Forms.PictureBox pbTeamspeak;
         private System.Windows.Forms.PictureBox pbSkype;
+        private Ookii.Dialogs.VistaFolderBrowserDialog fbdAufnahmeordner;
     }
 }
