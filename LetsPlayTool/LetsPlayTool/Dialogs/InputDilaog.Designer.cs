@@ -153,9 +153,11 @@
             this.Controls.Add(this.tbString);
             this.Controls.Add(this.HeaderBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "InputDilaog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InputDilaog";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputDilaog_KeyDown);
             this.HeaderBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);

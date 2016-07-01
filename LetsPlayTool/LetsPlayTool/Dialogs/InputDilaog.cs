@@ -53,5 +53,27 @@ namespace LetsPlayTool.Dialogs
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void InputDilaog_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            //Bestätogen (Enter)
+            if(e.KeyCode == Keys.Enter)
+            {
+                Input = tbString.Text;
+
+                this.DialogResult = DialogResult.OK;
+
+
+            }
+
+            //Abbrechen 
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.DialogResult = DialogResult.Cancel;
+
+            }
+
+        }
     }
 }

@@ -16,8 +16,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
         public bool ShowÜFenster;
         public bool ShowÜFensterTimer;
-
-
+        
         public bool ShowIErinerrung;
 
         public string Erinerrungen;

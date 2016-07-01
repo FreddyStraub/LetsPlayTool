@@ -39,21 +39,7 @@
             this.bProfilLöschen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bProfilErstellen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbProfiles = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.bFarbe = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bFertig = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.switchBlinken = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.nudTimeSeconds = new System.Windows.Forms.NumericUpDown();
-            this.nudTimeMinutes = new System.Windows.Forms.NumericUpDown();
-            this.nudTimeMSeconds = new System.Windows.Forms.NumericUpDown();
-            this.nudTimeHours = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSeconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeMinutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeMSeconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeHours)).BeginInit();
             this.SuspendLayout();
             // 
             // lvTimes
@@ -117,6 +103,7 @@
             this.bZeitEntfernen.TabIndex = 9;
             this.bZeitEntfernen.Textcolor = System.Drawing.Color.White;
             this.bZeitEntfernen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bZeitEntfernen.Click += new System.EventHandler(this.bZeitEntfernen_Click);
             // 
             // bZeitHinzufügen
             // 
@@ -142,7 +129,7 @@
             this.bZeitHinzufügen.TabIndex = 8;
             this.bZeitHinzufügen.Textcolor = System.Drawing.Color.White;
             this.bZeitHinzufügen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bZeitHinzufügen.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
+            this.bZeitHinzufügen.Click += new System.EventHandler(this.bZeitHinzufügen_Click);
             // 
             // bProfilLöschen
             // 
@@ -168,6 +155,7 @@
             this.bProfilLöschen.TabIndex = 7;
             this.bProfilLöschen.Textcolor = System.Drawing.Color.White;
             this.bProfilLöschen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bProfilLöschen.Click += new System.EventHandler(this.bProfilLöschen_Click);
             // 
             // bProfilErstellen
             // 
@@ -213,164 +201,6 @@
             this.lbProfiles.TabIndex = 5;
             this.lbProfiles.SelectedIndexChanged += new System.EventHandler(this.lbProfiles_SelectedIndexChanged);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.bFarbe);
-            this.groupBox3.Controls.Add(this.bFertig);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.switchBlinken);
-            this.groupBox3.Controls.Add(this.nudTimeSeconds);
-            this.groupBox3.Controls.Add(this.nudTimeMinutes);
-            this.groupBox3.Controls.Add(this.nudTimeMSeconds);
-            this.groupBox3.Controls.Add(this.nudTimeHours);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 361);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(671, 180);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Zeit hinzufügen";
-            this.groupBox3.Visible = false;
-            // 
-            // bFarbe
-            // 
-            this.bFarbe.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bFarbe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bFarbe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bFarbe.BorderRadius = 0;
-            this.bFarbe.ButtonText = "     Farbe";
-            this.bFarbe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bFarbe.Iconcolor = System.Drawing.Color.Transparent;
-            this.bFarbe.Iconimage = null;
-            this.bFarbe.Iconimage_right = null;
-            this.bFarbe.Iconimage_right_Selected = null;
-            this.bFarbe.Iconimage_Selected = null;
-            this.bFarbe.IsTab = false;
-            this.bFarbe.Location = new System.Drawing.Point(17, 86);
-            this.bFarbe.Name = "bFarbe";
-            this.bFarbe.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bFarbe.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bFarbe.OnHoverTextColor = System.Drawing.Color.White;
-            this.bFarbe.Padding = new System.Windows.Forms.Padding(129, 0, 0, 0);
-            this.bFarbe.selected = false;
-            this.bFarbe.Size = new System.Drawing.Size(330, 31);
-            this.bFarbe.TabIndex = 11;
-            this.bFarbe.Textcolor = System.Drawing.Color.White;
-            this.bFarbe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bFertig
-            // 
-            this.bFertig.Activecolor = System.Drawing.Color.DodgerBlue;
-            this.bFertig.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bFertig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bFertig.BorderRadius = 0;
-            this.bFertig.ButtonText = "     Fertig";
-            this.bFertig.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bFertig.Iconcolor = System.Drawing.Color.Transparent;
-            this.bFertig.Iconimage = ((System.Drawing.Image)(resources.GetObject("bFertig.Iconimage")));
-            this.bFertig.Iconimage_right = null;
-            this.bFertig.Iconimage_right_Selected = null;
-            this.bFertig.Iconimage_Selected = null;
-            this.bFertig.IsTab = false;
-            this.bFertig.Location = new System.Drawing.Point(524, 136);
-            this.bFertig.Name = "bFertig";
-            this.bFertig.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bFertig.OnHovercolor = System.Drawing.Color.LimeGreen;
-            this.bFertig.OnHoverTextColor = System.Drawing.Color.White;
-            this.bFertig.selected = false;
-            this.bFertig.Size = new System.Drawing.Size(140, 38);
-            this.bFertig.TabIndex = 10;
-            this.bFertig.Textcolor = System.Drawing.Color.White;
-            this.bFertig.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(377, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Blinken";
-            // 
-            // switchBlinken
-            // 
-            this.switchBlinken.BackColor = System.Drawing.Color.Transparent;
-            this.switchBlinken.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchBlinken.BackgroundImage")));
-            this.switchBlinken.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchBlinken.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchBlinken.Location = new System.Drawing.Point(444, 61);
-            this.switchBlinken.Name = "switchBlinken";
-            this.switchBlinken.OffColor = System.Drawing.Color.Gray;
-            this.switchBlinken.OnColor = System.Drawing.Color.DodgerBlue;
-            this.switchBlinken.Size = new System.Drawing.Size(43, 25);
-            this.switchBlinken.TabIndex = 7;
-            this.switchBlinken.Value = true;
-            // 
-            // nudTimeSeconds
-            // 
-            this.nudTimeSeconds.BackColor = System.Drawing.Color.DodgerBlue;
-            this.nudTimeSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nudTimeSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudTimeSeconds.ForeColor = System.Drawing.Color.White;
-            this.nudTimeSeconds.Location = new System.Drawing.Point(185, 36);
-            this.nudTimeSeconds.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.nudTimeSeconds.Name = "nudTimeSeconds";
-            this.nudTimeSeconds.Size = new System.Drawing.Size(78, 31);
-            this.nudTimeSeconds.TabIndex = 4;
-            // 
-            // nudTimeMinutes
-            // 
-            this.nudTimeMinutes.BackColor = System.Drawing.Color.DodgerBlue;
-            this.nudTimeMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nudTimeMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudTimeMinutes.ForeColor = System.Drawing.Color.White;
-            this.nudTimeMinutes.Location = new System.Drawing.Point(101, 36);
-            this.nudTimeMinutes.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.nudTimeMinutes.Name = "nudTimeMinutes";
-            this.nudTimeMinutes.Size = new System.Drawing.Size(78, 31);
-            this.nudTimeMinutes.TabIndex = 2;
-            // 
-            // nudTimeMSeconds
-            // 
-            this.nudTimeMSeconds.BackColor = System.Drawing.Color.DodgerBlue;
-            this.nudTimeMSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nudTimeMSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudTimeMSeconds.ForeColor = System.Drawing.Color.White;
-            this.nudTimeMSeconds.Location = new System.Drawing.Point(269, 36);
-            this.nudTimeMSeconds.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.nudTimeMSeconds.Name = "nudTimeMSeconds";
-            this.nudTimeMSeconds.Size = new System.Drawing.Size(78, 31);
-            this.nudTimeMSeconds.TabIndex = 3;
-            // 
-            // nudTimeHours
-            // 
-            this.nudTimeHours.BackColor = System.Drawing.Color.DodgerBlue;
-            this.nudTimeHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nudTimeHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudTimeHours.ForeColor = System.Drawing.Color.White;
-            this.nudTimeHours.Location = new System.Drawing.Point(17, 36);
-            this.nudTimeHours.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.nudTimeHours.Name = "nudTimeHours";
-            this.nudTimeHours.Size = new System.Drawing.Size(78, 31);
-            this.nudTimeHours.TabIndex = 1;
-            // 
             // TimerTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,17 +208,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(695, 553);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimerTab";
             this.Text = "TimerTab";
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSeconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeMinutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeMSeconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTimeHours)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,19 +221,10 @@
         private System.Windows.Forms.ListView lvTimes;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.NumericUpDown nudTimeSeconds;
-        private System.Windows.Forms.NumericUpDown nudTimeMinutes;
-        private System.Windows.Forms.NumericUpDown nudTimeMSeconds;
-        private System.Windows.Forms.NumericUpDown nudTimeHours;
         private System.Windows.Forms.ListBox lbProfiles;
         private Bunifu.Framework.UI.BunifuFlatButton bProfilErstellen;
         private Bunifu.Framework.UI.BunifuFlatButton bProfilLöschen;
         private Bunifu.Framework.UI.BunifuFlatButton bZeitEntfernen;
         private Bunifu.Framework.UI.BunifuFlatButton bZeitHinzufügen;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switchBlinken;
-        private Bunifu.Framework.UI.BunifuFlatButton bFertig;
-        private Bunifu.Framework.UI.BunifuFlatButton bFarbe;
     }
 }

@@ -34,6 +34,7 @@
             this.cbFormat = new Bunifu.Framework.UI.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bKey = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.checkShift = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.bKey = new System.Windows.Forms.Button();
             this.fbdSpeicherort = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,6 +136,21 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hotkey";
+            // 
+            // bKey
+            // 
+            this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bKey.ForeColor = System.Drawing.Color.White;
+            this.bKey.Location = new System.Drawing.Point(264, 70);
+            this.bKey.Name = "bKey";
+            this.bKey.Size = new System.Drawing.Size(133, 57);
+            this.bKey.TabIndex = 18;
+            this.bKey.Text = "NumPad0";
+            this.bKey.UseVisualStyleBackColor = false;
+            this.bKey.Click += new System.EventHandler(this.bKey_Click);
             // 
             // label5
             // 
@@ -241,19 +256,6 @@
             this.label7.Text = "Marker helfen dir wichtige stellen im Video später beim Schnitt schneller wieder " +
     "zu finden.\r\n";
             // 
-            // bKey
-            // 
-            this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bKey.ForeColor = System.Drawing.Color.White;
-            this.bKey.Location = new System.Drawing.Point(264, 70);
-            this.bKey.Name = "bKey";
-            this.bKey.Size = new System.Drawing.Size(133, 57);
-            this.bKey.TabIndex = 18;
-            this.bKey.Text = "NumPad0";
-            this.bKey.UseVisualStyleBackColor = false;
-            // 
             // MarkerTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,8 +265,10 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "MarkerTab";
             this.Text = "MarkerTab";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MarkerTab_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

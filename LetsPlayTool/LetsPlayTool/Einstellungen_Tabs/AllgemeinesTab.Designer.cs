@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllgemeinesTab));
             this.gbHotkey = new System.Windows.Forms.GroupBox();
+            this.bAufnhameStart = new System.Windows.Forms.Button();
+            this.bAufnhameStop = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bAufnhameStop = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bAufnhameStart = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelÜFensterSettings = new System.Windows.Forms.Panel();
             this.checkÜFensterTimer = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -53,11 +53,11 @@
             // 
             // gbHotkey
             // 
+            this.gbHotkey.Controls.Add(this.bAufnhameStart);
+            this.gbHotkey.Controls.Add(this.bAufnhameStop);
             this.gbHotkey.Controls.Add(this.label3);
             this.gbHotkey.Controls.Add(this.label2);
             this.gbHotkey.Controls.Add(this.label1);
-            this.gbHotkey.Controls.Add(this.bAufnhameStop);
-            this.gbHotkey.Controls.Add(this.bAufnhameStart);
             this.gbHotkey.ForeColor = System.Drawing.Color.White;
             this.gbHotkey.Location = new System.Drawing.Point(12, 12);
             this.gbHotkey.Name = "gbHotkey";
@@ -65,6 +65,36 @@
             this.gbHotkey.TabIndex = 0;
             this.gbHotkey.TabStop = false;
             this.gbHotkey.Text = "Aufnhamehotkeys";
+            // 
+            // bAufnhameStart
+            // 
+            this.bAufnhameStart.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bAufnhameStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAufnhameStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAufnhameStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAufnhameStart.ForeColor = System.Drawing.Color.White;
+            this.bAufnhameStart.Location = new System.Drawing.Point(402, 61);
+            this.bAufnhameStart.Name = "bAufnhameStart";
+            this.bAufnhameStart.Size = new System.Drawing.Size(133, 57);
+            this.bAufnhameStart.TabIndex = 20;
+            this.bAufnhameStart.Text = "NumPad0";
+            this.bAufnhameStart.UseVisualStyleBackColor = false;
+            this.bAufnhameStart.Click += new System.EventHandler(this.bAufnhameStart_Click);
+            // 
+            // bAufnhameStop
+            // 
+            this.bAufnhameStop.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bAufnhameStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAufnhameStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAufnhameStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAufnhameStop.ForeColor = System.Drawing.Color.White;
+            this.bAufnhameStop.Location = new System.Drawing.Point(128, 61);
+            this.bAufnhameStop.Name = "bAufnhameStop";
+            this.bAufnhameStop.Size = new System.Drawing.Size(133, 57);
+            this.bAufnhameStop.TabIndex = 19;
+            this.bAufnhameStop.Text = "NumPad0";
+            this.bAufnhameStop.UseVisualStyleBackColor = false;
+            this.bAufnhameStop.Click += new System.EventHandler(this.bAufnhameStop_Click);
             // 
             // label3
             // 
@@ -99,59 +129,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Hotkeys für das Starten/Stoppem der Aufnahme. Damit wird auch der Timer aktiviert" +
     ".";
-            // 
-            // bAufnhameStop
-            // 
-            this.bAufnhameStop.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAufnhameStop.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bAufnhameStop.BorderRadius = 0;
-            this.bAufnhameStop.ButtonText = "NumPad0";
-            this.bAufnhameStop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAufnhameStop.Iconcolor = System.Drawing.Color.Transparent;
-            this.bAufnhameStop.Iconimage = null;
-            this.bAufnhameStop.Iconimage_right = null;
-            this.bAufnhameStop.Iconimage_right_Selected = null;
-            this.bAufnhameStop.Iconimage_Selected = null;
-            this.bAufnhameStop.IsTab = false;
-            this.bAufnhameStop.Location = new System.Drawing.Point(128, 61);
-            this.bAufnhameStop.Name = "bAufnhameStop";
-            this.bAufnhameStop.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStop.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAufnhameStop.OnHoverTextColor = System.Drawing.Color.White;
-            this.bAufnhameStop.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.bAufnhameStop.selected = false;
-            this.bAufnhameStop.Size = new System.Drawing.Size(133, 57);
-            this.bAufnhameStop.TabIndex = 4;
-            this.bAufnhameStop.Textcolor = System.Drawing.Color.White;
-            this.bAufnhameStop.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAufnhameStop.Click += new System.EventHandler(this.bAufnhameStop_Click);
-            // 
-            // bAufnhameStart
-            // 
-            this.bAufnhameStart.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAufnhameStart.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bAufnhameStart.BorderRadius = 0;
-            this.bAufnhameStart.ButtonText = "NumPad0";
-            this.bAufnhameStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAufnhameStart.Iconcolor = System.Drawing.Color.Transparent;
-            this.bAufnhameStart.Iconimage = null;
-            this.bAufnhameStart.Iconimage_right = null;
-            this.bAufnhameStart.Iconimage_right_Selected = null;
-            this.bAufnhameStart.Iconimage_Selected = null;
-            this.bAufnhameStart.IsTab = false;
-            this.bAufnhameStart.Location = new System.Drawing.Point(402, 64);
-            this.bAufnhameStart.Name = "bAufnhameStart";
-            this.bAufnhameStart.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStart.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAufnhameStart.OnHoverTextColor = System.Drawing.Color.White;
-            this.bAufnhameStart.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.bAufnhameStart.selected = false;
-            this.bAufnhameStart.Size = new System.Drawing.Size(133, 57);
-            this.bAufnhameStart.TabIndex = 3;
-            this.bAufnhameStart.Textcolor = System.Drawing.Color.White;
-            this.bAufnhameStart.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // groupBox1
             // 
@@ -307,8 +284,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuFlatButton bAufnhameStop;
-        private Bunifu.Framework.UI.BunifuFlatButton bAufnhameStart;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -319,5 +294,7 @@
         private System.Windows.Forms.Panel panelÜFensterSettings;
         private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterTimer;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button bAufnhameStart;
+        private System.Windows.Forms.Button bAufnhameStop;
     }
 }

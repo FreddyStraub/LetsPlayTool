@@ -24,8 +24,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public void setSettings(AllgemeinesTabEinstellungen Settings)
         {
 
-            bAufnhameStart.ButtonText = Settings.AufnahmeStartKey.ToString();
-            bAufnhameStop.ButtonText = Settings.AufnahmeStopKey.ToString();
+            bAufnhameStart.Text = Settings.AufnahmeStartKey.ToString();
+            bAufnhameStop.Text = Settings.AufnahmeStopKey.ToString();
 
 
             switchÜFenster.Value = Settings.ShowÜFenster;
@@ -44,8 +44,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
         {
             AllgemeinesTabEinstellungen newSettings = new AllgemeinesTabEinstellungen();
 
-            newSettings.AufnahmeStartKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStart.ButtonText);
-            newSettings.AufnahmeStopKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStop.ButtonText);
+            newSettings.AufnahmeStartKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStart.Text);
+            newSettings.AufnahmeStopKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStop.Text);
 
             newSettings.ShowÜFenster = switchÜFenster.Value;
             newSettings.ShowÜFensterTimer = checkÜFensterTimer.Checked;
@@ -56,24 +56,33 @@ namespace LetsPlayTool.Einstellungen_Tabs
             return newSettings;
         }
 
-        private void bAufnhameStop_Click(object sender, EventArgs e)
-        {
-            bAufnhameStart.ButtonText = "...";
-        }
+
 
         private void AllgemeinesTab_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if(bAufnhameStart.ButtonText == "...")
+            if(bAufnhameStart.Text == "...")
             {
-                bAufnhameStart.ButtonText = e.KeyCode.ToString();
+                bAufnhameStart.Text = e.KeyCode.ToString();
 
-            }else if (bAufnhameStop.ButtonText == "...")
+            }else if (bAufnhameStop.Text == "...")
             {
 
-                bAufnhameStop.ButtonText = e.KeyCode.ToString();
+                bAufnhameStop.Text = e.KeyCode.ToString();
 
             }
+
+        }
+
+        private void bAufnhameStop_Click(object sender, EventArgs e)
+        {
+
+            bAufnhameStop.Text = "...";
+
+        }
+        private void bAufnhameStart_Click(object sender, EventArgs e)
+        {
+            bAufnhameStart.Text = "...";
 
         }
     }

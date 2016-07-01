@@ -60,5 +60,22 @@ namespace LetsPlayTool.Einstellungen_Tabs
       
 
         }
+
+        private void bKey_Click(object sender, EventArgs e)
+        {
+            bKey.Text = "...";
+        }
+
+        private void MarkerTab_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if(bKey.Text == "...")
+            {
+
+                bKey.Text = e.KeyCode.ToString();
+
+            }
+
+        }
     }
 }

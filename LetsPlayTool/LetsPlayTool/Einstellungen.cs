@@ -25,7 +25,7 @@ namespace LetsPlayTool
         public void save()
         {
 
-            string pfad = EinstellungenPfad + "\\Settings";
+            string pfad = EinstellungenPfad + "\\Settings.pilz";
 
             System.IO.File.Delete(pfad);
 
@@ -46,7 +46,7 @@ namespace LetsPlayTool
 
             Einstellungen e = new Einstellungen();
 
-            string pfad = EinstellungenPfad + "\\Settings";
+            string pfad = EinstellungenPfad + "\\Settings.pilz";
 
             FileStream FS = new FileStream(pfad, FileMode.Open);
             BinaryFormatter BF = new BinaryFormatter();
