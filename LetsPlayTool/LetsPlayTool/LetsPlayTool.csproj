@@ -60,6 +60,7 @@
     <Compile Include="Dialogs\InputDilaog.Designer.cs">
       <DependentUpon>InputDilaog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\Time.cs" />
     <Compile Include="Dialogs\TimeDilaog.cs">
       <SubType>Form</SubType>
     </Compile>

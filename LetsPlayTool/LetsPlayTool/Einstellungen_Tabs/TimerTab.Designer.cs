@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "00:00:01:00"}, -1, System.Drawing.Color.White, System.Drawing.Color.Red, null);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimerTab));
             this.lvTimes = new System.Windows.Forms.ListView();
@@ -39,7 +39,10 @@
             this.bProfilLöschen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bProfilErstellen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbProfiles = new System.Windows.Forms.ListBox();
+            this.gbText = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
+            this.gbText.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvTimes
@@ -50,13 +53,14 @@
             this.columnHeader1});
             this.lvTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvTimes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem4});
             this.lvTimes.Location = new System.Drawing.Point(291, 19);
             this.lvTimes.Name = "lvTimes";
             this.lvTimes.Size = new System.Drawing.Size(174, 320);
             this.lvTimes.TabIndex = 0;
             this.lvTimes.UseCompatibleStateImageBehavior = false;
             this.lvTimes.View = System.Windows.Forms.View.List;
+            this.lvTimes.SelectedIndexChanged += new System.EventHandler(this.lvTimes_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -201,17 +205,44 @@
             this.lbProfiles.TabIndex = 5;
             this.lbProfiles.SelectedIndexChanged += new System.EventHandler(this.lbProfiles_SelectedIndexChanged);
             // 
+            // gbText
+            // 
+            this.gbText.Controls.Add(this.richTextBox1);
+            this.gbText.ForeColor = System.Drawing.Color.White;
+            this.gbText.Location = new System.Drawing.Point(12, 361);
+            this.gbText.Name = "gbText";
+            this.gbText.Size = new System.Drawing.Size(671, 180);
+            this.gbText.TabIndex = 4;
+            this.gbText.TabStop = false;
+            this.gbText.Text = "Text";
+            this.gbText.Visible = false;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(79, 19);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(585, 155);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // TimerTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(695, 553);
+            this.Controls.Add(this.gbText);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimerTab";
             this.Text = "TimerTab";
             this.groupBox2.ResumeLayout(false);
+            this.gbText.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,5 +257,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bProfilLöschen;
         private Bunifu.Framework.UI.BunifuFlatButton bZeitEntfernen;
         private Bunifu.Framework.UI.BunifuFlatButton bZeitHinzufügen;
+        private System.Windows.Forms.GroupBox gbText;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

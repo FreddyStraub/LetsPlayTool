@@ -112,10 +112,10 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                 int index = lbProfiles.Items.IndexOf(lbProfiles.SelectedItem);
 
-                foreach (ListViewItem Item in TimerProfiles[index].Times)
+                foreach (Time time in TimerProfiles[index].Times)
                 {
 
-                    lvTimes.Items.Add(Item);
+                    lvTimes.Items.Add(time.ListViewItem);
 
                 }
 
@@ -162,10 +162,11 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 if (TD.DialogResult == DialogResult.OK)
                 {
 
-                    ListViewItem Time = new ListViewItem();
-                    Time.Font = new Font(Time.Font.Name, 24f, FontStyle.Regular);
-                    Time.BackColor = TD.Farbe;
-                    Time.ForeColor = Color.White;
+                    ListViewItem TimeItem = new ListViewItem();
+                    TimeItem.Font = new Font(TimeItem.Font.Name, 24f, FontStyle.Regular);
+                    TimeItem.BackColor = TD.Farbe;
+                    TimeItem.ForeColor = Color.White;
+
 
                     string TimeText = "";
 
@@ -218,9 +219,13 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                     #endregion
 
-                    Time.Text = TimeText;
+                    TimeItem.Text = TimeText;
 
-                    TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Add(Time);
+                    Time t = new Time(TimeItem);
+                    t.isBig = TD.isBig;
+                    t.Text = TD.TimerText;
+
+                    TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Add(t);
 
                 }
             }
@@ -233,14 +238,14 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             if(lvTimes.SelectedItems.Count != 0)
             {
-
-               // TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)]Times.Remove(lvTimes.SelectedItems);
-
                 foreach(ListViewItem Item in lvTimes.SelectedItems)
                 {
                     int TimerProfil = lbProfiles.Items.IndexOf(lbProfiles.SelectedItem);
 
-                    TimerProfiles[TimerProfil].Times.Remove(Item);
+                    int realIndex = lvTimes.Items.IndexOf(Item);
+
+
+                    TimerProfiles[TimerProfil].Times.Remove(TimerProfiles[TimerProfil].Times[realIndex]);
 
                 }
 
@@ -250,5 +255,39 @@ namespace LetsPlayTool.Einstellungen_Tabs
             updateTimes();
 
         }
-    }
+
+        private void lvTimes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (lvTimes.SelectedItems.Count != 0)
+            {
+
+                int TimerProfilIndex = lbProfiles.Items.IndexOf(lbProfiles.SelectedItem); //Ausgewähltes TimerProfil
+                int realIndex = lvTimes.Items.IndexOf(lvTimes.SelectedItems[0]); //Index des ListViewItems (ausgewählten)
+
+                string realText = TimerProfiles[TimerProfilIndex].Times[realIndex].Text;
+
+                if (realText != String.Empty & realText != null)
+                {
+                    gbText.Visible = true;
+                    richTextBox1.Text = realText;
+
+                }
+                else
+                {
+                    richTextBox1.Text = "";
+                    gbText.Visible = false;
+                    
+                }
+
+            }
+            else
+            {
+                richTextBox1.Text = "";
+                gbText.Visible = false;
+
+            }
+
+        }
+        }
 }

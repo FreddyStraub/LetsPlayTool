@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,8 @@ namespace LetsPlayTool
 {
     public partial class Form1 : Form
     {
-        
+
+        Einstellungen einstellungen = new Einstellungen();
 
         public Form1()
         {
@@ -33,7 +35,7 @@ namespace LetsPlayTool
         private void Form1_Activated(object sender, EventArgs e)
         {
             MaximaizeAnimation.Start();
-
+            einstellungen = einstellungen.load();
 
         }
 
@@ -112,14 +114,11 @@ namespace LetsPlayTool
         int slide = 0;
         private void frmMain_Load(object sender, EventArgs e)
         {
-
-
+            
             ShowPanelsAnimation.Start();
 
         }
-
-
-
+        
         private void ShowPanelsAnimation_Tick(object sender, EventArgs e)
         {
 
@@ -169,23 +168,65 @@ namespace LetsPlayTool
             frmEinstellungen frmEinstellungen = new frmEinstellungen();
             frmEinstellungen.ShowDialog();
 
-
+            einstellungen = einstellungen.load();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Einstellungen en = new Einstellungen();
-            en.SetStandartValues();
 
-            en.save();
+        public int Stunden { get; set; }
+        public int Minuten { get; set; }
+        public int Sekunden { get; set; }
+        public int Millisekunden { get; set; }
+
+        Stopwatch Timerwatch= new Stopwatch();
+
+     
+        private void Mainactor_Tick(object sender, EventArgs e)
+        {
+
+            #region Timer
+
+            #region Time
+            string TimeString = "";
             
+            Millisekunden += 1;
+
+            if (Millisekunden == 65)
+            {
+                Sekunden += 1;
+                Millisekunden = 0;
+            }
+
+            if (Sekunden == 60)
+            {
+                Minuten += 1;
+                Sekunden = 0;
+            }
+
+            if (Minuten == 60)
+            {
+                Stunden += 1;
+                Minuten = 0;
+            }
+
+            TimeString = Stunden + ":" + Minuten + ":" + Sekunden + ":" + Millisekunden;
+
+            bunifuCustomLabel1.Text = TimeString;
+            #endregion
+
+
+            #endregion
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
-            Einstellungen en = new Einstellungen();
-            en.SetStandartValues();
-            en.save();
+            Mainactor.Start();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Einstellungen ea = new Einstellungen();
+            ea.SetStandartValues();
+            ea.save();
         }
     }
 }

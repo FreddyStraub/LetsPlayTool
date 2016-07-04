@@ -68,7 +68,25 @@ namespace LetsPlayTool.Dialogs
             Minuten = nudTimeMinutes.Value;
             Sekunden = nudTimeMSeconds.Value;
             Millisekunden = nudTimeMSeconds.Value;
-            
+
+
+            if (checkText.Checked)
+            {
+
+                TimerText = richTextBox1.Text;
+
+                if (cbFormat.selectedIndex == 0)
+                {
+                    isBig = false;
+                }
+                else
+                {
+                    isBig = true;
+
+                }
+
+            }
+
 
             DialogResult = DialogResult.OK;
 
@@ -78,6 +96,9 @@ namespace LetsPlayTool.Dialogs
         public decimal Minuten { get; private set; }
         public decimal Sekunden { get; private set; }
         public decimal Millisekunden { get; private set; }
+
+        public string TimerText { get; private set; }
+        public bool isBig { get; set; }
 
         public Color Farbe = Color.Green;
 
@@ -90,6 +111,7 @@ namespace LetsPlayTool.Dialogs
                 bFarbe.Normalcolor = Farbe;
                 bFarbe.Activecolor = Farbe;
                 bFarbe.BackColor = Farbe;
+
 
             }
         }
@@ -120,6 +142,13 @@ namespace LetsPlayTool.Dialogs
 
 
             }
+
+        }
+
+        private void checkShift_OnChange(object sender, EventArgs e)
+        {
+
+            panelText.Enabled = checkText.Checked;
 
         }
     }

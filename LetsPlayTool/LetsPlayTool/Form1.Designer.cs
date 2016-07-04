@@ -66,6 +66,8 @@
             this.lbSound = new System.Windows.Forms.Label();
             this.ShowPanelAnimator = new BunifuAnimatorNS.Animator(this.components);
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
+            this.Mainactor = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).BeginInit();
@@ -188,6 +190,7 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(395, 70);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "00:00:00:00";
+            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
             // 
             // panelOrdner
             // 
@@ -335,6 +338,7 @@
             // 
             this.panelMarker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelMarker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMarker.Controls.Add(this.button1);
             this.panelMarker.Controls.Add(this.listMarker);
             this.panelMarker.Controls.Add(this.lbMarker);
             this.ShowPanelAnimator.SetDecoration(this.panelMarker, BunifuAnimatorNS.DecorationType.None);
@@ -539,6 +543,22 @@
             this.ShowPanelsAnimation.Interval = 120;
             this.ShowPanelsAnimation.Tick += new System.EventHandler(this.ShowPanelsAnimation_Tick);
             // 
+            // Mainactor
+            // 
+            this.Mainactor.Interval = 1;
+            this.Mainactor.Tick += new System.EventHandler(this.Mainactor_Tick);
+            // 
+            // button1
+            // 
+            this.ShowPanelAnimator.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
+            this.button1.Location = new System.Drawing.Point(293, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,6 +636,8 @@
         private Bunifu.Framework.UI.BunifuImageButton bSettings;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbGPU;
+        private System.Windows.Forms.Timer Mainactor;
+        private System.Windows.Forms.Button button1;
     }
 }
 

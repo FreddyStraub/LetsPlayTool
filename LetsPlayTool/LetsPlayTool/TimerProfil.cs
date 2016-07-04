@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LetsPlayTool.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace LetsPlayTool
 
         public string name { get; set; }
 
-        public List<ListViewItem> Times = new List<ListViewItem>();
+        public List<Time> Times = new List<Time>();
         
         public TimerProfil(string name)
         {

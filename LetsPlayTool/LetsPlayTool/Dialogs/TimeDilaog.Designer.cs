@@ -41,12 +41,18 @@
             this.bFertig = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cdFarbe = new System.Windows.Forms.ColorDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panelText = new System.Windows.Forms.Panel();
+            this.cbFormat = new Bunifu.Framework.UI.BunifuDropdown();
+            this.lbText = new System.Windows.Forms.Label();
+            this.checkText = new Bunifu.Framework.UI.BunifuCheckbox();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSeconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeMSeconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeHours)).BeginInit();
+            this.panelText.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderBar
@@ -185,7 +191,7 @@
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
             this.bAbbrechen.IsTab = false;
-            this.bAbbrechen.Location = new System.Drawing.Point(219, 197);
+            this.bAbbrechen.Location = new System.Drawing.Point(215, 338);
             this.bAbbrechen.Name = "bAbbrechen";
             this.bAbbrechen.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bAbbrechen.OnHovercolor = System.Drawing.Color.DarkRed;
@@ -211,7 +217,7 @@
             this.bFertig.Iconimage_right_Selected = null;
             this.bFertig.Iconimage_Selected = null;
             this.bFertig.IsTab = false;
-            this.bFertig.Location = new System.Drawing.Point(90, 197);
+            this.bFertig.Location = new System.Drawing.Point(86, 338);
             this.bFertig.Name = "bFertig";
             this.bFertig.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bFertig.OnHovercolor = System.Drawing.Color.LimeGreen;
@@ -229,12 +235,79 @@
             this.toolTip1.InitialDelay = 300;
             this.toolTip1.ReshowDelay = 100;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 4);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(327, 96);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "";
+            // 
+            // panelText
+            // 
+            this.panelText.Controls.Add(this.cbFormat);
+            this.panelText.Controls.Add(this.richTextBox1);
+            this.panelText.Enabled = false;
+            this.panelText.Location = new System.Drawing.Point(12, 184);
+            this.panelText.Name = "panelText";
+            this.panelText.Size = new System.Drawing.Size(327, 136);
+            this.panelText.TabIndex = 9;
+            // 
+            // cbFormat
+            // 
+            this.cbFormat.BackColor = System.Drawing.Color.Transparent;
+            this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormat.ForeColor = System.Drawing.Color.White;
+            this.cbFormat.Items = new string[] {
+        "Kleiner Text",
+        "Großer Text"};
+            this.cbFormat.Location = new System.Drawing.Point(0, 107);
+            this.cbFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFormat.Name = "cbFormat";
+            this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
+            this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.cbFormat.selectedIndex = 0;
+            this.cbFormat.Size = new System.Drawing.Size(326, 26);
+            this.cbFormat.TabIndex = 19;
+            // 
+            // lbText
+            // 
+            this.lbText.AutoSize = true;
+            this.lbText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbText.ForeColor = System.Drawing.Color.White;
+            this.lbText.Location = new System.Drawing.Point(35, 159);
+            this.lbText.Name = "lbText";
+            this.lbText.Size = new System.Drawing.Size(34, 16);
+            this.lbText.TabIndex = 18;
+            this.lbText.Text = "Text";
+            // 
+            // checkText
+            // 
+            this.checkText.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkText.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkText.Checked = false;
+            this.checkText.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkText.ForeColor = System.Drawing.Color.White;
+            this.checkText.Location = new System.Drawing.Point(13, 157);
+            this.checkText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkText.Name = "checkText";
+            this.checkText.Size = new System.Drawing.Size(20, 20);
+            this.checkText.TabIndex = 17;
+            this.checkText.OnChange += new System.EventHandler(this.checkShift_OnChange);
+            // 
             // TimeDilaog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(351, 247);
+            this.ClientSize = new System.Drawing.Size(351, 388);
+            this.Controls.Add(this.lbText);
+            this.Controls.Add(this.checkText);
+            this.Controls.Add(this.panelText);
             this.Controls.Add(this.bAbbrechen);
             this.Controls.Add(this.bFertig);
             this.Controls.Add(this.bFarbe);
@@ -255,7 +328,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeMSeconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeHours)).EndInit();
+            this.panelText.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -272,5 +347,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton bFertig;
         private System.Windows.Forms.ColorDialog cdFarbe;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Panel panelText;
+        private System.Windows.Forms.Label lbText;
+        private Bunifu.Framework.UI.BunifuCheckbox checkText;
+        private Bunifu.Framework.UI.BunifuDropdown cbFormat;
     }
 }

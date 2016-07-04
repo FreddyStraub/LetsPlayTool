@@ -144,7 +144,7 @@
             this.bAbbrechen.BackColor = System.Drawing.Color.DodgerBlue;
             this.bAbbrechen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bAbbrechen.BorderRadius = 0;
-            this.bAbbrechen.ButtonText = "   Abberechen";
+            this.bAbbrechen.ButtonText = "   Abbrechen";
             this.bAbbrechen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bAbbrechen, BunifuAnimatorNS.DecorationType.None);
             this.bAbbrechen.Iconcolor = System.Drawing.Color.Transparent;
