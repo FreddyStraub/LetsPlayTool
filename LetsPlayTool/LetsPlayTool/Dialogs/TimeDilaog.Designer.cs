@@ -240,7 +240,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.DodgerBlue;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 4);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 35);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(327, 96);
             this.richTextBox1.TabIndex = 8;
@@ -264,7 +264,7 @@
             this.cbFormat.Items = new string[] {
         "Kleiner Text",
         "Großer Text"};
-            this.cbFormat.Location = new System.Drawing.Point(0, 107);
+            this.cbFormat.Location = new System.Drawing.Point(1, 4);
             this.cbFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbFormat.Name = "cbFormat";
             this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;

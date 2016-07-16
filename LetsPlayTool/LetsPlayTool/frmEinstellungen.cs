@@ -23,7 +23,45 @@ namespace LetsPlayTool
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            Closeanimation.Start();
+
+            getAllSettings();
+
+            Einstellungen oldSettings = new Einstellungen();
+            oldSettings = oldSettings.load();
+
+            if(!oldSettings.Equals(einstellungen) == true)
+            {
+
+                DialogResult MSG = MessageBox.Show("Änderungen speichern?", "LetsPlayTool, Änderungen speichern?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if(MSG != DialogResult.Yes)
+                {
+
+                    einstellungen.save();
+                    Closeanimation.Start();
+
+                }
+                else if(MSG == DialogResult.No)
+                {
+
+                    Closeanimation.Start();
+
+
+                }
+                else
+                {
+                    DialogResult = DialogResult.None;
+
+                }
+
+
+            }
+            else
+            {
+                Closeanimation.Start();
+
+            }
+            
         }
 
         private void frmEinstellungen_Load(object sender, EventArgs e)

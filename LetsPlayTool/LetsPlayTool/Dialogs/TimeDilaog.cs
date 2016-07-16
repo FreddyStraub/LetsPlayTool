@@ -72,23 +72,40 @@ namespace LetsPlayTool.Dialogs
 
             if (checkText.Checked)
             {
-
-                TimerText = richTextBox1.Text;
-
+                
                 if (cbFormat.selectedIndex == 0)
                 {
-                    isBig = false;
+
+                    if(richTextBox1.Text.Length > 212)
+                    {
+
+                        MessageBox.Show("Ein kleiner Text darf nur 211 Zeichen haben... Wenn du mehr Zeichen benötigst wähle bitte 'Großer Text' aus", "LetsPlayTool - Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        cbFormat.Select();
+
+                        DialogResult = DialogResult.None;
+                        
+
+                    }else
+                    {
+                        isBig = false;
+                        DialogResult = DialogResult.OK;
+
+                    }
+
                 }
                 else
                 {
                     isBig = true;
+                    DialogResult = DialogResult.OK;
 
                 }
+
+                TimerText = richTextBox1.Text;
+
 
             }
 
 
-            DialogResult = DialogResult.OK;
 
         }
 

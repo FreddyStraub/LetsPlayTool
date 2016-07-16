@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -60,8 +61,7 @@ namespace LetsPlayTool
         }
 
         #endregion
-
-
+        
         #region general Animations
 
         /// <summary>
@@ -177,9 +177,9 @@ namespace LetsPlayTool
         public int Sekunden { get; set; }
         public int Millisekunden { get; set; }
 
-        Stopwatch Timerwatch= new Stopwatch();
+        Stopwatch Timerwatch = new Stopwatch();
 
-     
+             
         private void Mainactor_Tick(object sender, EventArgs e)
         {
 
@@ -213,20 +213,85 @@ namespace LetsPlayTool
             bunifuCustomLabel1.Text = TimeString;
             #endregion
 
+            #region Message
+
+
+
+            #endregion
 
             #endregion
         }
 
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
-            Mainactor.Start();
+
+            startSession();
+
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void bOpenPrograms_Click(object sender, EventArgs e)
         {
-            Einstellungen ea = new Einstellungen();
-            ea.SetStandartValues();
-            ea.save();
+            selectTimerProifil();
+
+        }
+
+        /// <summary>
+        /// Zeigt ein kleine Nachricht in dem Panel an.
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="message"></param>
+        private void showSmallMessage(Panel panel, string message)
+        {
+
+            LetsPlayToolMessage.Small S = new LetsPlayToolMessage.Small(message);
+
+            S.TopLevel = false;
+            S.AutoScroll = true;
+
+            panel.Controls.Add(S);
+
+            S.BringToFront();
+
+            S.Show();
+            S.ShowMessage.Start();
+
+
+        }
+
+        /// <summary>
+        /// Startet die Session und alle Funktionen.
+        /// </summary>
+        private void startSession()
+        {
+
+            Mainactor.Start();
+
+        }
+
+        private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        /// <summary>
+        /// Läst den User ein Timerprofil auswählen
+        /// </summary>
+        private void selectTimerProifil()
+        {
+
+            frmTimerprofilAuswahl TPA = new frmTimerprofilAuswahl(einstellungen);
+
+ 
+                TPA.TopLevel = false;
+                TPA.AutoScroll = true;
+
+                Controls.Add(TPA);
+
+                TPA.Show();
+
+                TPA.Location = new Point(0, Location.Y + 10);
+
+                TPA.BringToFront();
+            
         }
     }
 }

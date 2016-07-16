@@ -38,7 +38,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 TimerProfiles.Add(p);
             }
 
-            lbProfiles.SelectedItem = Settings.SelectedTimerProfil;
+            lbProfiles.SelectedIndex = 0;
 
         }
 
@@ -56,11 +56,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                 newSettings.TimerProfiles.Add(TimerProfiles[lbProfiles.Items.IndexOf(item)]);
 
-                try
-                {
-                    newSettings.SelectedTimerProfil = lbProfiles.SelectedItem.ToString();
-                }
-                catch { }
             }
 
             return newSettings;
@@ -96,6 +91,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             {
                 lbProfiles.Items.Add(t.name);
             }
+
+            updateTimes();
         }
 
         /// <summary>
@@ -256,6 +253,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
         }
 
+
         private void lvTimes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -265,7 +263,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 int TimerProfilIndex = lbProfiles.Items.IndexOf(lbProfiles.SelectedItem); //Ausgewähltes TimerProfil
                 int realIndex = lvTimes.Items.IndexOf(lvTimes.SelectedItems[0]); //Index des ListViewItems (ausgewählten)
 
-                string realText = TimerProfiles[TimerProfilIndex].Times[realIndex].Text;
+                string realText = TimerProfiles[TimerProfilIndex].Times[realIndex].Text; //Text der ausgewählten Zeit
+
 
                 if (realText != String.Empty & realText != null)
                 {
