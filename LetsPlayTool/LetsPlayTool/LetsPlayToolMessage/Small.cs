@@ -45,7 +45,7 @@ namespace LetsPlayTool.LetsPlayToolMessage
 
             progressTime++;
 
-            if(progressTime == 5)
+            if(progressTime ==3)
             {
 
                 ShowMessageAnimator.HideSync(button1);

@@ -70,7 +70,19 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                 foreach(string programm in opfHinzufügen.FileNames)
                 {
-                    lbProgramme.Items.Add(programm);
+                    if (lbProgramme.Items.IndexOf(programm) == -1)
+                    {
+
+                        lbProgramme.Items.Add(programm);
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Dieses Programm ist bereits in der Liste!", "Programm bereits in Liste", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                    }
                 }
 
             }

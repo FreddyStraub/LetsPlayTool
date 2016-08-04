@@ -132,8 +132,16 @@ namespace LetsPlayTool
 
             #region Timer
 
-            //selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
-            //toolTip1.SetToolTip(labelTimer, selectedTimerProfil);
+            selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+
+            try
+
+            {
+
+                toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
+
+            }
+            catch { }
 
             #endregion
         }
@@ -330,7 +338,7 @@ namespace LetsPlayTool
         }
         private void bOpenPrograms_Click(object sender, EventArgs e)
         {
-            selectTimerProifil();
+            einstellungen.Programme.startProgramms();
 
         }
 
@@ -442,6 +450,12 @@ namespace LetsPlayTool
 
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Right)
+            {
+                selectTimerProifil();
+            }
+
+
         }
 
         /// <summary>
@@ -457,10 +471,23 @@ namespace LetsPlayTool
             TPA.ShowDialog();
 
 
-            selectedTimerProfil = TPA.selectedProfil;
+            if(TPA.selectedProfil != null)
+                selectedTimerProfil = TPA.selectedProfil;
             
             toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+
+            //Einstellungen die auf der Mainform gemacht werden können werden hier gespeichert.
+            einstellungen.Timer.SelectedTimerProfil = selectedTimerProfil;
+
+            einstellungen.save();
+
+        }
+
     }
 }
