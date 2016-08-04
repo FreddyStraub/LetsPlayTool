@@ -219,7 +219,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
                     TimeItem.Text = TimeText;
 
                     Time t = new Time(TimeItem);
-                    t.isBig = TD.isBig;
                     t.Text = TD.TimerText;
 
                     TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Add(t);

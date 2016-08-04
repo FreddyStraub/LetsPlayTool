@@ -12,7 +12,6 @@ namespace LetsPlayTool.Dialogs
     {
 
         public string Text { get; set; }
-        public bool isBig { get; set; }
 
         public ListViewItem ListViewItem { get; set; }
 

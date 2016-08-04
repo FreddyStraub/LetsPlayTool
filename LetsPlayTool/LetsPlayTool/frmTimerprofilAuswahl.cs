@@ -20,7 +20,9 @@ namespace LetsPlayTool
 
         }
 
-        public string selectedProfil { get; private set; }
+        public TimerProfil selectedProfil { get; private set; }
+        public List<TimerProfil> TimerProfiles = new List<TimerProfil>();
+
 
         /// <summary>
         /// Lädt die Timerprofile in den Listview.
@@ -39,36 +41,10 @@ namespace LetsPlayTool
                 TimeItem.ForeColor = Color.White;
                 TimeItem.Text = tp.name;
 
+                TimerProfiles.Add(tp);
+
                 listView1.Items.Add(TimeItem);
 
-            }
-
-            setListViewDesign();
-
-        }
-
-        /// <summary>
-        /// Macht den die ListviewItems anschaulicher
-        /// </summary>
-        private void setListViewDesign()
-        {
-
-            
-
-            for (int i = 0; i < listView1.Items.Count; i++)
-            {
-
-                listView1.Columns[0].TextAlign = HorizontalAlignment.Center;
-
-                if (i % 2 == 0)
-                {
-                    listView1.Items[i].BackColor = Color.FromArgb(40, 40, 40);
-
-                }else
-                {
-                    listView1.Items[i].BackColor = Color.FromArgb(0,0,0);
-
-                }
             }
 
         }
@@ -76,15 +52,16 @@ namespace LetsPlayTool
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            selectedProfil = listView1.SelectedItems[0].ToString();
+            int index = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+
+            selectedProfil = TimerProfiles[index];
 
             Close();
         }
 
-        private void frmTimerprofilAuswahl_Load(object sender, EventArgs e)
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-
-
+            Close();
         }
     }
 }

@@ -43,7 +43,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panelText = new System.Windows.Forms.Panel();
-            this.cbFormat = new Bunifu.Framework.UI.BunifuDropdown();
             this.lbText = new System.Windows.Forms.Label();
             this.checkText = new Bunifu.Framework.UI.BunifuCheckbox();
             this.HeaderBar.SuspendLayout();
@@ -240,38 +239,20 @@
             this.richTextBox1.BackColor = System.Drawing.Color.DodgerBlue;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 35);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 3);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(327, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(327, 128);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
             // panelText
             // 
-            this.panelText.Controls.Add(this.cbFormat);
             this.panelText.Controls.Add(this.richTextBox1);
             this.panelText.Enabled = false;
             this.panelText.Location = new System.Drawing.Point(12, 184);
             this.panelText.Name = "panelText";
             this.panelText.Size = new System.Drawing.Size(327, 136);
             this.panelText.TabIndex = 9;
-            // 
-            // cbFormat
-            // 
-            this.cbFormat.BackColor = System.Drawing.Color.Transparent;
-            this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFormat.ForeColor = System.Drawing.Color.White;
-            this.cbFormat.Items = new string[] {
-        "Kleiner Text",
-        "Großer Text"};
-            this.cbFormat.Location = new System.Drawing.Point(1, 4);
-            this.cbFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbFormat.Name = "cbFormat";
-            this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
-            this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.cbFormat.selectedIndex = 0;
-            this.cbFormat.Size = new System.Drawing.Size(326, 26);
-            this.cbFormat.TabIndex = 19;
             // 
             // lbText
             // 
@@ -351,6 +332,5 @@
         private System.Windows.Forms.Panel panelText;
         private System.Windows.Forms.Label lbText;
         private Bunifu.Framework.UI.BunifuCheckbox checkText;
-        private Bunifu.Framework.UI.BunifuDropdown cbFormat;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LetsPlayTool.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -117,8 +118,26 @@ namespace LetsPlayTool
             
             ShowPanelsAnimation.Start();
 
+            loadSettings();
+
         }
-        
+
+        /// <summary>
+        /// Lädt die Einstellungen und setzt sie.
+        /// </summary>
+        private void loadSettings()
+        {
+
+            einstellungen = einstellungen.load();
+
+            #region Timer
+
+            //selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+            //toolTip1.SetToolTip(labelTimer, selectedTimerProfil);
+
+            #endregion
+        }
+
         private void ShowPanelsAnimation_Tick(object sender, EventArgs e)
         {
 
@@ -179,15 +198,20 @@ namespace LetsPlayTool
 
         Stopwatch Timerwatch = new Stopwatch();
 
-             
+        public TimerProfil selectedTimerProfil;
+
+
+
         private void Mainactor_Tick(object sender, EventArgs e)
         {
 
             #region Timer
 
+            //Macht das die Zeit läuft und angezeigt wird
+
+            string TimeString = ""; // == Das was angezeigt wird
             #region Time
-            string TimeString = "";
-            
+
             Millisekunden += 1;
 
             if (Millisekunden == 65)
@@ -208,15 +232,91 @@ namespace LetsPlayTool
                 Minuten = 0;
             }
 
-            TimeString = Stunden + ":" + Minuten + ":" + Sekunden + ":" + Millisekunden;
 
-            bunifuCustomLabel1.Text = TimeString;
+            #region aussehen
+
+            string StringStunden = "";
+            string StringMinuten = "";
+            string StringSekunden = "";
+            string StringMillisekunden = "";
+
+            //Stunden
+            if(Stunden < 10)
+            {
+                StringStunden = "0" + Stunden.ToString();
+            }
+            else
+            {
+                StringStunden = Stunden.ToString();
+            }
+
+            //Minuten
+            if (Minuten < 10)
+            {
+                StringMinuten = "0" + Minuten.ToString();
+            }
+            else
+            {
+                StringMinuten = Minuten.ToString();
+            }
+
+            //Sekunden
+            if (Sekunden < 10)
+            {
+                StringSekunden = "0" + Sekunden.ToString();
+            }
+            else
+            {
+                StringSekunden = Sekunden.ToString();
+            }
+
+            //Millisekunden
+            if (Millisekunden < 10)
+            {
+                StringMillisekunden = "0" + Millisekunden.ToString();
+            }
+            else
+            {
+                StringMillisekunden = Millisekunden.ToString();
+            }
+
+
             #endregion
 
+            TimeString = StringStunden + ":" + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
+
+
+
+            labelTimer.Text = TimeString;
+            #endregion // Mácht das der Timer 
+
+
+            //Macht, das bei eingestellter Zeit die Nachricht angezeigt wird
             #region Message
 
 
+                foreach (Time t in getTimes())
+                {
 
+
+                    #region 0 Time
+
+                    if (t.ListViewItem.Text == "00:00:00:00" && TimeString == "00:00:00:01")
+                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+
+
+                    #endregion
+
+                    if (t.ListViewItem.Text == TimeString)
+                    {
+
+                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+
+                    }
+
+                
+
+            }
             #endregion
 
             #endregion
@@ -228,12 +328,13 @@ namespace LetsPlayTool
             startSession();
 
         }
-
         private void bOpenPrograms_Click(object sender, EventArgs e)
         {
             selectTimerProifil();
 
         }
+
+        #region showMessages
 
         /// <summary>
         /// Zeigt ein kleine Nachricht in dem Panel an.
@@ -259,6 +360,31 @@ namespace LetsPlayTool
         }
 
         /// <summary>
+        /// Zeigt ein kleine Nachricht in dem Panel an.
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="message"></param>
+        private void showSmallMessage(Panel panel, string message, Color color)
+        {
+
+            LetsPlayToolMessage.Small S = new LetsPlayToolMessage.Small(message, color);
+
+            S.TopLevel = false;
+            S.AutoScroll = true;
+
+            panel.Controls.Add(S);
+
+            S.BringToFront();
+
+            S.Show();
+            S.ShowMessage.Start();
+
+
+        }
+
+        #endregion
+
+        /// <summary>
         /// Startet die Session und alle Funktionen.
         /// </summary>
         private void startSession()
@@ -266,6 +392,52 @@ namespace LetsPlayTool
 
             Mainactor.Start();
 
+            #region Get Times
+
+            if (selectedTimerProfil != null)
+        {
+
+
+            getTimes();
+
+        }
+        else
+        {
+
+            stopSession();
+            showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.Red);
+
+        }
+            #endregion
+
+        }
+
+        /// <summary>
+        /// Stoppt die Session und alle Funktionen
+        /// </summary>
+        private void stopSession()
+        {
+
+            Mainactor.Stop();
+
+        }
+
+
+        /// <summary>
+        /// Listet die Zeiten des aktuellen ´TimerProfiles auf.
+        /// </summary>
+        /// <returns></returns>
+        private List<Time> getTimes()
+        {
+
+            List<Time> Times = new List<Time>();
+
+            foreach(Time t in selectedTimerProfil.Times)
+            {
+                Times.Add(t);
+            }
+
+                return Times;
         }
 
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
@@ -280,18 +452,15 @@ namespace LetsPlayTool
 
             frmTimerprofilAuswahl TPA = new frmTimerprofilAuswahl(einstellungen);
 
- 
-                TPA.TopLevel = false;
-                TPA.AutoScroll = true;
+            TPA.Location = new Point(Location.X, Location.Y + 59);
 
-                Controls.Add(TPA);
+            TPA.ShowDialog();
 
-                TPA.Show();
 
-                TPA.Location = new Point(0, Location.Y + 10);
-
-                TPA.BringToFront();
+            selectedTimerProfil = TPA.selectedProfil;
             
+            toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
+
         }
     }
 }

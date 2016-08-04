@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bSettings = new Bunifu.Framework.UI.BunifuImageButton();
@@ -39,7 +39,7 @@
             this.MinimaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.MaximaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.panelTimer = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelTimer = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelOrdner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbGPU = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@
             this.ShowPanelAnimator = new BunifuAnimatorNS.Animator(this.components);
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).BeginInit();
@@ -170,7 +171,7 @@
             // 
             this.panelTimer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTimer.Controls.Add(this.bunifuCustomLabel1);
+            this.panelTimer.Controls.Add(this.labelTimer);
             this.ShowPanelAnimator.SetDecoration(this.panelTimer, BunifuAnimatorNS.DecorationType.None);
             this.panelTimer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTimer.Location = new System.Drawing.Point(0, 59);
@@ -179,19 +180,19 @@
             this.panelTimer.TabIndex = 1;
             this.panelTimer.Visible = false;
             // 
-            // bunifuCustomLabel1
+            // labelTimer
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Windows Command Prompt", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(22, 29);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(395, 70);
-            this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = "00:00:00:00";
-            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
-            this.bunifuCustomLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuCustomLabel1_MouseDown);
+            this.labelTimer.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.labelTimer, BunifuAnimatorNS.DecorationType.None);
+            this.labelTimer.Font = new System.Drawing.Font("Segoe UI", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimer.ForeColor = System.Drawing.Color.White;
+            this.labelTimer.Location = new System.Drawing.Point(15, 16);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(402, 98);
+            this.labelTimer.TabIndex = 0;
+            this.labelTimer.Text = "00:00:00:00";
+            this.labelTimer.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
+            this.labelTimer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuCustomLabel1_MouseDown);
             // 
             // panelOrdner
             // 
@@ -219,11 +220,11 @@
             // 
             this.label1.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(200, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.Size = new System.Drawing.Size(41, 21);
             this.label1.TabIndex = 9;
             this.label1.Text = "80%";
             // 
@@ -231,23 +232,23 @@
             // 
             this.lbGPU.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbGPU, BunifuAnimatorNS.DecorationType.None);
-            this.lbGPU.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGPU.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGPU.ForeColor = System.Drawing.Color.White;
             this.lbGPU.Location = new System.Drawing.Point(146, 106);
             this.lbGPU.Name = "lbGPU";
-            this.lbGPU.Size = new System.Drawing.Size(40, 17);
+            this.lbGPU.Size = new System.Drawing.Size(44, 21);
             this.lbGPU.TabIndex = 8;
-            this.lbGPU.Text = "CPU:";
+            this.lbGPU.Text = "GPU:";
             // 
             // lbCPUAuslastung
             // 
             this.lbCPUAuslastung.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbCPUAuslastung, BunifuAnimatorNS.DecorationType.None);
-            this.lbCPUAuslastung.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPUAuslastung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPUAuslastung.ForeColor = System.Drawing.Color.White;
             this.lbCPUAuslastung.Location = new System.Drawing.Point(92, 106);
             this.lbCPUAuslastung.Name = "lbCPUAuslastung";
-            this.lbCPUAuslastung.Size = new System.Drawing.Size(34, 17);
+            this.lbCPUAuslastung.Size = new System.Drawing.Size(41, 21);
             this.lbCPUAuslastung.TabIndex = 7;
             this.lbCPUAuslastung.Text = "80%";
             // 
@@ -255,11 +256,11 @@
             // 
             this.lbCPU.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbCPU, BunifuAnimatorNS.DecorationType.None);
-            this.lbCPU.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPU.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPU.ForeColor = System.Drawing.Color.White;
             this.lbCPU.Location = new System.Drawing.Point(38, 106);
             this.lbCPU.Name = "lbCPU";
-            this.lbCPU.Size = new System.Drawing.Size(40, 17);
+            this.lbCPU.Size = new System.Drawing.Size(43, 21);
             this.lbCPU.TabIndex = 6;
             this.lbCPU.Text = "CPU:";
             // 
@@ -267,11 +268,11 @@
             // 
             this.lbBSpeicherMB.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicherMB, BunifuAnimatorNS.DecorationType.None);
-            this.lbBSpeicherMB.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBSpeicherMB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicherMB.ForeColor = System.Drawing.Color.White;
             this.lbBSpeicherMB.Location = new System.Drawing.Point(267, 74);
             this.lbBSpeicherMB.Name = "lbBSpeicherMB";
-            this.lbBSpeicherMB.Size = new System.Drawing.Size(72, 18);
+            this.lbBSpeicherMB.Size = new System.Drawing.Size(69, 21);
             this.lbBSpeicherMB.TabIndex = 5;
             this.lbBSpeicherMB.Text = "1400mB";
             // 
@@ -279,11 +280,11 @@
             // 
             this.lbBSpeicher.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicher, BunifuAnimatorNS.DecorationType.None);
-            this.lbBSpeicher.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBSpeicher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicher.ForeColor = System.Drawing.Color.White;
             this.lbBSpeicher.Location = new System.Drawing.Point(92, 73);
             this.lbBSpeicher.Name = "lbBSpeicher";
-            this.lbBSpeicher.Size = new System.Drawing.Size(156, 17);
+            this.lbBSpeicher.Size = new System.Drawing.Size(134, 21);
             this.lbBSpeicher.TabIndex = 4;
             this.lbBSpeicher.Text = "Belegter Speicher:";
             // 
@@ -291,11 +292,11 @@
             // 
             this.lbFSpeicherMB.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicherMB, BunifuAnimatorNS.DecorationType.None);
-            this.lbFSpeicherMB.Font = new System.Drawing.Font("Windows Command Prompt", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFSpeicherMB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicherMB.ForeColor = System.Drawing.Color.White;
-            this.lbFSpeicherMB.Location = new System.Drawing.Point(252, 44);
+            this.lbFSpeicherMB.Location = new System.Drawing.Point(267, 44);
             this.lbFSpeicherMB.Name = "lbFSpeicherMB";
-            this.lbFSpeicherMB.Size = new System.Drawing.Size(70, 18);
+            this.lbFSpeicherMB.Size = new System.Drawing.Size(69, 21);
             this.lbFSpeicherMB.TabIndex = 3;
             this.lbFSpeicherMB.Text = "1200mB";
             // 
@@ -303,11 +304,11 @@
             // 
             this.lbFSpeicher.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicher, BunifuAnimatorNS.DecorationType.None);
-            this.lbFSpeicher.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFSpeicher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicher.ForeColor = System.Drawing.Color.White;
             this.lbFSpeicher.Location = new System.Drawing.Point(92, 44);
             this.lbFSpeicher.Name = "lbFSpeicher";
-            this.lbFSpeicher.Size = new System.Drawing.Size(140, 17);
+            this.lbFSpeicher.Size = new System.Drawing.Size(117, 21);
             this.lbFSpeicher.TabIndex = 2;
             this.lbFSpeicher.Text = "Freier Speicher:";
             // 
@@ -315,11 +316,11 @@
             // 
             this.lbPath.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbPath, BunifuAnimatorNS.DecorationType.None);
-            this.lbPath.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPath.ForeColor = System.Drawing.Color.White;
             this.lbPath.Location = new System.Drawing.Point(92, 12);
             this.lbPath.Name = "lbPath";
-            this.lbPath.Size = new System.Drawing.Size(226, 17);
+            this.lbPath.Size = new System.Drawing.Size(216, 21);
             this.lbPath.TabIndex = 1;
             this.lbPath.Text = "D:\\OpenTools V2.0\\Aufnahme";
             // 
@@ -327,11 +328,11 @@
             // 
             this.lbOrdner.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbOrdner, BunifuAnimatorNS.DecorationType.None);
-            this.lbOrdner.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOrdner.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOrdner.ForeColor = System.Drawing.Color.White;
             this.lbOrdner.Location = new System.Drawing.Point(12, 12);
             this.lbOrdner.Name = "lbOrdner";
-            this.lbOrdner.Size = new System.Drawing.Size(68, 17);
+            this.lbOrdner.Size = new System.Drawing.Size(63, 21);
             this.lbOrdner.TabIndex = 0;
             this.lbOrdner.Text = "Ordner:";
             // 
@@ -354,10 +355,10 @@
             this.listMarker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.listMarker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ShowPanelAnimator.SetDecoration(this.listMarker, BunifuAnimatorNS.DecorationType.None);
-            this.listMarker.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listMarker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listMarker.ForeColor = System.Drawing.Color.White;
             this.listMarker.FormattingEnabled = true;
-            this.listMarker.ItemHeight = 17;
+            this.listMarker.ItemHeight = 21;
             this.listMarker.Items.AddRange(new object[] {
             "00:20:25:15",
             "",
@@ -366,18 +367,18 @@
             "01:23:80:21"});
             this.listMarker.Location = new System.Drawing.Point(94, 12);
             this.listMarker.Name = "listMarker";
-            this.listMarker.Size = new System.Drawing.Size(323, 136);
+            this.listMarker.Size = new System.Drawing.Size(323, 126);
             this.listMarker.TabIndex = 1;
             // 
             // lbMarker
             // 
             this.lbMarker.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbMarker, BunifuAnimatorNS.DecorationType.None);
-            this.lbMarker.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarker.ForeColor = System.Drawing.Color.White;
             this.lbMarker.Location = new System.Drawing.Point(12, 12);
             this.lbMarker.Name = "lbMarker";
-            this.lbMarker.Size = new System.Drawing.Size(70, 17);
+            this.lbMarker.Size = new System.Drawing.Size(63, 21);
             this.lbMarker.TabIndex = 0;
             this.lbMarker.Text = "Marker:";
             // 
@@ -403,11 +404,11 @@
             // 
             this.lbTeamspeakStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbTeamspeakStatus, BunifuAnimatorNS.DecorationType.None);
-            this.lbTeamspeakStatus.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeamspeakStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamspeakStatus.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lbTeamspeakStatus.Location = new System.Drawing.Point(228, 41);
             this.lbTeamspeakStatus.Name = "lbTeamspeakStatus";
-            this.lbTeamspeakStatus.Size = new System.Drawing.Size(16, 17);
+            this.lbTeamspeakStatus.Size = new System.Drawing.Size(17, 21);
             this.lbTeamspeakStatus.TabIndex = 5;
             this.lbTeamspeakStatus.Text = "?";
             // 
@@ -415,11 +416,11 @@
             // 
             this.lbDiscordSMStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbDiscordSMStatus, BunifuAnimatorNS.DecorationType.None);
-            this.lbDiscordSMStatus.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiscordSMStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscordSMStatus.ForeColor = System.Drawing.Color.Red;
             this.lbDiscordSMStatus.Location = new System.Drawing.Point(228, 73);
             this.lbDiscordSMStatus.Name = "lbDiscordSMStatus";
-            this.lbDiscordSMStatus.Size = new System.Drawing.Size(34, 17);
+            this.lbDiscordSMStatus.Size = new System.Drawing.Size(32, 21);
             this.lbDiscordSMStatus.TabIndex = 4;
             this.lbDiscordSMStatus.Text = "Off";
             // 
@@ -427,11 +428,11 @@
             // 
             this.lbSkypeStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbSkypeStatus, BunifuAnimatorNS.DecorationType.None);
-            this.lbSkypeStatus.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSkypeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSkypeStatus.ForeColor = System.Drawing.Color.Lime;
             this.lbSkypeStatus.Location = new System.Drawing.Point(228, 12);
             this.lbSkypeStatus.Name = "lbSkypeStatus";
-            this.lbSkypeStatus.Size = new System.Drawing.Size(58, 17);
+            this.lbSkypeStatus.Size = new System.Drawing.Size(56, 21);
             this.lbSkypeStatus.TabIndex = 3;
             this.lbSkypeStatus.Text = "Online";
             // 
@@ -439,11 +440,11 @@
             // 
             this.lbDiscordSM.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbDiscordSM, BunifuAnimatorNS.DecorationType.None);
-            this.lbDiscordSM.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiscordSM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscordSM.ForeColor = System.Drawing.Color.White;
             this.lbDiscordSM.Location = new System.Drawing.Point(12, 73);
             this.lbDiscordSM.Name = "lbDiscordSM";
-            this.lbDiscordSM.Size = new System.Drawing.Size(186, 17);
+            this.lbDiscordSM.Size = new System.Drawing.Size(173, 21);
             this.lbDiscordSM.TabIndex = 2;
             this.lbDiscordSM.Text = "Discord Streamermode:";
             // 
@@ -451,11 +452,11 @@
             // 
             this.lbTeamSpeak.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbTeamSpeak, BunifuAnimatorNS.DecorationType.None);
-            this.lbTeamSpeak.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeamSpeak.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamSpeak.ForeColor = System.Drawing.Color.White;
             this.lbTeamSpeak.Location = new System.Drawing.Point(11, 41);
             this.lbTeamSpeak.Name = "lbTeamSpeak";
-            this.lbTeamSpeak.Size = new System.Drawing.Size(94, 17);
+            this.lbTeamSpeak.Size = new System.Drawing.Size(89, 21);
             this.lbTeamSpeak.TabIndex = 1;
             this.lbTeamSpeak.Text = "Teamspeak:";
             // 
@@ -463,11 +464,11 @@
             // 
             this.lbSkype.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbSkype, BunifuAnimatorNS.DecorationType.None);
-            this.lbSkype.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSkype.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSkype.ForeColor = System.Drawing.Color.White;
             this.lbSkype.Location = new System.Drawing.Point(12, 12);
             this.lbSkype.Name = "lbSkype";
-            this.lbSkype.Size = new System.Drawing.Size(56, 17);
+            this.lbSkype.Size = new System.Drawing.Size(55, 21);
             this.lbSkype.TabIndex = 0;
             this.lbSkype.Text = "Skype:";
             // 
@@ -490,10 +491,10 @@
             this.listSoundüberwachung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.listSoundüberwachung.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ShowPanelAnimator.SetDecoration(this.listSoundüberwachung, BunifuAnimatorNS.DecorationType.None);
-            this.listSoundüberwachung.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listSoundüberwachung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listSoundüberwachung.ForeColor = System.Drawing.Color.White;
             this.listSoundüberwachung.FormattingEnabled = true;
-            this.listSoundüberwachung.ItemHeight = 17;
+            this.listSoundüberwachung.ItemHeight = 21;
             this.listSoundüberwachung.Items.AddRange(new object[] {
             "Chrome",
             "Minecraft 1.9",
@@ -501,18 +502,18 @@
             "Windows Media Player"});
             this.listSoundüberwachung.Location = new System.Drawing.Point(11, 41);
             this.listSoundüberwachung.Name = "listSoundüberwachung";
-            this.listSoundüberwachung.Size = new System.Drawing.Size(429, 68);
+            this.listSoundüberwachung.Size = new System.Drawing.Size(429, 63);
             this.listSoundüberwachung.TabIndex = 2;
             // 
             // lbSound
             // 
             this.lbSound.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbSound, BunifuAnimatorNS.DecorationType.None);
-            this.lbSound.Font = new System.Drawing.Font("Windows Command Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSound.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSound.ForeColor = System.Drawing.Color.White;
             this.lbSound.Location = new System.Drawing.Point(12, 12);
             this.lbSound.Name = "lbSound";
-            this.lbSound.Size = new System.Drawing.Size(356, 17);
+            this.lbSound.Size = new System.Drawing.Size(337, 21);
             this.lbSound.TabIndex = 0;
             this.lbSound.Text = "Diese Programme könnten Sound verursachen:\r\n";
             // 
@@ -520,22 +521,22 @@
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation2;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
@@ -547,6 +548,10 @@
             // 
             this.Mainactor.Interval = 1;
             this.Mainactor.Tick += new System.EventHandler(this.Mainactor_Tick);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             // 
             // Form1
             // 
@@ -596,7 +601,7 @@
         private System.Windows.Forms.Timer MinimaizeAnimation;
         private System.Windows.Forms.Timer MaximaizeAnimation;
         private System.Windows.Forms.Panel panelTimer;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelTimer;
         private System.Windows.Forms.Panel panelOrdner;
         private System.Windows.Forms.Label lbBSpeicherMB;
         private System.Windows.Forms.Label lbBSpeicher;
@@ -626,6 +631,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbGPU;
         private System.Windows.Forms.Timer Mainactor;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

@@ -66,28 +66,24 @@ namespace LetsPlayTool.Dialogs
 
             Stunden = nudTimeHours.Value;
             Minuten = nudTimeMinutes.Value;
-            Sekunden = nudTimeMSeconds.Value;
+            Sekunden = nudTimeSeconds.Value;
             Millisekunden = nudTimeMSeconds.Value;
 
 
             if (checkText.Checked)
             {
                 
-                if (cbFormat.selectedIndex == 0)
-                {
 
                     if(richTextBox1.Text.Length > 212)
                     {
 
                         MessageBox.Show("Ein kleiner Text darf nur 211 Zeichen haben... Wenn du mehr Zeichen benötigst wähle bitte 'Großer Text' aus", "LetsPlayTool - Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        cbFormat.Select();
 
                         DialogResult = DialogResult.None;
                         
 
                     }else
                     {
-                        isBig = false;
                         DialogResult = DialogResult.OK;
 
                     }
@@ -95,7 +91,6 @@ namespace LetsPlayTool.Dialogs
                 }
                 else
                 {
-                    isBig = true;
                     DialogResult = DialogResult.OK;
 
                 }
@@ -103,7 +98,6 @@ namespace LetsPlayTool.Dialogs
                 TimerText = richTextBox1.Text;
 
 
-            }
 
 
 

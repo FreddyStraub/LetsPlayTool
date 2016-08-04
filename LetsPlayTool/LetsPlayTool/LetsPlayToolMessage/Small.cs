@@ -21,7 +21,15 @@ namespace LetsPlayTool.LetsPlayToolMessage
             button1.Text = Text;
 
         }
+        public Small(string Text, Color backColor)
+        {
+            InitializeComponent();
 
+            this.Text = Text;
+            button1.Text = Text;
+            button1.BackColor = backColor;
+
+        }
 
         private void Small_Load(object sender, EventArgs e)
         {
@@ -46,6 +54,9 @@ namespace LetsPlayTool.LetsPlayToolMessage
 
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.1">
-      <HintPath>C:\Users\Freddy Straub\Desktop\Bunifu_UI_v1.1.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Meine Datein\LetsPlayTool\LetsPlayTool\LetsPlayTool\bin\Debug\Bunifu_UI_v1.1.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs">
-      <HintPath>C:\Users\Freddy Straub\Desktop\Ookii.Dialogs.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Meine Datein\LetsPlayTool\LetsPlayTool\LetsPlayTool\bin\Debug\Ookii.Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
