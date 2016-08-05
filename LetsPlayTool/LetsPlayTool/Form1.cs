@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -130,6 +131,11 @@ namespace LetsPlayTool
 
             einstellungen = einstellungen.load();
 
+            selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+
+            unregisterHotKeys();
+            registerHotkeys();
+
             #region Timer
 
             selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
@@ -195,7 +201,7 @@ namespace LetsPlayTool
             frmEinstellungen frmEinstellungen = new frmEinstellungen();
             frmEinstellungen.ShowDialog();
 
-            einstellungen = einstellungen.load();
+            loadSettings();
         }
 
 
@@ -208,7 +214,7 @@ namespace LetsPlayTool
 
         public TimerProfil selectedTimerProfil;
 
-
+        string TimeString = ""; // == Das was im Timer angezeigt wird
 
         private void Mainactor_Tick(object sender, EventArgs e)
         {
@@ -217,7 +223,6 @@ namespace LetsPlayTool
 
             //Macht das die Zeit läuft und angezeigt wird
 
-            string TimeString = ""; // == Das was angezeigt wird
             #region Time
 
             Millisekunden += 1;
@@ -400,6 +405,8 @@ namespace LetsPlayTool
 
             Mainactor.Start();
 
+            einstellungen.SessionValue += 1;
+
             #region Get Times
 
             if (selectedTimerProfil != null)
@@ -425,7 +432,7 @@ namespace LetsPlayTool
         /// </summary>
         private void stopSession()
         {
-
+            createMarkerFile();
             Mainactor.Stop();
 
         }
@@ -478,16 +485,144 @@ namespace LetsPlayTool
 
         }
 
+        #region Hotkeys
+
+        /// <summary>
+        /// Registriert die Hotkeys: Markererstellen, Aufnahmestart - und stop
+        /// </summary>
+        public void registerHotkeys()
+        {
+
+            //MarkerHotkey:
+            RegisterHotKey(this.Handle, 1, getDinger(einstellungen.Marker.MarkerKeyAlt, 
+                einstellungen.Marker.MarkerKeyShift, 
+                einstellungen.Marker.MarkerKeyStrg), 
+                (int)einstellungen.Marker.MarkerKey);
+
+        }
+
+        /// <summary>
+        /// Entregistriert die Hotkeys
+        /// </summary>
+        private void unregisterHotKeys()
+        {
+            UnregisterHotKey(this.Handle, 1); //Makerhotkey
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+
+            //Markerhotkey:
+            if (m.Msg == WM_HOTKEY && (int)m.WParam == 1)
+                makeNewMarker();
+
+            base.WndProc(ref m);
+        }
+
+        [DllImport("user32.dll")]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+        [DllImport("user32.dll")]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        
+        const int MOD_CONTROL = 0x0002;
+        const int MOD_ALT = 0x0001;
+        const int MOD_SHIFT = 0x0004;
+        const int WM_HOTKEY = 0x0312;
+
+        private int getDinger(bool alt, bool strg, bool shift)
+        {
+            int vor = 0;
+
+
+            if (alt == true)
+            {
+                vor += MOD_ALT;
+            }
+            if (shift == true)
+            {
+                vor += MOD_SHIFT;
+            }
+            if (strg == true)
+            {
+                vor += MOD_CONTROL;
+            }
+            return vor;
+
+        }
+
+        #endregion
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
 
 
             //Einstellungen die auf der Mainform gemacht werden können werden hier gespeichert.
+
+            stopSession();
+
             einstellungen.Timer.SelectedTimerProfil = selectedTimerProfil;
 
             einstellungen.save();
 
+            
+            
+            unregisterHotKeys(); //Hotkeys werden wird deregistriert
+
         }
 
+        #region Marker
+
+        public List<string> lMarker = new List<string>();
+
+        /// <summary>
+        /// Erstellt einen neuen Marker bzw. neue Markerliste
+        /// </summary>
+        private void makeNewMarker() 
+        {
+
+            lMarker.Add(TimeString);
+
+        }
+
+        /// <summary>
+        /// KOnvertiert die erstellen Markerdaten in eine Datei
+        /// </summary>
+        private void createMarkerFile()
+        {
+            string FileName = einstellungen.Marker.MarkerSpeicherort + "\\" + DateTime.Now.Year + "_" + DateTime.Now.Month
+                + "_" + DateTime.Now.Day + " " + DateTime.Now.Hour
+                + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second
+                + " Session " + einstellungen.SessionValue;
+
+            if (einstellungen.Marker.MarkerFormat == 0) //Format = .txt
+                {
+
+                    using (System.IO.StreamWriter SW = new System.IO.StreamWriter(@FileName + ".txt", true))
+                    {
+
+                        foreach (string time in lMarker)
+                        {
+
+                            SW.WriteLine();
+                            SW.WriteLine(time);
+
+
+                        }
+                        SW.Dispose();
+                        SW.Close();
+
+                    }
+
+
+                }
+                else
+                {
+                    //Format = .wav
+                }
+
+
+    }
+
+        #endregion
     }
 }

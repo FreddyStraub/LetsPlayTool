@@ -19,6 +19,8 @@ namespace LetsPlayTool
 
         public Einstellungen() { }
 
+        public int SessionValue { get; set; }
+
         /// <summary>
         /// Speicher die Einstellungen
         /// </summary>

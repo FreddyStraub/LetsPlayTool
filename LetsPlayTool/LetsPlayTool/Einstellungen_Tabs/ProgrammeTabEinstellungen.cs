@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LetsPlayTool.Einstellungen_Tabs
 {
@@ -19,7 +20,18 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             foreach (string programm in this.Programme)
             {
-                Process.Start(programm);
+                try {
+
+                    Process.Start(programm);
+
+                }
+                catch
+                {
+
+                    MessageBox.Show(programm + " konnte nicht ausgeführt werden! Überprüfen sie bitte den Pfad!", "LetsPlayTool - File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
             }
 
         }
