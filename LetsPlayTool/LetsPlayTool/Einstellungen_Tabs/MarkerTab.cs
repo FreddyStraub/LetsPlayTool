@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace LetsPlayTool.Einstellungen_Tabs
@@ -53,9 +54,16 @@ namespace LetsPlayTool.Einstellungen_Tabs
         {
             if(fbdSpeicherort.ShowDialog() == DialogResult.OK)
             {
+                if (fbdSpeicherort.SelectedPath.Length > 40)
+                {
+                    int startIndex = fbdSpeicherort.SelectedPath.Length - 40;
+                    tbSpeicherort.Text = "... " + fbdSpeicherort.SelectedPath.Substring(startIndex);
+                }
+                else
+                {
+                    tbSpeicherort.Text = fbdSpeicherort.SelectedPath;
 
-                tbSpeicherort.Text = fbdSpeicherort.SelectedPath;
-
+                }
             }
       
 
@@ -77,5 +85,28 @@ namespace LetsPlayTool.Einstellungen_Tabs
             }
 
         }
+
+        private void bBrowse_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if(e.Button == MouseButtons.Right)
+            {
+
+                Process.Start(tbSpeicherort.Text);
+
+                   }
+        }  //Speicherort öffnen
+
+        private void tbSpeicherort_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+
+                Process.Start(tbSpeicherort.Text);
+
+                   }
+        } //Speicherort öffnen
+
     }
 }
+

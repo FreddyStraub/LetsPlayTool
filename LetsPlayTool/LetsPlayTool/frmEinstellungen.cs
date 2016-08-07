@@ -14,8 +14,11 @@ namespace LetsPlayTool
     public partial class frmEinstellungen : Form
     {
 
-        Einstellungen einstellungen;
-        
+        public Einstellungen einstellungen;
+
+        public TimerProfil selectedTimerProfil { get; set; }
+
+
         public frmEinstellungen()
         {
             InitializeComponent();
@@ -26,15 +29,10 @@ namespace LetsPlayTool
 
             getAllSettings();
 
-            Einstellungen oldSettings = new Einstellungen();
-            oldSettings = oldSettings.load();
-
-            if(!oldSettings.Equals(einstellungen) == true)
-            {
 
                 DialogResult MSG = MessageBox.Show("Änderungen speichern?", "LetsPlayTool, Änderungen speichern?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-                if(MSG != DialogResult.Yes)
+                if(MSG == DialogResult.Yes)
                 {
 
                     einstellungen.save();
@@ -54,14 +52,6 @@ namespace LetsPlayTool
 
                 }
 
-
-            }
-            else
-            {
-                Closeanimation.Start();
-
-            }
-            
         }
 
         private void frmEinstellungen_Load(object sender, EventArgs e)
@@ -334,6 +324,10 @@ namespace LetsPlayTool
         {
 
             getAllSettings();
+
+
+            einstellungen.Timer.SelectedTimerProfil = selectedTimerProfil;
+
 
             einstellungen.save();
             Closeanimation.Start();

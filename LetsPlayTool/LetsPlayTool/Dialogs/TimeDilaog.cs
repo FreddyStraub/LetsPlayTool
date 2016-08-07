@@ -77,7 +77,7 @@ namespace LetsPlayTool.Dialogs
                     if(richTextBox1.Text.Length > 212)
                     {
 
-                        MessageBox.Show("Ein kleiner Text darf nur 211 Zeichen haben... Wenn du mehr Zeichen benötigst wähle bitte 'Großer Text' aus", "LetsPlayTool - Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Ein Text darf nur 211 Zeichen haben... Bitte halte dich kürzer! :P", "LetsPlayTool - Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         DialogResult = DialogResult.None;
                         

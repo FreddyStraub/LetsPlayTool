@@ -63,7 +63,7 @@ namespace LetsPlayTool
         }
 
         #endregion
-        
+
         #region general Animations
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace LetsPlayTool
         int slide = 0;
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+
             ShowPanelsAnimation.Start();
 
             loadSettings();
@@ -133,6 +133,17 @@ namespace LetsPlayTool
 
             selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
 
+            if (einstellungen.Überwachung.ÜberwachungOrdner.Length > 40)
+            {
+                int startIndex = einstellungen.Überwachung.ÜberwachungOrdner.Length - 40;
+                lbPath.Text = "... " + einstellungen.Überwachung.ÜberwachungOrdner.Substring(startIndex);
+            }
+            else
+            {
+                lbPath.Text = einstellungen.Überwachung.ÜberwachungOrdner;
+
+            }
+            
             unregisterHotKeys();
             registerHotkeys();
 
@@ -199,7 +210,9 @@ namespace LetsPlayTool
         private void bSettings_Click(object sender, EventArgs e)
         {
             frmEinstellungen frmEinstellungen = new frmEinstellungen();
+            frmEinstellungen.selectedTimerProfil = selectedTimerProfil;
             frmEinstellungen.ShowDialog();
+
 
             loadSettings();
         }
@@ -210,14 +223,20 @@ namespace LetsPlayTool
         public int Sekunden { get; set; }
         public int Millisekunden { get; set; }
 
-        Stopwatch Timerwatch = new Stopwatch();
-
         public TimerProfil selectedTimerProfil;
 
         string TimeString = ""; // == Das was im Timer angezeigt wird
 
+        static PerformanceCounter cpuCounter; // globaler PerformanceCounter 
+        static PerformanceCounter RAMCounter;
+
+        int MainactorElapsedTicks = 0;
+        int cpuTimervalue = 0;
+
         private void Mainactor_Tick(object sender, EventArgs e)
         {
+
+            MainactorElapsedTicks++;
 
             #region Timer
 
@@ -254,7 +273,7 @@ namespace LetsPlayTool
             string StringMillisekunden = "";
 
             //Stunden
-            if(Stunden < 10)
+            if (Stunden < 10)
             {
                 StringStunden = "0" + Stunden.ToString();
             }
@@ -308,28 +327,91 @@ namespace LetsPlayTool
             #region Message
 
 
-                foreach (Time t in getTimes())
+            foreach (Time t in getTimes())
+            {
+
+
+                #region 0 Time
+
+                if (t.ListViewItem.Text == "00:00:00:00" && TimeString == "00:00:00:01")
+                    showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+
+
+                #endregion
+
+                if (t.ListViewItem.Text == TimeString)
                 {
 
-
-                    #region 0 Time
-
-                    if (t.ListViewItem.Text == "00:00:00:00" && TimeString == "00:00:00:01")
-                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
-
-
-                    #endregion
-
-                    if (t.ListViewItem.Text == TimeString)
+                    if (t.Text != "")
                     {
 
-                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
 
                     }
+                    else
+                    {
 
-                
+                        showSmallMessage(panelTimer, t.ListViewItem.Text, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
+
+                    }
+                }
+
+
 
             }
+            #endregion
+
+            #endregion
+
+            #region Überwachung
+
+            #region Speicher
+
+            System.IO.DriveInfo[] Drives = System.IO.DriveInfo.GetDrives(); // alle Laufwerke auslesen
+
+            string drive = System.IO.Path.GetPathRoot(einstellungen.Überwachung.ÜberwachungOrdner); // = Das laufwerk welches im PFad des Users steht
+
+            long freierSpeicherMB = 0;
+            long belegterSpeicherMB = 0;
+            long freierSpeicherGB = 0;
+            long belegterSpeicherGB = 0;
+
+            foreach (System.IO.DriveInfo d in Drives)
+            {
+                if (d.Name == drive)
+                {
+
+                    freierSpeicherMB = d.TotalFreeSpace / (1024 * 1024);
+                    belegterSpeicherMB = d.TotalSize / (1024 * 1024) - freierSpeicherMB;
+
+                    freierSpeicherGB = d.TotalFreeSpace / (1024 * 1024 * 1024);
+                    belegterSpeicherGB = d.TotalSize / (1024 * 1024 * 1024) - freierSpeicherGB;
+                }
+            }
+
+            //Ausgabe an User
+            lbBSpeicherMB.Text = belegterSpeicherGB.ToString() + "GB";
+            lbFSpeicherMB.Text = freierSpeicherGB.ToString() + "GB";
+
+            toolTip1.SetToolTip(lbBSpeicherMB, belegterSpeicherMB.ToString() + "MB");
+            toolTip1.SetToolTip(lbFSpeicherMB, freierSpeicherMB.ToString() + "MB");
+
+            #endregion
+            
+            #region CPU & RAM
+
+
+            if (MainactorElapsedTicks == cpuTimervalue + 100)
+            {
+
+                lbCPUAuslastung.Text = ((int)cpuCounter.NextValue()).ToString() + "%"; //CPU-Auslastung in Prozent
+                lbRAMUsed.Text = ((int)RAMCounter.NextValue()).ToString() + "MB"; //Verfügbarer RAM in Megabyte
+
+                cpuTimervalue += 100;
+
+            }
+
+
             #endregion
 
             #endregion
@@ -403,26 +485,30 @@ namespace LetsPlayTool
         private void startSession()
         {
 
+            InitialisierePerformanceCounter();
+
             Mainactor.Start();
 
             einstellungen.SessionValue += 1;
 
+            listMarker.Items.Clear();
+
             #region Get Times
 
             if (selectedTimerProfil != null)
-        {
+            {
 
 
-            getTimes();
+                getTimes();
 
-        }
-        else
-        {
+            }
+            else
+            {
 
-            stopSession();
-            showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.Red);
+                stopSession();
+                showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.Red);
 
-        }
+            }
             #endregion
 
         }
@@ -437,6 +523,24 @@ namespace LetsPlayTool
 
         }
 
+        /// <summary>
+        /// INitialisiert den Performencecounter für CPU
+        /// </summary>
+        static void InitialisierePerformanceCounter()
+        {
+            cpuCounter = new PerformanceCounter();
+            cpuCounter.CategoryName = "Processor";
+            cpuCounter.CounterName = "% Processor Time";
+            cpuCounter.InstanceName = "_Total";
+
+            RAMCounter = new PerformanceCounter();
+            RAMCounter.CategoryName = "Memory";
+            RAMCounter.CounterName = "Available MBytes";
+
+
+
+        }  // "_Total" entspricht der gesamten CPU Auslastung, Bei Computern mit mehr als 1 logischem Prozessor: "0" dem ersten Core, "1" dem zweiten...
+
 
         /// <summary>
         /// Listet die Zeiten des aktuellen ´TimerProfiles auf.
@@ -447,12 +551,12 @@ namespace LetsPlayTool
 
             List<Time> Times = new List<Time>();
 
-            foreach(Time t in selectedTimerProfil.Times)
+            foreach (Time t in selectedTimerProfil.Times)
             {
                 Times.Add(t);
             }
 
-                return Times;
+            return Times;
         }
 
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
@@ -478,11 +582,15 @@ namespace LetsPlayTool
             TPA.ShowDialog();
 
 
-            if(TPA.selectedProfil != null)
+            if (TPA.selectedProfil != null)
                 selectedTimerProfil = TPA.selectedProfil;
-            
-            toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
 
+            try
+            {
+
+                toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
+            }
+            catch { }
         }
 
         #region Hotkeys
@@ -494,9 +602,9 @@ namespace LetsPlayTool
         {
 
             //MarkerHotkey:
-            RegisterHotKey(this.Handle, 1, getDinger(einstellungen.Marker.MarkerKeyAlt, 
-                einstellungen.Marker.MarkerKeyShift, 
-                einstellungen.Marker.MarkerKeyStrg), 
+            RegisterHotKey(this.Handle, 1, getDinger(einstellungen.Marker.MarkerKeyAlt,
+                einstellungen.Marker.MarkerKeyShift,
+                einstellungen.Marker.MarkerKeyStrg),
                 (int)einstellungen.Marker.MarkerKey);
 
         }
@@ -523,7 +631,7 @@ namespace LetsPlayTool
         private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
         [DllImport("user32.dll")]
         private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-        
+
         const int MOD_CONTROL = 0x0002;
         const int MOD_ALT = 0x0001;
         const int MOD_SHIFT = 0x0004;
@@ -564,8 +672,8 @@ namespace LetsPlayTool
 
             einstellungen.save();
 
-            
-            
+
+
             unregisterHotKeys(); //Hotkeys werden wird deregistriert
 
         }
@@ -577,10 +685,12 @@ namespace LetsPlayTool
         /// <summary>
         /// Erstellt einen neuen Marker bzw. neue Markerliste
         /// </summary>
-        private void makeNewMarker() 
+        private void makeNewMarker()
         {
 
             lMarker.Add(TimeString);
+            listMarker.Items.Add(TimeString);
+
 
         }
 
@@ -594,7 +704,10 @@ namespace LetsPlayTool
                 + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second
                 + " Session " + einstellungen.SessionValue;
 
-            if (einstellungen.Marker.MarkerFormat == 0) //Format = .txt
+            if (lMarker.Count != 0)
+            {
+
+                if (einstellungen.Marker.MarkerFormat == 0) //Format = .txt
                 {
 
                     using (System.IO.StreamWriter SW = new System.IO.StreamWriter(@FileName + ".txt", true))
@@ -619,9 +732,9 @@ namespace LetsPlayTool
                 {
                     //Format = .wav
                 }
+            }
 
-
-    }
+        }
 
         #endregion
     }

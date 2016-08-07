@@ -55,8 +55,19 @@ namespace LetsPlayTool.Einstellungen_Tabs
             if(fbdAufnahmeordner.ShowDialog() == DialogResult.OK)
             {
 
-                tbAufnahmeordner.Text = fbdAufnahmeordner.SelectedPath;
 
+                if (fbdAufnahmeordner.SelectedPath.Length > 40)
+                {
+                    int startIndex = fbdAufnahmeordner.SelectedPath.Length - 40;
+                    tbAufnahmeordner.Text = "... " + fbdAufnahmeordner.SelectedPath.Substring(startIndex);
+                }
+                else
+                {
+                    tbAufnahmeordner.Text = fbdAufnahmeordner.SelectedPath;
+
+                }
+
+                
             }
 
         }

@@ -61,6 +61,7 @@
             this.tbSpeicherort.ReadOnly = true;
             this.tbSpeicherort.Size = new System.Drawing.Size(516, 25);
             this.tbSpeicherort.TabIndex = 0;
+            this.tbSpeicherort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbSpeicherort_MouseDown);
             // 
             // bBrowse
             // 
@@ -75,6 +76,7 @@
             this.bBrowse.Text = "...";
             this.bBrowse.UseVisualStyleBackColor = false;
             this.bBrowse.Click += new System.EventHandler(this.bBrowse_Click);
+            this.bBrowse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bBrowse_MouseDown);
             // 
             // groupBox1
             // 

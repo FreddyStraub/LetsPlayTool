@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bSettings = new Bunifu.Framework.UI.BunifuImageButton();
@@ -41,8 +41,8 @@
             this.panelTimer = new System.Windows.Forms.Panel();
             this.labelTimer = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelOrdner = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbGPU = new System.Windows.Forms.Label();
+            this.lbRAMUsed = new System.Windows.Forms.Label();
+            this.lbRAM = new System.Windows.Forms.Label();
             this.lbCPUAuslastung = new System.Windows.Forms.Label();
             this.lbCPU = new System.Windows.Forms.Label();
             this.lbBSpeicherMB = new System.Windows.Forms.Label();
@@ -198,8 +198,8 @@
             // 
             this.panelOrdner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelOrdner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelOrdner.Controls.Add(this.label1);
-            this.panelOrdner.Controls.Add(this.lbGPU);
+            this.panelOrdner.Controls.Add(this.lbRAMUsed);
+            this.panelOrdner.Controls.Add(this.lbRAM);
             this.panelOrdner.Controls.Add(this.lbCPUAuslastung);
             this.panelOrdner.Controls.Add(this.lbCPU);
             this.panelOrdner.Controls.Add(this.lbBSpeicherMB);
@@ -216,29 +216,29 @@
             this.panelOrdner.TabIndex = 2;
             this.panelOrdner.Visible = false;
             // 
-            // label1
+            // lbRAMUsed
             // 
-            this.label1.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(200, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "80%";
+            this.lbRAMUsed.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbRAMUsed, BunifuAnimatorNS.DecorationType.None);
+            this.lbRAMUsed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRAMUsed.ForeColor = System.Drawing.Color.White;
+            this.lbRAMUsed.Location = new System.Drawing.Point(371, 101);
+            this.lbRAMUsed.Name = "lbRAMUsed";
+            this.lbRAMUsed.Size = new System.Drawing.Size(41, 21);
+            this.lbRAMUsed.TabIndex = 9;
+            this.lbRAMUsed.Text = "80%";
             // 
-            // lbGPU
+            // lbRAM
             // 
-            this.lbGPU.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.lbGPU, BunifuAnimatorNS.DecorationType.None);
-            this.lbGPU.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGPU.ForeColor = System.Drawing.Color.White;
-            this.lbGPU.Location = new System.Drawing.Point(146, 106);
-            this.lbGPU.Name = "lbGPU";
-            this.lbGPU.Size = new System.Drawing.Size(44, 21);
-            this.lbGPU.TabIndex = 8;
-            this.lbGPU.Text = "GPU:";
+            this.lbRAM.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbRAM, BunifuAnimatorNS.DecorationType.None);
+            this.lbRAM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRAM.ForeColor = System.Drawing.Color.White;
+            this.lbRAM.Location = new System.Drawing.Point(267, 101);
+            this.lbRAM.Name = "lbRAM";
+            this.lbRAM.Size = new System.Drawing.Size(91, 21);
+            this.lbRAM.TabIndex = 8;
+            this.lbRAM.Text = "Freier RAM:";
             // 
             // lbCPUAuslastung
             // 
@@ -246,7 +246,7 @@
             this.ShowPanelAnimator.SetDecoration(this.lbCPUAuslastung, BunifuAnimatorNS.DecorationType.None);
             this.lbCPUAuslastung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPUAuslastung.ForeColor = System.Drawing.Color.White;
-            this.lbCPUAuslastung.Location = new System.Drawing.Point(92, 106);
+            this.lbCPUAuslastung.Location = new System.Drawing.Point(146, 101);
             this.lbCPUAuslastung.Name = "lbCPUAuslastung";
             this.lbCPUAuslastung.Size = new System.Drawing.Size(41, 21);
             this.lbCPUAuslastung.TabIndex = 7;
@@ -258,7 +258,7 @@
             this.ShowPanelAnimator.SetDecoration(this.lbCPU, BunifuAnimatorNS.DecorationType.None);
             this.lbCPU.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPU.ForeColor = System.Drawing.Color.White;
-            this.lbCPU.Location = new System.Drawing.Point(38, 106);
+            this.lbCPU.Location = new System.Drawing.Point(92, 101);
             this.lbCPU.Name = "lbCPU";
             this.lbCPU.Size = new System.Drawing.Size(43, 21);
             this.lbCPU.TabIndex = 6;
@@ -270,7 +270,7 @@
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicherMB, BunifuAnimatorNS.DecorationType.None);
             this.lbBSpeicherMB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicherMB.ForeColor = System.Drawing.Color.White;
-            this.lbBSpeicherMB.Location = new System.Drawing.Point(267, 74);
+            this.lbBSpeicherMB.Location = new System.Drawing.Point(267, 70);
             this.lbBSpeicherMB.Name = "lbBSpeicherMB";
             this.lbBSpeicherMB.Size = new System.Drawing.Size(69, 21);
             this.lbBSpeicherMB.TabIndex = 5;
@@ -282,7 +282,7 @@
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicher, BunifuAnimatorNS.DecorationType.None);
             this.lbBSpeicher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicher.ForeColor = System.Drawing.Color.White;
-            this.lbBSpeicher.Location = new System.Drawing.Point(92, 73);
+            this.lbBSpeicher.Location = new System.Drawing.Point(92, 69);
             this.lbBSpeicher.Name = "lbBSpeicher";
             this.lbBSpeicher.Size = new System.Drawing.Size(134, 21);
             this.lbBSpeicher.TabIndex = 4;
@@ -294,7 +294,7 @@
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicherMB, BunifuAnimatorNS.DecorationType.None);
             this.lbFSpeicherMB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicherMB.ForeColor = System.Drawing.Color.White;
-            this.lbFSpeicherMB.Location = new System.Drawing.Point(267, 44);
+            this.lbFSpeicherMB.Location = new System.Drawing.Point(267, 40);
             this.lbFSpeicherMB.Name = "lbFSpeicherMB";
             this.lbFSpeicherMB.Size = new System.Drawing.Size(69, 21);
             this.lbFSpeicherMB.TabIndex = 3;
@@ -306,7 +306,7 @@
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicher, BunifuAnimatorNS.DecorationType.None);
             this.lbFSpeicher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicher.ForeColor = System.Drawing.Color.White;
-            this.lbFSpeicher.Location = new System.Drawing.Point(92, 44);
+            this.lbFSpeicher.Location = new System.Drawing.Point(92, 40);
             this.lbFSpeicher.Name = "lbFSpeicher";
             this.lbFSpeicher.Size = new System.Drawing.Size(117, 21);
             this.lbFSpeicher.TabIndex = 2;
@@ -320,9 +320,10 @@
             this.lbPath.ForeColor = System.Drawing.Color.White;
             this.lbPath.Location = new System.Drawing.Point(92, 12);
             this.lbPath.Name = "lbPath";
-            this.lbPath.Size = new System.Drawing.Size(216, 21);
+            this.lbPath.Size = new System.Drawing.Size(328, 21);
             this.lbPath.TabIndex = 1;
-            this.lbPath.Text = "D:\\OpenTools V2.0\\Aufnahme";
+            this.lbPath.Text = "D:\\OpenTools V2.0\\Aufnahmeaaaaaaaaaaaaaa";
+            this.lbPath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbOrdner
             // 
@@ -359,12 +360,6 @@
             this.listMarker.ForeColor = System.Drawing.Color.White;
             this.listMarker.FormattingEnabled = true;
             this.listMarker.ItemHeight = 21;
-            this.listMarker.Items.AddRange(new object[] {
-            "00:20:25:15",
-            "",
-            "00:50:50:50",
-            "",
-            "01:23:80:21"});
             this.listMarker.Location = new System.Drawing.Point(94, 12);
             this.listMarker.Name = "listMarker";
             this.listMarker.Size = new System.Drawing.Size(323, 126);
@@ -521,22 +516,22 @@
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation1;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
@@ -629,8 +624,8 @@
         private System.Windows.Forms.Timer ShowPanelsAnimation;
         private Bunifu.Framework.UI.BunifuImageButton bOpenPrograms;
         private Bunifu.Framework.UI.BunifuImageButton bSettings;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbGPU;
+        private System.Windows.Forms.Label lbRAMUsed;
+        private System.Windows.Forms.Label lbRAM;
         private System.Windows.Forms.Timer Mainactor;
         private System.Windows.Forms.ToolTip toolTip1;
     }
