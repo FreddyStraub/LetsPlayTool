@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.3">
-      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.1">
+      <HintPath>..\..\..\..\..\Documents\Meine Datein\LetsPlayTool\LetsPlayTool\LetsPlayTool\bin\Debug\Bunifu_UI_v1.1.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs">
       <HintPath>..\..\..\..\..\Documents\Meine Datein\LetsPlayTool\LetsPlayTool\LetsPlayTool\bin\Debug\Ookii.Dialogs.dll</HintPath>

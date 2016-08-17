@@ -115,11 +115,9 @@
             this.Controls.Add(this.bunifuCards1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
             this.Name = "frmTimerprofilAuswahl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmTimerprofilAuswahl";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTimerprofilAuswahl_KeyDown);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();

@@ -34,10 +34,12 @@
             this.tbAufnahmeordner = new System.Windows.Forms.TextBox();
             this.bBrowse = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbFRam = new System.Windows.Forms.Label();
-            this.switchRAM = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.label4 = new System.Windows.Forms.Label();
+            this.switchGPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label2 = new System.Windows.Forms.Label();
             this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.label3 = new System.Windows.Forms.Label();
+            this.switchSpeicherplatz = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pbDiscord = new System.Windows.Forms.PictureBox();
             this.pbTeamspeak = new System.Windows.Forms.PictureBox();
@@ -86,7 +88,6 @@
             this.tbAufnahmeordner.ReadOnly = true;
             this.tbAufnahmeordner.Size = new System.Drawing.Size(486, 25);
             this.tbAufnahmeordner.TabIndex = 3;
-            this.tbAufnahmeordner.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbAufnahmeordner_MouseDown);
             // 
             // bBrowse
             // 
@@ -101,14 +102,15 @@
             this.bBrowse.Text = "...";
             this.bBrowse.UseVisualStyleBackColor = false;
             this.bBrowse.Click += new System.EventHandler(this.bBrowse_Click);
-            this.bBrowse.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bBrowse_MouseDown);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lbFRam);
-            this.groupBox2.Controls.Add(this.switchRAM);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.switchGPU);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.switchCPU);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.switchSpeicherplatz);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(13, 94);
             this.groupBox2.Name = "groupBox2";
@@ -117,35 +119,35 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Anzeige";
             // 
-            // lbFRam
+            // label4
             // 
-            this.lbFRam.AutoSize = true;
-            this.lbFRam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFRam.Location = new System.Drawing.Point(122, 40);
-            this.lbFRam.Name = "lbFRam";
-            this.lbFRam.Size = new System.Drawing.Size(76, 16);
-            this.lbFRam.TabIndex = 12;
-            this.lbFRam.Text = "Freier RAM";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(310, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 16);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "GPU";
             // 
-            // switchRAM
+            // switchGPU
             // 
-            this.switchRAM.BackColor = System.Drawing.Color.Transparent;
-            this.switchRAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchRAM.BackgroundImage")));
-            this.switchRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchRAM.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchRAM.Location = new System.Drawing.Point(204, 37);
-            this.switchRAM.Name = "switchRAM";
-            this.switchRAM.OffColor = System.Drawing.Color.Gray;
-            this.switchRAM.OnColor = System.Drawing.Color.DodgerBlue;
-            this.switchRAM.Size = new System.Drawing.Size(43, 25);
-            this.switchRAM.TabIndex = 11;
-            this.switchRAM.Value = true;
+            this.switchGPU.BackColor = System.Drawing.Color.Transparent;
+            this.switchGPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchGPU.BackgroundImage")));
+            this.switchGPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchGPU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchGPU.Location = new System.Drawing.Point(357, 37);
+            this.switchGPU.Name = "switchGPU";
+            this.switchGPU.OffColor = System.Drawing.Color.Gray;
+            this.switchGPU.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchGPU.Size = new System.Drawing.Size(43, 25);
+            this.switchGPU.TabIndex = 11;
+            this.switchGPU.Value = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 40);
+            this.label2.Location = new System.Drawing.Point(185, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 10;
@@ -157,13 +159,37 @@
             this.switchCPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchCPU.BackgroundImage")));
             this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchCPU.Location = new System.Drawing.Point(57, 37);
+            this.switchCPU.Location = new System.Drawing.Point(229, 37);
             this.switchCPU.Name = "switchCPU";
             this.switchCPU.OffColor = System.Drawing.Color.Gray;
             this.switchCPU.OnColor = System.Drawing.Color.DodgerBlue;
             this.switchCPU.Size = new System.Drawing.Size(43, 25);
             this.switchCPU.TabIndex = 9;
             this.switchCPU.Value = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Speicherplatz";
+            // 
+            // switchSpeicherplatz
+            // 
+            this.switchSpeicherplatz.BackColor = System.Drawing.Color.Transparent;
+            this.switchSpeicherplatz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchSpeicherplatz.BackgroundImage")));
+            this.switchSpeicherplatz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchSpeicherplatz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchSpeicherplatz.Location = new System.Drawing.Point(106, 37);
+            this.switchSpeicherplatz.Name = "switchSpeicherplatz";
+            this.switchSpeicherplatz.OffColor = System.Drawing.Color.Gray;
+            this.switchSpeicherplatz.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchSpeicherplatz.Size = new System.Drawing.Size(43, 25);
+            this.switchSpeicherplatz.TabIndex = 7;
+            this.switchSpeicherplatz.Value = true;
             // 
             // groupBox3
             // 
@@ -239,8 +265,10 @@
         private System.Windows.Forms.TextBox tbAufnahmeordner;
         private System.Windows.Forms.Button bBrowse;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lbFRam;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switchRAM;
+        private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchSpeicherplatz;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchGPU;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchCPU;
         private System.Windows.Forms.GroupBox groupBox3;

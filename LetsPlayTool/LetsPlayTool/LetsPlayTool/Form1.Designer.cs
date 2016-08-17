@@ -215,7 +215,6 @@
             this.panelOrdner.Size = new System.Drawing.Size(445, 133);
             this.panelOrdner.TabIndex = 2;
             this.panelOrdner.Visible = false;
-            this.panelOrdner.Paint += new System.Windows.Forms.PaintEventHandler(this.panelOrdner_Paint);
             // 
             // lbRAMUsed
             // 
@@ -223,11 +222,11 @@
             this.ShowPanelAnimator.SetDecoration(this.lbRAMUsed, BunifuAnimatorNS.DecorationType.None);
             this.lbRAMUsed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRAMUsed.ForeColor = System.Drawing.Color.White;
-            this.lbRAMUsed.Location = new System.Drawing.Point(355, 101);
+            this.lbRAMUsed.Location = new System.Drawing.Point(371, 101);
             this.lbRAMUsed.Name = "lbRAMUsed";
-            this.lbRAMUsed.Size = new System.Drawing.Size(19, 21);
+            this.lbRAMUsed.Size = new System.Drawing.Size(41, 21);
             this.lbRAMUsed.TabIndex = 9;
-            this.lbRAMUsed.Text = "...";
+            this.lbRAMUsed.Text = "80%";
             // 
             // lbRAM
             // 
@@ -247,11 +246,11 @@
             this.ShowPanelAnimator.SetDecoration(this.lbCPUAuslastung, BunifuAnimatorNS.DecorationType.None);
             this.lbCPUAuslastung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPUAuslastung.ForeColor = System.Drawing.Color.White;
-            this.lbCPUAuslastung.Location = new System.Drawing.Point(133, 101);
+            this.lbCPUAuslastung.Location = new System.Drawing.Point(146, 101);
             this.lbCPUAuslastung.Name = "lbCPUAuslastung";
-            this.lbCPUAuslastung.Size = new System.Drawing.Size(19, 21);
+            this.lbCPUAuslastung.Size = new System.Drawing.Size(41, 21);
             this.lbCPUAuslastung.TabIndex = 7;
-            this.lbCPUAuslastung.Text = "...";
+            this.lbCPUAuslastung.Text = "80%";
             // 
             // lbCPU
             // 

@@ -14,7 +14,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
         public bool ÜShowSpeicherort;
         public bool ÜShowCPU;
-        public bool ÜShowRAM;
+        public bool ÜShowGPU;
         
 
     }

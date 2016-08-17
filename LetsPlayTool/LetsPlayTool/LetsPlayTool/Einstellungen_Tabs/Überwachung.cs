@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +27,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             tbAufnahmeordner.Text = Settings.ÜberwachungOrdner;
 
             switchCPU.Value = Settings.ÜShowCPU;
-            switchRAM.Value = Settings.ÜShowRAM;
+            switchGPU.Value = Settings.ÜShowGPU;
+            switchSpeicherplatz.Value = Settings.ÜShowSpeicherort;
 
         }
 
@@ -43,8 +43,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             newSettings.ÜberwachungOrdner = tbAufnahmeordner.Text;
 
             newSettings.ÜShowCPU = switchCPU.Value;
-            newSettings.ÜShowRAM = switchRAM.Value;
-
+            newSettings.ÜShowGPU = switchGPU.Value;
+            newSettings.ÜShowSpeicherort = switchSpeicherplatz.Value;
 
             return newSettings;
         }
@@ -69,23 +69,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                 
             }
-
-        }
-
-        private void tbAufnahmeordner_MouseDown(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Right)
-            {
-
-                try { Process.Start(tbAufnahmeordner.Text); } catch { }
-
-            }
-        }
-
-        private void bBrowse_MouseDown(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Right)
-                try { Process.Start(tbAufnahmeordner.Text); } catch { }
 
         }
     }

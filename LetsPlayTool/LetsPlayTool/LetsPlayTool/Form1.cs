@@ -116,7 +116,7 @@ namespace LetsPlayTool
         int slide = 0;
         private void frmMain_Load(object sender, EventArgs e)
         {
-             
+
             ShowPanelsAnimation.Start();
 
             loadSettings();
@@ -131,10 +131,6 @@ namespace LetsPlayTool
 
             einstellungen = einstellungen.load();
 
-
-
-            #region Überwachung
-
             selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
 
             if (einstellungen.Überwachung.ÜberwachungOrdner.Length > 40)
@@ -147,45 +143,7 @@ namespace LetsPlayTool
                 lbPath.Text = einstellungen.Überwachung.ÜberwachungOrdner;
 
             }
-
-
-            #region CPU
-
-            if (einstellungen.Überwachung.ÜShowCPU == true)
-            {
-
-                lbCPU.Visible = true;
-                lbCPUAuslastung.Visible = true;
-
-            }else
-            {
-                lbCPU.Visible = false;
-                lbCPUAuslastung.Visible = false;
-
-            }
-
-            #endregion
-            #region RAM
-
-            if (einstellungen.Überwachung.ÜShowRAM == true)
-            {
-
-                lbRAM.Visible = true;
-                lbRAMUsed.Visible = true;
-
-            }
-            else
-            {
-                lbRAM.Visible = false;
-                lbRAMUsed.Visible = false;
-
-            }
-
-
-            #endregion
-
-            #endregion
-
+            
             unregisterHotKeys();
             registerHotkeys();
 
@@ -358,6 +316,8 @@ namespace LetsPlayTool
             #endregion
 
             TimeString = StringStunden + ":" + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
+
+
 
             labelTimer.Text = TimeString;
             #endregion // Mácht das der Timer 
@@ -777,12 +737,5 @@ namespace LetsPlayTool
         }
 
         #endregion
-
-        private void panelOrdner_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
     }
 }
