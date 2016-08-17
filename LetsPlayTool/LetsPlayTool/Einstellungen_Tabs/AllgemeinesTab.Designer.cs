@@ -45,6 +45,10 @@
             this.switchIErinerrungen = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.tbIErinerrungen = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkÜFensterCPU = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbCPU = new System.Windows.Forms.Label();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbHotkey.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelÜFensterSettings.SuspendLayout();
@@ -145,6 +149,10 @@
             // 
             // panelÜFensterSettings
             // 
+            this.panelÜFensterSettings.Controls.Add(this.bunifuCheckbox1);
+            this.panelÜFensterSettings.Controls.Add(this.label5);
+            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterCPU);
+            this.panelÜFensterSettings.Controls.Add(this.lbCPU);
             this.panelÜFensterSettings.Controls.Add(this.checkÜFensterTimer);
             this.panelÜFensterSettings.Controls.Add(this.label4);
             this.panelÜFensterSettings.Location = new System.Drawing.Point(61, 57);
@@ -252,6 +260,52 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
             // 
+            // checkÜFensterCPU
+            // 
+            this.checkÜFensterCPU.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterCPU.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkÜFensterCPU.Checked = true;
+            this.checkÜFensterCPU.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterCPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkÜFensterCPU.ForeColor = System.Drawing.Color.White;
+            this.checkÜFensterCPU.Location = new System.Drawing.Point(113, 13);
+            this.checkÜFensterCPU.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkÜFensterCPU.Name = "checkÜFensterCPU";
+            this.checkÜFensterCPU.Size = new System.Drawing.Size(20, 20);
+            this.checkÜFensterCPU.TabIndex = 20;
+            // 
+            // lbCPU
+            // 
+            this.lbCPU.AutoSize = true;
+            this.lbCPU.Location = new System.Drawing.Point(136, 17);
+            this.lbCPU.Name = "lbCPU";
+            this.lbCPU.Size = new System.Drawing.Size(75, 13);
+            this.lbCPU.TabIndex = 21;
+            this.lbCPU.Text = "CPU anzeigen";
+            // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.Checked = true;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuCheckbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(213, 13);
+            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox1.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(236, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Freier RAM";
+            // 
             // AllgemeinesTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +350,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bAufnhameStart;
         private System.Windows.Forms.Button bAufnhameStop;
+        private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterCPU;
+        private System.Windows.Forms.Label lbCPU;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private System.Windows.Forms.Label label5;
     }
 }

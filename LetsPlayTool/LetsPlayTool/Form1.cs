@@ -40,6 +40,9 @@ namespace LetsPlayTool
             MaximaizeAnimation.Start();
             einstellungen = einstellungen.load();
 
+
+
+
         }
 
 
@@ -251,6 +254,7 @@ namespace LetsPlayTool
 
         private void bSettings_Click(object sender, EventArgs e)
         {
+
             frmEinstellungen frmEinstellungen = new frmEinstellungen();
             frmEinstellungen.selectedTimerProfil = selectedTimerProfil;
             frmEinstellungen.ShowDialog();
@@ -359,6 +363,8 @@ namespace LetsPlayTool
 
             TimeString = StringStunden + ":" + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
 
+            frmÜFenster.Text = TimeString;
+
             labelTimer.Text = TimeString;
             #endregion // Mácht das der Timer 
 
@@ -449,10 +455,16 @@ namespace LetsPlayTool
 
                 cpuTimervalue += 100;
 
+                //ÜFenster
+                frmÜFenster.lbCPUAuslastung.Text = lbCPUAuslastung.Text;
+                frmÜFenster.lbRAMUsed.Text = lbRAMUsed.Text;
+
+
             }
 
 
             #endregion
+
 
             #endregion
         }
@@ -519,11 +531,14 @@ namespace LetsPlayTool
 
         #endregion
 
+        frmÜFenster frmÜFenster = new frmÜFenster();
+
         /// <summary>
         /// Startet die Session und alle Funktionen.
         /// </summary>
         private void startSession()
         {
+
 
             InitialisierePerformanceCounter();
 
@@ -532,6 +547,9 @@ namespace LetsPlayTool
             einstellungen.SessionValue += 1;
 
             listMarker.Items.Clear();
+
+            if(einstellungen.Allgemeines.ShowÜFenster)
+                frmÜFenster.Show();
 
             #region Get Times
 
@@ -777,11 +795,6 @@ namespace LetsPlayTool
         }
 
         #endregion
-
-        private void panelOrdner_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
 
     }
