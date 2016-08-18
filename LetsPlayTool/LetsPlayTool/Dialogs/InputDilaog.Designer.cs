@@ -102,6 +102,7 @@
             this.bFertig.Iconimage_right = null;
             this.bFertig.Iconimage_right_Selected = null;
             this.bFertig.Iconimage_Selected = null;
+            this.bFertig.IconZoom = 100D;
             this.bFertig.IsTab = false;
             this.bFertig.Location = new System.Drawing.Point(321, 104);
             this.bFertig.Name = "bFertig";
@@ -128,6 +129,7 @@
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
+            this.bAbbrechen.IconZoom = 100D;
             this.bAbbrechen.IsTab = false;
             this.bAbbrechen.Location = new System.Drawing.Point(439, 104);
             this.bAbbrechen.Name = "bAbbrechen";

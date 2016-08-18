@@ -137,7 +137,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmÜFenster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmÜFenster";
+            this.Text = "00:00:00:00";
             this.Activated += new System.EventHandler(this.frmÜFenster_Activated);
             this.TextChanged += new System.EventHandler(this.frmÜFenster_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();

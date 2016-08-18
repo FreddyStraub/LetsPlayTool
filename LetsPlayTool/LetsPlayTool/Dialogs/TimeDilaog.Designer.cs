@@ -162,6 +162,7 @@
             this.bFarbe.Iconimage_right = null;
             this.bFarbe.Iconimage_right_Selected = null;
             this.bFarbe.Iconimage_Selected = null;
+            this.bFarbe.IconZoom = 90D;
             this.bFarbe.IsTab = false;
             this.bFarbe.Location = new System.Drawing.Point(12, 120);
             this.bFarbe.Name = "bFarbe";
@@ -189,6 +190,7 @@
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
+            this.bAbbrechen.IconZoom = 100D;
             this.bAbbrechen.IsTab = false;
             this.bAbbrechen.Location = new System.Drawing.Point(215, 338);
             this.bAbbrechen.Name = "bAbbrechen";
@@ -215,6 +217,7 @@
             this.bFertig.Iconimage_right = null;
             this.bFertig.Iconimage_right_Selected = null;
             this.bFertig.Iconimage_Selected = null;
+            this.bFertig.IconZoom = 100D;
             this.bFertig.IsTab = false;
             this.bFertig.Location = new System.Drawing.Point(86, 338);
             this.bFertig.Name = "bFertig";

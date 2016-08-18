@@ -133,8 +133,7 @@ namespace LetsPlayTool
         {
 
             einstellungen = einstellungen.load();
-
-
+            
 
             #region Überwachung
 
@@ -188,6 +187,17 @@ namespace LetsPlayTool
             #endregion
 
             #endregion
+
+            if (einstellungen.Allgemeines.ShowÜFenster == true)
+            {
+
+                bShowÜFenster.Visible = true;
+
+            }else
+            {
+                bShowÜFenster.Visible = false;
+
+            }
 
             unregisterHotKeys();
             registerHotkeys();
@@ -450,8 +460,11 @@ namespace LetsPlayTool
             if (MainactorElapsedTicks == cpuTimervalue + 100)
             {
 
-                lbCPUAuslastung.Text = ((int)cpuCounter.NextValue()).ToString() + "%"; //CPU-Auslastung in Prozent
-                lbRAMUsed.Text = ((int)RAMCounter.NextValue()).ToString() + "MB"; //Verfügbarer RAM in Megabyte
+                int cpuAuslastung = (int)cpuCounter.NextValue();
+                int freierRAM = (int)RAMCounter.NextValue();
+
+                lbCPUAuslastung.Text = cpuAuslastung.ToString() + "%"; //CPU-Auslastung in Prozent
+                lbRAMUsed.Text = freierRAM.ToString() + "MB"; //Verfügbarer RAM in Megabyte
 
                 cpuTimervalue += 100;
 
@@ -460,6 +473,43 @@ namespace LetsPlayTool
                 frmÜFenster.lbRAMUsed.Text = lbRAMUsed.Text;
 
 
+                #region Desgin
+
+                //CPU
+                if(cpuAuslastung > 50 & cpuAuslastung < 80)
+                {
+                    lbCPUAuslastung.BackColor = Color.Yellow;
+                    frmÜFenster.lbCPUAuslastung.BackColor = Color.Yellow;
+
+                }else if(cpuAuslastung > 80)
+                {
+                    lbCPUAuslastung.BackColor = Color.Red;
+                    frmÜFenster.lbCPUAuslastung.BackColor = Color.Red;
+                }else
+                {
+                    lbCPUAuslastung.BackColor = Color.FromArgb(38,38,38);
+                    frmÜFenster.lbCPUAuslastung.BackColor = Color.FromArgb(38, 38, 38);
+                }
+
+                //Freier RAM
+                if (freierRAM > 200 & freierRAM < 800)
+                {
+                    lbRAMUsed.BackColor = Color.Yellow;
+                    frmÜFenster.lbRAMUsed.BackColor = Color.Yellow;
+
+                }
+                else if (freierRAM < 200)
+                {
+                    lbRAMUsed.BackColor = Color.Red;
+                    frmÜFenster.lbRAMUsed.BackColor = Color.Red;
+                }
+                else
+                {
+                    lbRAMUsed.BackColor = Color.FromArgb(38, 38, 38);
+                    frmÜFenster.lbRAMUsed.BackColor = Color.FromArgb(38, 38, 38);
+                }
+                #endregion
+
             }
 
 
@@ -467,6 +517,7 @@ namespace LetsPlayTool
 
 
             #endregion
+
         }
 
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
@@ -531,7 +582,7 @@ namespace LetsPlayTool
 
         #endregion
 
-        frmÜFenster frmÜFenster = new frmÜFenster();
+        frmÜFenster frmÜFenster = new frmÜFenster(); //Kleiner Überwachungsfenster
 
         /// <summary>
         /// Startet die Session und alle Funktionen.
@@ -794,8 +845,15 @@ namespace LetsPlayTool
 
         }
 
+
         #endregion
 
+        private void bOpenÜFenster_Click(object sender, EventArgs e)
+        {
+            frmÜFenster.Close();
+            frmÜFenster = new frmÜFenster();
+            frmÜFenster.Show();
 
+        }
     }
 }

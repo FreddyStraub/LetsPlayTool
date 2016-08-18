@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bSettings = new Bunifu.Framework.UI.BunifuImageButton();
@@ -68,6 +68,7 @@
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.bShowÜFenster = new Bunifu.Framework.UI.BunifuImageButton();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).BeginInit();
@@ -78,11 +79,13 @@
             this.panelMarker.SuspendLayout();
             this.panelÜberwachung.SuspendLayout();
             this.panelSoundÜberwachung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderBar
             // 
             this.HeaderBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.HeaderBar.Controls.Add(this.bShowÜFenster);
             this.HeaderBar.Controls.Add(this.bSettings);
             this.HeaderBar.Controls.Add(this.bOpenPrograms);
             this.HeaderBar.Controls.Add(this.bunifuImageButton2);
@@ -183,6 +186,7 @@
             // labelTimer
             // 
             this.labelTimer.AutoSize = true;
+            this.labelTimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ShowPanelAnimator.SetDecoration(this.labelTimer, BunifuAnimatorNS.DecorationType.None);
             this.labelTimer.Font = new System.Drawing.Font("Segoe UI", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTimer.ForeColor = System.Drawing.Color.White;
@@ -324,6 +328,7 @@
             this.lbPath.TabIndex = 1;
             this.lbPath.Text = "D:\\OpenTools V2.0\\Aufnahmeaaaaaaaaaaaaaa";
             this.lbPath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lbPath, "Überwachungsordner");
             // 
             // lbOrdner
             // 
@@ -364,6 +369,7 @@
             this.listMarker.Name = "listMarker";
             this.listMarker.Size = new System.Drawing.Size(323, 126);
             this.listMarker.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.listMarker, "Erstellte Marker in dieser Session");
             // 
             // lbMarker
             // 
@@ -406,6 +412,7 @@
             this.lbTeamspeakStatus.Size = new System.Drawing.Size(17, 21);
             this.lbTeamspeakStatus.TabIndex = 5;
             this.lbTeamspeakStatus.Text = "?";
+            this.toolTip1.SetToolTip(this.lbTeamspeakStatus, "Status");
             // 
             // lbDiscordSMStatus
             // 
@@ -418,6 +425,7 @@
             this.lbDiscordSMStatus.Size = new System.Drawing.Size(32, 21);
             this.lbDiscordSMStatus.TabIndex = 4;
             this.lbDiscordSMStatus.Text = "Off";
+            this.toolTip1.SetToolTip(this.lbDiscordSMStatus, "Status");
             // 
             // lbSkypeStatus
             // 
@@ -430,6 +438,7 @@
             this.lbSkypeStatus.Size = new System.Drawing.Size(56, 21);
             this.lbSkypeStatus.TabIndex = 3;
             this.lbSkypeStatus.Text = "Online";
+            this.toolTip1.SetToolTip(this.lbSkypeStatus, "Status");
             // 
             // lbDiscordSM
             // 
@@ -516,22 +525,22 @@
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation2;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation3;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
@@ -547,6 +556,22 @@
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            // 
+            // bShowÜFenster
+            // 
+            this.bShowÜFenster.BackColor = System.Drawing.Color.Transparent;
+            this.ShowPanelAnimator.SetDecoration(this.bShowÜFenster, BunifuAnimatorNS.DecorationType.None);
+            this.bShowÜFenster.Image = ((System.Drawing.Image)(resources.GetObject("bShowÜFenster.Image")));
+            this.bShowÜFenster.ImageActive = null;
+            this.bShowÜFenster.Location = new System.Drawing.Point(94, 12);
+            this.bShowÜFenster.Name = "bShowÜFenster";
+            this.bShowÜFenster.Size = new System.Drawing.Size(35, 35);
+            this.bShowÜFenster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bShowÜFenster.TabIndex = 5;
+            this.bShowÜFenster.TabStop = false;
+            this.toolTip1.SetToolTip(this.bShowÜFenster, "Überwachungsfenster anzeigen");
+            this.bShowÜFenster.Zoom = 5;
+            this.bShowÜFenster.Click += new System.EventHandler(this.bOpenÜFenster_Click);
             // 
             // Form1
             // 
@@ -585,6 +610,7 @@
             this.panelÜberwachung.PerformLayout();
             this.panelSoundÜberwachung.ResumeLayout(false);
             this.panelSoundÜberwachung.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -628,6 +654,7 @@
         private System.Windows.Forms.Label lbRAM;
         private System.Windows.Forms.Timer Mainactor;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Bunifu.Framework.UI.BunifuImageButton bShowÜFenster;
     }
 }
 

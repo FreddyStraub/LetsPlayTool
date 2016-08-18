@@ -30,6 +30,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             switchÜFenster.Value = Settings.ShowÜFenster;
             checkÜFensterTimer.Checked = Settings.ShowÜFensterTimer;
+            checkÜFensterCPU.Checked = Settings.ShowÜFensterCPU;
+            checkÜFensterRAM.Checked = Settings.ShowÜFensterRAM;
 
             switchIErinerrungen.Value = Settings.ShowIErinerrung;
             tbIErinerrungen.Text = Settings.Erinerrungen;
@@ -49,6 +51,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             newSettings.ShowÜFenster = switchÜFenster.Value;
             newSettings.ShowÜFensterTimer = checkÜFensterTimer.Checked;
+            newSettings.ShowÜFensterCPU = checkÜFensterCPU.Checked;
+            newSettings.ShowÜFensterRAM= checkÜFensterRAM.Checked;
 
             newSettings.ShowIErinerrung = switchIErinerrungen.Value;
             newSettings.Erinerrungen = tbIErinerrungen.Text;
@@ -83,6 +87,38 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private void bAufnhameStart_Click(object sender, EventArgs e)
         {
             bAufnhameStart.Text = "...";
+
+        }
+
+        private void switchÜFenster_OnValueChange(object sender, EventArgs e)
+        {
+
+            if(switchÜFenster.Value == true)
+            {
+                panelÜFensterSettings.Enabled = true;
+
+            }else
+            {
+
+                panelÜFensterSettings.Enabled = false;
+
+            }
+
+        }
+
+        private void switchIErinerrungen_OnValueChange(object sender, EventArgs e)
+        {
+
+            if(switchIErinerrungen.Value == true)
+            {
+                tbIErinerrungen.Enabled = true;
+
+            }else
+            {
+
+                tbIErinerrungen.Enabled = false;
+
+            }
 
         }
     }

@@ -48,8 +48,54 @@ namespace LetsPlayTool
 
             lbTimer.Text = Text;
             TopMost = true;
-            
 
+
+            #region Design
+
+            //CPU
+            if(einstellungen.Allgemeines.ShowÜFensterCPU == true)
+            {
+
+                lbCPU.Visible = true;
+                lbCPUAuslastung.Visible = true;
+
+            }else
+            {
+                lbCPU.Visible = false;
+                lbCPUAuslastung.Visible = false;
+                
+            }
+
+            //RAM
+            if (einstellungen.Allgemeines.ShowÜFensterRAM == true)
+            {
+
+                lbRAM.Visible = true;
+                lbRAMUsed.Visible = true;
+
+            }
+            else
+            {
+                lbRAM.Visible = false;
+                lbRAMUsed.Visible = false;
+
+            }
+
+
+            //TIMER
+            if (einstellungen.Allgemeines.ShowÜFensterTimer == true)
+            {
+
+                lbTimer.Visible = true;
+
+            }
+            else
+            {
+                lbTimer.Visible = false;
+
+            }
+
+            #endregion
         }
 
         private void frmÜFenster_TextChanged(object sender, EventArgs e)
