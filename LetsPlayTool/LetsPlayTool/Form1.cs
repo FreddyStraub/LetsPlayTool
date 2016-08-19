@@ -46,6 +46,8 @@ namespace LetsPlayTool
         }
 
 
+        
+
         #region Move Form
 
         private Point mouseposition;
@@ -289,8 +291,12 @@ namespace LetsPlayTool
         int MainactorElapsedTicks = 0;
         int cpuTimervalue = 0;
 
+        Point ÜFensterLocation = new Point();
+
         private void Mainactor_Tick(object sender, EventArgs e)
         {
+
+            ÜFensterLocation = frmÜFenster.Location;
 
             MainactorElapsedTicks++;
 
@@ -402,12 +408,14 @@ namespace LetsPlayTool
                     {
 
                         showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
+                        frmÜFenster.showMessage(t.Text, t.ListViewItem.BackColor, 3);
 
                     }
                     else
                     {
 
                         showSmallMessage(panelTimer, t.ListViewItem.Text, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
+                        frmÜFenster.showMessage(t.ListViewItem.Text, t.ListViewItem.BackColor, 3);
 
                     }
                 }
@@ -485,7 +493,8 @@ namespace LetsPlayTool
                 {
                     lbCPUAuslastung.BackColor = Color.Red;
                     frmÜFenster.lbCPUAuslastung.BackColor = Color.Red;
-                }else
+                }
+                else
                 {
                     lbCPUAuslastung.BackColor = Color.FromArgb(38,38,38);
                     frmÜFenster.lbCPUAuslastung.BackColor = Color.FromArgb(38, 38, 38);
@@ -589,8 +598,7 @@ namespace LetsPlayTool
         /// </summary>
         private void startSession()
         {
-
-
+            
             InitialisierePerformanceCounter();
 
             Mainactor.Start();
@@ -599,8 +607,16 @@ namespace LetsPlayTool
 
             listMarker.Items.Clear();
 
-            if(einstellungen.Allgemeines.ShowÜFenster)
+            if (einstellungen.Allgemeines.ShowÜFenster)
+            {
+                frmÜFenster.Close();
+                frmÜFenster = new frmÜFenster();
                 frmÜFenster.Show();
+
+                frmÜFenster.Location = ÜFensterLocation;
+
+            }
+
 
             #region Get Times
 
@@ -799,7 +815,7 @@ namespace LetsPlayTool
 
             lMarker.Add(TimeString);
             listMarker.Items.Add(TimeString);
-
+            frmÜFenster.showMessage("Marker erstellt (" + TimeString + ")", Color.FromArgb(38, 38, 38), 2);
 
         }
 
@@ -853,6 +869,8 @@ namespace LetsPlayTool
             frmÜFenster.Close();
             frmÜFenster = new frmÜFenster();
             frmÜFenster.Show();
+
+            frmÜFenster.Location = ÜFensterLocation;
 
         }
     }

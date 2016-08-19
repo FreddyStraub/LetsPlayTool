@@ -109,6 +109,37 @@ namespace LetsPlayTool
         {
             Close();
         }
+
+        /// <summary>
+        /// Zeigt eine Nachricht auf dem ÜFenster an.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
+        /// <param name="duration"></param>
+        public void showMessage(string message, Color color, int duration)
+        {
+
+            LetsPlayToolMessage.ÜFenster S = new LetsPlayToolMessage.ÜFenster(message, duration, color);
+
+            S.TopLevel = false;
+            S.AutoScroll = true;
+
+            Controls.Add(S);
+
+            S.Location = new Point(0, 59);
+
+            S.BringToFront();
+
+            S.Show();
+            S.ShowMessage.Start();
+        }
+
+        private void lbTimer_Click(object sender, EventArgs e)
+        {
+
+            showMessage("TEst", Color.Blue, 5);
+
+        }
     }
 
 

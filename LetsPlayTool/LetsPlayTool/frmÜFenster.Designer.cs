@@ -77,6 +77,7 @@
             this.lbTimer.Size = new System.Drawing.Size(152, 55);
             this.lbTimer.TabIndex = 2;
             this.lbTimer.Text = "label1";
+            this.lbTimer.Click += new System.EventHandler(this.lbTimer_Click);
             // 
             // lbRAMUsed
             // 

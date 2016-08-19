@@ -20,6 +20,23 @@ namespace LetsPlayTool.LetsPlayToolMessage
             this.Text = Text;
             button1.Text = Text;
 
+
+            #region Textgröße anpassen
+
+            if (Text.Length > 77 && Text.Length < 150)
+            {
+                button1.Font = new Font(Font.Name, 18f, FontStyle.Regular);
+
+            }
+            else if (Text.Length > 150)
+            {
+                button1.Font = new Font(Font.Name, 14f, FontStyle.Regular);
+            }
+
+            #endregion
+
+
+
         }
         public Small(string Text, Color backColor)
         {
