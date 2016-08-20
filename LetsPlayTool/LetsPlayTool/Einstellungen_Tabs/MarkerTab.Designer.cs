@@ -53,7 +53,7 @@
             // 
             this.tbSpeicherort.BackColor = System.Drawing.Color.DodgerBlue;
             this.tbSpeicherort.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSpeicherort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSpeicherort.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSpeicherort.ForeColor = System.Drawing.Color.White;
             this.tbSpeicherort.Location = new System.Drawing.Point(94, 37);
             this.tbSpeicherort.Multiline = true;
@@ -68,6 +68,7 @@
             this.bBrowse.BackColor = System.Drawing.Color.DodgerBlue;
             this.bBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBrowse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBrowse.ForeColor = System.Drawing.Color.White;
             this.bBrowse.Location = new System.Drawing.Point(616, 37);
             this.bBrowse.Name = "bBrowse";
@@ -97,7 +98,7 @@
             // cbFormat
             // 
             this.cbFormat.BackColor = System.Drawing.Color.Transparent;
-            this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFormat.ForeColor = System.Drawing.Color.White;
             this.cbFormat.Items = new string[] {
         "Textdatei (.txt)",
@@ -114,10 +115,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(35, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 16);
+            this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 17;
             this.label6.Text = "Format:";
             // 
@@ -144,7 +145,7 @@
             this.bKey.BackColor = System.Drawing.Color.DodgerBlue;
             this.bKey.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bKey.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bKey.ForeColor = System.Drawing.Color.White;
             this.bKey.Location = new System.Drawing.Point(264, 70);
             this.bKey.Name = "bKey";
@@ -157,10 +158,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(199, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 16);
+            this.label5.Size = new System.Drawing.Size(33, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Shift";
             // 
@@ -181,10 +182,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(132, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 16);
+            this.label4.Size = new System.Drawing.Size(23, 17);
             this.label4.TabIndex = 14;
             this.label4.Text = "Alt";
             // 
@@ -205,10 +206,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(55, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 16);
+            this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "Strg";
             // 
@@ -229,31 +230,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(7, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 16);
+            this.label2.Size = new System.Drawing.Size(209, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Hotkey um einen Marker zu setzen";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Speicherort:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(10, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(530, 16);
+            this.label7.Size = new System.Drawing.Size(531, 17);
             this.label7.TabIndex = 17;
             this.label7.Text = "Marker helfen dir wichtige stellen im Video später beim Schnitt schneller wieder " +
     "zu finden.\r\n";

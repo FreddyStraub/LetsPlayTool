@@ -40,14 +40,14 @@
             // 
             this.lbProgramme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.lbProgramme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbProgramme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProgramme.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProgramme.ForeColor = System.Drawing.Color.White;
             this.lbProgramme.FormattingEnabled = true;
-            this.lbProgramme.ItemHeight = 16;
+            this.lbProgramme.ItemHeight = 17;
             this.lbProgramme.Location = new System.Drawing.Point(12, 52);
             this.lbProgramme.Name = "lbProgramme";
             this.lbProgramme.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbProgramme.Size = new System.Drawing.Size(385, 480);
+            this.lbProgramme.Size = new System.Drawing.Size(385, 476);
             this.lbProgramme.TabIndex = 0;
             // 
             // bHinzufügen
@@ -56,12 +56,12 @@
             this.bHinzufügen.color = System.Drawing.Color.DodgerBlue;
             this.bHinzufügen.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
             this.bHinzufügen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bHinzufügen.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bHinzufügen.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bHinzufügen.ForeColor = System.Drawing.Color.White;
             this.bHinzufügen.Image = ((System.Drawing.Image)(resources.GetObject("bHinzufügen.Image")));
             this.bHinzufügen.ImagePosition = 20;
             this.bHinzufügen.ImageZoom = 50;
-            this.bHinzufügen.LabelPosition = 41;
+            this.bHinzufügen.LabelPosition = 51;
             this.bHinzufügen.LabelText = "Hinzufügen";
             this.bHinzufügen.Location = new System.Drawing.Point(406, 52);
             this.bHinzufügen.Margin = new System.Windows.Forms.Padding(6);
@@ -76,12 +76,12 @@
             this.bEntfernen.color = System.Drawing.Color.DodgerBlue;
             this.bEntfernen.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
             this.bEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bEntfernen.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bEntfernen.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bEntfernen.ForeColor = System.Drawing.Color.White;
             this.bEntfernen.Image = ((System.Drawing.Image)(resources.GetObject("bEntfernen.Image")));
             this.bEntfernen.ImagePosition = 20;
             this.bEntfernen.ImageZoom = 50;
-            this.bEntfernen.LabelPosition = 41;
+            this.bEntfernen.LabelPosition = 51;
             this.bEntfernen.LabelText = "Entfernen";
             this.bEntfernen.Location = new System.Drawing.Point(406, 193);
             this.bEntfernen.Margin = new System.Windows.Forms.Padding(6);
@@ -93,11 +93,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 16);
+            this.label1.Size = new System.Drawing.Size(412, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Programme die durch einen einfachen Klick gestartet werden können.";
             // 

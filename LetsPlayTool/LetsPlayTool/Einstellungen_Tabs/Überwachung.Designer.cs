@@ -56,6 +56,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbAufnahmeordner);
             this.groupBox1.Controls.Add(this.bBrowse);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -67,10 +68,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Aufnahmeordner:";
             // 
@@ -78,7 +79,7 @@
             // 
             this.tbAufnahmeordner.BackColor = System.Drawing.Color.DodgerBlue;
             this.tbAufnahmeordner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbAufnahmeordner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAufnahmeordner.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAufnahmeordner.ForeColor = System.Drawing.Color.White;
             this.tbAufnahmeordner.Location = new System.Drawing.Point(127, 34);
             this.tbAufnahmeordner.Multiline = true;
@@ -109,6 +110,7 @@
             this.groupBox2.Controls.Add(this.switchRAM);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.switchCPU);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(13, 94);
             this.groupBox2.Name = "groupBox2";
@@ -120,10 +122,10 @@
             // lbFRam
             // 
             this.lbFRam.AutoSize = true;
-            this.lbFRam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFRam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFRam.Location = new System.Drawing.Point(122, 40);
             this.lbFRam.Name = "lbFRam";
-            this.lbFRam.Size = new System.Drawing.Size(76, 16);
+            this.lbFRam.Size = new System.Drawing.Size(73, 17);
             this.lbFRam.TabIndex = 12;
             this.lbFRam.Text = "Freier RAM";
             // 
@@ -144,10 +146,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "CPU";
             // 
@@ -170,6 +172,7 @@
             this.groupBox3.Controls.Add(this.pbDiscord);
             this.groupBox3.Controls.Add(this.pbTeamspeak);
             this.groupBox3.Controls.Add(this.pbSkype);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 196);
             this.groupBox3.Name = "groupBox3";

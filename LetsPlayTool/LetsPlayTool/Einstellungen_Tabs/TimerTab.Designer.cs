@@ -75,6 +75,7 @@
             this.groupBox2.Controls.Add(this.bProfilErstellen);
             this.groupBox2.Controls.Add(this.lbProfiles);
             this.groupBox2.Controls.Add(this.lvTimes);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 11);
             this.groupBox2.Name = "groupBox2";
@@ -91,11 +92,13 @@
             this.bZeitEntfernen.BorderRadius = 0;
             this.bZeitEntfernen.ButtonText = "     Zeit entfernen";
             this.bZeitEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bZeitEntfernen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitEntfernen.Iconcolor = System.Drawing.Color.Transparent;
             this.bZeitEntfernen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitEntfernen.Iconimage")));
             this.bZeitEntfernen.Iconimage_right = null;
             this.bZeitEntfernen.Iconimage_right_Selected = null;
             this.bZeitEntfernen.Iconimage_Selected = null;
+            this.bZeitEntfernen.IconZoom = 90D;
             this.bZeitEntfernen.IsTab = false;
             this.bZeitEntfernen.Location = new System.Drawing.Point(470, 216);
             this.bZeitEntfernen.Name = "bZeitEntfernen";
@@ -117,11 +120,13 @@
             this.bZeitHinzufügen.BorderRadius = 0;
             this.bZeitHinzufügen.ButtonText = "     Zeit hinzufügen";
             this.bZeitHinzufügen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bZeitHinzufügen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitHinzufügen.Iconcolor = System.Drawing.Color.Transparent;
             this.bZeitHinzufügen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitHinzufügen.Iconimage")));
             this.bZeitHinzufügen.Iconimage_right = null;
             this.bZeitHinzufügen.Iconimage_right_Selected = null;
             this.bZeitHinzufügen.Iconimage_Selected = null;
+            this.bZeitHinzufügen.IconZoom = 90D;
             this.bZeitHinzufügen.IsTab = false;
             this.bZeitHinzufügen.Location = new System.Drawing.Point(470, 162);
             this.bZeitHinzufügen.Name = "bZeitHinzufügen";
@@ -143,11 +148,13 @@
             this.bProfilLöschen.BorderRadius = 0;
             this.bProfilLöschen.ButtonText = "     Profil löschen";
             this.bProfilLöschen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bProfilLöschen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilLöschen.Iconcolor = System.Drawing.Color.Transparent;
             this.bProfilLöschen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bProfilLöschen.Iconimage")));
             this.bProfilLöschen.Iconimage_right = null;
             this.bProfilLöschen.Iconimage_right_Selected = null;
             this.bProfilLöschen.Iconimage_Selected = null;
+            this.bProfilLöschen.IconZoom = 90D;
             this.bProfilLöschen.IsTab = false;
             this.bProfilLöschen.Location = new System.Drawing.Point(471, 73);
             this.bProfilLöschen.Name = "bProfilLöschen";
@@ -169,11 +176,13 @@
             this.bProfilErstellen.BorderRadius = 0;
             this.bProfilErstellen.ButtonText = "     Profil erstellen";
             this.bProfilErstellen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bProfilErstellen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilErstellen.Iconcolor = System.Drawing.Color.Transparent;
             this.bProfilErstellen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bProfilErstellen.Iconimage")));
             this.bProfilErstellen.Iconimage_right = null;
             this.bProfilErstellen.Iconimage_right_Selected = null;
             this.bProfilErstellen.Iconimage_Selected = null;
+            this.bProfilErstellen.IconZoom = 90D;
             this.bProfilErstellen.IsTab = false;
             this.bProfilErstellen.Location = new System.Drawing.Point(471, 19);
             this.bProfilErstellen.Name = "bProfilErstellen";
@@ -191,23 +200,24 @@
             // 
             this.lbProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.lbProfiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProfiles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProfiles.ForeColor = System.Drawing.Color.White;
             this.lbProfiles.FormattingEnabled = true;
-            this.lbProfiles.ItemHeight = 20;
+            this.lbProfiles.ItemHeight = 21;
             this.lbProfiles.Items.AddRange(new object[] {
             "Minecraft",
             "Overwatch",
             "Tutorial"});
             this.lbProfiles.Location = new System.Drawing.Point(6, 19);
             this.lbProfiles.Name = "lbProfiles";
-            this.lbProfiles.Size = new System.Drawing.Size(279, 320);
+            this.lbProfiles.Size = new System.Drawing.Size(279, 315);
             this.lbProfiles.TabIndex = 5;
             this.lbProfiles.SelectedIndexChanged += new System.EventHandler(this.lbProfiles_SelectedIndexChanged);
             // 
             // gbText
             // 
             this.gbText.Controls.Add(this.richTextBox1);
+            this.gbText.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbText.ForeColor = System.Drawing.Color.White;
             this.gbText.Location = new System.Drawing.Point(12, 361);
             this.gbText.Name = "gbText";
@@ -221,7 +231,7 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(6, 19);
             this.richTextBox1.Name = "richTextBox1";

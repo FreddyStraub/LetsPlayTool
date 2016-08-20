@@ -40,9 +40,7 @@ namespace LetsPlayTool
             MaximaizeAnimation.Start();
             einstellungen = einstellungen.load();
 
-
-
-
+            
         }
 
 
@@ -527,7 +525,7 @@ namespace LetsPlayTool
 
             #endregion
 
-        }
+        } //Mainactor!!!!!!!!!!!!!!!!!!
 
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
