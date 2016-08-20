@@ -587,6 +587,30 @@ namespace LetsPlayTool
 
         }
 
+        /// <summary>
+        /// Zeigt eine große Nachricht auf dem ganzen Fenster an
+        /// </summary>
+        /// <param name="Message"></param>
+        private void showBigMessage(string Message)
+        {
+
+            LetsPlayToolMessage.Big B = new LetsPlayToolMessage.Big(Message, einstellungen.Allgemeines.ErinerrungenAnzeigeDauer);
+
+            B.TopLevel = false;
+            B.AutoScroll = true;
+
+            Controls.Add(B);
+
+            B.Location = new Point(0, 59);
+            B.BringToFront();
+
+            B.Show();
+            B.ShowMessage.Start();
+
+
+
+        }
+
         #endregion
 
         frmÜFenster frmÜFenster = new frmÜFenster(); //Kleiner Überwachungsfenster
@@ -613,6 +637,11 @@ namespace LetsPlayTool
 
                 frmÜFenster.Location = ÜFensterLocation;
 
+            }
+
+            if (einstellungen.Allgemeines.ShowIErinerrung)
+            {
+                showBigMessage(einstellungen.Allgemeines.Erinerrungen);
             }
 
 

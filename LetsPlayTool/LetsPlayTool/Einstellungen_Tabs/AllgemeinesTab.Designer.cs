@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllgemeinesTab));
             this.gbHotkey = new System.Windows.Forms.GroupBox();
             this.bAufnhameStart = new System.Windows.Forms.Button();
@@ -49,10 +50,14 @@
             this.switchIErinerrungen = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.tbIErinerrungen = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.nudDuration = new System.Windows.Forms.NumericUpDown();
+            this.lbDuration = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gbHotkey.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelÜFensterSettings.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHotkey
@@ -171,8 +176,8 @@
             this.checkÜFensterRAM.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.checkÜFensterRAM.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkÜFensterRAM.ForeColor = System.Drawing.Color.White;
-            this.checkÜFensterRAM.Location = new System.Drawing.Point(213, 13);
-            this.checkÜFensterRAM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkÜFensterRAM.Location = new System.Drawing.Point(257, 13);
+            this.checkÜFensterRAM.Margin = new System.Windows.Forms.Padding(4);
             this.checkÜFensterRAM.Name = "checkÜFensterRAM";
             this.checkÜFensterRAM.Size = new System.Drawing.Size(20, 20);
             this.checkÜFensterRAM.TabIndex = 22;
@@ -181,7 +186,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(236, 17);
+            this.label5.Location = new System.Drawing.Point(284, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 17);
             this.label5.TabIndex = 23;
@@ -195,8 +200,8 @@
             this.checkÜFensterCPU.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.checkÜFensterCPU.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkÜFensterCPU.ForeColor = System.Drawing.Color.White;
-            this.checkÜFensterCPU.Location = new System.Drawing.Point(113, 13);
-            this.checkÜFensterCPU.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkÜFensterCPU.Location = new System.Drawing.Point(135, 13);
+            this.checkÜFensterCPU.Margin = new System.Windows.Forms.Padding(4);
             this.checkÜFensterCPU.Name = "checkÜFensterCPU";
             this.checkÜFensterCPU.Size = new System.Drawing.Size(20, 20);
             this.checkÜFensterCPU.TabIndex = 20;
@@ -205,7 +210,7 @@
             // 
             this.lbCPU.AutoSize = true;
             this.lbCPU.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCPU.Location = new System.Drawing.Point(136, 17);
+            this.lbCPU.Location = new System.Drawing.Point(162, 15);
             this.lbCPU.Name = "lbCPU";
             this.lbCPU.Size = new System.Drawing.Size(88, 17);
             this.lbCPU.TabIndex = 21;
@@ -220,7 +225,7 @@
             this.checkÜFensterTimer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkÜFensterTimer.ForeColor = System.Drawing.Color.White;
             this.checkÜFensterTimer.Location = new System.Drawing.Point(4, 13);
-            this.checkÜFensterTimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkÜFensterTimer.Margin = new System.Windows.Forms.Padding(4);
             this.checkÜFensterTimer.Name = "checkÜFensterTimer";
             this.checkÜFensterTimer.Size = new System.Drawing.Size(20, 20);
             this.checkÜFensterTimer.TabIndex = 18;
@@ -229,7 +234,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 17);
+            this.label4.Location = new System.Drawing.Point(31, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 17);
             this.label4.TabIndex = 19;
@@ -266,6 +271,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbDuration);
+            this.groupBox2.Controls.Add(this.nudDuration);
             this.groupBox2.Controls.Add(this.switchIErinerrungen);
             this.groupBox2.Controls.Add(this.tbIErinerrungen);
             this.groupBox2.Controls.Add(this.label7);
@@ -317,6 +324,28 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
             // 
+            // nudDuration
+            // 
+            this.nudDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.nudDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudDuration.ForeColor = System.Drawing.Color.White;
+            this.nudDuration.Location = new System.Drawing.Point(600, 32);
+            this.nudDuration.Name = "nudDuration";
+            this.nudDuration.Size = new System.Drawing.Size(56, 21);
+            this.nudDuration.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.nudDuration, "Anzeigedauer der Nachricht in Sekunden");
+            // 
+            // lbDuration
+            // 
+            this.lbDuration.AutoSize = true;
+            this.lbDuration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDuration.ForeColor = System.Drawing.Color.White;
+            this.lbDuration.Location = new System.Drawing.Point(506, 32);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(91, 17);
+            this.lbDuration.TabIndex = 7;
+            this.lbDuration.Text = "Anzeigedauer:";
+            // 
             // AllgemeinesTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +368,7 @@
             this.panelÜFensterSettings.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +395,8 @@
         private System.Windows.Forms.Label lbCPU;
         private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterRAM;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbDuration;
+        private System.Windows.Forms.NumericUpDown nudDuration;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

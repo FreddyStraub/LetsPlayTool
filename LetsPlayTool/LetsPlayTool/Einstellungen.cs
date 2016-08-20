@@ -73,11 +73,15 @@ namespace LetsPlayTool
 
             newAllgemeines.AufnahmeStopKey = Keys.NumPad0;
             newAllgemeines.AufnahmeStartKey = Keys.NumPad0;
+
             newAllgemeines.Erinerrungen = "";
             newAllgemeines.ShowIErinerrung = true;
-            newAllgemeines.ShowÜFenster = false;
-            newAllgemeines.ShowÜFensterTimer = false;
+            newAllgemeines.ErinerrungenAnzeigeDauer = 4;
 
+            newAllgemeines.ShowÜFenster = false;
+            newAllgemeines.ShowÜFensterTimer = true;
+            newAllgemeines.ShowÜFensterCPU = true;
+            newAllgemeines.ShowÜFensterRAM = true;
 
             Allgemeines = newAllgemeines;
 

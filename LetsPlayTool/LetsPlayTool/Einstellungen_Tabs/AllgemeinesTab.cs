@@ -35,6 +35,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             switchIErinerrungen.Value = Settings.ShowIErinerrung;
             tbIErinerrungen.Text = Settings.Erinerrungen;
+            nudDuration.Value = Settings.ErinerrungenAnzeigeDauer;
 
         }
 
@@ -56,6 +57,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             newSettings.ShowIErinerrung = switchIErinerrungen.Value;
             newSettings.Erinerrungen = tbIErinerrungen.Text;
+            newSettings.ErinerrungenAnzeigeDauer = (int)nudDuration.Value;
 
             return newSettings;
         }

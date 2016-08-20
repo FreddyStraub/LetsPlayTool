@@ -127,6 +127,12 @@
     <Compile Include="frmÜFenster.Designer.cs">
       <DependentUpon>frmÜFenster.cs</DependentUpon>
     </Compile>
+    <Compile Include="LetsPlayToolMessage\Big.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LetsPlayToolMessage\Big.Designer.cs">
+      <DependentUpon>Big.cs</DependentUpon>
+    </Compile>
     <Compile Include="LetsPlayToolMessage\Small.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmÜFenster.resx">
       <DependentUpon>frmÜFenster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LetsPlayToolMessage\Big.resx">
+      <DependentUpon>Big.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LetsPlayToolMessage\Small.resx">
       <DependentUpon>Small.cs</DependentUpon>

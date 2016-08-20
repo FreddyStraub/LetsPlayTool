@@ -20,8 +20,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public bool ShowÜFensterRAM;
 
         public bool ShowIErinerrung;
-
         public string Erinerrungen;
+        public int ErinerrungenAnzeigeDauer;
 
 
     }
