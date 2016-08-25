@@ -137,8 +137,6 @@ namespace LetsPlayTool
         private void lbTimer_Click(object sender, EventArgs e)
         {
 
-            showMessage("TEst", Color.Blue, 5);
-
         }
     }
 

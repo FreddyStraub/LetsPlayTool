@@ -1,15 +1,9 @@
 ﻿using LetsPlayTool.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LetsPlayTool
@@ -40,10 +34,7 @@ namespace LetsPlayTool
             MaximaizeAnimation.Start();
             einstellungen = einstellungen.load();
 
-            
         }
-
-
         
 
         #region Move Form
@@ -281,6 +272,8 @@ namespace LetsPlayTool
 
         public TimerProfil selectedTimerProfil;
 
+        public bool SessionRuns = false;
+
         string TimeString = ""; // == Das was im Timer angezeigt wird
 
         static PerformanceCounter cpuCounter; // globaler PerformanceCounter 
@@ -452,11 +445,11 @@ namespace LetsPlayTool
             }
 
             //Ausgabe an User
-            lbBSpeicherMB.Text = belegterSpeicherGB.ToString() + "GB";
-            lbFSpeicherMB.Text = freierSpeicherGB.ToString() + "GB";
+            lbBSpeicherGB.Text = belegterSpeicherGB.ToString() + "GB";
+            lbFSpeicherGB.Text = freierSpeicherGB.ToString() + "GB";
 
-            toolTip1.SetToolTip(lbBSpeicherMB, belegterSpeicherMB.ToString() + "MB");
-            toolTip1.SetToolTip(lbFSpeicherMB, freierSpeicherMB.ToString() + "MB");
+            toolTip1.SetToolTip(lbBSpeicherGB, belegterSpeicherMB.ToString() + "MB");
+            toolTip1.SetToolTip(lbFSpeicherGB, freierSpeicherMB.ToString() + "MB");
 
             #endregion
             
@@ -530,9 +523,19 @@ namespace LetsPlayTool
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
 
-            startSession();
+            if (!SessionRuns)
+            {
+                startSession();
+                SessionRuns = true;
+            }else
+            {
+                stopSession();
+                SessionRuns = false;
+            }
+
 
         }
+
         private void bOpenPrograms_Click(object sender, EventArgs e)
         {
             einstellungen.Programme.startProgramms();
@@ -672,6 +675,26 @@ namespace LetsPlayTool
         {
             createMarkerFile();
             Mainactor.Stop();
+
+            ÜFensterLocation = frmÜFenster.Location;
+
+            #region Werte zurücksetzten
+
+            Stunden = 0;
+            Minuten = 0;
+            Sekunden = 0;
+            Millisekunden = 0;
+            labelTimer.Text = "00:00:00:00";
+
+            lbCPUAuslastung.Text = "...";
+            lbRAMUsed.Text = "...";
+
+            lbFSpeicherGB.Text = "...";
+            lbBSpeicherGB.Text = "...";
+                          
+            listMarker.Items.Clear();
+
+            #endregion
 
         }
 
@@ -900,5 +923,14 @@ namespace LetsPlayTool
             frmÜFenster.Location = ÜFensterLocation;
 
         }
+
+        private void sliderLautsprecher_ValueChanged(object sender, EventArgs e)
+        {
+
+            SoundController.setVolume(sliderLautsprecher.Value);
+
+
+        }
     }
+ 
 }

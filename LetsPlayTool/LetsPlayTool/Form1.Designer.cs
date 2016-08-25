@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
+            this.bShowÜFenster = new Bunifu.Framework.UI.BunifuImageButton();
             this.bSettings = new Bunifu.Framework.UI.BunifuImageButton();
             this.bOpenPrograms = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -45,9 +46,9 @@
             this.lbRAM = new System.Windows.Forms.Label();
             this.lbCPUAuslastung = new System.Windows.Forms.Label();
             this.lbCPU = new System.Windows.Forms.Label();
-            this.lbBSpeicherMB = new System.Windows.Forms.Label();
+            this.lbBSpeicherGB = new System.Windows.Forms.Label();
             this.lbBSpeicher = new System.Windows.Forms.Label();
-            this.lbFSpeicherMB = new System.Windows.Forms.Label();
+            this.lbFSpeicherGB = new System.Windows.Forms.Label();
             this.lbFSpeicher = new System.Windows.Forms.Label();
             this.lbPath = new System.Windows.Forms.Label();
             this.lbOrdner = new System.Windows.Forms.Label();
@@ -62,14 +63,17 @@
             this.lbTeamSpeak = new System.Windows.Forms.Label();
             this.lbSkype = new System.Windows.Forms.Label();
             this.panelSoundÜberwachung = new System.Windows.Forms.Panel();
-            this.listSoundüberwachung = new System.Windows.Forms.ListBox();
+            this.sliderLautsprecher = new Bunifu.Framework.UI.BunifuTrackbar();
+            this.sliderMikrofon = new Bunifu.Framework.UI.BunifuTrackbar();
+            this.lbLautsprecher = new System.Windows.Forms.Label();
+            this.lbMikrodon = new System.Windows.Forms.Label();
             this.lbSound = new System.Windows.Forms.Label();
             this.ShowPanelAnimator = new BunifuAnimatorNS.Animator(this.components);
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.bShowÜFenster = new Bunifu.Framework.UI.BunifuImageButton();
             this.HeaderBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -79,7 +83,6 @@
             this.panelMarker.SuspendLayout();
             this.panelÜberwachung.SuspendLayout();
             this.panelSoundÜberwachung.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderBar
@@ -98,6 +101,22 @@
             this.HeaderBar.TabIndex = 0;
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
             this.HeaderBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
+            // 
+            // bShowÜFenster
+            // 
+            this.bShowÜFenster.BackColor = System.Drawing.Color.Transparent;
+            this.ShowPanelAnimator.SetDecoration(this.bShowÜFenster, BunifuAnimatorNS.DecorationType.None);
+            this.bShowÜFenster.Image = ((System.Drawing.Image)(resources.GetObject("bShowÜFenster.Image")));
+            this.bShowÜFenster.ImageActive = null;
+            this.bShowÜFenster.Location = new System.Drawing.Point(94, 12);
+            this.bShowÜFenster.Name = "bShowÜFenster";
+            this.bShowÜFenster.Size = new System.Drawing.Size(35, 35);
+            this.bShowÜFenster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bShowÜFenster.TabIndex = 5;
+            this.bShowÜFenster.TabStop = false;
+            this.toolTip1.SetToolTip(this.bShowÜFenster, "Überwachungsfenster anzeigen");
+            this.bShowÜFenster.Zoom = 5;
+            this.bShowÜFenster.Click += new System.EventHandler(this.bOpenÜFenster_Click);
             // 
             // bSettings
             // 
@@ -206,9 +225,9 @@
             this.panelOrdner.Controls.Add(this.lbRAM);
             this.panelOrdner.Controls.Add(this.lbCPUAuslastung);
             this.panelOrdner.Controls.Add(this.lbCPU);
-            this.panelOrdner.Controls.Add(this.lbBSpeicherMB);
+            this.panelOrdner.Controls.Add(this.lbBSpeicherGB);
             this.panelOrdner.Controls.Add(this.lbBSpeicher);
-            this.panelOrdner.Controls.Add(this.lbFSpeicherMB);
+            this.panelOrdner.Controls.Add(this.lbFSpeicherGB);
             this.panelOrdner.Controls.Add(this.lbFSpeicher);
             this.panelOrdner.Controls.Add(this.lbPath);
             this.panelOrdner.Controls.Add(this.lbOrdner);
@@ -268,17 +287,17 @@
             this.lbCPU.TabIndex = 6;
             this.lbCPU.Text = "CPU:";
             // 
-            // lbBSpeicherMB
+            // lbBSpeicherGB
             // 
-            this.lbBSpeicherMB.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.lbBSpeicherMB, BunifuAnimatorNS.DecorationType.None);
-            this.lbBSpeicherMB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBSpeicherMB.ForeColor = System.Drawing.Color.White;
-            this.lbBSpeicherMB.Location = new System.Drawing.Point(267, 70);
-            this.lbBSpeicherMB.Name = "lbBSpeicherMB";
-            this.lbBSpeicherMB.Size = new System.Drawing.Size(69, 21);
-            this.lbBSpeicherMB.TabIndex = 5;
-            this.lbBSpeicherMB.Text = "1400mB";
+            this.lbBSpeicherGB.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbBSpeicherGB, BunifuAnimatorNS.DecorationType.None);
+            this.lbBSpeicherGB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBSpeicherGB.ForeColor = System.Drawing.Color.White;
+            this.lbBSpeicherGB.Location = new System.Drawing.Point(267, 70);
+            this.lbBSpeicherGB.Name = "lbBSpeicherGB";
+            this.lbBSpeicherGB.Size = new System.Drawing.Size(19, 21);
+            this.lbBSpeicherGB.TabIndex = 5;
+            this.lbBSpeicherGB.Text = "...";
             // 
             // lbBSpeicher
             // 
@@ -292,17 +311,17 @@
             this.lbBSpeicher.TabIndex = 4;
             this.lbBSpeicher.Text = "Belegter Speicher:";
             // 
-            // lbFSpeicherMB
+            // lbFSpeicherGB
             // 
-            this.lbFSpeicherMB.AutoSize = true;
-            this.ShowPanelAnimator.SetDecoration(this.lbFSpeicherMB, BunifuAnimatorNS.DecorationType.None);
-            this.lbFSpeicherMB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFSpeicherMB.ForeColor = System.Drawing.Color.White;
-            this.lbFSpeicherMB.Location = new System.Drawing.Point(267, 40);
-            this.lbFSpeicherMB.Name = "lbFSpeicherMB";
-            this.lbFSpeicherMB.Size = new System.Drawing.Size(69, 21);
-            this.lbFSpeicherMB.TabIndex = 3;
-            this.lbFSpeicherMB.Text = "1200mB";
+            this.lbFSpeicherGB.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbFSpeicherGB, BunifuAnimatorNS.DecorationType.None);
+            this.lbFSpeicherGB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFSpeicherGB.ForeColor = System.Drawing.Color.White;
+            this.lbFSpeicherGB.Location = new System.Drawing.Point(267, 40);
+            this.lbFSpeicherGB.Name = "lbFSpeicherGB";
+            this.lbFSpeicherGB.Size = new System.Drawing.Size(19, 21);
+            this.lbFSpeicherGB.TabIndex = 3;
+            this.lbFSpeicherGB.Text = "...";
             // 
             // lbFSpeicher
             // 
@@ -480,7 +499,10 @@
             // 
             this.panelSoundÜberwachung.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelSoundÜberwachung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSoundÜberwachung.Controls.Add(this.listSoundüberwachung);
+            this.panelSoundÜberwachung.Controls.Add(this.sliderLautsprecher);
+            this.panelSoundÜberwachung.Controls.Add(this.sliderMikrofon);
+            this.panelSoundÜberwachung.Controls.Add(this.lbLautsprecher);
+            this.panelSoundÜberwachung.Controls.Add(this.lbMikrodon);
             this.panelSoundÜberwachung.Controls.Add(this.lbSound);
             this.ShowPanelAnimator.SetDecoration(this.panelSoundÜberwachung, BunifuAnimatorNS.DecorationType.None);
             this.panelSoundÜberwachung.Dock = System.Windows.Forms.DockStyle.Top;
@@ -490,24 +512,58 @@
             this.panelSoundÜberwachung.TabIndex = 8;
             this.panelSoundÜberwachung.Visible = false;
             // 
-            // listSoundüberwachung
+            // sliderLautsprecher
             // 
-            this.listSoundüberwachung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.listSoundüberwachung.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ShowPanelAnimator.SetDecoration(this.listSoundüberwachung, BunifuAnimatorNS.DecorationType.None);
-            this.listSoundüberwachung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listSoundüberwachung.ForeColor = System.Drawing.Color.White;
-            this.listSoundüberwachung.FormattingEnabled = true;
-            this.listSoundüberwachung.ItemHeight = 21;
-            this.listSoundüberwachung.Items.AddRange(new object[] {
-            "Chrome",
-            "Minecraft 1.9",
-            "Skype",
-            "Windows Media Player"});
-            this.listSoundüberwachung.Location = new System.Drawing.Point(11, 41);
-            this.listSoundüberwachung.Name = "listSoundüberwachung";
-            this.listSoundüberwachung.Size = new System.Drawing.Size(429, 63);
-            this.listSoundüberwachung.TabIndex = 2;
+            this.sliderLautsprecher.BackColor = System.Drawing.Color.Transparent;
+            this.sliderLautsprecher.BackgroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.sliderLautsprecher.BorderRadius = 0;
+            this.ShowPanelAnimator.SetDecoration(this.sliderLautsprecher, BunifuAnimatorNS.DecorationType.None);
+            this.sliderLautsprecher.IndicatorColor = System.Drawing.Color.DodgerBlue;
+            this.sliderLautsprecher.Location = new System.Drawing.Point(144, 75);
+            this.sliderLautsprecher.MaximumValue = 100;
+            this.sliderLautsprecher.Name = "sliderLautsprecher";
+            this.sliderLautsprecher.Size = new System.Drawing.Size(276, 30);
+            this.sliderLautsprecher.TabIndex = 6;
+            this.sliderLautsprecher.Value = 0;
+            this.sliderLautsprecher.ValueChanged += new System.EventHandler(this.sliderLautsprecher_ValueChanged);
+            // 
+            // sliderMikrofon
+            // 
+            this.sliderMikrofon.BackColor = System.Drawing.Color.Transparent;
+            this.sliderMikrofon.BackgroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.sliderMikrofon.BorderRadius = 0;
+            this.ShowPanelAnimator.SetDecoration(this.sliderMikrofon, BunifuAnimatorNS.DecorationType.None);
+            this.sliderMikrofon.IndicatorColor = System.Drawing.Color.DodgerBlue;
+            this.sliderMikrofon.Location = new System.Drawing.Point(144, 39);
+            this.sliderMikrofon.MaximumValue = 100;
+            this.sliderMikrofon.Name = "sliderMikrofon";
+            this.sliderMikrofon.Size = new System.Drawing.Size(276, 30);
+            this.sliderMikrofon.TabIndex = 5;
+            this.sliderMikrofon.Value = 0;
+            // 
+            // lbLautsprecher
+            // 
+            this.lbLautsprecher.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbLautsprecher, BunifuAnimatorNS.DecorationType.None);
+            this.lbLautsprecher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLautsprecher.ForeColor = System.Drawing.Color.White;
+            this.lbLautsprecher.Location = new System.Drawing.Point(12, 78);
+            this.lbLautsprecher.Name = "lbLautsprecher";
+            this.lbLautsprecher.Size = new System.Drawing.Size(103, 21);
+            this.lbLautsprecher.TabIndex = 4;
+            this.lbLautsprecher.Text = "Lautsprecher:";
+            // 
+            // lbMikrodon
+            // 
+            this.lbMikrodon.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbMikrodon, BunifuAnimatorNS.DecorationType.None);
+            this.lbMikrodon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMikrodon.ForeColor = System.Drawing.Color.White;
+            this.lbMikrodon.Location = new System.Drawing.Point(12, 42);
+            this.lbMikrodon.Name = "lbMikrodon";
+            this.lbMikrodon.Size = new System.Drawing.Size(77, 21);
+            this.lbMikrodon.TabIndex = 3;
+            this.lbMikrodon.Text = "Mikrofon:";
             // 
             // lbSound
             // 
@@ -515,32 +571,32 @@
             this.ShowPanelAnimator.SetDecoration(this.lbSound, BunifuAnimatorNS.DecorationType.None);
             this.lbSound.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSound.ForeColor = System.Drawing.Color.White;
-            this.lbSound.Location = new System.Drawing.Point(12, 12);
+            this.lbSound.Location = new System.Drawing.Point(12, 9);
             this.lbSound.Name = "lbSound";
-            this.lbSound.Size = new System.Drawing.Size(337, 21);
-            this.lbSound.TabIndex = 0;
-            this.lbSound.Text = "Diese Programme könnten Sound verursachen:\r\n";
+            this.lbSound.Size = new System.Drawing.Size(65, 21);
+            this.lbSound.TabIndex = 2;
+            this.lbSound.Text = "Sounds:";
             // 
             // ShowPanelAnimator
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation1;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
@@ -556,22 +612,6 @@
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            // 
-            // bShowÜFenster
-            // 
-            this.bShowÜFenster.BackColor = System.Drawing.Color.Transparent;
-            this.ShowPanelAnimator.SetDecoration(this.bShowÜFenster, BunifuAnimatorNS.DecorationType.None);
-            this.bShowÜFenster.Image = ((System.Drawing.Image)(resources.GetObject("bShowÜFenster.Image")));
-            this.bShowÜFenster.ImageActive = null;
-            this.bShowÜFenster.Location = new System.Drawing.Point(94, 12);
-            this.bShowÜFenster.Name = "bShowÜFenster";
-            this.bShowÜFenster.Size = new System.Drawing.Size(35, 35);
-            this.bShowÜFenster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bShowÜFenster.TabIndex = 5;
-            this.bShowÜFenster.TabStop = false;
-            this.toolTip1.SetToolTip(this.bShowÜFenster, "Überwachungsfenster anzeigen");
-            this.bShowÜFenster.Zoom = 5;
-            this.bShowÜFenster.Click += new System.EventHandler(this.bOpenÜFenster_Click);
             // 
             // Form1
             // 
@@ -596,6 +636,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.HeaderBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bOpenPrograms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
@@ -610,7 +651,6 @@
             this.panelÜberwachung.PerformLayout();
             this.panelSoundÜberwachung.ResumeLayout(false);
             this.panelSoundÜberwachung.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,9 +665,9 @@
         private System.Windows.Forms.Panel panelTimer;
         private Bunifu.Framework.UI.BunifuCustomLabel labelTimer;
         private System.Windows.Forms.Panel panelOrdner;
-        private System.Windows.Forms.Label lbBSpeicherMB;
+        private System.Windows.Forms.Label lbBSpeicherGB;
         private System.Windows.Forms.Label lbBSpeicher;
-        private System.Windows.Forms.Label lbFSpeicherMB;
+        private System.Windows.Forms.Label lbFSpeicherGB;
         private System.Windows.Forms.Label lbFSpeicher;
         private System.Windows.Forms.Label lbPath;
         private System.Windows.Forms.Label lbOrdner;
@@ -644,8 +684,6 @@
         private System.Windows.Forms.Label lbDiscordSM;
         private System.Windows.Forms.Label lbTeamSpeak;
         private System.Windows.Forms.Panel panelSoundÜberwachung;
-        private System.Windows.Forms.ListBox listSoundüberwachung;
-        private System.Windows.Forms.Label lbSound;
         private BunifuAnimatorNS.Animator ShowPanelAnimator;
         private System.Windows.Forms.Timer ShowPanelsAnimation;
         private Bunifu.Framework.UI.BunifuImageButton bOpenPrograms;
@@ -655,6 +693,11 @@
         private System.Windows.Forms.Timer Mainactor;
         private System.Windows.Forms.ToolTip toolTip1;
         private Bunifu.Framework.UI.BunifuImageButton bShowÜFenster;
+        private System.Windows.Forms.Label lbLautsprecher;
+        private System.Windows.Forms.Label lbMikrodon;
+        private System.Windows.Forms.Label lbSound;
+        private Bunifu.Framework.UI.BunifuTrackbar sliderLautsprecher;
+        private Bunifu.Framework.UI.BunifuTrackbar sliderMikrofon;
     }
 }
 
