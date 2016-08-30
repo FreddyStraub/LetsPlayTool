@@ -136,6 +136,7 @@
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.HeaderBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmÜFenster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "00:00:00:00";

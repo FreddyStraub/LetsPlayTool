@@ -627,6 +627,7 @@
             this.Controls.Add(this.HeaderBar);
             this.ShowPanelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(445, 724);
             this.MinimumSize = new System.Drawing.Size(445, 724);
             this.Name = "Form1";

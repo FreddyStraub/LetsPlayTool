@@ -383,6 +383,7 @@
             this.Controls.Add(this.HeaderBar);
             this.panelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(897, 615);
             this.MinimumSize = new System.Drawing.Size(897, 615);
             this.Name = "frmEinstellungen";
