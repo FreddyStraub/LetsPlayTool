@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LetsPlayTool.Einstellungen_Tabs.Messenger;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             InitializeComponent();
         }
 
+      //  public ÜberwachungTabEinstellungen überwachungTagEinstellungen = new ÜberwachungTabEinstellungen();
+
         /// <summary>
         /// Lädt die Einstellungen.
         /// </summary>
@@ -30,6 +33,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
             switchCPU.Value = Settings.ÜShowCPU;
             switchRAM.Value = Settings.ÜShowRAM;
 
+          //  überwachungTagEinstellungen = Settings;
+
+            setMessengerSettigs(Settings.MessengerSettings);
         }
 
         /// <summary>
@@ -45,9 +51,32 @@ namespace LetsPlayTool.Einstellungen_Tabs
             newSettings.ÜShowCPU = switchCPU.Value;
             newSettings.ÜShowRAM = switchRAM.Value;
 
+            getMessengerSettings();
+
+            newSettings.MessengerSettings = getMessengerSettings();
 
             return newSettings;
         }
+
+        /// <summary>
+        /// Speichert die Messenger-Einstellungen.
+        /// </summary>
+        private Messenger.Settings getMessengerSettings()
+        {
+            Messenger.Settings newMSettings = new Messenger.Settings();
+
+            newMSettings.skypeSettings = sk.getSettings();
+
+            return newMSettings;
+
+        }
+        private void setMessengerSettigs(Messenger.Settings mSettings)
+        {
+
+            sk.setSettings(mSettings.skypeSettings);
+
+        }
+
 
         private void bBrowse_Click(object sender, EventArgs e)
         {
@@ -71,7 +100,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             }
 
         }
-
         private void tbAufnahmeordner_MouseDown(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Right)
@@ -81,12 +109,49 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             }
         }
-
         private void bBrowse_MouseDown(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Right)
                 try { Process.Start(tbAufnahmeordner.Text); } catch { }
 
+        }
+
+        //Messenger
+
+
+        SkypeTab sk = new SkypeTab();
+
+        private void toggleMessenger(int number)
+        {
+            getMessengerSettings();
+            switch (number)
+            {
+
+                case 0:
+
+                  //  bTimer.selected = true;
+
+                    #region Tab anzeigen
+
+                    sk.TopLevel = false;
+                    sk.AutoScroll = true;
+                    
+                    sk.setSettings(getMessengerSettings().skypeSettings);
+
+                    panelMessengerSwitch.Controls.Add(sk);
+                    sk.Show();
+
+                    #endregion
+
+                    break;
+
+            }
+
+            }
+
+        private void bSkype_Click(object sender, EventArgs e)
+        {
+            toggleMessenger(0);
         }
     }
 }

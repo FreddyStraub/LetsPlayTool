@@ -85,6 +85,14 @@
       <DependentUpon>MarkerTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Einstellungen_Tabs\MarkerTabEinstellungen.cs" />
+    <Compile Include="Einstellungen_Tabs\Messenger\Settings.cs" />
+    <Compile Include="Einstellungen_Tabs\Messenger\SkypeSettings.cs" />
+    <Compile Include="Einstellungen_Tabs\Messenger\SkypeTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\Messenger\SkypeTab.Designer.cs">
+      <DependentUpon>SkypeTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Einstellungen_Tabs\ProgrammeTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\TimerTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\Überwachung.cs">
@@ -163,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\MarkerTab.resx">
       <DependentUpon>MarkerTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\Messenger\SkypeTab.resx">
+      <DependentUpon>SkypeTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\Überwachung.resx">
       <DependentUpon>Überwachung.cs</DependentUpon>

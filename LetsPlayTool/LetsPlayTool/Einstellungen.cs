@@ -120,6 +120,11 @@ namespace LetsPlayTool
 
             newTimer.TimerProfiles = new List<TimerProfil>();
 
+
+            newTimer.TimerProfiles.Add(new TimerProfil("Standart"));
+
+            newTimer.SelectedTimerProfil = newTimer.TimerProfiles[0];
+
             Timer = newTimer;
 
             #endregion
@@ -134,11 +139,18 @@ namespace LetsPlayTool
 
             Überwachung = newÜberwachung;
 
+            #region Messenger
+
+
+            newÜberwachung.MessengerSettings = new Einstellungen_Tabs.Messenger.Settings();
+            newÜberwachung.MessengerSettings.skypeSettings.active = false;
+            #endregion
+
             #endregion
 
         }
 
-     
+
         public AllgemeinesTabEinstellungen Allgemeines;
         public MarkerTabEinstellungen Marker;
         public ProgrammeTabEinstellungen Programme;

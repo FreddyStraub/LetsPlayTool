@@ -72,6 +72,7 @@
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
@@ -365,6 +366,7 @@
             // 
             this.panelMarker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelMarker.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMarker.Controls.Add(this.button1);
             this.panelMarker.Controls.Add(this.listMarker);
             this.panelMarker.Controls.Add(this.lbMarker);
             this.ShowPanelAnimator.SetDecoration(this.panelMarker, BunifuAnimatorNS.DecorationType.None);
@@ -613,6 +615,17 @@
             // 
             this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             // 
+            // button1
+            // 
+            this.ShowPanelAnimator.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
+            this.button1.Location = new System.Drawing.Point(202, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -699,6 +712,7 @@
         private System.Windows.Forms.Label lbSound;
         private Bunifu.Framework.UI.BunifuTrackbar sliderLautsprecher;
         private Bunifu.Framework.UI.BunifuTrackbar sliderMikrofon;
+        private System.Windows.Forms.Button button1;
     }
 }
 

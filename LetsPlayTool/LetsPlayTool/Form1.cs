@@ -122,13 +122,24 @@ namespace LetsPlayTool
         /// </summary>
         private void loadSettings()
         {
+            try
+            {
+                einstellungen = einstellungen.load();
+            }
+            catch
+            {
 
-            einstellungen = einstellungen.load();
-            
+                Einstellungen st = new Einstellungen();
+                st.SetStandartValues();
+                st.save();
+
+                einstellungen = einstellungen.load();
+
+            }
 
             #region Überwachung
 
-            selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+                selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
 
             if (einstellungen.Überwachung.ÜberwachungOrdner.Length > 40)
             {
@@ -929,6 +940,16 @@ namespace LetsPlayTool
 
             SoundController.setVolume(sliderLautsprecher.Value);
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Einstellungen newe = new Einstellungen();
+            newe.SetStandartValues();
+
+            newe.save();
 
         }
     }

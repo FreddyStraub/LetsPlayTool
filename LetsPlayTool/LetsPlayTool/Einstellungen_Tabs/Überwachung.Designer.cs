@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Überwachung));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,16 +40,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pbDiscord = new System.Windows.Forms.PictureBox();
-            this.pbTeamspeak = new System.Windows.Forms.PictureBox();
-            this.pbSkype = new System.Windows.Forms.PictureBox();
+            this.bTeamspeak = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bDiscord = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelMessengerSwitch = new System.Windows.Forms.Panel();
+            this.bSkype = new Bunifu.Framework.UI.BunifuImageButton();
             this.fbdAufnahmeordner = new Ookii.Dialogs.VistaFolderBrowserDialog();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDiscord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTeamspeak)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkype)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bTeamspeak)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDiscord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bSkype)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -169,9 +172,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pbDiscord);
-            this.groupBox3.Controls.Add(this.pbTeamspeak);
-            this.groupBox3.Controls.Add(this.pbSkype);
+            this.groupBox3.Controls.Add(this.bTeamspeak);
+            this.groupBox3.Controls.Add(this.bDiscord);
+            this.groupBox3.Controls.Add(this.panelMessengerSwitch);
+            this.groupBox3.Controls.Add(this.bSkype);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 196);
@@ -181,35 +185,54 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Messenger";
             // 
-            // pbDiscord
+            // bTeamspeak
             // 
-            this.pbDiscord.Image = ((System.Drawing.Image)(resources.GetObject("pbDiscord.Image")));
-            this.pbDiscord.Location = new System.Drawing.Point(10, 241);
-            this.pbDiscord.Name = "pbDiscord";
-            this.pbDiscord.Size = new System.Drawing.Size(70, 70);
-            this.pbDiscord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDiscord.TabIndex = 2;
-            this.pbDiscord.TabStop = false;
+            this.bTeamspeak.BackColor = System.Drawing.Color.Crimson;
+            this.bTeamspeak.Image = ((System.Drawing.Image)(resources.GetObject("bTeamspeak.Image")));
+            this.bTeamspeak.ImageActive = null;
+            this.bTeamspeak.Location = new System.Drawing.Point(142, 21);
+            this.bTeamspeak.Name = "bTeamspeak";
+            this.bTeamspeak.Size = new System.Drawing.Size(60, 60);
+            this.bTeamspeak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bTeamspeak.TabIndex = 3;
+            this.bTeamspeak.TabStop = false;
+            this.toolTip1.SetToolTip(this.bTeamspeak, "Nicht verfügbar");
+            this.bTeamspeak.Zoom = 5;
             // 
-            // pbTeamspeak
+            // bDiscord
             // 
-            this.pbTeamspeak.Image = ((System.Drawing.Image)(resources.GetObject("pbTeamspeak.Image")));
-            this.pbTeamspeak.Location = new System.Drawing.Point(10, 140);
-            this.pbTeamspeak.Name = "pbTeamspeak";
-            this.pbTeamspeak.Size = new System.Drawing.Size(70, 70);
-            this.pbTeamspeak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbTeamspeak.TabIndex = 1;
-            this.pbTeamspeak.TabStop = false;
+            this.bDiscord.BackColor = System.Drawing.Color.Crimson;
+            this.bDiscord.Image = ((System.Drawing.Image)(resources.GetObject("bDiscord.Image")));
+            this.bDiscord.ImageActive = null;
+            this.bDiscord.Location = new System.Drawing.Point(74, 21);
+            this.bDiscord.Name = "bDiscord";
+            this.bDiscord.Size = new System.Drawing.Size(60, 60);
+            this.bDiscord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bDiscord.TabIndex = 2;
+            this.bDiscord.TabStop = false;
+            this.toolTip1.SetToolTip(this.bDiscord, "Nicht verfügbar");
+            this.bDiscord.Zoom = 5;
             // 
-            // pbSkype
+            // panelMessengerSwitch
             // 
-            this.pbSkype.Image = ((System.Drawing.Image)(resources.GetObject("pbSkype.Image")));
-            this.pbSkype.Location = new System.Drawing.Point(10, 42);
-            this.pbSkype.Name = "pbSkype";
-            this.pbSkype.Size = new System.Drawing.Size(70, 70);
-            this.pbSkype.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSkype.TabIndex = 0;
-            this.pbSkype.TabStop = false;
+            this.panelMessengerSwitch.Location = new System.Drawing.Point(6, 87);
+            this.panelMessengerSwitch.Name = "panelMessengerSwitch";
+            this.panelMessengerSwitch.Size = new System.Drawing.Size(658, 252);
+            this.panelMessengerSwitch.TabIndex = 1;
+            // 
+            // bSkype
+            // 
+            this.bSkype.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bSkype.Image = ((System.Drawing.Image)(resources.GetObject("bSkype.Image")));
+            this.bSkype.ImageActive = null;
+            this.bSkype.Location = new System.Drawing.Point(6, 21);
+            this.bSkype.Name = "bSkype";
+            this.bSkype.Size = new System.Drawing.Size(60, 60);
+            this.bSkype.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bSkype.TabIndex = 0;
+            this.bSkype.TabStop = false;
+            this.bSkype.Zoom = 5;
+            this.bSkype.Click += new System.EventHandler(this.bSkype_Click);
             // 
             // Überwachung
             // 
@@ -228,9 +251,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbDiscord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTeamspeak)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSkype)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bTeamspeak)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDiscord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bSkype)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,9 +270,11 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchCPU;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pbDiscord;
-        private System.Windows.Forms.PictureBox pbTeamspeak;
-        private System.Windows.Forms.PictureBox pbSkype;
         private Ookii.Dialogs.VistaFolderBrowserDialog fbdAufnahmeordner;
+        private Bunifu.Framework.UI.BunifuImageButton bSkype;
+        private System.Windows.Forms.Panel panelMessengerSwitch;
+        private Bunifu.Framework.UI.BunifuImageButton bTeamspeak;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private Bunifu.Framework.UI.BunifuImageButton bDiscord;
     }
 }
