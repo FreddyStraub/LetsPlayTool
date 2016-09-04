@@ -531,6 +531,27 @@ namespace LetsPlayTool
 
             #endregion
 
+            #region Messenger
+
+            #region Display Status
+
+        //    lbSkypeStatus.Text = skype.CurrentUserStatus
+
+                switch (skype.CurrentUserStatus)
+            {
+
+                case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
+                case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend";  break;
+                case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
+                case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
+                case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
+
+            }
+
+            #endregion
+
+            #endregion
+
 
             #endregion
 
