@@ -1,4 +1,5 @@
 ﻿using LetsPlayTool.Dialogs;
+using SKYPE4COMLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -33,6 +34,8 @@ namespace LetsPlayTool
         {
             MaximaizeAnimation.Start();
             einstellungen = einstellungen.load();
+
+            skype.Attach();
 
         }
         
@@ -275,6 +278,8 @@ namespace LetsPlayTool
             loadSettings();
         }
 
+        Skype skype = new Skype();
+        public string NormalStatus = "";
 
         public int Stunden { get; set; }
         public int Minuten { get; set; }
@@ -677,6 +682,41 @@ namespace LetsPlayTool
             }
             #endregion
 
+            #region Messenger
+
+            #region Skype
+
+            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            {
+
+                #region Status
+                switch (einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme)
+                {
+                    case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
+                    case 1: skype.ChangeUserStatus(TUserStatus.cusAway);  break;
+                    case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
+                    case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
+                    case 4: skype.ChangeUserStatus(TUserStatus.cusOffline);  break;
+                        
+
+                }
+
+                #endregion
+
+                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                {
+
+                    NormalStatus = skype.CurrentUserProfile.MoodText;
+                    skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
+
+                }
+            }
+
+            #endregion
+
+            #endregion
+
+
         }
 
         /// <summary>
@@ -688,6 +728,39 @@ namespace LetsPlayTool
             Mainactor.Stop();
 
             ÜFensterLocation = frmÜFenster.Location;
+
+            #region Messenger
+
+            #region Skype
+
+
+            #region Status
+            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            {
+
+                switch (einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme)
+                {
+                    case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
+                    case 1: skype.ChangeUserStatus(TUserStatus.cusAway); break;
+                    case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
+                    case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
+                    case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
+
+
+                }
+
+                #endregion
+
+                if(einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                    skype.CurrentUserProfile.MoodText = NormalStatus;
+    
+
+            }
+
+            #endregion
+
+            #endregion
+
 
             #region Werte zurücksetzten
 
@@ -940,16 +1013,6 @@ namespace LetsPlayTool
 
             SoundController.setVolume(sliderLautsprecher.Value);
 
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            Einstellungen newe = new Einstellungen();
-            newe.SetStandartValues();
-
-            newe.save();
 
         }
     }

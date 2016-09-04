@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Überwachung));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.bSkype = new Bunifu.Framework.UI.BunifuImageButton();
             this.fbdAufnahmeordner = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panelAnimator = new BunifuAnimatorNS.Animator(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,6 +61,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbAufnahmeordner);
             this.groupBox1.Controls.Add(this.bBrowse);
+            this.panelAnimator.SetDecoration(this.groupBox1, BunifuAnimatorNS.DecorationType.None);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -71,6 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.panelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 37);
             this.label1.Name = "label1";
@@ -82,6 +86,7 @@
             // 
             this.tbAufnahmeordner.BackColor = System.Drawing.Color.DodgerBlue;
             this.tbAufnahmeordner.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.panelAnimator.SetDecoration(this.tbAufnahmeordner, BunifuAnimatorNS.DecorationType.None);
             this.tbAufnahmeordner.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAufnahmeordner.ForeColor = System.Drawing.Color.White;
             this.tbAufnahmeordner.Location = new System.Drawing.Point(127, 34);
@@ -96,6 +101,7 @@
             // 
             this.bBrowse.BackColor = System.Drawing.Color.DodgerBlue;
             this.bBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.bBrowse, BunifuAnimatorNS.DecorationType.None);
             this.bBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBrowse.ForeColor = System.Drawing.Color.White;
             this.bBrowse.Location = new System.Drawing.Point(619, 34);
@@ -113,6 +119,7 @@
             this.groupBox2.Controls.Add(this.switchRAM);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.switchCPU);
+            this.panelAnimator.SetDecoration(this.groupBox2, BunifuAnimatorNS.DecorationType.None);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(13, 94);
@@ -125,6 +132,7 @@
             // lbFRam
             // 
             this.lbFRam.AutoSize = true;
+            this.panelAnimator.SetDecoration(this.lbFRam, BunifuAnimatorNS.DecorationType.None);
             this.lbFRam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFRam.Location = new System.Drawing.Point(122, 40);
             this.lbFRam.Name = "lbFRam";
@@ -138,6 +146,7 @@
             this.switchRAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchRAM.BackgroundImage")));
             this.switchRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchRAM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.switchRAM, BunifuAnimatorNS.DecorationType.None);
             this.switchRAM.Location = new System.Drawing.Point(204, 37);
             this.switchRAM.Name = "switchRAM";
             this.switchRAM.OffColor = System.Drawing.Color.Gray;
@@ -149,6 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.panelAnimator.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 40);
             this.label2.Name = "label2";
@@ -162,6 +172,7 @@
             this.switchCPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchCPU.BackgroundImage")));
             this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.switchCPU, BunifuAnimatorNS.DecorationType.None);
             this.switchCPU.Location = new System.Drawing.Point(57, 37);
             this.switchCPU.Name = "switchCPU";
             this.switchCPU.OffColor = System.Drawing.Color.Gray;
@@ -176,6 +187,7 @@
             this.groupBox3.Controls.Add(this.bDiscord);
             this.groupBox3.Controls.Add(this.panelMessengerSwitch);
             this.groupBox3.Controls.Add(this.bSkype);
+            this.panelAnimator.SetDecoration(this.groupBox3, BunifuAnimatorNS.DecorationType.None);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 196);
@@ -188,6 +200,7 @@
             // bTeamspeak
             // 
             this.bTeamspeak.BackColor = System.Drawing.Color.Crimson;
+            this.panelAnimator.SetDecoration(this.bTeamspeak, BunifuAnimatorNS.DecorationType.None);
             this.bTeamspeak.Image = ((System.Drawing.Image)(resources.GetObject("bTeamspeak.Image")));
             this.bTeamspeak.ImageActive = null;
             this.bTeamspeak.Location = new System.Drawing.Point(142, 21);
@@ -202,6 +215,7 @@
             // bDiscord
             // 
             this.bDiscord.BackColor = System.Drawing.Color.Crimson;
+            this.panelAnimator.SetDecoration(this.bDiscord, BunifuAnimatorNS.DecorationType.None);
             this.bDiscord.Image = ((System.Drawing.Image)(resources.GetObject("bDiscord.Image")));
             this.bDiscord.ImageActive = null;
             this.bDiscord.Location = new System.Drawing.Point(74, 21);
@@ -215,14 +229,18 @@
             // 
             // panelMessengerSwitch
             // 
+            this.panelAnimator.SetDecoration(this.panelMessengerSwitch, BunifuAnimatorNS.DecorationType.None);
             this.panelMessengerSwitch.Location = new System.Drawing.Point(6, 87);
             this.panelMessengerSwitch.Name = "panelMessengerSwitch";
             this.panelMessengerSwitch.Size = new System.Drawing.Size(658, 252);
             this.panelMessengerSwitch.TabIndex = 1;
+            this.panelMessengerSwitch.Visible = false;
+            this.panelMessengerSwitch.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelMessengerSwitch_ControlAdded);
             // 
             // bSkype
             // 
             this.bSkype.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panelAnimator.SetDecoration(this.bSkype, BunifuAnimatorNS.DecorationType.None);
             this.bSkype.Image = ((System.Drawing.Image)(resources.GetObject("bSkype.Image")));
             this.bSkype.ImageActive = null;
             this.bSkype.Location = new System.Drawing.Point(6, 21);
@@ -234,6 +252,27 @@
             this.bSkype.Zoom = 5;
             this.bSkype.Click += new System.EventHandler(this.bSkype_Click);
             // 
+            // panelAnimator
+            // 
+            this.panelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.panelAnimator.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.panelAnimator.DefaultAnimation = animation1;
+            // 
             // Überwachung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +282,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.panelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Überwachung";
             this.Text = "OrdnerüberwachungTab";
@@ -276,5 +316,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bTeamspeak;
         private System.Windows.Forms.ToolTip toolTip1;
         private Bunifu.Framework.UI.BunifuImageButton bDiscord;
+        private BunifuAnimatorNS.Animator panelAnimator;
     }
 }

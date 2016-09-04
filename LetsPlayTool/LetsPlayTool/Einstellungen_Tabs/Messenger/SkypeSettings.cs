@@ -10,9 +10,13 @@ namespace LetsPlayTool.Einstellungen_Tabs.Messenger
     public class SkypeSettings
     {
 
-        //TODO: Skyp Settings
-
         public bool active { get; set; }
+
+        public int statusInAufnahme { get; set; }
+        public int statusNachAufnahme { get; set; }
+
+        public string Statusmeldung { get; set; }
+        public bool writeStatusmeldung { get; set; }
 
     }
 }

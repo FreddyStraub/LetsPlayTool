@@ -144,6 +144,13 @@ namespace LetsPlayTool
 
             newÜberwachung.MessengerSettings = new Einstellungen_Tabs.Messenger.Settings();
             newÜberwachung.MessengerSettings.skypeSettings.active = false;
+
+            newÜberwachung.MessengerSettings.skypeSettings.statusInAufnahme = 2;
+            newÜberwachung.MessengerSettings.skypeSettings.statusNachAufnahme = 0;
+
+            newÜberwachung.MessengerSettings.skypeSettings.Statusmeldung = "Ich fange jetzt aufzunehmen!!!";
+            newÜberwachung.MessengerSettings.skypeSettings.writeStatusmeldung = false;
+
             #endregion
 
             #endregion

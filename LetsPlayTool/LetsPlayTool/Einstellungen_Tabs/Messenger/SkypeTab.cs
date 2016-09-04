@@ -16,16 +16,31 @@ namespace LetsPlayTool.Einstellungen_Tabs.Messenger
         {
             InitializeComponent();
         }
-
-        //TODO: set - getSettigns
-
         /// <summary>
         /// Lädt die Einstellungen
         /// </summary>
         public void setSettings(SkypeSettings settings)
         {
 
-            checkBox1.Checked = settings.active;
+            switchActive.Value = settings.active;
+
+            cbStatusIA.selectedIndex = settings.statusInAufnahme;
+            cbStatusNA.selectedIndex = settings.statusNachAufnahme;
+
+            tbStatusmeldung.Text = settings.Statusmeldung;
+            checkStatusMeldung.Checked = settings.writeStatusmeldung;
+
+
+            if (checkStatusMeldung.Checked)
+            {
+                tbStatusmeldung.Enabled = true;
+
+            }
+            else
+            {
+                tbStatusmeldung.Enabled = false;
+
+            }
 
         }
 
@@ -38,10 +53,30 @@ namespace LetsPlayTool.Einstellungen_Tabs.Messenger
 
             SkypeSettings newSks = new SkypeSettings();
 
-            newSks.active = checkBox1.Checked;
+            newSks.active = switchActive.Value;
+
+            newSks.statusInAufnahme = cbStatusIA.selectedIndex;
+            newSks.statusNachAufnahme = cbStatusNA.selectedIndex;
+
+            newSks.Statusmeldung = tbStatusmeldung.Text;
+            newSks.writeStatusmeldung = checkStatusMeldung.Checked;
 
             return newSks;
         }
 
+        private void checkStatusMeldung_OnChange(object sender, EventArgs e)
+        {
+
+            if (checkStatusMeldung.Checked)
+            {
+                tbStatusmeldung.Enabled = true;
+                
+            }else
+            {
+                tbStatusmeldung.Enabled = false;
+                
+            }
+
+        }
     }
 }

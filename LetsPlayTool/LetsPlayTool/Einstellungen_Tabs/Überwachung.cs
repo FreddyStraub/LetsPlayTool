@@ -152,6 +152,14 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private void bSkype_Click(object sender, EventArgs e)
         {
             toggleMessenger(0);
+
+            
+        }
+
+        private void panelMessengerSwitch_ControlAdded(object sender, ControlEventArgs e)
+        {
+            panelMessengerSwitch.Visible = false;
+            panelAnimator.Show(panelMessengerSwitch);
         }
     }
 }
