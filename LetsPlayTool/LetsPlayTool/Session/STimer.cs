@@ -1,8 +1,20 @@
-﻿namespace LetsPlayTool.Session
+﻿using LetsPlayTool.Dialogs;
+using System.Collections.Generic;
+
+namespace LetsPlayTool.Session
 {
     public class STimer
     {
-       
+
+        public TimerProfil selectedTimerProfil;
+
+
+        public STimer(TimerProfil selectedTimerProfil)
+        {
+
+            this.selectedTimerProfil = selectedTimerProfil;
+
+        }
 
         public string TimeString = "";
 
@@ -93,6 +105,24 @@
 
 
         }
+
+        /// <summary>
+        /// Listet die Zeiten des aktuellen TimerProfiles auf.
+        /// </summary>
+        /// <returns></returns>
+        public List<Time> getTimes()
+        {
+
+            List<Time> Times = new List<Time>();
+
+            foreach (Time t in selectedTimerProfil.Times)
+            {
+                Times.Add(t);
+            }
+
+            return Times;
+        }
+
 
     }
 }

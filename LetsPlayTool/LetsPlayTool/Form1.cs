@@ -278,21 +278,14 @@ namespace LetsPlayTool
             loadSettings();
         }
 
-        Session.Session Session = new LetsPlayTool.Session.Session();
+        Session.Session Session;
 
         Skype skype = new Skype();
         public string NormalStatus = "";
 
-        public int Stunden { get; set; }
-        public int Minuten { get; set; }
-        public int Sekunden { get; set; }
-        public int Millisekunden { get; set; }
-
-        public TimerProfil selectedTimerProfil;
+        public static TimerProfil selectedTimerProfil;
 
         public bool SessionRuns = false;
-
-        string TimeString = ""; // == Das was im Timer angezeigt wird
 
         static PerformanceCounter cpuCounter; // globaler PerformanceCounter 
         static PerformanceCounter RAMCounter;
@@ -305,15 +298,13 @@ namespace LetsPlayTool
         private void Mainactor_Tick(object sender, EventArgs e)
         {
 
+            Session.Next();
+
             ÜFensterLocation = frmÜFenster.Location;
 
             MainactorElapsedTicks++;
 
             #region Timer
-
-            //Macht das die Zeit läuft und angezeigt wird
-
-            Session.Next();
 
             labelTimer.Text = Session.Timer.TimeString;
             frmÜFenster.Text = Session.Timer.TimeString;
@@ -321,20 +312,19 @@ namespace LetsPlayTool
             //Macht, das bei eingestellter Zeit die Nachricht angezeigt wird
             #region Message
 
-
-            foreach (Time t in getTimes())
+            foreach (Time t in Session.Timer.getTimes())
             {
 
 
                 #region 0 Time
 
-                if (t.ListViewItem.Text == "00:00:00:00" && TimeString == "00:00:00:01")
+                if (t.ListViewItem.Text == "00:00:00:00" && Session.Timer.TimeString == "00:00:00:01")
                     showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
 
 
                 #endregion
 
-                if (t.ListViewItem.Text == TimeString)
+                if (t.ListViewItem.Text == Session.Timer.TimeString)
                 {
 
                     if (t.Text != "")
@@ -490,7 +480,9 @@ namespace LetsPlayTool
             {
                 startSession();
                 SessionRuns = true;
-            }else
+                Session = new LetsPlayTool.Session.Session(selectedTimerProfil);
+            }
+            else
             {
                 stopSession();
                 SessionRuns = false;
@@ -613,16 +605,9 @@ namespace LetsPlayTool
 
             #region Get Times
 
-            if (selectedTimerProfil != null)
+            if (selectedTimerProfil == null)
             {
-
-
-                getTimes();
-
-            }
-            else
-            {
-
+               
                 stopSession();
                 showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.Red);
 
@@ -711,10 +696,6 @@ namespace LetsPlayTool
 
             #region Werte zurücksetzten
 
-            Stunden = 0;
-            Minuten = 0;
-            Sekunden = 0;
-            Millisekunden = 0;
             labelTimer.Text = "00:00:00:00";
 
             lbCPUAuslastung.Text = "...";
@@ -748,28 +729,11 @@ namespace LetsPlayTool
         }  // "_Total" entspricht der gesamten CPU Auslastung, Bei Computern mit mehr als 1 logischem Prozessor: "0" dem ersten Core, "1" dem zweiten...
 
 
-        /// <summary>
-        /// Listet die Zeiten des aktuellen ´TimerProfiles auf.
-        /// </summary>
-        /// <returns></returns>
-        private List<Time> getTimes()
-        {
-
-            List<Time> Times = new List<Time>();
-
-            foreach (Time t in selectedTimerProfil.Times)
-            {
-                Times.Add(t);
-            }
-
-            return Times;
-        }
-
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                selectTimerProifil();
+                selectTimerProfil();
             }
 
 
@@ -778,7 +742,7 @@ namespace LetsPlayTool
         /// <summary>
         /// Läst den User ein Timerprofil auswählen
         /// </summary>
-        private void selectTimerProifil()
+        private void selectTimerProfil()
         {
 
             frmTimerprofilAuswahl TPA = new frmTimerprofilAuswahl(einstellungen);
@@ -894,9 +858,9 @@ namespace LetsPlayTool
         private void makeNewMarker()
         {
 
-            lMarker.Add(TimeString);
-            listMarker.Items.Add(TimeString);
-            frmÜFenster.showMessage("Marker erstellt (" + TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+            lMarker.Add(Session.Timer.TimeString);
+            listMarker.Items.Add(Session.Timer.TimeString);
+            frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
 
         }
 

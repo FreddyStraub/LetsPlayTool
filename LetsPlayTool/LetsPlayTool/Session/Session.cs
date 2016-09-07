@@ -9,7 +9,16 @@ namespace LetsPlayTool.Session
     public class Session
     {
 
-        public STimer Timer = new STimer();
+        //  public TimerProfil selectedTimerProfil;
+
+        public STimer Timer;
+
+        public Session(TimerProfil selectedTimerProfil)
+        {
+            Timer = new STimer(selectedTimerProfil);
+        }
+
+
 
         public void Next()
         {
