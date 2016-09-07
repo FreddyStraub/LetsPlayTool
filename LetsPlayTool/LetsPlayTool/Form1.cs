@@ -278,6 +278,8 @@ namespace LetsPlayTool
             loadSettings();
         }
 
+        Session.Session Session = new LetsPlayTool.Session.Session();
+
         Skype skype = new Skype();
         public string NormalStatus = "";
 
@@ -311,86 +313,10 @@ namespace LetsPlayTool
 
             //Macht das die Zeit läuft und angezeigt wird
 
-            #region Time
+            Session.Next();
 
-            Millisekunden += 1;
-
-            if (Millisekunden == 65)
-            {
-                Sekunden += 1;
-                Millisekunden = 0;
-            }
-
-            if (Sekunden == 60)
-            {
-                Minuten += 1;
-                Sekunden = 0;
-            }
-
-            if (Minuten == 60)
-            {
-                Stunden += 1;
-                Minuten = 0;
-            }
-
-
-            #region aussehen
-
-            string StringStunden = "";
-            string StringMinuten = "";
-            string StringSekunden = "";
-            string StringMillisekunden = "";
-
-            //Stunden
-            if (Stunden < 10)
-            {
-                StringStunden = "0" + Stunden.ToString();
-            }
-            else
-            {
-                StringStunden = Stunden.ToString();
-            }
-
-            //Minuten
-            if (Minuten < 10)
-            {
-                StringMinuten = "0" + Minuten.ToString();
-            }
-            else
-            {
-                StringMinuten = Minuten.ToString();
-            }
-
-            //Sekunden
-            if (Sekunden < 10)
-            {
-                StringSekunden = "0" + Sekunden.ToString();
-            }
-            else
-            {
-                StringSekunden = Sekunden.ToString();
-            }
-
-            //Millisekunden
-            if (Millisekunden < 10)
-            {
-                StringMillisekunden = "0" + Millisekunden.ToString();
-            }
-            else
-            {
-                StringMillisekunden = Millisekunden.ToString();
-            }
-
-
-            #endregion
-
-            TimeString = StringStunden + ":" + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
-
-            frmÜFenster.Text = TimeString;
-
-            labelTimer.Text = TimeString;
-            #endregion // Mácht das der Timer 
-
+            labelTimer.Text = Session.Timer.TimeString;
+            frmÜFenster.Text = Session.Timer.TimeString;
 
             //Macht, das bei eingestellter Zeit die Nachricht angezeigt wird
             #region Message

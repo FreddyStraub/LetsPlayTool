@@ -158,6 +158,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\Session.cs" />
+    <Compile Include="Session\STimer.cs" />
     <Compile Include="SoundController.cs" />
     <Compile Include="TimerProfil.cs" />
     <EmbeddedResource Include="Dialogs\InputDilaog.resx">
