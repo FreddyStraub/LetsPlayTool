@@ -354,34 +354,13 @@ namespace LetsPlayTool
 
             #region Speicher
 
-            System.IO.DriveInfo[] Drives = System.IO.DriveInfo.GetDrives(); // alle Laufwerke auslesen
-
-            string drive = System.IO.Path.GetPathRoot(einstellungen.Überwachung.ÜberwachungOrdner); // = Das laufwerk welches im PFad des Users steht
-
-            long freierSpeicherMB = 0;
-            long belegterSpeicherMB = 0;
-            long freierSpeicherGB = 0;
-            long belegterSpeicherGB = 0;
-
-            foreach (System.IO.DriveInfo d in Drives)
-            {
-                if (d.Name == drive)
-                {
-
-                    freierSpeicherMB = d.TotalFreeSpace / (1024 * 1024);
-                    belegterSpeicherMB = d.TotalSize / (1024 * 1024) - freierSpeicherMB;
-
-                    freierSpeicherGB = d.TotalFreeSpace / (1024 * 1024 * 1024);
-                    belegterSpeicherGB = d.TotalSize / (1024 * 1024 * 1024) - freierSpeicherGB;
-                }
-            }
-
+         
             //Ausgabe an User
-            lbBSpeicherGB.Text = belegterSpeicherGB.ToString() + "GB";
-            lbFSpeicherGB.Text = freierSpeicherGB.ToString() + "GB";
+            lbBSpeicherGB.Text = Session.Überwachung.belegterSpeicherGB.ToString() + "GB";
+            lbFSpeicherGB.Text = Session.Überwachung.freierSpeicherGB.ToString() + "GB";
 
-            toolTip1.SetToolTip(lbBSpeicherGB, belegterSpeicherMB.ToString() + "MB");
-            toolTip1.SetToolTip(lbFSpeicherGB, freierSpeicherMB.ToString() + "MB");
+            toolTip1.SetToolTip(lbBSpeicherGB, Session.Überwachung.belegterSpeicherMB.ToString() + "MB");
+            toolTip1.SetToolTip(lbFSpeicherGB, Session.Überwachung.freierSpeicherMB.ToString() + "MB");
 
             #endregion
             
@@ -451,18 +430,16 @@ namespace LetsPlayTool
 
             #region Display Status
 
-        //    lbSkypeStatus.Text = skype.CurrentUserStatus
+    switch (skype.CurrentUserStatus)
+    {
 
-                switch (skype.CurrentUserStatus)
-            {
+        case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
+        case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend";  break;
+        case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
+        case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
+        case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
 
-                case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
-                case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend";  break;
-                case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
-                case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
-                case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
-
-            }
+    }
 
             #endregion
 
@@ -480,7 +457,7 @@ namespace LetsPlayTool
             {
                 startSession();
                 SessionRuns = true;
-                Session = new LetsPlayTool.Session.Session(selectedTimerProfil);
+                Session = new LetsPlayTool.Session.Session(selectedTimerProfil, einstellungen);
             }
             else
             {
@@ -629,7 +606,6 @@ namespace LetsPlayTool
                     case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
                     case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
                     case 4: skype.ChangeUserStatus(TUserStatus.cusOffline);  break;
-                        
 
                 }
 
@@ -670,6 +646,8 @@ namespace LetsPlayTool
             if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
             {
 
+                #region SetSkypeStatus
+
                 switch (einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme)
                 {
                     case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
@@ -678,16 +656,34 @@ namespace LetsPlayTool
                     case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
                     case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
 
+                }
+
+                #endregion
+
+                #region SetLabelText
+
+                switch (skype.CurrentUserStatus)
+                {
+
+                    case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
+                    case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend"; break;
+                    case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
+                    case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
+                    case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
 
                 }
 
                 #endregion
 
-                if(einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+
+                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
                     skype.CurrentUserProfile.MoodText = NormalStatus;
-    
+
+
 
             }
+
+            #endregion
 
             #endregion
 
@@ -709,6 +705,8 @@ namespace LetsPlayTool
             #endregion
 
         }
+
+        
 
         /// <summary>
         /// INitialisiert den Performencecounter für CPU

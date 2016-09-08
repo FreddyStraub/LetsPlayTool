@@ -9,13 +9,17 @@ namespace LetsPlayTool.Session
     public class Session
     {
 
-        //  public TimerProfil selectedTimerProfil;
+        Einstellungen einstellungen;
 
         public STimer Timer;
+        public SÜberwachung Überwachung;
 
-        public Session(TimerProfil selectedTimerProfil)
+        public Session(TimerProfil selectedTimerProfil, Einstellungen einstellungen)
         {
             Timer = new STimer(selectedTimerProfil);
+            Überwachung = new SÜberwachung(einstellungen.Überwachung.ÜberwachungOrdner);
+
+            this.einstellungen = einstellungen;
         }
 
 
@@ -24,6 +28,7 @@ namespace LetsPlayTool.Session
         {
 
             Timer.generateTimeString();
+            Überwachung.generateMemoryValues();
 
         }
 
