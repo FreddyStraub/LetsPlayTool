@@ -287,8 +287,6 @@ namespace LetsPlayTool
 
         public bool SessionRuns = false;
 
-        static PerformanceCounter cpuCounter; // globaler PerformanceCounter 
-        static PerformanceCounter RAMCounter;
 
         int MainactorElapsedTicks = 0;
         int cpuTimervalue = 0;
@@ -370,11 +368,9 @@ namespace LetsPlayTool
             if (MainactorElapsedTicks == cpuTimervalue + 100)
             {
 
-                int cpuAuslastung = (int)cpuCounter.NextValue();
-                int freierRAM = (int)RAMCounter.NextValue();
 
-                lbCPUAuslastung.Text = cpuAuslastung.ToString() + "%"; //CPU-Auslastung in Prozent
-                lbRAMUsed.Text = freierRAM.ToString() + "MB"; //Verfügbarer RAM in Megabyte
+                lbCPUAuslastung.Text = Session.Überwachung.cpuAuslastung.ToString() + "%"; //CPU-Auslastung in Prozent
+                lbRAMUsed.Text = Session.Überwachung.freierRAM.ToString() + "MB"; //Verfügbarer RAM in Megabyte
 
                 cpuTimervalue += 100;
 
@@ -384,14 +380,15 @@ namespace LetsPlayTool
 
 
                 #region Desgin
+                
 
                 //CPU
-                if(cpuAuslastung > 50 & cpuAuslastung < 80)
+                if(Session.Überwachung.cpuAuslastung > 50 & Session.Überwachung.cpuAuslastung < 80)
                 {
                     lbCPUAuslastung.BackColor = Color.Yellow;
                     frmÜFenster.lbCPUAuslastung.BackColor = Color.Yellow;
 
-                }else if(cpuAuslastung > 80)
+                }else if(Session.Überwachung.cpuAuslastung > 80)
                 {
                     lbCPUAuslastung.BackColor = Color.Red;
                     frmÜFenster.lbCPUAuslastung.BackColor = Color.Red;
@@ -403,13 +400,13 @@ namespace LetsPlayTool
                 }
 
                 //Freier RAM
-                if (freierRAM > 200 & freierRAM < 800)
+                if (Session.Überwachung.freierRAM > 200 & Session.Überwachung.freierRAM < 800)
                 {
                     lbRAMUsed.BackColor = Color.Yellow;
                     frmÜFenster.lbRAMUsed.BackColor = Color.Yellow;
 
                 }
-                else if (freierRAM < 200)
+                else if (Session.Überwachung.freierRAM < 200)
                 {
                     lbRAMUsed.BackColor = Color.Red;
                     frmÜFenster.lbRAMUsed.BackColor = Color.Red;
@@ -457,7 +454,7 @@ namespace LetsPlayTool
             {
                 startSession();
                 SessionRuns = true;
-                Session = new LetsPlayTool.Session.Session(selectedTimerProfil, einstellungen);
+
             }
             else
             {
@@ -555,8 +552,9 @@ namespace LetsPlayTool
         /// </summary>
         private void startSession()
         {
-            
-            InitialisierePerformanceCounter();
+            Session = new LetsPlayTool.Session.Session(selectedTimerProfil, einstellungen);
+
+            //InitialisierePerformanceCounter();
 
             Mainactor.Start();
 
@@ -688,8 +686,7 @@ namespace LetsPlayTool
             #endregion
 
             #endregion
-
-
+            
             #region Werte zurücksetzten
 
             labelTimer.Text = "00:00:00:00";
@@ -705,26 +702,8 @@ namespace LetsPlayTool
             #endregion
 
         }
+                
 
-        
-
-        /// <summary>
-        /// INitialisiert den Performencecounter für CPU
-        /// </summary>
-        static void InitialisierePerformanceCounter()
-        {
-            cpuCounter = new PerformanceCounter();
-            cpuCounter.CategoryName = "Processor";
-            cpuCounter.CounterName = "% Processor Time";
-            cpuCounter.InstanceName = "_Total";
-
-            RAMCounter = new PerformanceCounter();
-            RAMCounter.CategoryName = "Memory";
-            RAMCounter.CounterName = "Available MBytes";
-
-
-
-        }  // "_Total" entspricht der gesamten CPU Auslastung, Bei Computern mit mehr als 1 logischem Prozessor: "0" dem ersten Core, "1" dem zweiten...
 
 
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)

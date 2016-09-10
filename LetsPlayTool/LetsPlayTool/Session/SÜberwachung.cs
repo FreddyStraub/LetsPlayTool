@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace LetsPlayTool.Session
         {
 
             Userpath = DirectoryPath;
+            InitialisierePerformanceCounter();
 
         }
 
@@ -46,6 +48,44 @@ namespace LetsPlayTool.Session
                 }
             }
         }
+
+
+        static PerformanceCounter cpuCounter; // globaler PerformanceCounter 
+        static PerformanceCounter RAMCounter;
+
+        public int cpuAuslastung = 0;
+        public int freierRAM = 0;
+
+
+        /// <summary>
+        /// Setzt: cpuAUslastung, freierRAM
+        /// </summary>
+        public void generatePerformanceCounterValues()
+        {
+
+            cpuAuslastung = (int)cpuCounter.NextValue();
+            freierRAM = (int)RAMCounter.NextValue();
+
+        }
+
+        /// <summary>
+        /// INitialisiert den Performencecounter für CPU
+        /// </summary>
+        static void InitialisierePerformanceCounter()
+        {
+            cpuCounter = new PerformanceCounter();
+            cpuCounter.CategoryName = "Processor";
+            cpuCounter.CounterName = "% Processor Time";
+            cpuCounter.InstanceName = "_Total";
+
+            RAMCounter = new PerformanceCounter();
+            RAMCounter.CategoryName = "Memory";
+            RAMCounter.CounterName = "Available MBytes";
+
+
+
+        }  // "_Total" entspricht der gesamten CPU Auslastung, Bei Computern mit mehr als 1 logischem Prozessor: "0" dem ersten Core, "1" dem zweiten...
+
 
     }
 }

@@ -29,7 +29,7 @@ namespace LetsPlayTool.Session
 
             Timer.generateTimeString();
             Überwachung.generateMemoryValues();
-
+            Überwachung.generatePerformanceCounterValues();
         }
 
     }
