@@ -460,6 +460,7 @@ namespace LetsPlayTool
             this.lbSkypeStatus.TabIndex = 3;
             this.lbSkypeStatus.Text = "...";
             this.toolTip1.SetToolTip(this.lbSkypeStatus, "Status");
+            this.lbSkypeStatus.TextChanged += new System.EventHandler(this.lbSkypeStatus_TextChanged);
             // 
             // lbDiscordSM
             // 
