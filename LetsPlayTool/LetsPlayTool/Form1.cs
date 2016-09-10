@@ -35,7 +35,7 @@ namespace LetsPlayTool
             MaximaizeAnimation.Start();
             einstellungen = einstellungen.load();
 
-            skype.Attach();
+
 
         }
         
@@ -142,7 +142,7 @@ namespace LetsPlayTool
 
             #region Überwachung
 
-                selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+            selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
 
             if (einstellungen.Überwachung.ÜberwachungOrdner.Length > 40)
             {
@@ -204,6 +204,47 @@ namespace LetsPlayTool
 
             }
 
+            #region Skype
+
+            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            {
+                skype = new Skype();
+
+                if(skype.Client.IsRunning)
+                {
+
+                    skype.Attach();
+                    lbSkypeStatus.Text = "...";
+                    lbSkypeStatus.ForeColor = Color.Lime;
+
+
+                }
+                else
+                {
+
+                    einstellungen.Überwachung.MessengerSettings.skypeSettings.active = false;
+
+                    einstellungen.save();
+                    einstellungen = einstellungen.load();
+
+                    showSmallMessage(panelÜberwachung, "Es wurde kein Skype Client gefunden!", Color.Red);
+
+                    lbSkypeStatus.Text = "Kein Skype Client gefunden";
+                    lbSkypeStatus.ForeColor = Color.Red;
+
+                    loadSettings();
+                }
+
+            }else
+            {
+
+                lbSkypeStatus.Text = "Deaktiviert";
+                lbSkypeStatus.ForeColor = Color.Orange;
+
+            }
+
+            #endregion
+
             unregisterHotKeys();
             registerHotkeys();
 
@@ -222,6 +263,11 @@ namespace LetsPlayTool
 
             #endregion
         }
+
+
+        Skype skype;
+
+
 
         private void ShowPanelsAnimation_Tick(object sender, EventArgs e)
         {
@@ -280,7 +326,7 @@ namespace LetsPlayTool
 
         Session.Session Session;
 
-        Skype skype = new Skype();
+
         public string NormalStatus = "";
 
         public static TimerProfil selectedTimerProfil;
@@ -427,16 +473,22 @@ namespace LetsPlayTool
 
             #region Display Status
 
-    switch (skype.CurrentUserStatus)
-    {
 
-        case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
-        case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend";  break;
-        case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
-        case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
-        case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
+            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            {
+                switch (skype.CurrentUserStatus)
+                {
 
-    }
+                    case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
+                    case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend"; break;
+                    case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
+                    case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
+                    case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
+
+                }
+            }
+
+
 
             #endregion
 

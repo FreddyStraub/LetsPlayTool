@@ -75,7 +75,7 @@ namespace LetsPlayTool
             newAllgemeines.AufnahmeStartKey = Keys.NumPad0;
 
             newAllgemeines.Erinerrungen = "";
-            newAllgemeines.ShowIErinerrung = true;
+            newAllgemeines.ShowIErinerrung = false;
             newAllgemeines.ErinerrungenAnzeigeDauer = 4;
 
             newAllgemeines.ShowÜFenster = false;
@@ -133,9 +133,10 @@ namespace LetsPlayTool
 
             ÜberwachungTabEinstellungen newÜberwachung = new ÜberwachungTabEinstellungen();
 
-            newÜberwachung.ÜberwachungOrdner = "";
+            newÜberwachung.ÜberwachungOrdner = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
             newÜberwachung.ÜShowCPU = true;
-            newÜberwachung.ÜShowSpeicherort = false;
+            newÜberwachung.ÜShowSpeicherort = true;
+            newÜberwachung.ÜShowRAM = true;
 
             Überwachung = newÜberwachung;
 
@@ -148,7 +149,7 @@ namespace LetsPlayTool
             newÜberwachung.MessengerSettings.skypeSettings.statusInAufnahme = 2;
             newÜberwachung.MessengerSettings.skypeSettings.statusNachAufnahme = 0;
 
-            newÜberwachung.MessengerSettings.skypeSettings.Statusmeldung = "Ich fange jetzt aufzunehmen!!!";
+            newÜberwachung.MessengerSettings.skypeSettings.Statusmeldung = "Ich fange jetzt an aufzunehmen!!!";
             newÜberwachung.MessengerSettings.skypeSettings.writeStatusmeldung = false;
 
             #endregion
