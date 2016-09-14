@@ -126,6 +126,8 @@ namespace LetsPlayTool
         /// </summary>
         private void loadSettings()
         {
+
+            //Einstellungen laden wenn vorhanden, ansonsten erstellen.
             try
             {
                 einstellungen = einstellungen.load();
@@ -194,24 +196,13 @@ namespace LetsPlayTool
 
             #endregion
 
-            if (einstellungen.Allgemeines.ShowÜFenster == true)
-            {
-
-                bShowÜFenster.Visible = true;
-
-            }else
-            {
-                bShowÜFenster.Visible = false;
-
-            }
-
             #region Skype
 
             if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
             {
 
 
-                if(skype.Client.IsRunning)
+                if (skype.Client.IsRunning)
                 {
 
                     skype.Attach();
@@ -223,7 +214,7 @@ namespace LetsPlayTool
                 else
                 {
 
-                  
+
                     showSmallMessage(panelÜberwachung, "Es wurde kein Skype Client gefunden!", Color.Orange);
 
                     lbSkypeStatus.Text = "Kein Skype Client gefunden!";
@@ -231,13 +222,51 @@ namespace LetsPlayTool
 
                 }
 
-            }else
+            }
+            else
             {
 
                 lbSkypeStatus.Text = "Deaktiviert";
                 lbSkypeStatus.ForeColor = Color.Orange;
 
             }
+
+            #endregion
+
+            #region ShowÜFensterButton
+
+            if (einstellungen.Allgemeines.ShowÜFenster == true)
+            {
+
+                bShowÜFenster.Visible = true;
+
+            }else
+            {
+                bShowÜFenster.Visible = false;
+
+            }
+
+            #endregion
+
+
+            #region MarkerLabel setzen
+
+            string MarkerLabelTTip = "Drücke:\n";
+
+            if (einstellungen.Marker.MarkerKeyStrg)
+                MarkerLabelTTip += "Strg + ";
+
+            if (einstellungen.Marker.MarkerKeyAlt)
+                MarkerLabelTTip += "Alt + ";
+
+            if (einstellungen.Marker.MarkerKeyShift)
+                MarkerLabelTTip += "Shift + ";
+
+            MarkerLabelTTip += einstellungen.Marker.MarkerKey + "\num einen Marker zu erstellen";
+
+
+
+            toolTip1.SetToolTip(lbMarker, MarkerLabelTTip);
 
             #endregion
 
@@ -262,8 +291,7 @@ namespace LetsPlayTool
 
 
         Skype skype;
-
-
+        
 
         private void ShowPanelsAnimation_Tick(object sender, EventArgs e)
         {
@@ -769,8 +797,6 @@ namespace LetsPlayTool
 
         }
               
-
-
 
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {

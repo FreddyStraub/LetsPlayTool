@@ -23,7 +23,6 @@ namespace LetsPlayTool.Session
         }
 
 
-
         public void Next()
         {
 
