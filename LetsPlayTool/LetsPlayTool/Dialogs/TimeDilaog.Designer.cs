@@ -322,18 +322,18 @@
 
         private System.Windows.Forms.Panel HeaderBar;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.NumericUpDown nudTimeSeconds;
-        private System.Windows.Forms.NumericUpDown nudTimeMinutes;
-        private System.Windows.Forms.NumericUpDown nudTimeMSeconds;
-        private System.Windows.Forms.NumericUpDown nudTimeHours;
-        private Bunifu.Framework.UI.BunifuFlatButton bFarbe;
         private Bunifu.Framework.UI.BunifuFlatButton bAbbrechen;
         private Bunifu.Framework.UI.BunifuFlatButton bFertig;
         private System.Windows.Forms.ColorDialog cdFarbe;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Panel panelText;
         private System.Windows.Forms.Label lbText;
-        private Bunifu.Framework.UI.BunifuCheckbox checkText;
+        public System.Windows.Forms.NumericUpDown nudTimeSeconds;
+        public System.Windows.Forms.NumericUpDown nudTimeMinutes;
+        public System.Windows.Forms.NumericUpDown nudTimeMSeconds;
+        public System.Windows.Forms.NumericUpDown nudTimeHours;
+        public Bunifu.Framework.UI.BunifuFlatButton bFarbe;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public Bunifu.Framework.UI.BunifuCheckbox checkText;
+        public System.Windows.Forms.Panel panelText;
     }
 }

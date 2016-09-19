@@ -173,7 +173,7 @@
             this.bSpeichern.BackColor = System.Drawing.Color.DodgerBlue;
             this.bSpeichern.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bSpeichern.BorderRadius = 0;
-            this.bSpeichern.ButtonText = "     Speichern";
+            this.bSpeichern.ButtonText = "    Speichern";
             this.bSpeichern.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bSpeichern, BunifuAnimatorNS.DecorationType.None);
             this.bSpeichern.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

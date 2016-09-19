@@ -151,7 +151,18 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private void bZeitHinzufügen_Click(object sender, EventArgs e)
         {
 
-            if(lbProfiles.SelectedItem != null)
+            AddTime();
+
+            updateTimes();
+
+        }
+
+        /// <summary>
+        /// Fügt dem aktuellen Timerprofil eine Zeit hinzu.
+        /// </summary>
+        private void AddTime()
+        {
+            if (lbProfiles.SelectedItem != null)
             {
                 TimeDilaog TD = new TimeDilaog();
                 TD.ShowDialog();
@@ -225,9 +236,142 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                 }
             }
+        }
 
-            updateTimes();
+        private void editTime()
+        {
 
+            if (lbProfiles.SelectedItem != null & lvTimes.SelectedItems.Count != 0)
+            {
+
+                
+                foreach (ListViewItem Item in lvTimes.SelectedItems)
+                {
+                    int TimerProfil = lbProfiles.Items.IndexOf(lbProfiles.SelectedItem);
+                    int realIndex = lvTimes.Items.IndexOf(Item);
+
+                    ListViewItem altesLItem = TimerProfiles[TimerProfil].Times[realIndex].ListViewItem;
+
+                    TimeDilaog td = new TimeDilaog();
+
+                    if(TimerProfiles[TimerProfil].Times[realIndex].Text != "")
+                    {
+
+                        td.checkText.Checked = true;
+                        td.panelText.Enabled = true;
+                        td.richTextBox1.Enabled = true;
+                        td.richTextBox1.Text = TimerProfiles[TimerProfil].Times[realIndex].Text;
+
+
+                    }
+                    else
+                    {
+                        td.checkText.Checked = false;
+
+                    }
+
+
+                    int alteStunden = Convert.ToInt32(altesLItem.Text.Substring(0,2));
+                    int alteMinuten = Convert.ToInt32(altesLItem.Text.Substring(3, 2));
+                    int alteSekunden= Convert.ToInt32(altesLItem.Text.Substring(6, 2));
+                    int alteMillisekunden= Convert.ToInt32(altesLItem.Text.Substring(9, 2));
+
+                    td.nudTimeHours.Value = alteStunden;
+                    td.nudTimeMinutes.Value = alteMinuten;
+                    td.nudTimeSeconds.Value = alteSekunden;
+                    td.nudTimeMSeconds.Value = alteMillisekunden;
+
+                    td.bFarbe.BackColor = altesLItem.BackColor;
+                    td.bFarbe.Activecolor = altesLItem.BackColor;
+                    td.bFarbe.Normalcolor = altesLItem.BackColor;
+
+                    if(td.ShowDialog() == DialogResult.OK)
+                    {
+
+                        TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Remove(TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times[Item.Index]);
+                        lvTimes.Items.Remove(Item);
+
+
+                        ListViewItem TimeItem = new ListViewItem();
+                        TimeItem.Font = new Font(TimeItem.Font.Name, 24f, FontStyle.Regular);
+                        TimeItem.BackColor = td.Farbe;
+                        TimeItem.ForeColor = Color.White;
+
+
+                        string TimeText = "";
+
+                        #region Anzeige
+
+
+                        //Stunden
+                        if (td.Stunden < 10)
+                        {
+                            TimeText += "0" + td.Stunden.ToString() + ":";
+
+                        }
+                        else
+                        {
+                            TimeText += td.Stunden.ToString() + ":";
+                        }
+
+                        //Minuten
+                        if (td.Minuten < 10)
+                        {
+                            TimeText += "0" + td.Minuten.ToString() + ":";
+
+                        }
+                        else
+                        {
+                            TimeText += td.Minuten.ToString() + ":";
+                        }
+
+                        //Sekunden
+                        if (td.Sekunden < 10)
+                        {
+                            TimeText += "0" + td.Sekunden.ToString() + ":";
+
+                        }
+                        else
+                        {
+                            TimeText += td.Sekunden.ToString() + ":";
+                        }
+
+                        //Millisekunden
+                        if (td.Millisekunden < 10)
+                        {
+                            TimeText += "0" + td.Millisekunden.ToString();
+
+                        }
+                        else
+                        {
+                            TimeText += td.Millisekunden.ToString();
+                        }
+
+                        #endregion
+
+                        TimeItem.Text = TimeText;
+
+                        Time t = new Time(TimeItem);
+
+                        if(td.checkText.Checked == false)
+                        {
+                            t.Text = "";
+
+                        }else
+                        {
+                            t.Text = td.TimerText;
+
+                        }
+
+
+                        TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Add(t);
+
+                    }
+
+                    updateTimes();
+
+                }
+            }
         }
         private void bZeitEntfernen_Click(object sender, EventArgs e)
         {
@@ -287,5 +431,10 @@ namespace LetsPlayTool.Einstellungen_Tabs
             }
 
         }
+
+        private void bZeitBearbeiten_Click(object sender, EventArgs e)
+        {
+            editTime();
         }
+    }
 }

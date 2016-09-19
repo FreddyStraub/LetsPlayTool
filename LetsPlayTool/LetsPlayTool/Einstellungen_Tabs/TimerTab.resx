@@ -118,6 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bZeitBearbeiten.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAR5SURBVHhe7dxPaiVVGMbhuAMHLkAX4CocOBAX4NQlOFP82w7dh+AqnKjLcOCsBRHBgbP4duo7
+        SOx0Orm5detUfc8DB0LIzT0FvxcCIbkCAAAAAAAAAAAAAAAAAAAAAABgP66vr9/K+TTnl5w/c/7J+S3n
+        h5wPc96oL4VjSdwf5/yVc5+fc96pl8AxJOpnN3k/zPOcd+ulsG+J+dubrB/n9xwjYN8S8SnxD0bAfiXe
+        p8Q/GAH7k2jPEf9gBOxHYj1n/IMRML9Eukb8gxEwr8S5ZvyDETCfRHmJ+AcjYB6J8ZLxD0bA9hLhFvEP
+        RsB2Et+W8Q9GwOUluhniH4yAy0lsM8U/GAHrS2Qzxj8YAetKYDMP4AUjYF0JzAjoLYEZAb0lMCOgtwQ2
+        +whe/Hnl23VdOL8ENvsIfsrx3yZYTwKbfQQf1FVhHYls5hF8X9eEuyWS9+vDk+V7zDqCX+uK8LIEMsL9
+        rj51snyPGUfwd10Pbksc/w/2iCN4XleD/ySMV4V6tBH8WNeCRaJ4XaBHGsEndSV4VJhHGMEfOW/Wdegu
+        MTw2yL2P4KO6Bt0lhlND3OsIPqu3p7vE8NQA9zaCz+tt6S4xnCu8vYxA/CwSw7mDm30E4meRGNYKbdYR
+        iJ9FYlj7R43ZRiB+Folh7fiHWUYgfhaJ4VLxD1uPQPwsEsOl4x+2GoH4WSSGreIfLj0C8bNIDFvHP1xq
+        BOJnkRhmiX9YewTiZ5EYZot/WGsE4meRGGaNfzj3CMTPIjHMHv9wrhGIn0UFsSdPHgHcSEzPlqZ2xwh4
+        mkS01/gHI+A0iWfv8Q9GwOMkmqPEPxgBD5NYjhb/YATcL5EcNf7BCLhb4jh6/IMRcFui6BL/8F49Ot0l
+        hm7x+w0vi8QgfnpKDOKnp8QgfnpKDOKnp8QgfnpKDOKnp8QgfnpKDOKnp8QgfnpKDOKnp8QgfnpKDOKn
+        p8QgfnpKDN8sTbQhfhaJQfz0lBjET0+JQfz0lBjET0+JQfz0lBjET0+JQfz0lBi6xf9FPTrdJQbx01Ni
+        ED89JQbx01NiED89JQbx01NiED89JQbx01NiED89JQbx01NiED89JQbx01NiED89JQbx01Ni+Hppog3x
+        s0gM4qenxCB+ekoM4qenxCB+ekoM4qenxCB+ekoM4qenxNAt/i/r0ekuMYifnhKD+OkpMYifnhKD+Okp
+        MYifnhKD+OkpMYifnhKD+OkpMYifnhKD+OkpMYifnhKD+OkpMYifviqKLsTPbRVGB+LnZRXH0Ymfu1Ug
+        RyZ+Xq0iOSrxc78K5YjEz+tVLEcjfh6mgjkS8fNwFc1RfFWPBQ9T4RyB+Hm8imfvxM9pKqA9Ez+nq4j2
+        Svw8TYW0R+Ln6SqmvRE/51FB7Yn4OZ+Kai/Ez3lVWHsgfs6v4pqd+FlHBTYz8bOeimxW4mddFdqMxM/6
+        KrbZiJ/LqOBmIn4up6Kbhfi5rApvBuLn8iq+rYmfbVSAWxI/26kItyJ+tlUhbkH8AAAAAAAAAAAAAAAA
+        AAAAAAAAu3F19S8NERrVyYFA9gAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="bZeitEntfernen.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGPC/xhBQAABPVJREFUeF7t

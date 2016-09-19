@@ -87,7 +87,7 @@
             this.tbAufnahmeordner.BackColor = System.Drawing.Color.DodgerBlue;
             this.tbAufnahmeordner.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.panelAnimator.SetDecoration(this.tbAufnahmeordner, BunifuAnimatorNS.DecorationType.None);
-            this.tbAufnahmeordner.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAufnahmeordner.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAufnahmeordner.ForeColor = System.Drawing.Color.White;
             this.tbAufnahmeordner.Location = new System.Drawing.Point(127, 34);
             this.tbAufnahmeordner.Multiline = true;
@@ -264,7 +264,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));

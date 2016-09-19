@@ -79,7 +79,7 @@ namespace LetsPlayTool.Dialogs
 
                         MessageBox.Show("Ein Text darf nur 211 Zeichen haben... Bitte halte dich kürzer! :P", "LetsPlayTool - Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                        DialogResult = DialogResult.None;
+                        DialogResult = DialogResult.Cancel;
                         
 
                     }else
@@ -97,10 +97,7 @@ namespace LetsPlayTool.Dialogs
 
                 TimerText = richTextBox1.Text;
 
-
-
-
-
+            
         }
 
         public decimal Stunden { get; private set; }
@@ -115,8 +112,13 @@ namespace LetsPlayTool.Dialogs
 
         private void bFarbe_Click(object sender, EventArgs e)
         {
-            if(cdFarbe.ShowDialog() == DialogResult.OK)
+
+
+            cdFarbe.Color = bFarbe.Normalcolor;
+
+            if (cdFarbe.ShowDialog() == DialogResult.OK)
             {
+
 
                 Farbe = cdFarbe.Color;
                 bFarbe.Normalcolor = Farbe;
@@ -162,5 +164,6 @@ namespace LetsPlayTool.Dialogs
             panelText.Enabled = checkText.Checked;
 
         }
+
     }
 }

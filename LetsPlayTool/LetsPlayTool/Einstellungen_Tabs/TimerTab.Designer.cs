@@ -41,6 +41,7 @@
             this.lbProfiles = new System.Windows.Forms.ListBox();
             this.gbText = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.bZeitBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2.SuspendLayout();
             this.gbText.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bZeitBearbeiten);
             this.groupBox2.Controls.Add(this.bZeitEntfernen);
             this.groupBox2.Controls.Add(this.bZeitHinzufügen);
             this.groupBox2.Controls.Add(this.bProfilLöschen);
@@ -90,7 +92,7 @@
             this.bZeitEntfernen.BackColor = System.Drawing.Color.DodgerBlue;
             this.bZeitEntfernen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bZeitEntfernen.BorderRadius = 0;
-            this.bZeitEntfernen.ButtonText = "     Zeit entfernen";
+            this.bZeitEntfernen.ButtonText = "     Zeit entfernen...";
             this.bZeitEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bZeitEntfernen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitEntfernen.Iconcolor = System.Drawing.Color.Transparent;
@@ -100,7 +102,7 @@
             this.bZeitEntfernen.Iconimage_Selected = null;
             this.bZeitEntfernen.IconZoom = 90D;
             this.bZeitEntfernen.IsTab = false;
-            this.bZeitEntfernen.Location = new System.Drawing.Point(470, 216);
+            this.bZeitEntfernen.Location = new System.Drawing.Point(471, 270);
             this.bZeitEntfernen.Name = "bZeitEntfernen";
             this.bZeitEntfernen.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bZeitEntfernen.OnHovercolor = System.Drawing.Color.DarkRed;
@@ -118,7 +120,7 @@
             this.bZeitHinzufügen.BackColor = System.Drawing.Color.DodgerBlue;
             this.bZeitHinzufügen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bZeitHinzufügen.BorderRadius = 0;
-            this.bZeitHinzufügen.ButtonText = "     Zeit hinzufügen";
+            this.bZeitHinzufügen.ButtonText = "     Zeit hinzufügen...";
             this.bZeitHinzufügen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bZeitHinzufügen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitHinzufügen.Iconcolor = System.Drawing.Color.Transparent;
@@ -174,7 +176,7 @@
             this.bProfilErstellen.BackColor = System.Drawing.Color.DodgerBlue;
             this.bProfilErstellen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bProfilErstellen.BorderRadius = 0;
-            this.bProfilErstellen.ButtonText = "     Profil erstellen";
+            this.bProfilErstellen.ButtonText = "     Profil erstellen...";
             this.bProfilErstellen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bProfilErstellen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilErstellen.Iconcolor = System.Drawing.Color.Transparent;
@@ -240,6 +242,34 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
+            // bZeitBearbeiten
+            // 
+            this.bZeitBearbeiten.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.bZeitBearbeiten.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bZeitBearbeiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bZeitBearbeiten.BorderRadius = 0;
+            this.bZeitBearbeiten.ButtonText = "     Zeit bearbeiten...";
+            this.bZeitBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bZeitBearbeiten.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bZeitBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
+            this.bZeitBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitBearbeiten.Iconimage")));
+            this.bZeitBearbeiten.Iconimage_right = null;
+            this.bZeitBearbeiten.Iconimage_right_Selected = null;
+            this.bZeitBearbeiten.Iconimage_Selected = null;
+            this.bZeitBearbeiten.IconZoom = 90D;
+            this.bZeitBearbeiten.IsTab = false;
+            this.bZeitBearbeiten.Location = new System.Drawing.Point(470, 216);
+            this.bZeitBearbeiten.Name = "bZeitBearbeiten";
+            this.bZeitBearbeiten.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bZeitBearbeiten.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bZeitBearbeiten.OnHoverTextColor = System.Drawing.Color.White;
+            this.bZeitBearbeiten.selected = false;
+            this.bZeitBearbeiten.Size = new System.Drawing.Size(194, 48);
+            this.bZeitBearbeiten.TabIndex = 10;
+            this.bZeitBearbeiten.Textcolor = System.Drawing.Color.White;
+            this.bZeitBearbeiten.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bZeitBearbeiten.Click += new System.EventHandler(this.bZeitBearbeiten_Click);
+            // 
             // TimerTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,5 +299,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bZeitHinzufügen;
         private System.Windows.Forms.GroupBox gbText;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private Bunifu.Framework.UI.BunifuFlatButton bZeitBearbeiten;
     }
 }

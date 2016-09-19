@@ -53,7 +53,7 @@
             // 
             this.tbSpeicherort.BackColor = System.Drawing.Color.DodgerBlue;
             this.tbSpeicherort.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSpeicherort.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSpeicherort.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSpeicherort.ForeColor = System.Drawing.Color.White;
             this.tbSpeicherort.Location = new System.Drawing.Point(94, 37);
             this.tbSpeicherort.Multiline = true;
@@ -104,7 +104,7 @@
         "Textdatei (.txt)",
         "Audiodatei (.wav)"};
             this.cbFormat.Location = new System.Drawing.Point(94, 101);
-            this.cbFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFormat.Margin = new System.Windows.Forms.Padding(4);
             this.cbFormat.Name = "cbFormat";
             this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
             this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
