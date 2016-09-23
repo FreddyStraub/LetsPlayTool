@@ -363,6 +363,8 @@ namespace LetsPlayTool
 
         Point ÜFensterLocation = new Point();
 
+
+
         private void Mainactor_Tick(object sender, EventArgs e)
         {
 
@@ -641,6 +643,7 @@ namespace LetsPlayTool
             //InitialisierePerformanceCounter();
 
             Mainactor.Start();
+            Session.Timer.st.Start(); //Startet die Stopwatch
 
             einstellungen.SessionValue += 1;
 
@@ -720,6 +723,8 @@ namespace LetsPlayTool
         {
             createMarkerFile();
             Mainactor.Stop();
+            Session.Timer.st.Stop(); //Stop die Stopwatch
+
 
             ÜFensterLocation = frmÜFenster.Location;
 

@@ -26,10 +26,13 @@ namespace LetsPlayTool.Session
         public void Next()
         {
 
+            
             Timer.generateTimeString();
             Überwachung.generateMemoryValues();
             Überwachung.generatePerformanceCounterValues();
         }
+
+
 
     }
 }

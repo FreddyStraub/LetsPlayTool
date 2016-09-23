@@ -1,5 +1,7 @@
 ﻿using LetsPlayTool.Dialogs;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace LetsPlayTool.Session
 {
@@ -23,31 +25,18 @@ namespace LetsPlayTool.Session
         public int Sekunden { get; private set; }
         public int Millisekunden { get; private set; }
 
+        public long hours { get; set; }
+        public long minutes { get; set; }
+        public long seconds { get; set; }
+        public long milliseconds { get; set; }
+
+        public Stopwatch st = new Stopwatch();
+        
         public void generateTimeString()
     {
+            milliseconds = st.ElapsedMilliseconds;
 
-            #region Time
-
-            Millisekunden += 1;
-
-            if (Millisekunden == 65)
-            {
-                Sekunden += 1;
-                Millisekunden = 0;
-            }
-
-            if (Sekunden == 60)
-            {
-                Minuten += 1;
-                Sekunden = 0;
-            }
-
-            if (Minuten == 60)
-            {
-                Stunden += 1;
-                Minuten = 0;
-            }
-
+            TimeSpan ElapsedTime = st.Elapsed;
 
             #region aussehen
 
@@ -56,52 +45,62 @@ namespace LetsPlayTool.Session
             string StringSekunden = "";
             string StringMillisekunden = "";
 
-            //Stunden
-            if (Stunden < 10)
+            //ElapsedTime.Hours
+            if (ElapsedTime.Hours < 10)
             {
-                StringStunden = "0" + Stunden.ToString();
+                StringStunden = "0" + ElapsedTime.Hours.ToString();
             }
             else
             {
-                StringStunden = Stunden.ToString();
+                StringStunden = ElapsedTime.Hours.ToString();
             }
 
-            //Minuten
-            if (Minuten < 10)
+            //ElapsedTime.Minutes
+            if (ElapsedTime.Minutes < 10)
             {
-                StringMinuten = "0" + Minuten.ToString();
+                StringMinuten = "0" + ElapsedTime.Minutes.ToString();
             }
             else
             {
-                StringMinuten = Minuten.ToString();
+                StringMinuten = ElapsedTime.Minutes.ToString();
             }
 
-            //Sekunden
-            if (Sekunden < 10)
+            //ElapsedTime.Seconds
+            if (ElapsedTime.Seconds < 10)
             {
-                StringSekunden = "0" + Sekunden.ToString();
+                StringSekunden = "0" + ElapsedTime.Seconds.ToString();
             }
             else
             {
-                StringSekunden = Sekunden.ToString();
+                StringSekunden = ElapsedTime.Seconds.ToString();
             }
 
-            //Millisekunden
-            if (Millisekunden < 10)
+            //ElapsedTime.Milliseconds
+            if (ElapsedTime.Milliseconds > 0 & ElapsedTime.Milliseconds < 10)
             {
-                StringMillisekunden = "0" + Millisekunden.ToString();
+                StringMillisekunden = "00" + ElapsedTime.Milliseconds.ToString();
+            }
+            else if (ElapsedTime.Milliseconds > 9 & ElapsedTime.Milliseconds < 100)
+            {
+                StringMillisekunden = "0" + ElapsedTime.Milliseconds.ToString();
+
             }
             else
             {
-                StringMillisekunden = Millisekunden.ToString();
+                StringMillisekunden = ElapsedTime.Milliseconds.ToString();
+                
             }
 
+            StringMillisekunden = StringMillisekunden.Substring(0, 2);
 
             #endregion
 
-            TimeString = StringStunden + ":" + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
+            
 
-            #endregion // Mácht das der Timer 
+            TimeString = StringStunden + ":"  + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
+
+
+
 
 
         }
