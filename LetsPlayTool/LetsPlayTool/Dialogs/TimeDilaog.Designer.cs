@@ -190,7 +190,7 @@
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
-            this.bAbbrechen.IconZoom = 100D;
+            this.bAbbrechen.IconZoom = 70D;
             this.bAbbrechen.IsTab = false;
             this.bAbbrechen.Location = new System.Drawing.Point(215, 338);
             this.bAbbrechen.Name = "bAbbrechen";
@@ -217,7 +217,7 @@
             this.bFertig.Iconimage_right = null;
             this.bFertig.Iconimage_right_Selected = null;
             this.bFertig.Iconimage_Selected = null;
-            this.bFertig.IconZoom = 100D;
+            this.bFertig.IconZoom = 70D;
             this.bFertig.IsTab = false;
             this.bFertig.Location = new System.Drawing.Point(86, 338);
             this.bFertig.Name = "bFertig";

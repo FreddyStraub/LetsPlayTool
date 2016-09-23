@@ -522,7 +522,7 @@ namespace LetsPlayTool
             this.sliderLautsprecher.BorderRadius = 0;
             this.ShowPanelAnimator.SetDecoration(this.sliderLautsprecher, BunifuAnimatorNS.DecorationType.None);
             this.sliderLautsprecher.IndicatorColor = System.Drawing.Color.DodgerBlue;
-            this.sliderLautsprecher.Location = new System.Drawing.Point(144, 75);
+            this.sliderLautsprecher.Location = new System.Drawing.Point(144, 41);
             this.sliderLautsprecher.MaximumValue = 100;
             this.sliderLautsprecher.Name = "sliderLautsprecher";
             this.sliderLautsprecher.Size = new System.Drawing.Size(276, 30);
@@ -537,7 +537,7 @@ namespace LetsPlayTool
             this.sliderMikrofon.BorderRadius = 0;
             this.ShowPanelAnimator.SetDecoration(this.sliderMikrofon, BunifuAnimatorNS.DecorationType.None);
             this.sliderMikrofon.IndicatorColor = System.Drawing.Color.DodgerBlue;
-            this.sliderMikrofon.Location = new System.Drawing.Point(144, 39);
+            this.sliderMikrofon.Location = new System.Drawing.Point(144, 81);
             this.sliderMikrofon.MaximumValue = 100;
             this.sliderMikrofon.Name = "sliderMikrofon";
             this.sliderMikrofon.Size = new System.Drawing.Size(276, 30);
@@ -550,7 +550,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbLautsprecher, BunifuAnimatorNS.DecorationType.None);
             this.lbLautsprecher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLautsprecher.ForeColor = System.Drawing.Color.White;
-            this.lbLautsprecher.Location = new System.Drawing.Point(12, 78);
+            this.lbLautsprecher.Location = new System.Drawing.Point(12, 44);
             this.lbLautsprecher.Name = "lbLautsprecher";
             this.lbLautsprecher.Size = new System.Drawing.Size(103, 21);
             this.lbLautsprecher.TabIndex = 4;
@@ -562,7 +562,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbMikrodon, BunifuAnimatorNS.DecorationType.None);
             this.lbMikrodon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMikrodon.ForeColor = System.Drawing.Color.White;
-            this.lbMikrodon.Location = new System.Drawing.Point(12, 42);
+            this.lbMikrodon.Location = new System.Drawing.Point(12, 84);
             this.lbMikrodon.Name = "lbMikrodon";
             this.lbMikrodon.Size = new System.Drawing.Size(77, 21);
             this.lbMikrodon.TabIndex = 3;

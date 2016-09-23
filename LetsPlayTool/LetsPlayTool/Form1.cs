@@ -459,7 +459,7 @@ namespace LetsPlayTool
                 if(Session.Überwachung.cpuAuslastung > 50 & Session.Überwachung.cpuAuslastung < 80)
                 {
                     lbCPUAuslastung.BackColor = Color.Yellow;
-                    frmÜFenster.lbCPUAuslastung.BackColor = Color.Yellow;
+                    frmÜFenster.lbCPUAuslastung.BackColor = Color.Orange;
 
                 }else if(Session.Überwachung.cpuAuslastung > 80)
                 {
@@ -475,8 +475,8 @@ namespace LetsPlayTool
                 //Freier RAM
                 if (Session.Überwachung.freierRAM > 200 & Session.Überwachung.freierRAM < 800)
                 {
-                    lbRAMUsed.BackColor = Color.Yellow;
-                    frmÜFenster.lbRAMUsed.BackColor = Color.Yellow;
+                    lbRAMUsed.BackColor = Color.Orange;
+                    frmÜFenster.lbRAMUsed.BackColor = Color.Orange;
 
                 }
                 else if (Session.Überwachung.freierRAM < 200)
@@ -501,6 +501,23 @@ namespace LetsPlayTool
             #region Display Status
 
 
+            setSkyeLabelStatus();
+
+            #endregion
+
+            #endregion
+
+
+            #endregion
+
+        } //Mainactor!!!!!!!!!!!!!!!!!!
+
+        /// <summary>
+        /// Zeigt den aktuellen Skypestatus im Label an.
+        /// </summary>
+        private void setSkyeLabelStatus()
+        {
+
             if (skype.Client.IsRunning)
             {
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
@@ -517,21 +534,31 @@ namespace LetsPlayTool
                     }
                 }
 
-            }else
+            }
+            else
             {
 
                 lbSkypeStatus.Text = "Kein Skype Client gefunden!";
 
             }
+        }
 
-            #endregion
+        /// <summary>
+        /// Setzt den eingestellen Status
+        /// </summary>
+        private void setSkypeStatus(int status)
+        {
+            switch (status)
+            {
+                case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
+                case 1: skype.ChangeUserStatus(TUserStatus.cusAway); break;
+                case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
+                case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
+                case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
 
-            #endregion
+            }
+        }
 
-
-            #endregion
-
-        } //Mainactor!!!!!!!!!!!!!!!!!!
 
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
@@ -686,18 +713,7 @@ namespace LetsPlayTool
                 if (skype.Client.IsRunning)
                 {
 
-                    #region Status
-                    switch (einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme)
-                    {
-                        case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
-                        case 1: skype.ChangeUserStatus(TUserStatus.cusAway); break;
-                        case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
-                        case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
-                        case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
-
-                    }
-
-                    #endregion
+                    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
 
                     if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
                     {
@@ -716,6 +732,7 @@ namespace LetsPlayTool
 
         }
 
+
         /// <summary>
         /// Stoppt die Session und alle Funktionen
         /// </summary>
@@ -723,7 +740,6 @@ namespace LetsPlayTool
         {
             createMarkerFile();
             Mainactor.Stop();
-            Session.Timer.st.Stop(); //Stop die Stopwatch
 
 
             ÜFensterLocation = frmÜFenster.Location;
@@ -732,46 +748,16 @@ namespace LetsPlayTool
 
             #region Skype
 
-
             #region Status
             if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
             {
 
-                #region SetSkypeStatus
 
                 if (skype.Client.IsRunning)
                 {
 
-                    switch (einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme)
-                    {
-                        case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
-                        case 1: skype.ChangeUserStatus(TUserStatus.cusAway); break;
-                        case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
-                        case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
-                        case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
-
-                    }
-
-
-                    #endregion
-
-                    #region SetLabelText
-
-
-
-                    switch (skype.CurrentUserStatus)
-                    {
-
-                        case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
-                        case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend"; break;
-                        case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
-                        case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
-                        case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
-
-                    }
-
-                    #endregion
-
+                    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
+                    setSkyeLabelStatus();
 
                     if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
                         skype.CurrentUserProfile.MoodText = NormalStatus;

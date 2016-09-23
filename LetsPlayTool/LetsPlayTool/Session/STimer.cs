@@ -91,11 +91,17 @@ namespace LetsPlayTool.Session
                 
             }
 
-            StringMillisekunden = StringMillisekunden.Substring(0, 2);
+            try
+            {
+                StringMillisekunden = StringMillisekunden.Substring(0, 2);
+
+            }
+            catch { }
+
 
             #endregion
 
-            
+
 
             TimeString = StringStunden + ":"  + StringMinuten + ":" + StringSekunden + ":" + StringMillisekunden;
 
