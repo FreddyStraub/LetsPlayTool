@@ -273,6 +273,8 @@ namespace LetsPlayTool
             unregisterHotKeys();
             registerHotkeys();
 
+            sliderLautsprecher.Value = (int)AudioTest.SoundController.GetMasterVolume();
+
             #region Timer
 
             selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
@@ -732,7 +734,6 @@ namespace LetsPlayTool
 
         }
 
-
         /// <summary>
         /// Stoppt die Session und alle Funktionen
         /// </summary>
@@ -788,7 +789,6 @@ namespace LetsPlayTool
 
         }
               
-
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -982,9 +982,8 @@ namespace LetsPlayTool
         private void sliderLautsprecher_ValueChanged(object sender, EventArgs e)
         {
 
-            SoundController.setVolume(sliderLautsprecher.Value);
-
-
+            AudioTest.SoundController.SetMasterVolume(sliderLautsprecher.Value);
+            
         }
 
         private void lbSkypeStatus_TextChanged(object sender, EventArgs e)
@@ -1001,6 +1000,11 @@ namespace LetsPlayTool
                 case "Kein Skype Client gefunden!": lbSkypeStatus.ForeColor = Color.Orange; break;
 
             }
+        }
+
+        private void lbLautsprecher_Click(object sender, EventArgs e)
+        {
+            AudioTest.SoundController.ToggleMasterVolumeMute();
         }
     }
  
