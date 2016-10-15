@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 // ReSharper disable SuspiciousTypeConversion.Global
 // ReSharper disable InconsistentNaming
 
-namespace AudioTest
+namespace LPTSound
 {
     /// <summary>
     /// Controls audio using the Windows CoreAudio API

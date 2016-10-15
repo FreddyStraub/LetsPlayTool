@@ -273,7 +273,7 @@ namespace LetsPlayTool
             unregisterHotKeys();
             registerHotkeys();
 
-            sliderLautsprecher.Value = (int)AudioTest.SoundController.GetMasterVolume();
+            sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
 
             #region Timer
 
@@ -512,6 +512,13 @@ namespace LetsPlayTool
 
             #endregion
 
+            #region lautsprecher
+
+            sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
+
+            #endregion
+
+
         } //Mainactor!!!!!!!!!!!!!!!!!!
 
         /// <summary>
@@ -667,71 +674,80 @@ namespace LetsPlayTool
         /// </summary>
         private void startSession()
         {
-            Session = new LetsPlayTool.Session.Session(selectedTimerProfil, einstellungen);
 
-            //InitialisierePerformanceCounter();
-
-            Mainactor.Start();
-            Session.Timer.st.Start(); //Startet die Stopwatch
-
-            einstellungen.SessionValue += 1;
-
-            listMarker.Items.Clear();
-
-            if (einstellungen.Allgemeines.ShowÜFenster)
-            {
-                frmÜFenster.Close();
-                frmÜFenster = new frmÜFenster();
-                frmÜFenster.Show();
-
-                frmÜFenster.Location = ÜFensterLocation;
-
-            }
-
-            if (einstellungen.Allgemeines.ShowIErinerrung)
-            {
-                showBigMessage(einstellungen.Allgemeines.Erinerrungen);
-            }
-
-
-            #region Get Times
-
-            if (selectedTimerProfil == null)
-            {
-               
-                stopSession();
-                showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.Red);
-
-            }
-            #endregion
-
-            #region Messenger
-
-            #region Skype
-
-            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            if (selectedTimerProfil != null)
             {
 
-                if (skype.Client.IsRunning)
+                Session = new LetsPlayTool.Session.Session(selectedTimerProfil, einstellungen);
+
+                //InitialisierePerformanceCounter();
+
+                Mainactor.Start();
+                Session.Timer.st.Start(); //Startet die Stopwatch
+
+                einstellungen.SessionValue += 1;
+
+                listMarker.Items.Clear();
+
+                if (einstellungen.Allgemeines.ShowÜFenster)
+                {
+                    frmÜFenster.Close();
+                    frmÜFenster = new frmÜFenster();
+                    frmÜFenster.Show();
+
+                    frmÜFenster.Location = ÜFensterLocation;
+
+                }
+
+                if (einstellungen.Allgemeines.ShowIErinerrung)
+                {
+                    showBigMessage(einstellungen.Allgemeines.Erinerrungen);
+                }
+
+
+                #region Get Times
+
+                if (selectedTimerProfil == null)
                 {
 
-                    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
+                    stopSession();
+                    showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.Red);
 
-                    if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                }
+                #endregion
+
+                #region Messenger
+
+                #region Skype
+
+                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+                {
+
+                    if (skype.Client.IsRunning)
                     {
 
-                        NormalStatus = skype.CurrentUserProfile.MoodText;
-                        skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
+                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
 
+                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                        {
+
+                            NormalStatus = skype.CurrentUserProfile.MoodText;
+                            skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
+
+                        }
                     }
                 }
+
+                #endregion
+
+                #endregion
+
+            }else
+            {
+
+                showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.DarkRed);
+
             }
-
-            #endregion
-
-            #endregion
-
-
         }
 
         /// <summary>
@@ -742,6 +758,7 @@ namespace LetsPlayTool
             createMarkerFile();
             Mainactor.Stop();
 
+            einstellungen.save();
 
             ÜFensterLocation = frmÜFenster.Location;
 
@@ -784,6 +801,8 @@ namespace LetsPlayTool
             lbBSpeicherGB.Text = "...";
                           
             listMarker.Items.Clear();
+
+            lMarker.Clear();
 
             #endregion
 
@@ -943,6 +962,8 @@ namespace LetsPlayTool
                     using (System.IO.StreamWriter SW = new System.IO.StreamWriter(@FileName + ".txt", true))
                     {
 
+                        SW.WriteLine("Marker: ");
+
                         foreach (string time in lMarker)
                         {
 
@@ -982,7 +1003,7 @@ namespace LetsPlayTool
         private void sliderLautsprecher_ValueChanged(object sender, EventArgs e)
         {
 
-            AudioTest.SoundController.SetMasterVolume(sliderLautsprecher.Value);
+            LPTSound.SoundController.SetMasterVolume(sliderLautsprecher.Value);
             
         }
 
@@ -1004,8 +1025,20 @@ namespace LetsPlayTool
 
         private void lbLautsprecher_Click(object sender, EventArgs e)
         {
-            AudioTest.SoundController.ToggleMasterVolumeMute();
+
+            if (LPTSound.SoundController.ToggleMasterVolumeMute())
+            {
+                lbLautsprecher.ForeColor = Color.DarkRed;
+
+            }else
+            {
+                lbLautsprecher.ForeColor = Color.White;
+
+            }
+
         }
+
+
     }
  
 }
