@@ -204,11 +204,24 @@ namespace LetsPlayTool
 
                 if (skype.Client.IsRunning)
                 {
+                    skype.Client.Start();
+                    try
+                    {
+                        skype.Attach();
 
-                    skype.Attach();
-                    lbSkypeStatus.Text = "...";
-                    lbSkypeStatus.ForeColor = Color.Lime;
+                        lbSkypeStatus.Text = "...";
+                        lbSkypeStatus.ForeColor = Color.Lime;
+                    }
+                    catch {
+                        lbSkypeStatus.Text = "Deaktiviert";
+                        lbSkypeStatus.ForeColor = Color.White;
+                        showSmallMessage(panelÜberwachung, "Es konnte keine Verbindung zum Skypeclient hergestellt werden!", Color.Red);
 
+                        einstellungen.Überwachung.MessengerSettings.skypeSettings.active = false;
+                        einstellungen.save();
+                        loadSettings();
+
+                    }
 
                 }
                 else
@@ -221,6 +234,8 @@ namespace LetsPlayTool
                     lbSkypeStatus.ForeColor = Color.Orange;
 
                 }
+
+       
 
             }
             else

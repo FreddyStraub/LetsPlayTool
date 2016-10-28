@@ -47,7 +47,7 @@ namespace LetsPlayTool.LetsPlayToolMessage
 
             #region Textgröße anpassen
 
-            if(Text.Length > 77 && Text.Length < 150)
+            if(Text.Length > 60 && Text.Length < 150)
             {
                 button1.Font = new Font(Font.Name, 18f, FontStyle.Regular);
 
