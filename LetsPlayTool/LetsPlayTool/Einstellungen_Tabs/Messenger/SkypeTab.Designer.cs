@@ -117,13 +117,14 @@
             this.tbStatusmeldung.ForeColor = System.Drawing.Color.White;
             this.tbStatusmeldung.Location = new System.Drawing.Point(22, 147);
             this.tbStatusmeldung.Name = "tbStatusmeldung";
-            this.tbStatusmeldung.Size = new System.Drawing.Size(613, 93);
+            this.tbStatusmeldung.Size = new System.Drawing.Size(623, 93);
             this.tbStatusmeldung.TabIndex = 37;
             this.tbStatusmeldung.Text = "";
             // 
             // cbStatusNA
             // 
             this.cbStatusNA.BackColor = System.Drawing.Color.Transparent;
+            this.cbStatusNA.BorderRadius = 3;
             this.cbStatusNA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatusNA.ForeColor = System.Drawing.Color.White;
             this.cbStatusNA.Items = new string[] {
@@ -138,7 +139,7 @@
             this.cbStatusNA.NomalColor = System.Drawing.Color.DodgerBlue;
             this.cbStatusNA.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
             this.cbStatusNA.selectedIndex = -1;
-            this.cbStatusNA.Size = new System.Drawing.Size(140, 26);
+            this.cbStatusNA.Size = new System.Drawing.Size(150, 26);
             this.cbStatusNA.TabIndex = 36;
             // 
             // lSNA
@@ -164,6 +165,7 @@
             // cbStatusIA
             // 
             this.cbStatusIA.BackColor = System.Drawing.Color.Transparent;
+            this.cbStatusIA.BorderRadius = 3;
             this.cbStatusIA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatusIA.ForeColor = System.Drawing.Color.White;
             this.cbStatusIA.Items = new string[] {
@@ -178,7 +180,7 @@
             this.cbStatusIA.NomalColor = System.Drawing.Color.DodgerBlue;
             this.cbStatusIA.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
             this.cbStatusIA.selectedIndex = -1;
-            this.cbStatusIA.Size = new System.Drawing.Size(140, 26);
+            this.cbStatusIA.Size = new System.Drawing.Size(150, 26);
             this.cbStatusIA.TabIndex = 33;
             // 
             // lbAktivieren

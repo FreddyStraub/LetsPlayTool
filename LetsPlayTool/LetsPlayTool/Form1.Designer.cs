@@ -31,7 +31,7 @@ namespace LetsPlayTool
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bShowÜFenster = new Bunifu.Framework.UI.BunifuImageButton();
@@ -70,7 +70,7 @@ namespace LetsPlayTool
             this.lbLautsprecher = new System.Windows.Forms.Label();
             this.lbMikrodon = new System.Windows.Forms.Label();
             this.lbSound = new System.Windows.Forms.Label();
-            this.ShowPanelAnimator = new BunifuAnimatorNS.Animator(this.components);
+            this.ShowPanelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.ShowPanelsAnimation = new System.Windows.Forms.Timer(this.components);
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -107,6 +107,7 @@ namespace LetsPlayTool
             // bShowÜFenster
             // 
             this.bShowÜFenster.BackColor = System.Drawing.Color.Transparent;
+            this.bShowÜFenster.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPanelAnimator.SetDecoration(this.bShowÜFenster, BunifuAnimatorNS.DecorationType.None);
             this.bShowÜFenster.Image = ((System.Drawing.Image)(resources.GetObject("bShowÜFenster.Image")));
             this.bShowÜFenster.ImageActive = null;
@@ -123,6 +124,7 @@ namespace LetsPlayTool
             // bSettings
             // 
             this.bSettings.BackColor = System.Drawing.Color.Transparent;
+            this.bSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPanelAnimator.SetDecoration(this.bSettings, BunifuAnimatorNS.DecorationType.None);
             this.bSettings.Image = ((System.Drawing.Image)(resources.GetObject("bSettings.Image")));
             this.bSettings.ImageActive = null;
@@ -138,6 +140,7 @@ namespace LetsPlayTool
             // bOpenPrograms
             // 
             this.bOpenPrograms.BackColor = System.Drawing.Color.Transparent;
+            this.bOpenPrograms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPanelAnimator.SetDecoration(this.bOpenPrograms, BunifuAnimatorNS.DecorationType.None);
             this.bOpenPrograms.Image = ((System.Drawing.Image)(resources.GetObject("bOpenPrograms.Image")));
             this.bOpenPrograms.ImageActive = null;
@@ -153,6 +156,7 @@ namespace LetsPlayTool
             // bunifuImageButton2
             // 
             this.bunifuImageButton2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPanelAnimator.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
@@ -168,6 +172,7 @@ namespace LetsPlayTool
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPanelAnimator.SetDecoration(this.bunifuImageButton1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
@@ -427,12 +432,12 @@ namespace LetsPlayTool
             this.lbTeamspeakStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbTeamspeakStatus, BunifuAnimatorNS.DecorationType.None);
             this.lbTeamspeakStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamspeakStatus.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbTeamspeakStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbTeamspeakStatus.Location = new System.Drawing.Point(228, 41);
             this.lbTeamspeakStatus.Name = "lbTeamspeakStatus";
-            this.lbTeamspeakStatus.Size = new System.Drawing.Size(17, 21);
+            this.lbTeamspeakStatus.Size = new System.Drawing.Size(120, 21);
             this.lbTeamspeakStatus.TabIndex = 5;
-            this.lbTeamspeakStatus.Text = "?";
+            this.lbTeamspeakStatus.Text = "Nicht Verfügbar";
             this.toolTip1.SetToolTip(this.lbTeamspeakStatus, "Status");
             // 
             // lbDiscordSMStatus
@@ -440,12 +445,12 @@ namespace LetsPlayTool
             this.lbDiscordSMStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbDiscordSMStatus, BunifuAnimatorNS.DecorationType.None);
             this.lbDiscordSMStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiscordSMStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbDiscordSMStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbDiscordSMStatus.Location = new System.Drawing.Point(228, 73);
             this.lbDiscordSMStatus.Name = "lbDiscordSMStatus";
-            this.lbDiscordSMStatus.Size = new System.Drawing.Size(32, 21);
+            this.lbDiscordSMStatus.Size = new System.Drawing.Size(120, 21);
             this.lbDiscordSMStatus.TabIndex = 4;
-            this.lbDiscordSMStatus.Text = "Off";
+            this.lbDiscordSMStatus.Text = "Nicht Verfügbar";
             this.toolTip1.SetToolTip(this.lbDiscordSMStatus, "Status");
             // 
             // lbSkypeStatus
@@ -526,6 +531,7 @@ namespace LetsPlayTool
             this.sliderLautsprecher.MaximumValue = 100;
             this.sliderLautsprecher.Name = "sliderLautsprecher";
             this.sliderLautsprecher.Size = new System.Drawing.Size(276, 30);
+            this.sliderLautsprecher.SliderRadius = 0;
             this.sliderLautsprecher.TabIndex = 6;
             this.sliderLautsprecher.Value = 0;
             this.sliderLautsprecher.ValueChanged += new System.EventHandler(this.sliderLautsprecher_ValueChanged);
@@ -541,6 +547,7 @@ namespace LetsPlayTool
             this.sliderMikrofon.MaximumValue = 100;
             this.sliderMikrofon.Name = "sliderMikrofon";
             this.sliderMikrofon.Size = new System.Drawing.Size(276, 30);
+            this.sliderMikrofon.SliderRadius = 0;
             this.sliderMikrofon.TabIndex = 5;
             this.sliderMikrofon.Value = 0;
             // 
@@ -586,22 +593,22 @@ namespace LetsPlayTool
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation1;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
@@ -641,6 +648,7 @@ namespace LetsPlayTool
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.LocationChanged += new System.EventHandler(this.Form1_LocationChanged);
             this.HeaderBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).EndInit();
@@ -690,7 +698,7 @@ namespace LetsPlayTool
         private System.Windows.Forms.Label lbDiscordSM;
         private System.Windows.Forms.Label lbTeamSpeak;
         private System.Windows.Forms.Panel panelSoundÜberwachung;
-        private BunifuAnimatorNS.Animator ShowPanelAnimator;
+        private BunifuAnimatorNS.BunifuTransition ShowPanelAnimator;
         private System.Windows.Forms.Timer ShowPanelsAnimation;
         private Bunifu.Framework.UI.BunifuImageButton bOpenPrograms;
         private Bunifu.Framework.UI.BunifuImageButton bSettings;

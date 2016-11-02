@@ -33,7 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Big));
             this.button1 = new System.Windows.Forms.Button();
             this.ShowMessage = new System.Windows.Forms.Timer(this.components);
-            this.ShowMessageAnimator = new BunifuAnimatorNS.Animator(this.components);
+            this.ShowMessageAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -97,7 +97,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private BunifuAnimatorNS.Animator ShowMessageAnimator;
+        private BunifuAnimatorNS.BunifuTransition ShowMessageAnimator;
         public System.Windows.Forms.Timer ShowMessage;
     }
 }

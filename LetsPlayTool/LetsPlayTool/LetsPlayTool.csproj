@@ -36,9 +36,9 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.3, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Bunifu_UI_v1.5, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Bunifu_UI_v1.3.dll</HintPath>
+      <HintPath>bin\Debug\Bunifu_UI_v1.5.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs">
       <HintPath>bin\Debug\Ookii.Dialogs.dll</HintPath>

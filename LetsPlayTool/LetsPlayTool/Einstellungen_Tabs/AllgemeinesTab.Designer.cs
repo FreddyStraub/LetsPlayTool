@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllgemeinesTab));
             this.gbHotkey = new System.Windows.Forms.GroupBox();
-            this.bAufnhameStart = new System.Windows.Forms.Button();
             this.bAufnhameStop = new System.Windows.Forms.Button();
+            this.bAufnhameStart = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,11 +47,11 @@
             this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbDuration = new System.Windows.Forms.Label();
+            this.nudDuration = new System.Windows.Forms.NumericUpDown();
             this.switchIErinerrungen = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.tbIErinerrungen = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.nudDuration = new System.Windows.Forms.NumericUpDown();
-            this.lbDuration = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gbHotkey.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,8 +62,8 @@
             // 
             // gbHotkey
             // 
-            this.gbHotkey.Controls.Add(this.bAufnhameStart);
             this.gbHotkey.Controls.Add(this.bAufnhameStop);
+            this.gbHotkey.Controls.Add(this.bAufnhameStart);
             this.gbHotkey.Controls.Add(this.label3);
             this.gbHotkey.Controls.Add(this.label2);
             this.gbHotkey.Controls.Add(this.label1);
@@ -76,21 +76,6 @@
             this.gbHotkey.TabStop = false;
             this.gbHotkey.Text = "Aufnhamehotkeys";
             // 
-            // bAufnhameStart
-            // 
-            this.bAufnhameStart.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bAufnhameStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAufnhameStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAufnhameStart.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAufnhameStart.ForeColor = System.Drawing.Color.White;
-            this.bAufnhameStart.Location = new System.Drawing.Point(402, 61);
-            this.bAufnhameStart.Name = "bAufnhameStart";
-            this.bAufnhameStart.Size = new System.Drawing.Size(133, 57);
-            this.bAufnhameStart.TabIndex = 20;
-            this.bAufnhameStart.Text = "NumPad0";
-            this.bAufnhameStart.UseVisualStyleBackColor = false;
-            this.bAufnhameStart.Click += new System.EventHandler(this.bAufnhameStart_Click);
-            // 
             // bAufnhameStop
             // 
             this.bAufnhameStop.BackColor = System.Drawing.Color.DodgerBlue;
@@ -98,13 +83,28 @@
             this.bAufnhameStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAufnhameStop.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAufnhameStop.ForeColor = System.Drawing.Color.White;
-            this.bAufnhameStop.Location = new System.Drawing.Point(128, 61);
+            this.bAufnhameStop.Location = new System.Drawing.Point(402, 61);
             this.bAufnhameStop.Name = "bAufnhameStop";
             this.bAufnhameStop.Size = new System.Drawing.Size(133, 57);
-            this.bAufnhameStop.TabIndex = 19;
+            this.bAufnhameStop.TabIndex = 20;
             this.bAufnhameStop.Text = "NumPad0";
             this.bAufnhameStop.UseVisualStyleBackColor = false;
             this.bAufnhameStop.Click += new System.EventHandler(this.bAufnhameStop_Click);
+            // 
+            // bAufnhameStart
+            // 
+            this.bAufnhameStart.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bAufnhameStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAufnhameStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAufnhameStart.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAufnhameStart.ForeColor = System.Drawing.Color.White;
+            this.bAufnhameStart.Location = new System.Drawing.Point(128, 61);
+            this.bAufnhameStart.Name = "bAufnhameStart";
+            this.bAufnhameStart.Size = new System.Drawing.Size(133, 57);
+            this.bAufnhameStart.TabIndex = 19;
+            this.bAufnhameStart.Text = "NumPad0";
+            this.bAufnhameStart.UseVisualStyleBackColor = false;
+            this.bAufnhameStart.Click += new System.EventHandler(this.bAufnhameStart_Click);
             // 
             // label3
             // 
@@ -285,6 +285,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Individuelle Erinerrungen";
             // 
+            // lbDuration
+            // 
+            this.lbDuration.AutoSize = true;
+            this.lbDuration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDuration.ForeColor = System.Drawing.Color.White;
+            this.lbDuration.Location = new System.Drawing.Point(506, 32);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(91, 17);
+            this.lbDuration.TabIndex = 7;
+            this.lbDuration.Text = "Anzeigedauer:";
+            // 
+            // nudDuration
+            // 
+            this.nudDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.nudDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudDuration.ForeColor = System.Drawing.Color.White;
+            this.nudDuration.Location = new System.Drawing.Point(600, 32);
+            this.nudDuration.Name = "nudDuration";
+            this.nudDuration.Size = new System.Drawing.Size(56, 21);
+            this.nudDuration.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.nudDuration, "Anzeigedauer der Nachricht in Sekunden");
+            // 
             // switchIErinerrungen
             // 
             this.switchIErinerrungen.BackColor = System.Drawing.Color.Transparent;
@@ -323,28 +345,6 @@
             this.label7.Size = new System.Drawing.Size(403, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
-            // 
-            // nudDuration
-            // 
-            this.nudDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.nudDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nudDuration.ForeColor = System.Drawing.Color.White;
-            this.nudDuration.Location = new System.Drawing.Point(600, 32);
-            this.nudDuration.Name = "nudDuration";
-            this.nudDuration.Size = new System.Drawing.Size(56, 21);
-            this.nudDuration.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.nudDuration, "Anzeigedauer der Nachricht in Sekunden");
-            // 
-            // lbDuration
-            // 
-            this.lbDuration.AutoSize = true;
-            this.lbDuration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDuration.ForeColor = System.Drawing.Color.White;
-            this.lbDuration.Location = new System.Drawing.Point(506, 32);
-            this.lbDuration.Name = "lbDuration";
-            this.lbDuration.Size = new System.Drawing.Size(91, 17);
-            this.lbDuration.TabIndex = 7;
-            this.lbDuration.Text = "Anzeigedauer:";
             // 
             // AllgemeinesTab
             // 
@@ -389,8 +389,8 @@
         private System.Windows.Forms.Panel panelÜFensterSettings;
         private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterTimer;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button bAufnhameStart;
         private System.Windows.Forms.Button bAufnhameStop;
+        private System.Windows.Forms.Button bAufnhameStart;
         private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterCPU;
         private System.Windows.Forms.Label lbCPU;
         private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterRAM;

@@ -24,8 +24,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public void setSettings(AllgemeinesTabEinstellungen Settings)
         {
 
-            bAufnhameStart.Text = Settings.AufnahmeStartKey.ToString();
             bAufnhameStop.Text = Settings.AufnahmeStopKey.ToString();
+            bAufnhameStart.Text = Settings.AufnahmeStartKey.ToString();
 
 
             switchÜFenster.Value = Settings.ShowÜFenster;
@@ -67,28 +67,28 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private void AllgemeinesTab_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if(bAufnhameStart.Text == "...")
+            if(bAufnhameStop.Text == "...")
             {
-                bAufnhameStart.Text = e.KeyCode.ToString();
-
-            }else if (bAufnhameStop.Text == "...")
-            {
-
                 bAufnhameStop.Text = e.KeyCode.ToString();
+
+            }else if (bAufnhameStart.Text == "...")
+            {
+
+                bAufnhameStart.Text = e.KeyCode.ToString();
 
             }
 
         }
 
-        private void bAufnhameStop_Click(object sender, EventArgs e)
-        {
-
-            bAufnhameStop.Text = "...";
-
-        }
         private void bAufnhameStart_Click(object sender, EventArgs e)
         {
+
             bAufnhameStart.Text = "...";
+
+        }
+        private void bAufnhameStop_Click(object sender, EventArgs e)
+        {
+            bAufnhameStop.Text = "...";
 
         }
 

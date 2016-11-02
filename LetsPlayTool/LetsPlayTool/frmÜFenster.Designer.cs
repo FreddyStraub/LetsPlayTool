@@ -153,10 +153,10 @@
 
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.Panel HeaderBar;
-        private System.Windows.Forms.Label lbTimer;
         public System.Windows.Forms.Label lbRAMUsed;
         public System.Windows.Forms.Label lbRAM;
         public System.Windows.Forms.Label lbCPUAuslastung;
         public System.Windows.Forms.Label lbCPU;
+        public System.Windows.Forms.Label lbTimer;
     }
 }

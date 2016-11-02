@@ -127,6 +127,7 @@ namespace LetsPlayTool
         private void loadSettings()
         {
 
+        
             //Einstellungen laden wenn vorhanden, ansonsten erstellen.
             try
             {
@@ -356,6 +357,8 @@ namespace LetsPlayTool
 
         private void bSettings_Click(object sender, EventArgs e)
         {
+
+            unregisterHotKeys();
 
             frmEinstellungen frmEinstellungen = new frmEinstellungen();
             frmEinstellungen.selectedTimerProfil = selectedTimerProfil;
@@ -819,10 +822,18 @@ namespace LetsPlayTool
 
             lMarker.Clear();
 
+            //ÜFenster
+
+            frmÜFenster.lbCPUAuslastung.Text = "...";
+            frmÜFenster.lbRAMUsed.Text = "...";
+
+            frmÜFenster.lbTimer.Text = "00:00:00:00";
+
+
             #endregion
 
         }
-              
+
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -871,6 +882,9 @@ namespace LetsPlayTool
                 einstellungen.Marker.MarkerKeyStrg),
                 (int)einstellungen.Marker.MarkerKey);
 
+            RegisterHotKey(this.Handle, 2, 0,(int)einstellungen.Allgemeines.AufnahmeStartKey);
+            RegisterHotKey(this.Handle, 3, 0, (int)einstellungen.Allgemeines.AufnahmeStopKey);
+
         }
 
         /// <summary>
@@ -879,6 +893,9 @@ namespace LetsPlayTool
         private void unregisterHotKeys()
         {
             UnregisterHotKey(this.Handle, 1); //Makerhotkey
+            UnregisterHotKey(this.Handle, 2); //AufnahmeStartHotkey
+            UnregisterHotKey(this.Handle, 3); //AufnahmeStopHotkey
+
         }
 
         protected override void WndProc(ref Message m)
@@ -887,6 +904,48 @@ namespace LetsPlayTool
             //Markerhotkey:
             if (m.Msg == WM_HOTKEY && (int)m.WParam == 1)
                 makeNewMarker();
+
+            //Aufnahme/Session Hotkeys
+            //Start
+            if (m.Msg == WM_HOTKEY && (int)m.WParam == 2)
+            {
+
+                if(einstellungen.Allgemeines.AufnahmeStartKey == einstellungen.Allgemeines.AufnahmeStopKey)
+                {
+                    if (!SessionRuns)
+                    {
+                        startSession();
+                        SessionRuns = true;
+
+                    }
+                    else
+                    {
+                        stopSession();
+                        SessionRuns = false;
+                    }
+                }
+                else
+                {
+                    startSession();
+                    SessionRuns = true;
+                }
+
+
+            }
+            
+            //Stop
+            if (m.Msg == WM_HOTKEY && (int)m.WParam == 3)
+            {
+
+                if (einstellungen.Allgemeines.AufnahmeStartKey != einstellungen.Allgemeines.AufnahmeStopKey)
+                {
+
+                    stopSession();
+                    SessionRuns = false;
+                }
+
+
+            }
 
             base.WndProc(ref m);
         }
@@ -901,6 +960,13 @@ namespace LetsPlayTool
         const int MOD_SHIFT = 0x0004;
         const int WM_HOTKEY = 0x0312;
 
+        /// <summary>
+        /// Rechnet anhand der angaben den Wert für die Hotkeymodifier aus.
+        /// </summary>
+        /// <param name="alt"></param>
+        /// <param name="strg"></param>
+        /// <param name="shift"></param>
+        /// <returns></returns>
         private int getDinger(bool alt, bool strg, bool shift)
         {
             int vor = 0;
@@ -1053,7 +1119,10 @@ namespace LetsPlayTool
 
         }
 
-
+        private void Form1_LocationChanged(object sender, EventArgs e)
+        {
+            sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
+        }
     }
  
 }

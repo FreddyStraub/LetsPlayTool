@@ -46,7 +46,7 @@
             this.bAllgemeines = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bTimer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelAnimator = new BunifuAnimatorNS.Animator(this.components);
+            this.panelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
@@ -147,12 +147,16 @@
             this.bAbbrechen.ButtonText = "   Abbrechen";
             this.bAbbrechen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bAbbrechen, BunifuAnimatorNS.DecorationType.None);
+            this.bAbbrechen.DisabledColor = System.Drawing.Color.Gray;
             this.bAbbrechen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAbbrechen.Iconcolor = System.Drawing.Color.Transparent;
             this.bAbbrechen.Iconimage = null;
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
+            this.bAbbrechen.IconRightVisible = true;
+            this.bAbbrechen.IconRightZoom = 0D;
+            this.bAbbrechen.IconVisible = true;
             this.bAbbrechen.IconZoom = 90D;
             this.bAbbrechen.IsTab = false;
             this.bAbbrechen.Location = new System.Drawing.Point(102, 502);
@@ -163,6 +167,8 @@
             this.bAbbrechen.selected = false;
             this.bAbbrechen.Size = new System.Drawing.Size(100, 48);
             this.bAbbrechen.TabIndex = 7;
+            this.bAbbrechen.Text = "   Abbrechen";
+            this.bAbbrechen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bAbbrechen.Textcolor = System.Drawing.Color.White;
             this.bAbbrechen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAbbrechen.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
@@ -176,12 +182,16 @@
             this.bSpeichern.ButtonText = "    Speichern";
             this.bSpeichern.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bSpeichern, BunifuAnimatorNS.DecorationType.None);
+            this.bSpeichern.DisabledColor = System.Drawing.Color.Gray;
             this.bSpeichern.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSpeichern.Iconcolor = System.Drawing.Color.Transparent;
             this.bSpeichern.Iconimage = null;
             this.bSpeichern.Iconimage_right = null;
             this.bSpeichern.Iconimage_right_Selected = null;
             this.bSpeichern.Iconimage_Selected = null;
+            this.bSpeichern.IconRightVisible = true;
+            this.bSpeichern.IconRightZoom = 0D;
+            this.bSpeichern.IconVisible = true;
             this.bSpeichern.IconZoom = 90D;
             this.bSpeichern.IsTab = false;
             this.bSpeichern.Location = new System.Drawing.Point(1, 502);
@@ -192,6 +202,8 @@
             this.bSpeichern.selected = false;
             this.bSpeichern.Size = new System.Drawing.Size(100, 48);
             this.bSpeichern.TabIndex = 6;
+            this.bSpeichern.Text = "    Speichern";
+            this.bSpeichern.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bSpeichern.Textcolor = System.Drawing.Color.White;
             this.bSpeichern.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSpeichern.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
@@ -205,12 +217,16 @@
             this.bMarker.ButtonText = "    Marker";
             this.bMarker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bMarker, BunifuAnimatorNS.DecorationType.None);
+            this.bMarker.DisabledColor = System.Drawing.Color.Gray;
             this.bMarker.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMarker.Iconcolor = System.Drawing.Color.Transparent;
             this.bMarker.Iconimage = null;
             this.bMarker.Iconimage_right = null;
             this.bMarker.Iconimage_right_Selected = null;
             this.bMarker.Iconimage_Selected = null;
+            this.bMarker.IconRightVisible = true;
+            this.bMarker.IconRightZoom = 0D;
+            this.bMarker.IconVisible = true;
             this.bMarker.IconZoom = 90D;
             this.bMarker.IsTab = true;
             this.bMarker.Location = new System.Drawing.Point(1, 159);
@@ -221,6 +237,8 @@
             this.bMarker.selected = false;
             this.bMarker.Size = new System.Drawing.Size(201, 48);
             this.bMarker.TabIndex = 5;
+            this.bMarker.Text = "    Marker";
+            this.bMarker.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bMarker.Textcolor = System.Drawing.Color.White;
             this.bMarker.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMarker.Click += new System.EventHandler(this.bMarker_Click_1);
@@ -234,12 +252,16 @@
             this.bProgramme.ButtonText = "    Programme";
             this.bProgramme.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bProgramme, BunifuAnimatorNS.DecorationType.None);
+            this.bProgramme.DisabledColor = System.Drawing.Color.Gray;
             this.bProgramme.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProgramme.Iconcolor = System.Drawing.Color.Transparent;
             this.bProgramme.Iconimage = null;
             this.bProgramme.Iconimage_right = null;
             this.bProgramme.Iconimage_right_Selected = null;
             this.bProgramme.Iconimage_Selected = null;
+            this.bProgramme.IconRightVisible = true;
+            this.bProgramme.IconRightZoom = 0D;
+            this.bProgramme.IconVisible = true;
             this.bProgramme.IconZoom = 90D;
             this.bProgramme.IsTab = true;
             this.bProgramme.Location = new System.Drawing.Point(1, 65);
@@ -250,6 +272,8 @@
             this.bProgramme.selected = false;
             this.bProgramme.Size = new System.Drawing.Size(201, 48);
             this.bProgramme.TabIndex = 4;
+            this.bProgramme.Text = "    Programme";
+            this.bProgramme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProgramme.Textcolor = System.Drawing.Color.White;
             this.bProgramme.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProgramme.Click += new System.EventHandler(this.bProgramme_Click);
@@ -263,12 +287,16 @@
             this.bÜberwachung.ButtonText = "    Überwachung";
             this.bÜberwachung.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bÜberwachung, BunifuAnimatorNS.DecorationType.None);
+            this.bÜberwachung.DisabledColor = System.Drawing.Color.Gray;
             this.bÜberwachung.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bÜberwachung.Iconcolor = System.Drawing.Color.Transparent;
             this.bÜberwachung.Iconimage = null;
             this.bÜberwachung.Iconimage_right = null;
             this.bÜberwachung.Iconimage_right_Selected = null;
             this.bÜberwachung.Iconimage_Selected = null;
+            this.bÜberwachung.IconRightVisible = true;
+            this.bÜberwachung.IconRightZoom = 0D;
+            this.bÜberwachung.IconVisible = true;
             this.bÜberwachung.IconZoom = 90D;
             this.bÜberwachung.IsTab = true;
             this.bÜberwachung.Location = new System.Drawing.Point(1, 206);
@@ -279,6 +307,8 @@
             this.bÜberwachung.selected = false;
             this.bÜberwachung.Size = new System.Drawing.Size(201, 48);
             this.bÜberwachung.TabIndex = 3;
+            this.bÜberwachung.Text = "    Überwachung";
+            this.bÜberwachung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bÜberwachung.Textcolor = System.Drawing.Color.White;
             this.bÜberwachung.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bÜberwachung.Click += new System.EventHandler(this.bÜberwachung_Click);
@@ -286,18 +316,22 @@
             // bAllgemeines
             // 
             this.bAllgemeines.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bAllgemeines.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bAllgemeines.BackColor = System.Drawing.Color.DodgerBlue;
             this.bAllgemeines.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bAllgemeines.BorderRadius = 0;
             this.bAllgemeines.ButtonText = "    Allgemeines";
             this.bAllgemeines.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bAllgemeines, BunifuAnimatorNS.DecorationType.None);
+            this.bAllgemeines.DisabledColor = System.Drawing.Color.Gray;
             this.bAllgemeines.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAllgemeines.Iconcolor = System.Drawing.Color.Transparent;
             this.bAllgemeines.Iconimage = null;
             this.bAllgemeines.Iconimage_right = null;
             this.bAllgemeines.Iconimage_right_Selected = null;
             this.bAllgemeines.Iconimage_Selected = null;
+            this.bAllgemeines.IconRightVisible = true;
+            this.bAllgemeines.IconRightZoom = 0D;
+            this.bAllgemeines.IconVisible = true;
             this.bAllgemeines.IconZoom = 90D;
             this.bAllgemeines.IsTab = true;
             this.bAllgemeines.Location = new System.Drawing.Point(1, 18);
@@ -308,6 +342,8 @@
             this.bAllgemeines.selected = true;
             this.bAllgemeines.Size = new System.Drawing.Size(201, 48);
             this.bAllgemeines.TabIndex = 2;
+            this.bAllgemeines.Text = "    Allgemeines";
+            this.bAllgemeines.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bAllgemeines.Textcolor = System.Drawing.Color.White;
             this.bAllgemeines.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAllgemeines.Click += new System.EventHandler(this.bMarker_Click);
@@ -321,12 +357,16 @@
             this.bTimer.ButtonText = "    Timer";
             this.bTimer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.bTimer, BunifuAnimatorNS.DecorationType.None);
+            this.bTimer.DisabledColor = System.Drawing.Color.Gray;
             this.bTimer.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bTimer.Iconcolor = System.Drawing.Color.Transparent;
             this.bTimer.Iconimage = null;
             this.bTimer.Iconimage_right = null;
             this.bTimer.Iconimage_right_Selected = null;
             this.bTimer.Iconimage_Selected = null;
+            this.bTimer.IconRightVisible = true;
+            this.bTimer.IconRightZoom = 0D;
+            this.bTimer.IconVisible = true;
             this.bTimer.IconZoom = 90D;
             this.bTimer.IsTab = true;
             this.bTimer.Location = new System.Drawing.Point(1, 112);
@@ -337,6 +377,8 @@
             this.bTimer.selected = false;
             this.bTimer.Size = new System.Drawing.Size(201, 48);
             this.bTimer.TabIndex = 0;
+            this.bTimer.Text = "    Timer";
+            this.bTimer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bTimer.Textcolor = System.Drawing.Color.White;
             this.bTimer.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bTimer.Click += new System.EventHandler(this.bTimer_Click);
@@ -416,6 +458,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bMarker;
         private Bunifu.Framework.UI.BunifuFlatButton bAbbrechen;
         private Bunifu.Framework.UI.BunifuFlatButton bSpeichern;
-        private BunifuAnimatorNS.Animator panelAnimator;
+        private BunifuAnimatorNS.BunifuTransition panelAnimator;
     }
 }

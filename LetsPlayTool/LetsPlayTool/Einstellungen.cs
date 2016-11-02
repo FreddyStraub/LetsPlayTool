@@ -15,7 +15,7 @@ namespace LetsPlayTool
     public class Einstellungen
     {
 
-        private static string EinstellungenPfad = Application.StartupPath;
+       private static string EinstellungenPfad = Application.StartupPath;
 
         public Einstellungen() { }
 

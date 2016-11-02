@@ -47,7 +47,7 @@
             this.bSkype = new Bunifu.Framework.UI.BunifuImageButton();
             this.fbdAufnahmeordner = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panelAnimator = new BunifuAnimatorNS.Animator(this.components);
+            this.panelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -316,6 +316,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bTeamspeak;
         private System.Windows.Forms.ToolTip toolTip1;
         private Bunifu.Framework.UI.BunifuImageButton bDiscord;
-        private BunifuAnimatorNS.Animator panelAnimator;
+        private BunifuAnimatorNS.BunifuTransition panelAnimator;
     }
 }
