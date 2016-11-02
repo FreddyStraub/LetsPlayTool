@@ -1018,10 +1018,13 @@ namespace LetsPlayTool
         private void makeNewMarker()
         {
 
-            lMarker.Add(Session.Timer.TimeString);
-            listMarker.Items.Add(Session.Timer.TimeString);
-            frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+            if (SessionRuns == true)
+            {
 
+                lMarker.Add(Session.Timer.TimeString);
+                listMarker.Items.Add(Session.Timer.TimeString);
+                frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+            }
         }
 
         /// <summary>
@@ -1042,8 +1045,14 @@ namespace LetsPlayTool
 
                     using (System.IO.StreamWriter SW = new System.IO.StreamWriter(@FileName + ".txt", true))
                     {
-
-                        SW.WriteLine("Marker: ");
+                        SW.WriteLine("");
+                        SW.WriteLine("______________________________________________________________________________________________");
+                        SW.WriteLine("");
+                        SW.WriteLine("Marker von der Aufnahme am "+ DateTime.Now.Day + "." + DateTime.Now.Month +"."+ DateTime.Now.Year 
+                            + " um " + DateTime.Now.Hour +":"+ DateTime.Now.Minute + ".");
+                        SW.WriteLine("");
+                        SW.WriteLine("______________________________________________________________________________________________");
+                        SW.WriteLine("");
 
                         foreach (string time in lMarker)
                         {
@@ -1053,6 +1062,12 @@ namespace LetsPlayTool
 
 
                         }
+                        SW.WriteLine("");
+                        SW.WriteLine("______________________________________________________________________________________________");
+                        SW.WriteLine("");
+                        SW.WriteLine("Erstellte mit dem LetsPlayTool von Wolf066LP");
+
+
                         SW.Dispose();
                         SW.Close();
 
