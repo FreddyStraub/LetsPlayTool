@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace LetsPlayTool
@@ -348,6 +349,7 @@ namespace LetsPlayTool
                     break;
             }
 
+
             if (slide < 4)
             {
                 slide++;
@@ -381,7 +383,7 @@ namespace LetsPlayTool
         int MainactorElapsedTicks = 0;
         int cpuTimervalue = 0;
 
-        Point ÜFensterLocation = new Point();
+        public Point ÜFensterLocation = new Point();
 
 
 

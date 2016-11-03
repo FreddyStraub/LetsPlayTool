@@ -12,12 +12,16 @@ namespace LetsPlayTool
 {
     public partial class frmÜFenster : Form
     {
+        
         public frmÜFenster()
         {
             InitializeComponent();
+
         }
 
         Einstellungen einstellungen = new Einstellungen();
+
+
 
         #region Move Form
 
@@ -136,6 +140,13 @@ namespace LetsPlayTool
 
         private void lbTimer_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void frmÜFenster_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 frmMain = (Form1)Application.OpenForms[0];
+            frmMain.ÜFensterLocation = Location;
 
         }
     }

@@ -141,6 +141,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "00:00:00:00";
             this.Activated += new System.EventHandler(this.frmÜFenster_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmÜFenster_FormClosed);
             this.TextChanged += new System.EventHandler(this.frmÜFenster_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.HeaderBar.ResumeLayout(false);
