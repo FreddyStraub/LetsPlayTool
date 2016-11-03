@@ -386,7 +386,6 @@ namespace LetsPlayTool
         public Point ÜFensterLocation = new Point();
 
 
-
         private void Mainactor_Tick(object sender, EventArgs e)
         {
 
@@ -687,7 +686,7 @@ namespace LetsPlayTool
 
         #endregion
 
-        frmÜFenster frmÜFenster = new frmÜFenster(); //Kleiner Überwachungsfenster
+        frmÜFenster frmÜFenster = new frmÜFenster(); //Kleines Überwachungsfenster
 
         /// <summary>
         /// Startet die Session und alle Funktionen.
@@ -1025,7 +1024,19 @@ namespace LetsPlayTool
 
                 lMarker.Add(Session.Timer.TimeString);
                 listMarker.Items.Add(Session.Timer.TimeString);
-                frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+
+                if (frmÜFenster.Visible == true)
+                {
+                    frmÜFenster.Close();
+                    frmÜFenster = new frmÜFenster();
+                    frmÜFenster.Show();
+
+                    frmÜFenster.Location = ÜFensterLocation;
+                    frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+
+                }
+
+
             }
         }
 

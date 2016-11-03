@@ -98,17 +98,17 @@
             // cbFormat
             // 
             this.cbFormat.BackColor = System.Drawing.Color.Transparent;
+            this.cbFormat.BorderRadius = 3;
             this.cbFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFormat.ForeColor = System.Drawing.Color.White;
             this.cbFormat.Items = new string[] {
-        "Textdatei (.txt)",
-        "Audiodatei (.wav)"};
+        "Textdatei (.txt)"};
             this.cbFormat.Location = new System.Drawing.Point(94, 101);
             this.cbFormat.Margin = new System.Windows.Forms.Padding(4);
             this.cbFormat.Name = "cbFormat";
             this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
             this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.cbFormat.selectedIndex = 0;
+            this.cbFormat.selectedIndex = -1;
             this.cbFormat.Size = new System.Drawing.Size(217, 26);
             this.cbFormat.TabIndex = 18;
             // 

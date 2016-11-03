@@ -65,6 +65,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private void lbProfiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateTimes();
+
+            richTextBox1.Text = "";
+            gbText.Visible = false;
         }
 
         /// <summary>
@@ -118,6 +121,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
 
             }
+
+
 
 
         }
@@ -373,6 +378,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 }
             }
         }
+
         private void bZeitEntfernen_Click(object sender, EventArgs e)
         {
 
@@ -395,7 +401,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             updateTimes();
 
         }
-
 
         private void lvTimes_SelectedIndexChanged(object sender, EventArgs e)
         {
