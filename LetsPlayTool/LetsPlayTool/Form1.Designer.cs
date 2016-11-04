@@ -202,7 +202,6 @@ namespace LetsPlayTool
             this.panelTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTimer.Controls.Add(this.labelTimer);
             this.ShowPanelAnimator.SetDecoration(this.panelTimer, BunifuAnimatorNS.DecorationType.None);
-            this.panelTimer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTimer.Location = new System.Drawing.Point(0, 59);
             this.panelTimer.Name = "panelTimer";
             this.panelTimer.Size = new System.Drawing.Size(445, 133);
@@ -239,7 +238,6 @@ namespace LetsPlayTool
             this.panelOrdner.Controls.Add(this.lbPath);
             this.panelOrdner.Controls.Add(this.lbOrdner);
             this.ShowPanelAnimator.SetDecoration(this.panelOrdner, BunifuAnimatorNS.DecorationType.None);
-            this.panelOrdner.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOrdner.Location = new System.Drawing.Point(0, 192);
             this.panelOrdner.Name = "panelOrdner";
             this.panelOrdner.Size = new System.Drawing.Size(445, 133);
@@ -375,7 +373,6 @@ namespace LetsPlayTool
             this.panelMarker.Controls.Add(this.listMarker);
             this.panelMarker.Controls.Add(this.lbMarker);
             this.ShowPanelAnimator.SetDecoration(this.panelMarker, BunifuAnimatorNS.DecorationType.None);
-            this.panelMarker.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMarker.Location = new System.Drawing.Point(0, 325);
             this.panelMarker.Name = "panelMarker";
             this.panelMarker.Size = new System.Drawing.Size(445, 132);
@@ -420,7 +417,6 @@ namespace LetsPlayTool
             this.panelÜberwachung.Controls.Add(this.lbTeamSpeak);
             this.panelÜberwachung.Controls.Add(this.lbSkype);
             this.ShowPanelAnimator.SetDecoration(this.panelÜberwachung, BunifuAnimatorNS.DecorationType.None);
-            this.panelÜberwachung.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelÜberwachung.Location = new System.Drawing.Point(0, 457);
             this.panelÜberwachung.Name = "panelÜberwachung";
             this.panelÜberwachung.Size = new System.Drawing.Size(445, 132);
@@ -513,7 +509,6 @@ namespace LetsPlayTool
             this.panelSoundÜberwachung.Controls.Add(this.lbMikrodon);
             this.panelSoundÜberwachung.Controls.Add(this.lbSound);
             this.ShowPanelAnimator.SetDecoration(this.panelSoundÜberwachung, BunifuAnimatorNS.DecorationType.None);
-            this.panelSoundÜberwachung.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSoundÜberwachung.Location = new System.Drawing.Point(0, 589);
             this.panelSoundÜberwachung.Name = "panelSoundÜberwachung";
             this.panelSoundÜberwachung.Size = new System.Drawing.Size(445, 132);
