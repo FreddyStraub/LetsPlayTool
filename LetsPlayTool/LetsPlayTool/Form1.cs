@@ -118,14 +118,14 @@ namespace LetsPlayTool
              
             ShowPanelsAnimation.Start();
             skype = new Skype();
+         
+            loadSettings();
+
 
             Updater updater = new Updater();
 
             if (updater.isUpdateAvailable())
                 updater.update();
-           
-
-            loadSettings();
 
         }
 
@@ -154,7 +154,8 @@ namespace LetsPlayTool
 
             #region Überwachung
 
-            selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+            if(selectedTimerProfil != null)
+                selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
 
             if (einstellungen.Überwachung.ÜberwachungOrdner.Length > 40)
             {
@@ -793,23 +794,29 @@ namespace LetsPlayTool
             #region Skype
 
             #region Status
-            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+
+            try
             {
 
-
-                if (skype.Client.IsRunning)
+                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
 
-                    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
-                    setSkyeLabelStatus();
 
-                    if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
-                        skype.CurrentUserProfile.MoodText = NormalStatus;
+                    if (skype.Client.IsRunning)
+                    {
+
+                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
+                        setSkyeLabelStatus();
+
+                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                            skype.CurrentUserProfile.MoodText = NormalStatus;
+
+                    }
 
                 }
 
             }
-
+            catch { }
             #endregion
 
             #endregion
