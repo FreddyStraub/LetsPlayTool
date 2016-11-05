@@ -1,4 +1,5 @@
 ﻿using LetsPlayTool.Dialogs;
+using LetsPlayTool.Update;
 using SKYPE4COMLib;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace LetsPlayTool
         private void Form1_Activated(object sender, EventArgs e)
         {
             MaximaizeAnimation.Start();
-            einstellungen = einstellungen.load();
+            loadSettings();
 
 
 
@@ -117,6 +118,12 @@ namespace LetsPlayTool
              
             ShowPanelsAnimation.Start();
             skype = new Skype();
+
+            Updater updater = new Updater();
+
+            if (updater.isUpdateAvailable())
+                updater.update();
+           
 
             loadSettings();
 
@@ -1045,57 +1052,61 @@ namespace LetsPlayTool
         /// </summary>
         private void createMarkerFile()
         {
-            string FileName = einstellungen.Marker.MarkerSpeicherort + "\\" + DateTime.Now.Year + "_" + DateTime.Now.Month
-                + "_" + DateTime.Now.Day + " " + DateTime.Now.Hour
-                + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second
-                + " Session " + einstellungen.SessionValue;
 
-            if (lMarker.Count != 0)
-            {
+            try {
 
-                if (einstellungen.Marker.MarkerFormat == 0) //Format = .txt
+                string FileName = einstellungen.Marker.MarkerSpeicherort + "\\" + DateTime.Now.Year + "_" + DateTime.Now.Month
+                    + "_" + DateTime.Now.Day + " " + DateTime.Now.Hour
+                    + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second
+                    + " Session " + einstellungen.SessionValue;
+
+                if (lMarker.Count != 0)
                 {
 
-                    using (System.IO.StreamWriter SW = new System.IO.StreamWriter(@FileName + ".txt", true))
+                    if (einstellungen.Marker.MarkerFormat == 0) //Format = .txt
                     {
-                        SW.WriteLine("");
-                        SW.WriteLine("______________________________________________________________________________________________");
-                        SW.WriteLine("");
-                        SW.WriteLine("Marker von der Aufnahme am "+ DateTime.Now.Day + "." + DateTime.Now.Month +"."+ DateTime.Now.Year 
-                            + " um " + DateTime.Now.Hour +":"+ DateTime.Now.Minute + ".");
-                        SW.WriteLine("");
-                        SW.WriteLine("______________________________________________________________________________________________");
-                        SW.WriteLine("");
 
-                        foreach (string time in lMarker)
+                        using (System.IO.StreamWriter SW = new System.IO.StreamWriter(@FileName + ".txt", true))
                         {
+                            SW.WriteLine("");
+                            SW.WriteLine("______________________________________________________________________________________________");
+                            SW.WriteLine("");
+                            SW.WriteLine("Marker von der Aufnahme am " + DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year
+                                + " um " + DateTime.Now.Hour + ":" + DateTime.Now.Minute + ".");
+                            SW.WriteLine("");
+                            SW.WriteLine("______________________________________________________________________________________________");
+                            SW.WriteLine("");
 
-                            SW.WriteLine();
-                            SW.WriteLine(time);
+                            foreach (string time in lMarker)
+                            {
 
+                                SW.WriteLine();
+                                SW.WriteLine(time);
+
+
+                            }
+                            SW.WriteLine("");
+                            SW.WriteLine("______________________________________________________________________________________________");
+                            SW.WriteLine("");
+                            SW.WriteLine("Erstellte mit dem LetsPlayTool von Wolf066LP");
+
+
+                            SW.Dispose();
+                            SW.Close();
 
                         }
-                        SW.WriteLine("");
-                        SW.WriteLine("______________________________________________________________________________________________");
-                        SW.WriteLine("");
-                        SW.WriteLine("Erstellte mit dem LetsPlayTool von Wolf066LP");
 
-
-                        SW.Dispose();
-                        SW.Close();
 
                     }
-
-
+                    else
+                    {
+                        //Format = .wav
+                    }
                 }
-                else
-                {
-                    //Format = .wav
-                }
+
             }
-
+            catch { }
         }
-
 
         #endregion
 
