@@ -265,14 +265,31 @@ namespace LetsPlayTool
 
             #region Discord
 
+
             if(Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
             {
                 lbDiscordSMStatus.Text = "Offen";
-                lbDiscordSM.ForeColor = Color.Lime;
+                lbDiscordSMStatus.ForeColor = Color.Lime;
             }else {
 
                 lbDiscordSMStatus.Text = "Geschlossen";
-                lbDiscordSM.ForeColor = Color.Red;
+                lbDiscordSMStatus.ForeColor = Color.Red;
+            }
+
+            #endregion
+
+            #region Teamspeak
+            
+            if (Process.GetProcessesByName("ts3client_win64").Length > 0 | Process.GetProcessesByName("ts3client_win32").Length > 0 | Process.GetProcessesByName("ts2client_win64").Length > 0 | Process.GetProcessesByName("ts2client_win32").Length > 0)
+            {
+                lbTeamspeakStatus.Text = "Offen";
+                lbTeamspeakStatus.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbTeamspeakStatus.Text = "Geschlossen";
+                lbTeamspeakStatus.ForeColor = Color.Red;
             }
 
             #endregion
@@ -571,6 +588,23 @@ namespace LetsPlayTool
 
             #endregion
 
+            #region Teamspeak
+
+            if (Process.GetProcessesByName("ts3client_win64").Length > 0 | Process.GetProcessesByName("ts3client_win32").Length > 0 | Process.GetProcessesByName("ts2client_win64").Length > 0 | Process.GetProcessesByName("ts2client_win32").Length > 0)
+            {
+                lbTeamspeakStatus.Text = "Offen";
+                lbTeamspeakStatus.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbTeamspeakStatus.Text = "Geschlossen";
+                lbTeamspeakStatus.ForeColor = Color.Red;
+            }
+
+            #endregion
+
+
             #endregion
 
 
@@ -820,6 +854,23 @@ namespace LetsPlayTool
 
                 #endregion
 
+                #region Teamspeak
+
+                if (Process.GetProcessesByName("ts3client_win64").Length > 0 | Process.GetProcessesByName("ts3client_win32").Length > 0 | Process.GetProcessesByName("ts2client_win64").Length > 0 | Process.GetProcessesByName("ts2client_win32").Length > 0)
+                {
+                    lbTeamspeakStatus.Text = "Offen";
+                    lbTeamspeakStatus.ForeColor = Color.Lime;
+                }
+                else
+                {
+
+                    lbTeamspeakStatus.Text = "Geschlossen";
+                    lbTeamspeakStatus.ForeColor = Color.Red;
+                }
+
+                #endregion
+
+
 
                 #endregion
 
@@ -888,6 +939,22 @@ namespace LetsPlayTool
 
                 lbDiscordSMStatus.Text = "Geschlossen";
                 lbDiscordSM.ForeColor = Color.Red;
+            }
+
+            #endregion
+
+            #region Teamspeak
+
+            if (Process.GetProcessesByName("ts3client_win64").Length > 0 | Process.GetProcessesByName("ts3client_win32").Length > 0 | Process.GetProcessesByName("ts2client_win64").Length > 0 | Process.GetProcessesByName("ts2client_win32").Length > 0)
+            {
+                lbTeamspeakStatus.Text = "Offen";
+                lbTeamspeakStatus.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbTeamspeakStatus.Text = "Geschlossen";
+                lbTeamspeakStatus.ForeColor = Color.Red;
             }
 
             #endregion
