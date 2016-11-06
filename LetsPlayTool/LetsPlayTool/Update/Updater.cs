@@ -28,7 +28,7 @@ namespace LetsPlayTool.Update
 
         }
 
-        string txtUrl = "http://wolf066lp.de/letsplaytool/update.txt";
+        string txtUrl = "https://www.dropbox.com/s/smfvet997p8je3s/update.txt?dl=1";
 
         public string downloadurl;
         public string updatepicurl;

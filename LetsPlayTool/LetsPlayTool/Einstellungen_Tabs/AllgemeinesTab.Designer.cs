@@ -135,9 +135,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(502, 17);
+            this.label1.Size = new System.Drawing.Size(498, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Hotkeys für das Starten/Stoppem der Aufnahme. Damit wird auch der Timer aktiviert" +
+            this.label1.Text = "Hotkeys für das Starten/Stoppen der Aufnahme. Damit wird auch der Timer aktiviert" +
     ".";
             // 
             // groupBox1

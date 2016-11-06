@@ -127,9 +127,16 @@ namespace LetsPlayTool
             if (updater.UpdateAvailable())
                 updater.update();
 
-            if (System.IO.File.Exists("LetsPlayToolSetup.exe"))
-                System.IO.File.Delete("LetsPlayToolSetup.exe");
 
+            if (System.IO.File.Exists("LetsPlayToolSetup.exe"))
+            {
+                try
+                {
+                    System.IO.File.Delete("LetsPlayToolSetup.exe");
+
+                }
+                catch { }
+            }
         }
 
         /// <summary>
@@ -941,9 +948,7 @@ namespace LetsPlayTool
             #endregion
 
         }
-
-
-
+        
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
