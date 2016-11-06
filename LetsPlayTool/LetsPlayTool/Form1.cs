@@ -209,6 +209,8 @@ namespace LetsPlayTool
 
             #endregion
 
+            #region Messenger
+
             #region Skype
 
             if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
@@ -258,6 +260,22 @@ namespace LetsPlayTool
                 lbSkypeStatus.ForeColor = Color.Orange;
 
             }
+
+            #endregion
+
+            #region Discord
+
+            if(Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
+            {
+                lbDiscordSMStatus.Text = "Offen";
+                lbDiscordSM.ForeColor = Color.Lime;
+            }else {
+
+                lbDiscordSMStatus.Text = "Geschlossen";
+                lbDiscordSM.ForeColor = Color.Red;
+            }
+
+            #endregion
 
             #endregion
 
@@ -537,6 +555,22 @@ namespace LetsPlayTool
 
             #endregion
 
+            #region Discord
+
+            if (Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
+            {
+                lbDiscordSMStatus.Text = "Offen";
+                lbDiscordSM.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbDiscordSMStatus.Text = "Geschlossen";
+                lbDiscordSM.ForeColor = Color.Red;
+            }
+
+            #endregion
+
             #endregion
 
 
@@ -770,9 +804,27 @@ namespace LetsPlayTool
 
                 #endregion
 
+                #region Discord
+
+                if (Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
+                {
+                    lbDiscordSMStatus.Text = "Offen";
+                    lbDiscordSM.ForeColor = Color.Lime;
+                }
+                else
+                {
+
+                    lbDiscordSMStatus.Text = "Geschlossen";
+                    lbDiscordSM.ForeColor = Color.Red;
+                }
+
                 #endregion
 
-            }else
+
+                #endregion
+
+            }
+            else
             {
 
                 showSmallMessage(panelTimer, "Bitte wähle ein Timerprofil aus!", Color.DarkRed);
@@ -824,8 +876,25 @@ namespace LetsPlayTool
 
             #endregion
 
+            #region Discord
+
+            if (Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
+            {
+                lbDiscordSMStatus.Text = "Offen";
+                lbDiscordSM.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbDiscordSMStatus.Text = "Geschlossen";
+                lbDiscordSM.ForeColor = Color.Red;
+            }
+
             #endregion
-            
+
+
+            #endregion
+
             #region Werte zurücksetzten
 
             labelTimer.Text = "00:00:00:00";

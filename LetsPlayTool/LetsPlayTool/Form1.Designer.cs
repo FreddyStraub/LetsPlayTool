@@ -31,7 +31,7 @@ namespace LetsPlayTool
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bShowÜFenster = new Bunifu.Framework.UI.BunifuImageButton();
@@ -441,12 +441,12 @@ namespace LetsPlayTool
             this.lbDiscordSMStatus.AutoSize = true;
             this.ShowPanelAnimator.SetDecoration(this.lbDiscordSMStatus, BunifuAnimatorNS.DecorationType.None);
             this.lbDiscordSMStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiscordSMStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbDiscordSMStatus.ForeColor = System.Drawing.Color.White;
             this.lbDiscordSMStatus.Location = new System.Drawing.Point(228, 73);
             this.lbDiscordSMStatus.Name = "lbDiscordSMStatus";
-            this.lbDiscordSMStatus.Size = new System.Drawing.Size(120, 21);
+            this.lbDiscordSMStatus.Size = new System.Drawing.Size(19, 21);
             this.lbDiscordSMStatus.TabIndex = 4;
-            this.lbDiscordSMStatus.Text = "Nicht Verfügbar";
+            this.lbDiscordSMStatus.Text = "...";
             this.toolTip1.SetToolTip(this.lbDiscordSMStatus, "Status");
             // 
             // lbSkypeStatus
@@ -471,9 +471,9 @@ namespace LetsPlayTool
             this.lbDiscordSM.ForeColor = System.Drawing.Color.White;
             this.lbDiscordSM.Location = new System.Drawing.Point(12, 73);
             this.lbDiscordSM.Name = "lbDiscordSM";
-            this.lbDiscordSM.Size = new System.Drawing.Size(173, 21);
+            this.lbDiscordSM.Size = new System.Drawing.Size(66, 21);
             this.lbDiscordSM.TabIndex = 2;
-            this.lbDiscordSM.Text = "Discord Streamermode:";
+            this.lbDiscordSM.Text = "Discord:";
             // 
             // lbTeamSpeak
             // 
@@ -588,22 +588,22 @@ namespace LetsPlayTool
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation2;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
