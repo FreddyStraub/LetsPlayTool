@@ -137,6 +137,9 @@ namespace LetsPlayTool
                 }
                 catch { }
             }
+
+            ValueUpdater.Start();
+
         }
 
         /// <summary>
@@ -335,8 +338,7 @@ namespace LetsPlayTool
             try
 
             {
-
-                toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
+                toolTip1.SetToolTip(labelTimer, "Ausgewähltes Timerprofil: " + selectedTimerProfil.name + " / Rechtsklick um ein Timerprofil auszuwählen!");
 
             }
             catch { }
@@ -797,6 +799,8 @@ namespace LetsPlayTool
 
                 //InitialisierePerformanceCounter();
 
+                ValueUpdater.Stop();
+
                 Mainactor.Start();
                 Session.Timer.st.Start(); //Startet die Stopwatch
 
@@ -886,6 +890,8 @@ namespace LetsPlayTool
         {
             createMarkerFile();
             Mainactor.Stop();
+
+            ValueUpdater.Start();
 
             einstellungen.save();
 
@@ -999,7 +1005,7 @@ namespace LetsPlayTool
             try
             {
 
-                toolTip1.SetToolTip(labelTimer, selectedTimerProfil.name);
+                toolTip1.SetToolTip(labelTimer, "Ausgewähltes Timerprofil: " + selectedTimerProfil.name + " / Rechtsklick um ein Timerprofil auszuwählen!");
             }
             catch { }
         }
@@ -1138,7 +1144,7 @@ namespace LetsPlayTool
 
             einstellungen.save();
 
-
+            ValueUpdater.Stop();
 
             unregisterHotKeys(); //Hotkeys werden wird deregistriert
 
@@ -1289,6 +1295,20 @@ namespace LetsPlayTool
         private void Form1_LocationChanged(object sender, EventArgs e)
         {
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
+        }
+
+        private void ValueUpdater_Tick(object sender, EventArgs e)
+        {
+
+            ÜFensterLocation = frmÜFenster.Location; //Überwachungsfenster Location speichern
+            sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
+
+            setSkyeLabelStatus();
+            setTeamspeakStatus();
+            setDiscordStatus();
+
+
+
         }
     }
  
