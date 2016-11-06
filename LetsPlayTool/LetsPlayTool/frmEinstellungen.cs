@@ -160,6 +160,7 @@ namespace LetsPlayTool
         ProgrammeTab pt = new ProgrammeTab();
         TimerTab tt = new TimerTab();
         Überwachung üt = new Überwachung();
+        InfoTab it = new InfoTab();
 
         /// <summary>
         /// Kümmert sich um das anzeigen der einzelnen Menüpunkte
@@ -270,6 +271,22 @@ namespace LetsPlayTool
 
                     #endregion
 
+                    break;
+
+                case 6: bMarker.selected = true;
+
+                    #region Tab anzeigen
+
+                    it.TopLevel = false;
+                    it.AutoScroll = true;
+                    
+                    panel1.Controls.Add(it);
+
+                    it.Show();
+
+
+                    #endregion
+
 
                     break;
 
@@ -334,6 +351,9 @@ namespace LetsPlayTool
 
         }
 
-
+        private void bInfo_Click(object sender, EventArgs e)
+        {
+            toggle(6);
+        }
     }
 }

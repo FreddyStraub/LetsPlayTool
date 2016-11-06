@@ -79,6 +79,12 @@
       <DependentUpon>AllgemeinesTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Einstellungen_Tabs\AllgemeinesTabEinstellungen.cs" />
+    <Compile Include="Einstellungen_Tabs\InfoTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\InfoTab.Designer.cs">
+      <DependentUpon>InfoTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Einstellungen_Tabs\MarkerTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\AllgemeinesTab.resx">
       <DependentUpon>AllgemeinesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\InfoTab.resx">
+      <DependentUpon>InfoTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\MarkerTab.resx">
       <DependentUpon>MarkerTab.cs</DependentUpon>

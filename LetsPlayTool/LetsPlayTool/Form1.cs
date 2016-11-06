@@ -124,7 +124,7 @@ namespace LetsPlayTool
 
             Updater updater = new Updater();
 
-            if (updater.isUpdateAvailable())
+            if (updater.UpdateAvailable())
                 updater.update();
 
         }

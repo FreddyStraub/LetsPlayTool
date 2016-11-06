@@ -42,7 +42,7 @@ namespace LetsPlayTool.Update
         /// Gibt an ob ein neues Update verfügbar ist.
         /// </summary>
         /// <returns></returns>
-        public bool isUpdateAvailable()
+        public bool UpdateAvailable()
         {
             
             if (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() == newVersion)
