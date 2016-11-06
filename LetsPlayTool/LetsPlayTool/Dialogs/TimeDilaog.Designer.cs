@@ -157,11 +157,15 @@
             this.bFarbe.BorderRadius = 0;
             this.bFarbe.ButtonText = "     Farbe";
             this.bFarbe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFarbe.DisabledColor = System.Drawing.Color.Gray;
             this.bFarbe.Iconcolor = System.Drawing.Color.Transparent;
             this.bFarbe.Iconimage = null;
             this.bFarbe.Iconimage_right = null;
             this.bFarbe.Iconimage_right_Selected = null;
             this.bFarbe.Iconimage_Selected = null;
+            this.bFarbe.IconRightVisible = true;
+            this.bFarbe.IconRightZoom = 0D;
+            this.bFarbe.IconVisible = true;
             this.bFarbe.IconZoom = 90D;
             this.bFarbe.IsTab = false;
             this.bFarbe.Location = new System.Drawing.Point(12, 120);
@@ -173,6 +177,8 @@
             this.bFarbe.selected = false;
             this.bFarbe.Size = new System.Drawing.Size(330, 31);
             this.bFarbe.TabIndex = 5;
+            this.bFarbe.Text = "     Farbe";
+            this.bFarbe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bFarbe.Textcolor = System.Drawing.Color.White;
             this.bFarbe.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bFarbe.Click += new System.EventHandler(this.bFarbe_Click);
@@ -185,12 +191,16 @@
             this.bAbbrechen.BorderRadius = 0;
             this.bAbbrechen.ButtonText = "  Abbrechen";
             this.bAbbrechen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAbbrechen.DisabledColor = System.Drawing.Color.Gray;
             this.bAbbrechen.Iconcolor = System.Drawing.Color.Transparent;
             this.bAbbrechen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bAbbrechen.Iconimage")));
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
-            this.bAbbrechen.IconZoom = 70D;
+            this.bAbbrechen.IconRightVisible = true;
+            this.bAbbrechen.IconRightZoom = 0D;
+            this.bAbbrechen.IconVisible = true;
+            this.bAbbrechen.IconZoom = 80D;
             this.bAbbrechen.IsTab = false;
             this.bAbbrechen.Location = new System.Drawing.Point(215, 338);
             this.bAbbrechen.Name = "bAbbrechen";
@@ -200,6 +210,8 @@
             this.bAbbrechen.selected = false;
             this.bAbbrechen.Size = new System.Drawing.Size(123, 38);
             this.bAbbrechen.TabIndex = 7;
+            this.bAbbrechen.Text = "  Abbrechen";
+            this.bAbbrechen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bAbbrechen.Textcolor = System.Drawing.Color.White;
             this.bAbbrechen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAbbrechen.Click += new System.EventHandler(this.bAbbrechen_Click);
@@ -212,12 +224,16 @@
             this.bFertig.BorderRadius = 0;
             this.bFertig.ButtonText = "     Fertig";
             this.bFertig.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFertig.DisabledColor = System.Drawing.Color.Gray;
             this.bFertig.Iconcolor = System.Drawing.Color.Transparent;
             this.bFertig.Iconimage = ((System.Drawing.Image)(resources.GetObject("bFertig.Iconimage")));
             this.bFertig.Iconimage_right = null;
             this.bFertig.Iconimage_right_Selected = null;
             this.bFertig.Iconimage_Selected = null;
-            this.bFertig.IconZoom = 70D;
+            this.bFertig.IconRightVisible = true;
+            this.bFertig.IconRightZoom = 0D;
+            this.bFertig.IconVisible = true;
+            this.bFertig.IconZoom = 80D;
             this.bFertig.IsTab = false;
             this.bFertig.Location = new System.Drawing.Point(86, 338);
             this.bFertig.Name = "bFertig";
@@ -227,6 +243,8 @@
             this.bFertig.selected = false;
             this.bFertig.Size = new System.Drawing.Size(123, 38);
             this.bFertig.TabIndex = 6;
+            this.bFertig.Text = "     Fertig";
+            this.bFertig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bFertig.Textcolor = System.Drawing.Color.White;
             this.bFertig.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bFertig.Click += new System.EventHandler(this.bFertig_Click);
@@ -270,7 +288,7 @@
             // 
             // checkText
             // 
-            this.checkText.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.checkText.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.checkText.Checked = false;
             this.checkText.CheckedOnColor = System.Drawing.Color.DodgerBlue;
@@ -324,7 +342,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bAbbrechen;
         private Bunifu.Framework.UI.BunifuFlatButton bFertig;
-        private System.Windows.Forms.ColorDialog cdFarbe;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lbText;
         public System.Windows.Forms.NumericUpDown nudTimeSeconds;
@@ -335,5 +352,6 @@
         public System.Windows.Forms.RichTextBox richTextBox1;
         public Bunifu.Framework.UI.BunifuCheckbox checkText;
         public System.Windows.Forms.Panel panelText;
+        public System.Windows.Forms.ColorDialog cdFarbe;
     }
 }

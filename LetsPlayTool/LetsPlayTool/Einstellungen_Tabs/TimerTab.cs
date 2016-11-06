@@ -295,7 +295,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
                     td.bFarbe.Activecolor = altesLItem.BackColor;
                     td.bFarbe.Normalcolor = altesLItem.BackColor;
 
-                    if(td.ShowDialog() == DialogResult.OK)
+                    td.Farbe = altesLItem.BackColor;
+
+                    if (td.ShowDialog() == DialogResult.OK)
                     {
 
                         TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Remove(TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times[Item.Index]);
