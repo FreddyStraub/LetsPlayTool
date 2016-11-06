@@ -46,5 +46,18 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             }
         }
+
+        private void lbFormular_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSd8o5AHUYxt0CoGauHqmO8vNguiJ1yiIKYyPbpB3EQIbqPtnQ/viewform");
+
+        }
+
+        private void InfoTab_Load(object sender, EventArgs e)
+        {
+
+            lbVersion.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(); //Version laden
+
+        }
     }
 }

@@ -127,6 +127,9 @@ namespace LetsPlayTool
             if (updater.UpdateAvailable())
                 updater.update();
 
+            if (System.IO.File.Exists("LetsPlayToolSetup.exe"))
+                System.IO.File.Delete("LetsPlayToolSetup.exe");
+
         }
 
         /// <summary>
