@@ -21,6 +21,8 @@ namespace LetsPlayTool
 
         public int SessionValue { get; set; }
 
+        public TimerProfil selectedTimerProfile { get; set; }
+
         /// <summary>
         /// Speicher die Einstellungen
         /// </summary>
@@ -121,9 +123,9 @@ namespace LetsPlayTool
             newTimer.TimerProfiles = new List<TimerProfil>();
 
 
-            newTimer.TimerProfiles.Add(new TimerProfil("Standart"));
+            newTimer.TimerProfiles.Add(new TimerProfil("Standard"));
 
-            newTimer.SelectedTimerProfil = newTimer.TimerProfiles[0];
+            selectedTimerProfile = newTimer.TimerProfiles[0];
 
             Timer = newTimer;
 

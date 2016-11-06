@@ -38,7 +38,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 TimerProfiles.Add(p);
             }
 
-            lbProfiles.SelectedIndex = 0;
+            try
+            {
+                lbProfiles.SelectedIndex = 0;
+            }
+            catch { }
+
 
         }
 

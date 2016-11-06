@@ -12,7 +12,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
         public List<TimerProfil> TimerProfiles = new List<TimerProfil>();
 
-        public TimerProfil SelectedTimerProfil { get; set; }
+     //   public TimerProfil SelectedTimerProfil { get; set; }
 
     }
 }

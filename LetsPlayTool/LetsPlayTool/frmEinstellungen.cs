@@ -93,6 +93,8 @@ namespace LetsPlayTool
             einstellungen.Timer = tt.getSettings();
             einstellungen.Überwachung = üt.getSettings();
 
+           
+
 
         }
 
@@ -174,6 +176,7 @@ namespace LetsPlayTool
             bÜberwachung.selected = false;
             bProgramme.selected = false;
             bMarker.selected = false;
+            bInfo.selected = false;
 
             //Einstellungen speichern
             einstellungen.Allgemeines = at.getSettings();
@@ -343,8 +346,13 @@ namespace LetsPlayTool
             getAllSettings();
 
 
-            einstellungen.Timer.SelectedTimerProfil = selectedTimerProfil;
-
+            foreach (TimerProfil t in einstellungen.Timer.TimerProfiles)
+            {
+                if (t.name == selectedTimerProfil.name)
+                {
+                    einstellungen.selectedTimerProfile = t;
+                }
+            }
 
             einstellungen.save();
             Closeanimation.Start();

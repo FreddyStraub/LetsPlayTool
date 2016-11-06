@@ -162,10 +162,12 @@ namespace LetsPlayTool
 
             }
 
+            selectedTimerProfil = einstellungen.selectedTimerProfile;
+
             #region Überwachung
 
-            if(selectedTimerProfil != null)
-                selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+            if (selectedTimerProfil != null)
+                selectedTimerProfil = einstellungen.selectedTimerProfile;
 
             if (einstellungen.Überwachung.ÜberwachungOrdner.Length > 40)
             {
@@ -328,7 +330,7 @@ namespace LetsPlayTool
 
             #region Timer
 
-            selectedTimerProfil = einstellungen.Timer.SelectedTimerProfil;
+            selectedTimerProfil = einstellungen.selectedTimerProfile;
 
             try
 
@@ -445,7 +447,19 @@ namespace LetsPlayTool
                 #region 0 Time
 
                 if (t.ListViewItem.Text == "00:00:00:00" && Session.Timer.TimeString == "00:00:00:01")
-                    showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+                {
+                    if (t.Text != "")
+                    {
+
+                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+
+                    }else
+                    {
+                        showSmallMessage(panelTimer, "00:00:00:00", t.ListViewItem.BackColor);
+
+                    }
+
+                }
 
 
                 #endregion
@@ -928,11 +942,18 @@ namespace LetsPlayTool
             labelTimer.Text = "00:00:00:00";
 
             lbCPUAuslastung.Text = "...";
+            lbCPUAuslastung.BackColor = Color.Transparent;
+
             lbRAMUsed.Text = "...";
+            lbRAMUsed.BackColor = Color.Transparent;
 
             lbFSpeicherGB.Text = "...";
+            lbFSpeicherGB.BackColor = Color.Transparent;
+
             lbBSpeicherGB.Text = "...";
-                          
+            lbBSpeicherGB.BackColor = Color.Transparent;
+
+
             listMarker.Items.Clear();
 
             lMarker.Clear();
@@ -1113,7 +1134,7 @@ namespace LetsPlayTool
 
             stopSession();
 
-            einstellungen.Timer.SelectedTimerProfil = selectedTimerProfil;
+            einstellungen.selectedTimerProfile = selectedTimerProfil;
 
             einstellungen.save();
 
