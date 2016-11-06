@@ -128,11 +128,11 @@ namespace LetsPlayTool
                 updater.update();
 
 
-            if (System.IO.File.Exists("LetsPlayToolSetup.exe"))
+            if (System.IO.File.Exists("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe"))
             {
                 try
                 {
-                    System.IO.File.Delete("LetsPlayToolSetup.exe");
+                    System.IO.File.Delete("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
 
                 }
                 catch { }
@@ -148,7 +148,10 @@ namespace LetsPlayTool
         private void loadSettings()
         {
 
-        
+
+            if (!System.IO.Directory.Exists("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool"))
+                System.IO.Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool");
+
             //Einstellungen laden wenn vorhanden, ansonsten erstellen.
             try
             {

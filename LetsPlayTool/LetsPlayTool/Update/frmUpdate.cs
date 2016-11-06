@@ -61,8 +61,8 @@ namespace LetsPlayTool.Update
 
 
                 WebClient wb = new WebClient();
-                wb.DownloadFile(new Uri(_download), "LetsPlayToolSetup.exe");
-                System.Diagnostics.Process.Start("LetsPlayToolSetup.exe");
+                wb.DownloadFile(new Uri(_download), "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
+                System.Diagnostics.Process.Start("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
 
 
             }
