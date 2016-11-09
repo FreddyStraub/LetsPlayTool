@@ -122,24 +122,41 @@ namespace LetsPlayTool
         /// <param name="duration"></param>
         public void showMessage(string message, Color color, int duration)
         {
+    
+                LetsPlayToolMessage.ÜFenster S = new LetsPlayToolMessage.ÜFenster(message, duration, color);
 
-            LetsPlayToolMessage.ÜFenster S = new LetsPlayToolMessage.ÜFenster(message, duration, color);
+                S.TopLevel = false;
+                S.AutoScroll = true;
 
-            S.TopLevel = false;
-            S.AutoScroll = true;
+                Controls.Add(S);
 
-            Controls.Add(S);
+                S.Location = new Point(0, 59);
 
-            S.Location = new Point(0, 59);
+                S.BringToFront();
 
-            S.BringToFront();
+                S.Show();
+                S.ShowMessage.Start();
 
-            S.Show();
-            S.ShowMessage.Start();
+         
+        
         }
 
         private void lbTimer_Click(object sender, EventArgs e)
         {
+            Form1 frmMain = (Form1)Application.OpenForms[0];
+
+            if (!frmMain.SessionRuns)
+            {
+                frmMain.startSession();
+                frmMain.SessionRuns = true;
+
+            }
+            else
+            {
+                frmMain.stopSession();
+                frmMain.SessionRuns = false;
+            }
+
 
         }
 

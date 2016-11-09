@@ -792,7 +792,7 @@ namespace LetsPlayTool
         /// <summary>
         /// Startet die Session und alle Funktionen.
         /// </summary>
-        private void startSession()
+        public void startSession()
         {
 
             if (selectedTimerProfil != null)
@@ -889,7 +889,7 @@ namespace LetsPlayTool
         /// <summary>
         /// Stoppt die Session und alle Funktionen
         /// </summary>
-        private void stopSession()
+        public void stopSession()
         {
             createMarkerFile();
             Mainactor.Stop();
@@ -1157,6 +1157,8 @@ namespace LetsPlayTool
 
         public List<string> lMarker = new List<string>();
 
+        private bool creatingMarkerSecurity { get; set; }
+
         /// <summary>
         /// Erstellt einen neuen Marker bzw. neue Markerliste
         /// </summary>
@@ -1171,12 +1173,23 @@ namespace LetsPlayTool
 
                 if (frmÜFenster.Visible == true)
                 {
-                    frmÜFenster.Close();
-                    frmÜFenster = new frmÜFenster();
-                    frmÜFenster.Show();
 
-                    frmÜFenster.Location = ÜFensterLocation;
-                    frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+                    if (creatingMarkerSecurity)
+                    {
+
+                        frmÜFenster.Close();
+                        frmÜFenster = new frmÜFenster();
+                        frmÜFenster.Show();
+
+
+                        frmÜFenster.Location = ÜFensterLocation;
+
+
+                        frmÜFenster.showMessage("Marker erstellt (" + Session.Timer.TimeString + ")", Color.FromArgb(38, 38, 38), 2);
+
+                        creatingMarkerSecurity = false;
+
+                    }
 
                 }
 
@@ -1309,6 +1322,8 @@ namespace LetsPlayTool
             setSkyeLabelStatus();
             setTeamspeakStatus();
             setDiscordStatus();
+
+            creatingMarkerSecurity = true;
 
 
 

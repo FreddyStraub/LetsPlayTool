@@ -38,6 +38,7 @@ namespace LetsPlayTool.LetsPlayToolMessage
             {
 
                 ShowMessageAnimator.HideSync(button1);
+                
                 Close();
             }
 
