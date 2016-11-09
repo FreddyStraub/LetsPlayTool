@@ -117,6 +117,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "frmTimerprofilAuswahl";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmTimerprofilAuswahl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTimerprofilAuswahl_KeyDown);

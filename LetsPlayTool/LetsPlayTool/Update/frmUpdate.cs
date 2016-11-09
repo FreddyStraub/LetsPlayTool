@@ -35,22 +35,42 @@ namespace LetsPlayTool.Update
 
             richTextBox1.Text = _changelog;
 
-            HttpWebRequest logRequest = (HttpWebRequest)HttpWebRequest.Create(_changelog);
-            HttpWebResponse logResponse = (HttpWebResponse)logRequest.GetResponse();
-
-            System.IO.StreamReader updateReader = new System.IO.StreamReader(logResponse.GetResponseStream());
-
-            richTextBox1.Text = updateReader.ReadToEnd();
-
-            lbVersion.Text = _version;
-            
-            //Bild
-            var request = WebRequest.Create(_pic);
-                     
-            using (var response = request.GetResponse())
-            using (var stream = response.GetResponseStream())
+            try
             {
-                pbUpdatePic.Image = Bitmap.FromStream(stream);
+
+                HttpWebRequest logRequest = (HttpWebRequest)HttpWebRequest.Create(_changelog);
+                HttpWebResponse logResponse = (HttpWebResponse)logRequest.GetResponse();
+
+                System.IO.StreamReader updateReader = new System.IO.StreamReader(logResponse.GetResponseStream());
+
+                richTextBox1.Text = updateReader.ReadToEnd();
+
+                lbVersion.Text = _version;
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString());
+                Application.Exit();
+
+            }
+
+            //Bild
+
+            try
+            {
+                var request = WebRequest.Create(_pic);
+
+                using (var response = request.GetResponse())
+                using (var stream = response.GetResponseStream())
+                {
+                    pbUpdatePic.Image = Bitmap.FromStream(stream);
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString());
+                Application.Exit();
+
             }
         }
 
@@ -69,7 +89,9 @@ namespace LetsPlayTool.Update
             catch (Exception ex)
             {
                 MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString());
-                
+                Application.Exit();
+
+
             }
 
             Application.Exit();

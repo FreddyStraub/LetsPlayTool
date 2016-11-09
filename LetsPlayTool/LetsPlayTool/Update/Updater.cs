@@ -28,7 +28,10 @@ namespace LetsPlayTool.Update
 
         }
 
-        string txtUrl = "https://www.dropbox.com/s/smfvet997p8je3s/update.txt?dl=1";
+      //  string txtUrl = "https://www.dropbox.com/s/smfvet997p8je3s/update.txt?dl=1";
+
+        string txtUrl = "https://www.dropbox.com/s/asddds/update.txt?dl=1";
+
 
         public string downloadurl;
         public string updatepicurl;

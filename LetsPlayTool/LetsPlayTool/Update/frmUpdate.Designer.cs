@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdate));
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.HeaderBar = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pbUpdatePic = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbChangelog = new System.Windows.Forms.Label();
             this.bUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bCancel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.HeaderBar.SuspendLayout();
@@ -71,6 +71,19 @@
             this.HeaderBar.TabIndex = 1;
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
             this.HeaderBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(279, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Eine neue Version ist verfügbar!";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
             // 
             // pbUpdatePic
             // 
@@ -171,19 +184,6 @@
             this.bCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 25);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Eine neue Version ist verfügbar!";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
-            // 
             // lbVersion
             // 
             this.lbVersion.AutoSize = true;
@@ -209,6 +209,7 @@
             this.Controls.Add(this.pbUpdatePic);
             this.Controls.Add(this.HeaderBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUpdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdate";
