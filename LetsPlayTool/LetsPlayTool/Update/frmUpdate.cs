@@ -81,8 +81,12 @@ namespace LetsPlayTool.Update
 
 
                 WebClient wb = new WebClient();
-                wb.DownloadFile(new Uri(_download), "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
-                System.Diagnostics.Process.Start("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
+
+                richTextBox1.Text = "Downloading...";
+                richTextBox1.Font = new Font(richTextBox1.Font.Name, 40f, FontStyle.Regular);
+
+                //wb.DownloadFile(new Uri(_download), "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
+                //System.Diagnostics.Process.Start("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
 
 
             }
@@ -94,7 +98,7 @@ namespace LetsPlayTool.Update
 
             }
 
-            Application.Exit();
+          //  Application.Exit();
 
         }
 

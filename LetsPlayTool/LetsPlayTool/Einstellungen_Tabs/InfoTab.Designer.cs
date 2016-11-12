@@ -33,17 +33,19 @@ namespace LetsPlayTool.Einstellungen_Tabs
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoTab));
             this.lbLabelVersion = new System.Windows.Forms.Label();
             this.gbLetsPlayTool = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbFormular = new System.Windows.Forms.LinkLabel();
+            this.lbLabelverbesserungsVorschläge = new System.Windows.Forms.Label();
+            this.lbCopyRight = new System.Windows.Forms.Label();
             this.bSeaarchForUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbEnwtickler = new System.Windows.Forms.LinkLabel();
             this.lbLabelEntwickler = new System.Windows.Forms.Label();
             this.lbWebsite = new System.Windows.Forms.LinkLabel();
             this.lbLabelWebsite = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.lbCopyRight = new System.Windows.Forms.Label();
-            this.lbLabelverbesserungsVorschläge = new System.Windows.Forms.Label();
-            this.lbFormular = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbMail = new System.Windows.Forms.Label();
+            this.lbMailLink = new System.Windows.Forms.LinkLabel();
             this.gbLetsPlayTool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +63,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             // 
             // gbLetsPlayTool
             // 
+            this.gbLetsPlayTool.Controls.Add(this.lbMailLink);
+            this.gbLetsPlayTool.Controls.Add(this.lbMail);
             this.gbLetsPlayTool.Controls.Add(this.pictureBox1);
             this.gbLetsPlayTool.Controls.Add(this.label1);
             this.gbLetsPlayTool.Controls.Add(this.lbFormular);
@@ -80,6 +84,62 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.gbLetsPlayTool.TabIndex = 1;
             this.gbLetsPlayTool.TabStop = false;
             this.gbLetsPlayTool.Text = "LetsPlayTool";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LetsPlayTool.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(34, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(205, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(404, 73);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "LetsPlayTool";
+            // 
+            // lbFormular
+            // 
+            this.lbFormular.AutoSize = true;
+            this.lbFormular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFormular.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.lbFormular.Location = new System.Drawing.Point(455, 358);
+            this.lbFormular.Name = "lbFormular";
+            this.lbFormular.Size = new System.Drawing.Size(68, 18);
+            this.lbFormular.TabIndex = 10;
+            this.lbFormular.TabStop = true;
+            this.lbFormular.Text = "Formular";
+            this.lbFormular.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbFormular_LinkClicked);
+            // 
+            // lbLabelverbesserungsVorschläge
+            // 
+            this.lbLabelverbesserungsVorschläge.AutoSize = true;
+            this.lbLabelverbesserungsVorschläge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLabelverbesserungsVorschläge.ForeColor = System.Drawing.Color.White;
+            this.lbLabelverbesserungsVorschläge.Location = new System.Drawing.Point(17, 358);
+            this.lbLabelverbesserungsVorschläge.Name = "lbLabelverbesserungsVorschläge";
+            this.lbLabelverbesserungsVorschläge.Size = new System.Drawing.Size(432, 18);
+            this.lbLabelverbesserungsVorschläge.TabIndex = 9;
+            this.lbLabelverbesserungsVorschläge.Text = "Verbesserungsvorschläge / Anmerkungen und Bugs bitte hierher:";
+            // 
+            // lbCopyRight
+            // 
+            this.lbCopyRight.AutoSize = true;
+            this.lbCopyRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCopyRight.ForeColor = System.Drawing.Color.White;
+            this.lbCopyRight.Location = new System.Drawing.Point(17, 483);
+            this.lbCopyRight.Name = "lbCopyRight";
+            this.lbCopyRight.Size = new System.Drawing.Size(126, 18);
+            this.lbCopyRight.TabIndex = 8;
+            this.lbCopyRight.Text = "Copyright ©  2016";
             // 
             // bSeaarchForUpdate
             // 
@@ -173,61 +233,29 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.lbVersion.TabIndex = 1;
             this.lbVersion.Text = "0.0.0.1";
             // 
-            // lbCopyRight
+            // lbMail
             // 
-            this.lbCopyRight.AutoSize = true;
-            this.lbCopyRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCopyRight.ForeColor = System.Drawing.Color.White;
-            this.lbCopyRight.Location = new System.Drawing.Point(17, 483);
-            this.lbCopyRight.Name = "lbCopyRight";
-            this.lbCopyRight.Size = new System.Drawing.Size(126, 18);
-            this.lbCopyRight.TabIndex = 8;
-            this.lbCopyRight.Text = "Copyright ©  2016";
+            this.lbMail.AutoSize = true;
+            this.lbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMail.ForeColor = System.Drawing.Color.White;
+            this.lbMail.Location = new System.Drawing.Point(17, 391);
+            this.lbMail.Name = "lbMail";
+            this.lbMail.Size = new System.Drawing.Size(270, 18);
+            this.lbMail.TabIndex = 13;
+            this.lbMail.Text = "Ihr wollt mir eine EMail schreiben? Hier: ";
             // 
-            // lbLabelverbesserungsVorschläge
+            // lbMailLink
             // 
-            this.lbLabelverbesserungsVorschläge.AutoSize = true;
-            this.lbLabelverbesserungsVorschläge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLabelverbesserungsVorschläge.ForeColor = System.Drawing.Color.White;
-            this.lbLabelverbesserungsVorschläge.Location = new System.Drawing.Point(17, 358);
-            this.lbLabelverbesserungsVorschläge.Name = "lbLabelverbesserungsVorschläge";
-            this.lbLabelverbesserungsVorschläge.Size = new System.Drawing.Size(432, 18);
-            this.lbLabelverbesserungsVorschläge.TabIndex = 9;
-            this.lbLabelverbesserungsVorschläge.Text = "Verbesserungsvorschläge / Anmerkungen und Bugs bitte hierher:";
-            // 
-            // lbFormular
-            // 
-            this.lbFormular.AutoSize = true;
-            this.lbFormular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFormular.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.lbFormular.Location = new System.Drawing.Point(455, 358);
-            this.lbFormular.Name = "lbFormular";
-            this.lbFormular.Size = new System.Drawing.Size(68, 18);
-            this.lbFormular.TabIndex = 10;
-            this.lbFormular.TabStop = true;
-            this.lbFormular.Text = "Formular";
-            this.lbFormular.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbFormular_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(205, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(404, 73);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "LetsPlayTool";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LetsPlayTool.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.lbMailLink.AutoSize = true;
+            this.lbMailLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMailLink.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.lbMailLink.Location = new System.Drawing.Point(289, 391);
+            this.lbMailLink.Name = "lbMailLink";
+            this.lbMailLink.Size = new System.Drawing.Size(129, 18);
+            this.lbMailLink.TabIndex = 14;
+            this.lbMailLink.TabStop = true;
+            this.lbMailLink.Text = "info@wolf066lp.de";
+            this.lbMailLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbMailLink_LinkClicked);
             // 
             // InfoTab
             // 
@@ -262,5 +290,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private System.Windows.Forms.Label lbLabelverbesserungsVorschläge;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel lbMailLink;
+        private System.Windows.Forms.Label lbMail;
     }
 }

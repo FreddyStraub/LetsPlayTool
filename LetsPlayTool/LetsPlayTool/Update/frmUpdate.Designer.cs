@@ -103,6 +103,7 @@
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(12, 310);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(411, 184);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "-Neue Features!";

@@ -1,5 +1,6 @@
 ﻿using LetsPlayTool.Dialogs;
 using LetsPlayTool.Update;
+using Microsoft.Win32;
 using SKYPE4COMLib;
 using System;
 using System.Collections.Generic;
@@ -138,6 +139,7 @@ namespace LetsPlayTool
                 catch { }
             }
 
+
             ValueUpdater.Start();
 
         }
@@ -226,69 +228,11 @@ namespace LetsPlayTool
 
             #region Messenger
 
-            #region Skype
-
-            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
-            {
-
-
-                if (skype.Client.IsRunning)
-                {
-                    skype.Client.Start();
-                    try
-                    {
-                        skype.Attach();
-
-                        lbSkypeStatus.Text = "...";
-                        lbSkypeStatus.ForeColor = Color.Lime;
-                    }
-                    catch {
-                        lbSkypeStatus.Text = "Deaktiviert";
-                        lbSkypeStatus.ForeColor = Color.White;
-                        showSmallMessage(panelÜberwachung, "Es konnte keine Verbindung zum Skypeclient hergestellt werden!", Color.Red);
-
-                        einstellungen.Überwachung.MessengerSettings.skypeSettings.active = false;
-                        einstellungen.save();
-                        loadSettings();
-
-                    }
-
-                }
-                else
-                {
-
-
-                    showSmallMessage(panelÜberwachung, "Es wurde kein Skype Client gefunden!", Color.Orange);
-
-                    lbSkypeStatus.Text = "Kein Skype Client gefunden!";
-                    lbSkypeStatus.ForeColor = Color.Orange;
-
-                }
-
-       
-
-            }
-            else
-            {
-
-                lbSkypeStatus.Text = "Deaktiviert";
-                lbSkypeStatus.ForeColor = Color.Orange;
-
-            }
-
-            #endregion
-
-            #region Discord
-
-
-            setDiscordStatus();
-
-            #endregion
-
-            #region Teamspeak
-
+            setSteamStatus();
             setTeamspeakStatus();
-            #endregion
+            setDiscordStatus();
+            setSkyeLabelStatus();
+            setMailClientStatus();
 
             #endregion
 
@@ -624,6 +568,39 @@ namespace LetsPlayTool
         }
 
         /// <summary>
+        /// Setzt den aktuellen MailClientStatus in das Label.
+        /// </summary>
+
+        private void setMailClientStatus()
+        {
+    //  throw new NotImplementedException();
+
+            
+
+        }
+
+        /// <summary>
+        /// Setzt den Status von Steam in das Label.
+        /// </summary>
+        private void setSteamStatus()
+        {
+
+            if (Process.GetProcessesByName("Steam").Length > 0 | Process.GetProcessesByName("steam").Length > 0)
+            {
+                lbSteamStatus.Text = "Läuft";
+                lbSteamStatus.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbSteamStatus.Text = "Geschlossen";
+                lbSteamStatus.ForeColor = Color.Red;
+            }
+
+
+        }
+
+        /// <summary>
         /// Setzt den Status von Discord in das Label.
         /// </summary>
         private void setDiscordStatus()
@@ -688,6 +665,7 @@ namespace LetsPlayTool
             }
         }
 
+        
 
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
@@ -1322,12 +1300,15 @@ namespace LetsPlayTool
             setSkyeLabelStatus();
             setTeamspeakStatus();
             setDiscordStatus();
+            setMailClientStatus();
+            setSteamStatus();
 
             creatingMarkerSecurity = true;
 
 
 
         }
+
     }
  
 }

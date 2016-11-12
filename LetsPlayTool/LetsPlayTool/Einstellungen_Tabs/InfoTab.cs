@@ -59,5 +59,11 @@ namespace LetsPlayTool.Einstellungen_Tabs
             lbVersion.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(); //Version laden
 
         }
+
+        private void lbMailLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string prg = "mailto:" + lbMailLink.Text;
+            System.Diagnostics.Process.Start(prg);
+        }
     }
 }

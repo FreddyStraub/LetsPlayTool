@@ -31,7 +31,7 @@ namespace LetsPlayTool
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.bShowÜFenster = new Bunifu.Framework.UI.BunifuImageButton();
@@ -58,6 +58,8 @@ namespace LetsPlayTool
             this.listMarker = new System.Windows.Forms.ListBox();
             this.lbMarker = new System.Windows.Forms.Label();
             this.panelÜberwachung = new System.Windows.Forms.Panel();
+            this.lbMailClient = new System.Windows.Forms.Label();
+            this.lbMail = new System.Windows.Forms.Label();
             this.lbTeamspeakStatus = new System.Windows.Forms.Label();
             this.lbDiscordSMStatus = new System.Windows.Forms.Label();
             this.lbSkypeStatus = new System.Windows.Forms.Label();
@@ -73,6 +75,8 @@ namespace LetsPlayTool
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ValueUpdater = new System.Windows.Forms.Timer(this.components);
+            this.lbSteamStatus = new System.Windows.Forms.Label();
+            this.lbSteam = new System.Windows.Forms.Label();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
@@ -409,6 +413,10 @@ namespace LetsPlayTool
             // 
             this.panelÜberwachung.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelÜberwachung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelÜberwachung.Controls.Add(this.lbSteamStatus);
+            this.panelÜberwachung.Controls.Add(this.lbSteam);
+            this.panelÜberwachung.Controls.Add(this.lbMailClient);
+            this.panelÜberwachung.Controls.Add(this.lbMail);
             this.panelÜberwachung.Controls.Add(this.lbTeamspeakStatus);
             this.panelÜberwachung.Controls.Add(this.lbDiscordSMStatus);
             this.panelÜberwachung.Controls.Add(this.lbSkypeStatus);
@@ -418,9 +426,34 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.panelÜberwachung, BunifuAnimatorNS.DecorationType.None);
             this.panelÜberwachung.Location = new System.Drawing.Point(0, 457);
             this.panelÜberwachung.Name = "panelÜberwachung";
-            this.panelÜberwachung.Size = new System.Drawing.Size(445, 132);
+            this.panelÜberwachung.Size = new System.Drawing.Size(445, 198);
             this.panelÜberwachung.TabIndex = 7;
             this.panelÜberwachung.Visible = false;
+            // 
+            // lbMailClient
+            // 
+            this.lbMailClient.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbMailClient, BunifuAnimatorNS.DecorationType.None);
+            this.lbMailClient.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMailClient.ForeColor = System.Drawing.Color.White;
+            this.lbMailClient.Location = new System.Drawing.Point(228, 116);
+            this.lbMailClient.Name = "lbMailClient";
+            this.lbMailClient.Size = new System.Drawing.Size(19, 21);
+            this.lbMailClient.TabIndex = 7;
+            this.lbMailClient.Text = "...";
+            this.toolTip1.SetToolTip(this.lbMailClient, "Status");
+            // 
+            // lbMail
+            // 
+            this.lbMail.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbMail, BunifuAnimatorNS.DecorationType.None);
+            this.lbMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMail.ForeColor = System.Drawing.Color.White;
+            this.lbMail.Location = new System.Drawing.Point(11, 116);
+            this.lbMail.Name = "lbMail";
+            this.lbMail.Size = new System.Drawing.Size(43, 21);
+            this.lbMail.TabIndex = 6;
+            this.lbMail.Text = "Mail:";
             // 
             // lbTeamspeakStatus
             // 
@@ -428,7 +461,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbTeamspeakStatus, BunifuAnimatorNS.DecorationType.None);
             this.lbTeamspeakStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamspeakStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbTeamspeakStatus.Location = new System.Drawing.Point(228, 54);
+            this.lbTeamspeakStatus.Location = new System.Drawing.Point(228, 53);
             this.lbTeamspeakStatus.Name = "lbTeamspeakStatus";
             this.lbTeamspeakStatus.Size = new System.Drawing.Size(19, 21);
             this.lbTeamspeakStatus.TabIndex = 5;
@@ -480,7 +513,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbTeamSpeak, BunifuAnimatorNS.DecorationType.None);
             this.lbTeamSpeak.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamSpeak.ForeColor = System.Drawing.Color.White;
-            this.lbTeamSpeak.Location = new System.Drawing.Point(11, 54);
+            this.lbTeamSpeak.Location = new System.Drawing.Point(11, 53);
             this.lbTeamSpeak.Name = "lbTeamSpeak";
             this.lbTeamSpeak.Size = new System.Drawing.Size(89, 21);
             this.lbTeamSpeak.TabIndex = 1;
@@ -506,9 +539,9 @@ namespace LetsPlayTool
             this.panelSoundÜberwachung.Controls.Add(this.lbLautsprecher);
             this.panelSoundÜberwachung.Controls.Add(this.lbSound);
             this.ShowPanelAnimator.SetDecoration(this.panelSoundÜberwachung, BunifuAnimatorNS.DecorationType.None);
-            this.panelSoundÜberwachung.Location = new System.Drawing.Point(0, 589);
+            this.panelSoundÜberwachung.Location = new System.Drawing.Point(0, 650);
             this.panelSoundÜberwachung.Name = "panelSoundÜberwachung";
-            this.panelSoundÜberwachung.Size = new System.Drawing.Size(445, 132);
+            this.panelSoundÜberwachung.Size = new System.Drawing.Size(445, 71);
             this.panelSoundÜberwachung.TabIndex = 8;
             this.panelSoundÜberwachung.Visible = false;
             // 
@@ -519,7 +552,7 @@ namespace LetsPlayTool
             this.sliderLautsprecher.BorderRadius = 0;
             this.ShowPanelAnimator.SetDecoration(this.sliderLautsprecher, BunifuAnimatorNS.DecorationType.None);
             this.sliderLautsprecher.IndicatorColor = System.Drawing.Color.DodgerBlue;
-            this.sliderLautsprecher.Location = new System.Drawing.Point(144, 59);
+            this.sliderLautsprecher.Location = new System.Drawing.Point(145, 28);
             this.sliderLautsprecher.MaximumValue = 100;
             this.sliderLautsprecher.Name = "sliderLautsprecher";
             this.sliderLautsprecher.Size = new System.Drawing.Size(276, 30);
@@ -535,7 +568,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbLautsprecher, BunifuAnimatorNS.DecorationType.None);
             this.lbLautsprecher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLautsprecher.ForeColor = System.Drawing.Color.White;
-            this.lbLautsprecher.Location = new System.Drawing.Point(12, 62);
+            this.lbLautsprecher.Location = new System.Drawing.Point(13, 31);
             this.lbLautsprecher.Name = "lbLautsprecher";
             this.lbLautsprecher.Size = new System.Drawing.Size(103, 21);
             this.lbLautsprecher.TabIndex = 4;
@@ -548,7 +581,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbSound, BunifuAnimatorNS.DecorationType.None);
             this.lbSound.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSound.ForeColor = System.Drawing.Color.White;
-            this.lbSound.Location = new System.Drawing.Point(12, 9);
+            this.lbSound.Location = new System.Drawing.Point(13, 7);
             this.lbSound.Name = "lbSound";
             this.lbSound.Size = new System.Drawing.Size(65, 21);
             this.lbSound.TabIndex = 2;
@@ -558,22 +591,22 @@ namespace LetsPlayTool
             // 
             this.ShowPanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.ShowPanelAnimator.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.ShowPanelAnimator.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.ShowPanelAnimator.DefaultAnimation = animation1;
             this.ShowPanelAnimator.Interval = 5;
             // 
             // ShowPanelsAnimation
@@ -594,6 +627,31 @@ namespace LetsPlayTool
             // 
             this.ValueUpdater.Interval = 1000;
             this.ValueUpdater.Tick += new System.EventHandler(this.ValueUpdater_Tick);
+            // 
+            // lbSteamStatus
+            // 
+            this.lbSteamStatus.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbSteamStatus, BunifuAnimatorNS.DecorationType.None);
+            this.lbSteamStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSteamStatus.ForeColor = System.Drawing.Color.White;
+            this.lbSteamStatus.Location = new System.Drawing.Point(228, 150);
+            this.lbSteamStatus.Name = "lbSteamStatus";
+            this.lbSteamStatus.Size = new System.Drawing.Size(19, 21);
+            this.lbSteamStatus.TabIndex = 9;
+            this.lbSteamStatus.Text = "...";
+            this.toolTip1.SetToolTip(this.lbSteamStatus, "Status");
+            // 
+            // lbSteam
+            // 
+            this.lbSteam.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbSteam, BunifuAnimatorNS.DecorationType.None);
+            this.lbSteam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSteam.ForeColor = System.Drawing.Color.White;
+            this.lbSteam.Location = new System.Drawing.Point(11, 150);
+            this.lbSteam.Name = "lbSteam";
+            this.lbSteam.Size = new System.Drawing.Size(56, 21);
+            this.lbSteam.TabIndex = 8;
+            this.lbSteam.Text = "Steam:";
             // 
             // Form1
             // 
@@ -681,6 +739,10 @@ namespace LetsPlayTool
         private System.Windows.Forms.Label lbSound;
         private Bunifu.Framework.UI.BunifuTrackbar sliderLautsprecher;
         public System.Windows.Forms.Timer ValueUpdater;
+        private System.Windows.Forms.Label lbMailClient;
+        private System.Windows.Forms.Label lbMail;
+        private System.Windows.Forms.Label lbSteamStatus;
+        private System.Windows.Forms.Label lbSteam;
     }
 }
 
