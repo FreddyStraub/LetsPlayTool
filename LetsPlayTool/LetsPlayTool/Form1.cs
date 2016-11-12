@@ -573,9 +573,28 @@ namespace LetsPlayTool
 
         private void setMailClientStatus()
         {
-    //  throw new NotImplementedException();
+            //  throw new NotImplementedException();
 
-            
+            object mailClient = Registry.GetValue(@"HKEY_CLASSES_ROOT\mailto\shell\open\command", "", "none");
+
+            string rohPfad = mailClient.ToString().Substring(1);
+            rohPfad = rohPfad.Substring(0, rohPfad.Length - 26);
+
+            string processname = System.IO.Path.GetFileNameWithoutExtension(rohPfad);
+
+
+            if (Process.GetProcessesByName(processname).Length > 0)
+            {
+                lbMailClient.Text = "Gestartet";
+                lbMailClient.ForeColor = Color.Lime;
+            }
+            else
+            {
+
+                lbMailClient.Text = "Geschlossen";
+                lbMailClient.ForeColor = Color.Red;
+            }
+
 
         }
 
