@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEinstellungen));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.lbEinstellungen = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.Closeanimation = new System.Windows.Forms.Timer(this.components);
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTabs = new System.Windows.Forms.Panel();
+            this.bInfo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bAbbrechen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bSpeichern = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bMarker = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -47,7 +48,6 @@
             this.bTimer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.bInfo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
@@ -140,6 +140,43 @@
             this.panelTabs.Size = new System.Drawing.Size(202, 553);
             this.panelTabs.TabIndex = 1;
             // 
+            // bInfo
+            // 
+            this.bInfo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bInfo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bInfo.BorderRadius = 0;
+            this.bInfo.ButtonText = "    Info";
+            this.bInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.bInfo, BunifuAnimatorNS.DecorationType.None);
+            this.bInfo.DisabledColor = System.Drawing.Color.Gray;
+            this.bInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInfo.Iconcolor = System.Drawing.Color.Transparent;
+            this.bInfo.Iconimage = null;
+            this.bInfo.Iconimage_right = null;
+            this.bInfo.Iconimage_right_Selected = null;
+            this.bInfo.Iconimage_Selected = null;
+            this.bInfo.IconMarginLeft = 0;
+            this.bInfo.IconMarginRight = 0;
+            this.bInfo.IconRightVisible = true;
+            this.bInfo.IconRightZoom = 0D;
+            this.bInfo.IconVisible = true;
+            this.bInfo.IconZoom = 90D;
+            this.bInfo.IsTab = true;
+            this.bInfo.Location = new System.Drawing.Point(1, 267);
+            this.bInfo.Name = "bInfo";
+            this.bInfo.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bInfo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bInfo.OnHoverTextColor = System.Drawing.Color.White;
+            this.bInfo.selected = false;
+            this.bInfo.Size = new System.Drawing.Size(201, 48);
+            this.bInfo.TabIndex = 8;
+            this.bInfo.Text = "    Info";
+            this.bInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bInfo.Textcolor = System.Drawing.Color.White;
+            this.bInfo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInfo.Click += new System.EventHandler(this.bInfo_Click);
+            // 
             // bAbbrechen
             // 
             this.bAbbrechen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
@@ -156,6 +193,8 @@
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
+            this.bAbbrechen.IconMarginLeft = 0;
+            this.bAbbrechen.IconMarginRight = 0;
             this.bAbbrechen.IconRightVisible = true;
             this.bAbbrechen.IconRightZoom = 0D;
             this.bAbbrechen.IconVisible = true;
@@ -191,6 +230,8 @@
             this.bSpeichern.Iconimage_right = null;
             this.bSpeichern.Iconimage_right_Selected = null;
             this.bSpeichern.Iconimage_Selected = null;
+            this.bSpeichern.IconMarginLeft = 0;
+            this.bSpeichern.IconMarginRight = 0;
             this.bSpeichern.IconRightVisible = true;
             this.bSpeichern.IconRightZoom = 0D;
             this.bSpeichern.IconVisible = true;
@@ -226,6 +267,8 @@
             this.bMarker.Iconimage_right = null;
             this.bMarker.Iconimage_right_Selected = null;
             this.bMarker.Iconimage_Selected = null;
+            this.bMarker.IconMarginLeft = 0;
+            this.bMarker.IconMarginRight = 0;
             this.bMarker.IconRightVisible = true;
             this.bMarker.IconRightZoom = 0D;
             this.bMarker.IconVisible = true;
@@ -261,6 +304,8 @@
             this.bProgramme.Iconimage_right = null;
             this.bProgramme.Iconimage_right_Selected = null;
             this.bProgramme.Iconimage_Selected = null;
+            this.bProgramme.IconMarginLeft = 0;
+            this.bProgramme.IconMarginRight = 0;
             this.bProgramme.IconRightVisible = true;
             this.bProgramme.IconRightZoom = 0D;
             this.bProgramme.IconVisible = true;
@@ -296,6 +341,8 @@
             this.bÜberwachung.Iconimage_right = null;
             this.bÜberwachung.Iconimage_right_Selected = null;
             this.bÜberwachung.Iconimage_Selected = null;
+            this.bÜberwachung.IconMarginLeft = 0;
+            this.bÜberwachung.IconMarginRight = 0;
             this.bÜberwachung.IconRightVisible = true;
             this.bÜberwachung.IconRightZoom = 0D;
             this.bÜberwachung.IconVisible = true;
@@ -331,6 +378,8 @@
             this.bAllgemeines.Iconimage_right = null;
             this.bAllgemeines.Iconimage_right_Selected = null;
             this.bAllgemeines.Iconimage_Selected = null;
+            this.bAllgemeines.IconMarginLeft = 0;
+            this.bAllgemeines.IconMarginRight = 0;
             this.bAllgemeines.IconRightVisible = true;
             this.bAllgemeines.IconRightZoom = 0D;
             this.bAllgemeines.IconVisible = true;
@@ -366,6 +415,8 @@
             this.bTimer.Iconimage_right = null;
             this.bTimer.Iconimage_right_Selected = null;
             this.bTimer.Iconimage_Selected = null;
+            this.bTimer.IconMarginLeft = 0;
+            this.bTimer.IconMarginRight = 0;
             this.bTimer.IconRightVisible = true;
             this.bTimer.IconRightZoom = 0D;
             this.bTimer.IconVisible = true;
@@ -398,59 +449,24 @@
             // 
             this.panelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.panelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.panelAnimator.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.panelAnimator.DefaultAnimation = animation1;
             this.panelAnimator.Interval = 5;
             this.panelAnimator.MaxAnimationTime = 3000;
-            // 
-            // bInfo
-            // 
-            this.bInfo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bInfo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bInfo.BorderRadius = 0;
-            this.bInfo.ButtonText = "    Info";
-            this.bInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelAnimator.SetDecoration(this.bInfo, BunifuAnimatorNS.DecorationType.None);
-            this.bInfo.DisabledColor = System.Drawing.Color.Gray;
-            this.bInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bInfo.Iconcolor = System.Drawing.Color.Transparent;
-            this.bInfo.Iconimage = null;
-            this.bInfo.Iconimage_right = null;
-            this.bInfo.Iconimage_right_Selected = null;
-            this.bInfo.Iconimage_Selected = null;
-            this.bInfo.IconRightVisible = true;
-            this.bInfo.IconRightZoom = 0D;
-            this.bInfo.IconVisible = true;
-            this.bInfo.IconZoom = 90D;
-            this.bInfo.IsTab = true;
-            this.bInfo.Location = new System.Drawing.Point(1, 267);
-            this.bInfo.Name = "bInfo";
-            this.bInfo.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bInfo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bInfo.OnHoverTextColor = System.Drawing.Color.White;
-            this.bInfo.selected = false;
-            this.bInfo.Size = new System.Drawing.Size(201, 48);
-            this.bInfo.TabIndex = 8;
-            this.bInfo.Text = "    Info";
-            this.bInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bInfo.Textcolor = System.Drawing.Color.White;
-            this.bInfo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bInfo.Click += new System.EventHandler(this.bInfo_Click);
             // 
             // frmEinstellungen
             // 

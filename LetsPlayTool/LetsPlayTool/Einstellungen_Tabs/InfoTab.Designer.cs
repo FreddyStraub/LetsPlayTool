@@ -33,6 +33,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoTab));
             this.lbLabelVersion = new System.Windows.Forms.Label();
             this.gbLetsPlayTool = new System.Windows.Forms.GroupBox();
+            this.lbMailLink = new System.Windows.Forms.LinkLabel();
+            this.lbMail = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbFormular = new System.Windows.Forms.LinkLabel();
@@ -44,8 +46,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.lbWebsite = new System.Windows.Forms.LinkLabel();
             this.lbLabelWebsite = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.lbMail = new System.Windows.Forms.Label();
-            this.lbMailLink = new System.Windows.Forms.LinkLabel();
             this.gbLetsPlayTool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,9 +85,33 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.gbLetsPlayTool.TabStop = false;
             this.gbLetsPlayTool.Text = "LetsPlayTool";
             // 
+            // lbMailLink
+            // 
+            this.lbMailLink.AutoSize = true;
+            this.lbMailLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMailLink.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.lbMailLink.Location = new System.Drawing.Point(289, 391);
+            this.lbMailLink.Name = "lbMailLink";
+            this.lbMailLink.Size = new System.Drawing.Size(129, 18);
+            this.lbMailLink.TabIndex = 14;
+            this.lbMailLink.TabStop = true;
+            this.lbMailLink.Text = "info@wolf066lp.de";
+            this.lbMailLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbMailLink_LinkClicked);
+            // 
+            // lbMail
+            // 
+            this.lbMail.AutoSize = true;
+            this.lbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMail.ForeColor = System.Drawing.Color.White;
+            this.lbMail.Location = new System.Drawing.Point(17, 391);
+            this.lbMail.Name = "lbMail";
+            this.lbMail.Size = new System.Drawing.Size(270, 18);
+            this.lbMail.TabIndex = 13;
+            this.lbMail.Text = "Ihr wollt mir eine EMail schreiben? Hier: ";
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LetsPlayTool.Properties.Resources.logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(34, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 150);
@@ -155,6 +179,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.bSeaarchForUpdate.Iconimage_right = null;
             this.bSeaarchForUpdate.Iconimage_right_Selected = null;
             this.bSeaarchForUpdate.Iconimage_Selected = null;
+            this.bSeaarchForUpdate.IconMarginLeft = 0;
+            this.bSeaarchForUpdate.IconMarginRight = 0;
             this.bSeaarchForUpdate.IconRightVisible = true;
             this.bSeaarchForUpdate.IconRightZoom = 0D;
             this.bSeaarchForUpdate.IconVisible = true;
@@ -232,30 +258,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.lbVersion.Size = new System.Drawing.Size(52, 18);
             this.lbVersion.TabIndex = 1;
             this.lbVersion.Text = "0.0.0.1";
-            // 
-            // lbMail
-            // 
-            this.lbMail.AutoSize = true;
-            this.lbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMail.ForeColor = System.Drawing.Color.White;
-            this.lbMail.Location = new System.Drawing.Point(17, 391);
-            this.lbMail.Name = "lbMail";
-            this.lbMail.Size = new System.Drawing.Size(270, 18);
-            this.lbMail.TabIndex = 13;
-            this.lbMail.Text = "Ihr wollt mir eine EMail schreiben? Hier: ";
-            // 
-            // lbMailLink
-            // 
-            this.lbMailLink.AutoSize = true;
-            this.lbMailLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMailLink.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.lbMailLink.Location = new System.Drawing.Point(289, 391);
-            this.lbMailLink.Name = "lbMailLink";
-            this.lbMailLink.Size = new System.Drawing.Size(129, 18);
-            this.lbMailLink.TabIndex = 14;
-            this.lbMailLink.TabStop = true;
-            this.lbMailLink.Text = "info@wolf066lp.de";
-            this.lbMailLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbMailLink_LinkClicked);
             // 
             // InfoTab
             // 

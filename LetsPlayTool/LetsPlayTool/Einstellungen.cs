@@ -139,6 +139,8 @@ namespace LetsPlayTool
             newÜberwachung.ÜShowCPU = true;
             newÜberwachung.ÜShowSpeicherort = true;
             newÜberwachung.ÜShowRAM = true;
+            newÜberwachung.OpenÜberwachungOrdner = false;
+
 
             Überwachung = newÜberwachung;
 

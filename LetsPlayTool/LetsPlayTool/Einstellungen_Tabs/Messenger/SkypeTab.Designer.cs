@@ -133,20 +133,20 @@
         "Beschäftigt",
         "Als offline anzeigen",
         "Offline"};
-            this.cbStatusNA.Location = new System.Drawing.Point(495, 84);
+            this.cbStatusNA.Location = new System.Drawing.Point(475, 82);
             this.cbStatusNA.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatusNA.Name = "cbStatusNA";
             this.cbStatusNA.NomalColor = System.Drawing.Color.DodgerBlue;
             this.cbStatusNA.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
             this.cbStatusNA.selectedIndex = -1;
-            this.cbStatusNA.Size = new System.Drawing.Size(150, 26);
+            this.cbStatusNA.Size = new System.Drawing.Size(174, 26);
             this.cbStatusNA.TabIndex = 36;
             // 
             // lSNA
             // 
             this.lSNA.AutoSize = true;
             this.lSNA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSNA.Location = new System.Drawing.Point(349, 87);
+            this.lSNA.Location = new System.Drawing.Point(329, 85);
             this.lSNA.Name = "lSNA";
             this.lSNA.Size = new System.Drawing.Size(139, 17);
             this.lSNA.TabIndex = 35;
@@ -156,7 +156,7 @@
             // 
             this.lbSIA.AutoSize = true;
             this.lbSIA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSIA.Location = new System.Drawing.Point(19, 87);
+            this.lbSIA.Location = new System.Drawing.Point(12, 85);
             this.lbSIA.Name = "lbSIA";
             this.lbSIA.Size = new System.Drawing.Size(122, 17);
             this.lbSIA.TabIndex = 34;
@@ -174,13 +174,13 @@
         "Beschäftigt",
         "Als offline anzeigen",
         "Offline"};
-            this.cbStatusIA.Location = new System.Drawing.Point(148, 84);
+            this.cbStatusIA.Location = new System.Drawing.Point(141, 82);
             this.cbStatusIA.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatusIA.Name = "cbStatusIA";
             this.cbStatusIA.NomalColor = System.Drawing.Color.DodgerBlue;
             this.cbStatusIA.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
             this.cbStatusIA.selectedIndex = -1;
-            this.cbStatusIA.Size = new System.Drawing.Size(150, 26);
+            this.cbStatusIA.Size = new System.Drawing.Size(174, 26);
             this.cbStatusIA.TabIndex = 33;
             // 
             // lbAktivieren

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Überwachung));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.fbdAufnahmeordner = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.lbOrdnerÖffnen = new System.Windows.Forms.Label();
+            this.checkAufnahmeOrdnerÖffnen = new Bunifu.Framework.UI.BunifuCheckbox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,6 +60,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkAufnahmeOrdnerÖffnen);
+            this.groupBox1.Controls.Add(this.lbOrdnerÖffnen);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbAufnahmeordner);
             this.groupBox1.Controls.Add(this.bBrowse);
@@ -122,9 +126,9 @@
             this.panelAnimator.SetDecoration(this.groupBox2, BunifuAnimatorNS.DecorationType.None);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(13, 94);
+            this.groupBox2.Location = new System.Drawing.Point(13, 127);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(669, 96);
+            this.groupBox2.Size = new System.Drawing.Size(669, 63);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Anzeige";
@@ -134,7 +138,7 @@
             this.lbFRam.AutoSize = true;
             this.panelAnimator.SetDecoration(this.lbFRam, BunifuAnimatorNS.DecorationType.None);
             this.lbFRam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFRam.Location = new System.Drawing.Point(122, 40);
+            this.lbFRam.Location = new System.Drawing.Point(119, 27);
             this.lbFRam.Name = "lbFRam";
             this.lbFRam.Size = new System.Drawing.Size(73, 17);
             this.lbFRam.TabIndex = 12;
@@ -147,7 +151,7 @@
             this.switchRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchRAM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.switchRAM, BunifuAnimatorNS.DecorationType.None);
-            this.switchRAM.Location = new System.Drawing.Point(204, 37);
+            this.switchRAM.Location = new System.Drawing.Point(201, 24);
             this.switchRAM.Name = "switchRAM";
             this.switchRAM.OffColor = System.Drawing.Color.Gray;
             this.switchRAM.OnColor = System.Drawing.Color.DodgerBlue;
@@ -160,7 +164,7 @@
             this.label2.AutoSize = true;
             this.panelAnimator.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 40);
+            this.label2.Location = new System.Drawing.Point(10, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 10;
@@ -173,7 +177,7 @@
             this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimator.SetDecoration(this.switchCPU, BunifuAnimatorNS.DecorationType.None);
-            this.switchCPU.Location = new System.Drawing.Point(57, 37);
+            this.switchCPU.Location = new System.Drawing.Point(54, 24);
             this.switchCPU.Name = "switchCPU";
             this.switchCPU.OffColor = System.Drawing.Color.Gray;
             this.switchCPU.OnColor = System.Drawing.Color.DodgerBlue;
@@ -256,22 +260,48 @@
             // 
             this.panelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.panelAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.panelAnimator.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.panelAnimator.DefaultAnimation = animation2;
+            // 
+            // lbOrdnerÖffnen
+            // 
+            this.lbOrdnerÖffnen.AutoSize = true;
+            this.panelAnimator.SetDecoration(this.lbOrdnerÖffnen, BunifuAnimatorNS.DecorationType.None);
+            this.lbOrdnerÖffnen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOrdnerÖffnen.Location = new System.Drawing.Point(154, 82);
+            this.lbOrdnerÖffnen.Name = "lbOrdnerÖffnen";
+            this.lbOrdnerÖffnen.Size = new System.Drawing.Size(240, 17);
+            this.lbOrdnerÖffnen.TabIndex = 6;
+            this.lbOrdnerÖffnen.Text = "Aufnahmeordner nach Aufnahme öffnen";
+            // 
+            // checkAufnahmeOrdnerÖffnen
+            // 
+            this.checkAufnahmeOrdnerÖffnen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkAufnahmeOrdnerÖffnen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkAufnahmeOrdnerÖffnen.Checked = true;
+            this.checkAufnahmeOrdnerÖffnen.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.panelAnimator.SetDecoration(this.checkAufnahmeOrdnerÖffnen, BunifuAnimatorNS.DecorationType.None);
+            this.checkAufnahmeOrdnerÖffnen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAufnahmeOrdnerÖffnen.ForeColor = System.Drawing.Color.White;
+            this.checkAufnahmeOrdnerÖffnen.Location = new System.Drawing.Point(127, 82);
+            this.checkAufnahmeOrdnerÖffnen.Margin = new System.Windows.Forms.Padding(4);
+            this.checkAufnahmeOrdnerÖffnen.Name = "checkAufnahmeOrdnerÖffnen";
+            this.checkAufnahmeOrdnerÖffnen.Size = new System.Drawing.Size(20, 20);
+            this.checkAufnahmeOrdnerÖffnen.TabIndex = 19;
             // 
             // Überwachung
             // 
@@ -317,5 +347,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private Bunifu.Framework.UI.BunifuImageButton bDiscord;
         private BunifuAnimatorNS.BunifuTransition panelAnimator;
+        private System.Windows.Forms.Label lbOrdnerÖffnen;
+        private Bunifu.Framework.UI.BunifuCheckbox checkAufnahmeOrdnerÖffnen;
     }
 }

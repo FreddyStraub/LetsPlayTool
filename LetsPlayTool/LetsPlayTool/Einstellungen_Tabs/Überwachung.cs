@@ -28,14 +28,21 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public void setSettings(ÜberwachungTabEinstellungen Settings)
         {
 
-            tbAufnahmeordner.Text = Settings.ÜberwachungOrdner;
+            try
+            {
 
-            switchCPU.Value = Settings.ÜShowCPU;
-            switchRAM.Value = Settings.ÜShowRAM;
+                tbAufnahmeordner.Text = Settings.ÜberwachungOrdner;
 
-          //  überwachungTagEinstellungen = Settings;
+                switchCPU.Value = Settings.ÜShowCPU;
+                switchRAM.Value = Settings.ÜShowRAM;
+                checkAufnahmeOrdnerÖffnen.Checked = Settings.OpenÜberwachungOrdner;
 
-            setMessengerSettigs(Settings.MessengerSettings);
+                //  überwachungTagEinstellungen = Settings;
+
+                setMessengerSettigs(Settings.MessengerSettings);
+
+            }
+            catch(Exception ex) { MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message); }
         }
 
         /// <summary>
@@ -47,6 +54,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
             ÜberwachungTabEinstellungen newSettings = new ÜberwachungTabEinstellungen();
 
             newSettings.ÜberwachungOrdner = tbAufnahmeordner.Text;
+            newSettings.OpenÜberwachungOrdner = checkAufnahmeOrdnerÖffnen.Checked;
+
 
             newSettings.ÜShowCPU = switchCPU.Value;
             newSettings.ÜShowRAM = switchRAM.Value;

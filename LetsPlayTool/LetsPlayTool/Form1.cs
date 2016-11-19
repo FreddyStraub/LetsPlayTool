@@ -278,6 +278,9 @@ namespace LetsPlayTool
 
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
 
+            rohPfad = mailClient.ToString().Substring(1);
+            rohPfad = rohPfad.Substring(0, rohPfad.Length - 26);
+
             #region Timer
 
             selectedTimerProfil = einstellungen.selectedTimerProfile;
@@ -571,30 +574,40 @@ namespace LetsPlayTool
         /// Setzt den aktuellen MailClientStatus in das Label.
         /// </summary>
 
+
+
+        object mailClient = Registry.GetValue(@"HKEY_CLASSES_ROOT\mailto\shell\open\command", "", "none");
+
+        string rohPfad;
+
         private void setMailClientStatus()
         {
             //  throw new NotImplementedException();
 
-            object mailClient = Registry.GetValue(@"HKEY_CLASSES_ROOT\mailto\shell\open\command", "", "none");
 
-            string rohPfad = mailClient.ToString().Substring(1);
-            rohPfad = rohPfad.Substring(0, rohPfad.Length - 26);
-
-            string processname = System.IO.Path.GetFileNameWithoutExtension(rohPfad);
-
-
-            if (Process.GetProcessesByName(processname).Length > 0)
+            try
             {
-                lbMailClient.Text = "Gestartet";
-                lbMailClient.ForeColor = Color.Lime;
+                string processname = System.IO.Path.GetFileNameWithoutExtension(rohPfad);
+
+
+                if (Process.GetProcessesByName(processname).Length > 0)
+                {
+                    lbMailClient.Text = "Gestartet";
+                    lbMailClient.ForeColor = Color.Lime;
+                }
+                else
+                {
+
+                    lbMailClient.Text = "Geschlossen";
+                    lbMailClient.ForeColor = Color.Red;
+                }
+
             }
-            else
+            catch
             {
-
-                lbMailClient.Text = "Geschlossen";
+                lbMailClient.Text = "Nicht kompatibel!";
                 lbMailClient.ForeColor = Color.Red;
             }
-
 
         }
 
@@ -657,6 +670,11 @@ namespace LetsPlayTool
                         case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
 
                     }
+                }else
+                {
+                    lbSkypeStatus.Text = "Deaktiviert!";
+                    lbSkypeStatus.ForeColor = Color.Orange;
+
                 }
 
             }
@@ -664,6 +682,8 @@ namespace LetsPlayTool
             {
 
                 lbSkypeStatus.Text = "Kein Skype Client gefunden!";
+                lbSkypeStatus.ForeColor = Color.Orange;
+
 
             }
         }
@@ -943,6 +963,11 @@ namespace LetsPlayTool
 
             #endregion
 
+            if(labelTimer.Text != "00:00:00:00")
+                if (einstellungen.Überwachung.OpenÜberwachungOrdner)
+                     Process.Start(einstellungen.Überwachung.ÜberwachungOrdner);
+
+
             #region Werte zurücksetzten
 
             labelTimer.Text = "00:00:00:00";
@@ -973,6 +998,8 @@ namespace LetsPlayTool
 
 
             #endregion
+
+
 
         }
         
