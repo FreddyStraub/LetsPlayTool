@@ -477,12 +477,12 @@ namespace LetsPlayTool
                 
 
                 //CPU
-                if(Session.Überwachung.cpuAuslastung > 50 & Session.Überwachung.cpuAuslastung < 80)
+                if(Session.Überwachung.cpuAuslastung > 50 & Session.Überwachung.cpuAuslastung < 90)
                 {
-                    lbCPUAuslastung.BackColor = Color.Yellow;
+                    lbCPUAuslastung.BackColor = Color.Orange;
                     frmÜFenster.lbCPUAuslastung.BackColor = Color.Orange;
 
-                }else if(Session.Überwachung.cpuAuslastung > 80)
+                }else if(Session.Überwachung.cpuAuslastung > 90)
                 {
                     lbCPUAuslastung.BackColor = Color.Red;
                     frmÜFenster.lbCPUAuslastung.BackColor = Color.Red;
@@ -993,6 +993,10 @@ namespace LetsPlayTool
 
             frmÜFenster.lbCPUAuslastung.Text = "...";
             frmÜFenster.lbRAMUsed.Text = "...";
+
+            frmÜFenster.lbCPUAuslastung.BackColor = Color.Transparent;
+            frmÜFenster.lbRAMUsed.BackColor = Color.Transparent;
+
 
             frmÜFenster.lbTimer.Text = "00:00:00:00";
 

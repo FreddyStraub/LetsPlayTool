@@ -28,9 +28,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public void setSettings(ÜberwachungTabEinstellungen Settings)
         {
 
-            try
-            {
-
                 tbAufnahmeordner.Text = Settings.ÜberwachungOrdner;
 
                 switchCPU.Value = Settings.ÜShowCPU;
@@ -40,9 +37,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 //  überwachungTagEinstellungen = Settings;
 
                 setMessengerSettigs(Settings.MessengerSettings);
-
-            }
-            catch(Exception ex) { MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message); }
         }
 
         /// <summary>

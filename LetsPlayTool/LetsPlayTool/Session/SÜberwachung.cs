@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace LetsPlayTool.Session
 {
@@ -65,6 +66,7 @@ namespace LetsPlayTool.Session
 
             cpuAuslastung = (int)cpuCounter.NextValue();
             freierRAM = (int)RAMCounter.NextValue();
+
 
         }
 

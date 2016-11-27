@@ -163,6 +163,8 @@
             this.bFarbe.Iconimage_right = null;
             this.bFarbe.Iconimage_right_Selected = null;
             this.bFarbe.Iconimage_Selected = null;
+            this.bFarbe.IconMarginLeft = 0;
+            this.bFarbe.IconMarginRight = 0;
             this.bFarbe.IconRightVisible = true;
             this.bFarbe.IconRightZoom = 0D;
             this.bFarbe.IconVisible = true;
@@ -197,6 +199,8 @@
             this.bAbbrechen.Iconimage_right = null;
             this.bAbbrechen.Iconimage_right_Selected = null;
             this.bAbbrechen.Iconimage_Selected = null;
+            this.bAbbrechen.IconMarginLeft = 0;
+            this.bAbbrechen.IconMarginRight = 0;
             this.bAbbrechen.IconRightVisible = true;
             this.bAbbrechen.IconRightZoom = 0D;
             this.bAbbrechen.IconVisible = true;
@@ -230,6 +234,8 @@
             this.bFertig.Iconimage_right = null;
             this.bFertig.Iconimage_right_Selected = null;
             this.bFertig.Iconimage_Selected = null;
+            this.bFertig.IconMarginLeft = 0;
+            this.bFertig.IconMarginRight = 0;
             this.bFertig.IconRightVisible = true;
             this.bFertig.IconRightZoom = 0D;
             this.bFertig.IconVisible = true;
@@ -319,6 +325,7 @@
             this.Controls.Add(this.nudTimeHours);
             this.Controls.Add(this.HeaderBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "TimeDilaog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

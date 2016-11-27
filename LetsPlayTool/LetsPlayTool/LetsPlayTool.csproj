@@ -285,7 +285,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico" />
     <Content Include="newlogo.ico" />
     <None Include="Resources\logo.png" />
   </ItemGroup>

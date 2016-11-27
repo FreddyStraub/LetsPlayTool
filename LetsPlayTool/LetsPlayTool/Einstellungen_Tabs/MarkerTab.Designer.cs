@@ -33,6 +33,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.tbSpeicherort = new System.Windows.Forms.TextBox();
             this.bBrowse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbFormat = new Bunifu.Framework.UI.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bKey = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.fbdSpeicherort = new Ookii.Dialogs.VistaFolderBrowserDialog();
-            this.cbFormat = new Bunifu.Framework.UI.BunifuDropdown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,23 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marker";
+            // 
+            // cbFormat
+            // 
+            this.cbFormat.BackColor = System.Drawing.Color.Transparent;
+            this.cbFormat.BorderRadius = 3;
+            this.cbFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormat.ForeColor = System.Drawing.Color.White;
+            this.cbFormat.Items = new string[] {
+        "Textdatei (.txt)"};
+            this.cbFormat.Location = new System.Drawing.Point(94, 101);
+            this.cbFormat.Margin = new System.Windows.Forms.Padding(4);
+            this.cbFormat.Name = "cbFormat";
+            this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
+            this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.cbFormat.selectedIndex = -1;
+            this.cbFormat.Size = new System.Drawing.Size(217, 26);
+            this.cbFormat.TabIndex = 18;
             // 
             // label6
             // 
@@ -243,23 +260,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             this.label7.TabIndex = 17;
             this.label7.Text = "Marker helfen dir wichtige stellen im Video später beim Schnitt schneller wieder " +
     "zu finden.\r\n";
-            // 
-            // cbFormat
-            // 
-            this.cbFormat.BackColor = System.Drawing.Color.Transparent;
-            this.cbFormat.BorderRadius = 3;
-            this.cbFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFormat.ForeColor = System.Drawing.Color.White;
-            this.cbFormat.Items = new string[] {
-        "Textdatei (.txt)"};
-            this.cbFormat.Location = new System.Drawing.Point(94, 101);
-            this.cbFormat.Margin = new System.Windows.Forms.Padding(4);
-            this.cbFormat.Name = "cbFormat";
-            this.cbFormat.NomalColor = System.Drawing.Color.DodgerBlue;
-            this.cbFormat.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.cbFormat.selectedIndex = -1;
-            this.cbFormat.Size = new System.Drawing.Size(217, 26);
-            this.cbFormat.TabIndex = 18;
             // 
             // MarkerTab
             // 
