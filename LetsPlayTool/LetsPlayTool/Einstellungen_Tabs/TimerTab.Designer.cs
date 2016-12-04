@@ -34,6 +34,7 @@
             this.lvTimes = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bZeitBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bZeitEntfernen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bZeitHinzufügen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bProfilLöschen = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -41,7 +42,6 @@
             this.lbProfiles = new System.Windows.Forms.ListBox();
             this.gbText = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.bZeitBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2.SuspendLayout();
             this.gbText.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,7 @@
             this.lvTimes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.lvTimes.Location = new System.Drawing.Point(291, 19);
+            this.lvTimes.MultiSelect = false;
             this.lvTimes.Name = "lvTimes";
             this.lvTimes.Size = new System.Drawing.Size(174, 320);
             this.lvTimes.TabIndex = 0;
@@ -86,6 +87,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Timer";
             // 
+            // bZeitBearbeiten
+            // 
+            this.bZeitBearbeiten.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.bZeitBearbeiten.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bZeitBearbeiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bZeitBearbeiten.BorderRadius = 0;
+            this.bZeitBearbeiten.ButtonText = "     Zeit bearbeiten...";
+            this.bZeitBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bZeitBearbeiten.DisabledColor = System.Drawing.Color.Gray;
+            this.bZeitBearbeiten.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bZeitBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
+            this.bZeitBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitBearbeiten.Iconimage")));
+            this.bZeitBearbeiten.Iconimage_right = null;
+            this.bZeitBearbeiten.Iconimage_right_Selected = null;
+            this.bZeitBearbeiten.Iconimage_Selected = null;
+            this.bZeitBearbeiten.IconMarginLeft = 0;
+            this.bZeitBearbeiten.IconMarginRight = 0;
+            this.bZeitBearbeiten.IconRightVisible = true;
+            this.bZeitBearbeiten.IconRightZoom = 0D;
+            this.bZeitBearbeiten.IconVisible = true;
+            this.bZeitBearbeiten.IconZoom = 90D;
+            this.bZeitBearbeiten.IsTab = false;
+            this.bZeitBearbeiten.Location = new System.Drawing.Point(470, 216);
+            this.bZeitBearbeiten.Name = "bZeitBearbeiten";
+            this.bZeitBearbeiten.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bZeitBearbeiten.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bZeitBearbeiten.OnHoverTextColor = System.Drawing.Color.White;
+            this.bZeitBearbeiten.selected = false;
+            this.bZeitBearbeiten.Size = new System.Drawing.Size(194, 48);
+            this.bZeitBearbeiten.TabIndex = 10;
+            this.bZeitBearbeiten.Text = "     Zeit bearbeiten...";
+            this.bZeitBearbeiten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bZeitBearbeiten.Textcolor = System.Drawing.Color.White;
+            this.bZeitBearbeiten.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bZeitBearbeiten.Click += new System.EventHandler(this.bZeitBearbeiten_Click);
+            // 
             // bZeitEntfernen
             // 
             this.bZeitEntfernen.Activecolor = System.Drawing.Color.DodgerBlue;
@@ -94,12 +131,18 @@
             this.bZeitEntfernen.BorderRadius = 0;
             this.bZeitEntfernen.ButtonText = "     Zeit entfernen...";
             this.bZeitEntfernen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bZeitEntfernen.DisabledColor = System.Drawing.Color.Gray;
             this.bZeitEntfernen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitEntfernen.Iconcolor = System.Drawing.Color.Transparent;
             this.bZeitEntfernen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitEntfernen.Iconimage")));
             this.bZeitEntfernen.Iconimage_right = null;
             this.bZeitEntfernen.Iconimage_right_Selected = null;
             this.bZeitEntfernen.Iconimage_Selected = null;
+            this.bZeitEntfernen.IconMarginLeft = 0;
+            this.bZeitEntfernen.IconMarginRight = 0;
+            this.bZeitEntfernen.IconRightVisible = true;
+            this.bZeitEntfernen.IconRightZoom = 0D;
+            this.bZeitEntfernen.IconVisible = true;
             this.bZeitEntfernen.IconZoom = 90D;
             this.bZeitEntfernen.IsTab = false;
             this.bZeitEntfernen.Location = new System.Drawing.Point(471, 270);
@@ -110,6 +153,8 @@
             this.bZeitEntfernen.selected = false;
             this.bZeitEntfernen.Size = new System.Drawing.Size(194, 48);
             this.bZeitEntfernen.TabIndex = 9;
+            this.bZeitEntfernen.Text = "     Zeit entfernen...";
+            this.bZeitEntfernen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bZeitEntfernen.Textcolor = System.Drawing.Color.White;
             this.bZeitEntfernen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitEntfernen.Click += new System.EventHandler(this.bZeitEntfernen_Click);
@@ -122,12 +167,18 @@
             this.bZeitHinzufügen.BorderRadius = 0;
             this.bZeitHinzufügen.ButtonText = "     Zeit hinzufügen...";
             this.bZeitHinzufügen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bZeitHinzufügen.DisabledColor = System.Drawing.Color.Gray;
             this.bZeitHinzufügen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitHinzufügen.Iconcolor = System.Drawing.Color.Transparent;
             this.bZeitHinzufügen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitHinzufügen.Iconimage")));
             this.bZeitHinzufügen.Iconimage_right = null;
             this.bZeitHinzufügen.Iconimage_right_Selected = null;
             this.bZeitHinzufügen.Iconimage_Selected = null;
+            this.bZeitHinzufügen.IconMarginLeft = 0;
+            this.bZeitHinzufügen.IconMarginRight = 0;
+            this.bZeitHinzufügen.IconRightVisible = true;
+            this.bZeitHinzufügen.IconRightZoom = 0D;
+            this.bZeitHinzufügen.IconVisible = true;
             this.bZeitHinzufügen.IconZoom = 90D;
             this.bZeitHinzufügen.IsTab = false;
             this.bZeitHinzufügen.Location = new System.Drawing.Point(470, 162);
@@ -138,6 +189,8 @@
             this.bZeitHinzufügen.selected = false;
             this.bZeitHinzufügen.Size = new System.Drawing.Size(194, 48);
             this.bZeitHinzufügen.TabIndex = 8;
+            this.bZeitHinzufügen.Text = "     Zeit hinzufügen...";
+            this.bZeitHinzufügen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bZeitHinzufügen.Textcolor = System.Drawing.Color.White;
             this.bZeitHinzufügen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bZeitHinzufügen.Click += new System.EventHandler(this.bZeitHinzufügen_Click);
@@ -150,12 +203,18 @@
             this.bProfilLöschen.BorderRadius = 0;
             this.bProfilLöschen.ButtonText = "     Profil löschen";
             this.bProfilLöschen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bProfilLöschen.DisabledColor = System.Drawing.Color.Gray;
             this.bProfilLöschen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilLöschen.Iconcolor = System.Drawing.Color.Transparent;
             this.bProfilLöschen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bProfilLöschen.Iconimage")));
             this.bProfilLöschen.Iconimage_right = null;
             this.bProfilLöschen.Iconimage_right_Selected = null;
             this.bProfilLöschen.Iconimage_Selected = null;
+            this.bProfilLöschen.IconMarginLeft = 0;
+            this.bProfilLöschen.IconMarginRight = 0;
+            this.bProfilLöschen.IconRightVisible = true;
+            this.bProfilLöschen.IconRightZoom = 0D;
+            this.bProfilLöschen.IconVisible = true;
             this.bProfilLöschen.IconZoom = 90D;
             this.bProfilLöschen.IsTab = false;
             this.bProfilLöschen.Location = new System.Drawing.Point(471, 73);
@@ -166,6 +225,8 @@
             this.bProfilLöschen.selected = false;
             this.bProfilLöschen.Size = new System.Drawing.Size(194, 48);
             this.bProfilLöschen.TabIndex = 7;
+            this.bProfilLöschen.Text = "     Profil löschen";
+            this.bProfilLöschen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProfilLöschen.Textcolor = System.Drawing.Color.White;
             this.bProfilLöschen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilLöschen.Click += new System.EventHandler(this.bProfilLöschen_Click);
@@ -178,12 +239,18 @@
             this.bProfilErstellen.BorderRadius = 0;
             this.bProfilErstellen.ButtonText = "     Profil erstellen...";
             this.bProfilErstellen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bProfilErstellen.DisabledColor = System.Drawing.Color.Gray;
             this.bProfilErstellen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilErstellen.Iconcolor = System.Drawing.Color.Transparent;
             this.bProfilErstellen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bProfilErstellen.Iconimage")));
             this.bProfilErstellen.Iconimage_right = null;
             this.bProfilErstellen.Iconimage_right_Selected = null;
             this.bProfilErstellen.Iconimage_Selected = null;
+            this.bProfilErstellen.IconMarginLeft = 0;
+            this.bProfilErstellen.IconMarginRight = 0;
+            this.bProfilErstellen.IconRightVisible = true;
+            this.bProfilErstellen.IconRightZoom = 0D;
+            this.bProfilErstellen.IconVisible = true;
             this.bProfilErstellen.IconZoom = 90D;
             this.bProfilErstellen.IsTab = false;
             this.bProfilErstellen.Location = new System.Drawing.Point(471, 19);
@@ -194,6 +261,8 @@
             this.bProfilErstellen.selected = false;
             this.bProfilErstellen.Size = new System.Drawing.Size(194, 48);
             this.bProfilErstellen.TabIndex = 6;
+            this.bProfilErstellen.Text = "     Profil erstellen...";
+            this.bProfilErstellen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProfilErstellen.Textcolor = System.Drawing.Color.White;
             this.bProfilErstellen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfilErstellen.Click += new System.EventHandler(this.bProfilErstellen_Click);
@@ -241,34 +310,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(658, 155);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            // 
-            // bZeitBearbeiten
-            // 
-            this.bZeitBearbeiten.Activecolor = System.Drawing.Color.DodgerBlue;
-            this.bZeitBearbeiten.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bZeitBearbeiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bZeitBearbeiten.BorderRadius = 0;
-            this.bZeitBearbeiten.ButtonText = "     Zeit bearbeiten...";
-            this.bZeitBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bZeitBearbeiten.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bZeitBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
-            this.bZeitBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bZeitBearbeiten.Iconimage")));
-            this.bZeitBearbeiten.Iconimage_right = null;
-            this.bZeitBearbeiten.Iconimage_right_Selected = null;
-            this.bZeitBearbeiten.Iconimage_Selected = null;
-            this.bZeitBearbeiten.IconZoom = 90D;
-            this.bZeitBearbeiten.IsTab = false;
-            this.bZeitBearbeiten.Location = new System.Drawing.Point(470, 216);
-            this.bZeitBearbeiten.Name = "bZeitBearbeiten";
-            this.bZeitBearbeiten.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.bZeitBearbeiten.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
-            this.bZeitBearbeiten.OnHoverTextColor = System.Drawing.Color.White;
-            this.bZeitBearbeiten.selected = false;
-            this.bZeitBearbeiten.Size = new System.Drawing.Size(194, 48);
-            this.bZeitBearbeiten.TabIndex = 10;
-            this.bZeitBearbeiten.Textcolor = System.Drawing.Color.White;
-            this.bZeitBearbeiten.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bZeitBearbeiten.Click += new System.EventHandler(this.bZeitBearbeiten_Click);
             // 
             // TimerTab
             // 

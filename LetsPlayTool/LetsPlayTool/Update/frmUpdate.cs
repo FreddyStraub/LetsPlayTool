@@ -92,7 +92,7 @@ namespace LetsPlayTool.Update
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString());
+                MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Application.Exit();
 
 

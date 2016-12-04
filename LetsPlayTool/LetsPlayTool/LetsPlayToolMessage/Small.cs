@@ -76,18 +76,27 @@ namespace LetsPlayTool.LetsPlayToolMessage
 
             progressTime++;
 
-            if(progressTime ==3)
+            if(progressTime == 3)
             {
 
                 ShowMessageAnimator.HideSync(button1);
                 Close();
             }
 
+            if (button1.Visible == false)
+                Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Small_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 frmMain = (Form1)Application.OpenForms[0];
+            frmMain.messageSecurity = true;
         }
     }
 }

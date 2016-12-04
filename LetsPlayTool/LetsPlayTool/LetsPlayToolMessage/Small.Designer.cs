@@ -87,6 +87,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Small";
             this.Text = "Small";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Small_FormClosed);
             this.Load += new System.EventHandler(this.Small_Load);
             this.ResumeLayout(false);
 

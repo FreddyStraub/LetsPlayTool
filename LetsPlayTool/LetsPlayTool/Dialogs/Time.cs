@@ -15,6 +15,11 @@ namespace LetsPlayTool.Dialogs
 
         public ListViewItem ListViewItem { get; set; }
 
+        public int Stunden { get; set; }
+        public int Minuten { get; set; }
+        public int Sekunden { get; set; }
+        public int Millisekunden { get; set; }
+
         public Time(ListViewItem Item)
         {
 

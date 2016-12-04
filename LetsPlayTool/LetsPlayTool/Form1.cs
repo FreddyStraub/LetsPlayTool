@@ -119,7 +119,6 @@ namespace LetsPlayTool
              
             ShowPanelsAnimation.Start();
             skype = new Skype();
-         
             loadSettings();
 
 
@@ -140,7 +139,6 @@ namespace LetsPlayTool
             }
 
 
-            ValueUpdater.Start();
 
         }
 
@@ -225,6 +223,33 @@ namespace LetsPlayTool
             #endregion
 
             #endregion
+
+
+            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            {
+                if (skype.Client.IsRunning)
+                {
+                    try
+                    {
+
+                        skype.Attach();
+
+                    }
+                    catch
+                    {
+                        einstellungen.Überwachung.MessengerSettings.skypeSettings.active = false;
+                        einstellungen.save();
+                        einstellungen = einstellungen.load();
+
+                        MessageBox.Show("Verbindung mit Skype nicht möglich!");
+
+
+                    }
+                }
+
+            }
+
+            ValueUpdater.Start();
 
             #region Messenger
 
@@ -396,46 +421,63 @@ namespace LetsPlayTool
             {
 
 
-                #region 0 Time
+                //#region 0 Time
+                //if (Session.Timer.milliseconds < 100 & Session.Timer.seconds < 1)
+                //{
 
-                if (t.ListViewItem.Text == "00:00:00:00" && Session.Timer.TimeString == "00:00:00:01")
+                //    if (t.ListViewItem.Text == "00:00:00:00")
+
+                //{
+
+
+                //    if (t.Text != "")
+                //    {
+
+                //        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+
+                //    }else
+                //    {
+                //        showSmallMessage(panelTimer, "00:00:00:00", t.ListViewItem.BackColor);
+
+                //    }
+
+                //}
+
+                //}
+
+                //#endregion
+
+                if (t.Stunden == Session.Timer.st.Elapsed.Hours)
                 {
-                    if (t.Text != "")
+                    if (t.Minuten == Session.Timer.st.Elapsed.Minutes)
                     {
+                        if (t.Sekunden == Session.Timer.st.Elapsed.Seconds)
+                        {
 
-                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+                               
+                                    //        if (t.ListViewItem.Text == Session.Timer.TimeString)
+                                   // {
 
-                    }else
-                    {
-                        showSmallMessage(panelTimer, "00:00:00:00", t.ListViewItem.BackColor);
+                                        if (t.Text != "")
+                                        {
 
-                    }
+                                            showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
+                                            frmÜFenster.showMessage(t.Text, t.ListViewItem.BackColor, 3);
 
-                }
+                                        }
+                                        else
+                                        {
 
+                                            showSmallMessage(panelTimer, t.ListViewItem.Text, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
+                                            frmÜFenster.showMessage(t.ListViewItem.Text, t.ListViewItem.BackColor, 3);
 
-                #endregion
-
-                if (t.ListViewItem.Text == Session.Timer.TimeString)
-                {
-
-                    if (t.Text != "")
-                    {
-
-                        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
-                        frmÜFenster.showMessage(t.Text, t.ListViewItem.BackColor, 3);
-
-                    }
-                    else
-                    {
-
-                        showSmallMessage(panelTimer, t.ListViewItem.Text, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
-                        frmÜFenster.showMessage(t.ListViewItem.Text, t.ListViewItem.BackColor, 3);
-
+                                        }
+                                   // }
+                                
+                           
+                        }
                     }
                 }
-
-
 
             }
             #endregion
@@ -519,23 +561,10 @@ namespace LetsPlayTool
 
             #region Messenger
 
-            #region Display Status
-
-
-            setSkyeLabelStatus();
-
-            #endregion
-
-            #region Discord
             setDiscordStatus();
-            #endregion
-
-            #region Teamspeak
-
             setTeamspeakStatus();
-
-            #endregion
-
+            setMailClientStatus();
+            setSteamStatus();
 
             #endregion
 
@@ -660,22 +689,28 @@ namespace LetsPlayTool
             {
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
-                    switch (skype.CurrentUserStatus)
-                    {
 
-                        case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
-                        case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend"; break;
-                        case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
-                        case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
-                        case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
+            
+                        switch (skype.CurrentUserStatus)
+                        {
 
-                    }
-                }else
+                            case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
+                            case TUserStatus.cusAway: lbSkypeStatus.Text = "Abwesend"; break;
+                            case TUserStatus.cusDoNotDisturb: lbSkypeStatus.Text = "Beschäftigt"; break;
+                            case TUserStatus.cusInvisible: lbSkypeStatus.Text = "Als Offline anzeigen"; break;
+                            case TUserStatus.cusOffline: lbSkypeStatus.Text = "Offline"; break;
+
+                        }
+
+
+            }
+                else
                 {
                     lbSkypeStatus.Text = "Deaktiviert!";
                     lbSkypeStatus.ForeColor = Color.Orange;
 
                 }
+                
 
             }
             else
@@ -693,15 +728,17 @@ namespace LetsPlayTool
         /// </summary>
         private void setSkypeStatus(int status)
         {
-            switch (status)
-            {
-                case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
-                case 1: skype.ChangeUserStatus(TUserStatus.cusAway); break;
-                case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
-                case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
-                case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
+           
+                switch (status)
+                {
+                    case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
+                    case 1: skype.ChangeUserStatus(TUserStatus.cusAway); break;
+                    case 2: skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb); break;
+                    case 3: skype.ChangeUserStatus(TUserStatus.cusInvisible); break;
+                    case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
 
-            }
+                }
+          
         }
 
         
@@ -714,14 +751,16 @@ namespace LetsPlayTool
                 startSession();
                 SessionRuns = true;
 
+
+
             }
             else
             {
                 stopSession();
                 SessionRuns = false;
+
+
             }
-
-
         }
 
         private void bOpenPrograms_Click(object sender, EventArgs e)
@@ -740,18 +779,24 @@ namespace LetsPlayTool
         private void showSmallMessage(Panel panel, string message)
         {
 
-            LetsPlayToolMessage.Small S = new LetsPlayToolMessage.Small(message);
+            if (messageSecurity)
+            {
 
-            S.TopLevel = false;
-            S.AutoScroll = true;
+                LetsPlayToolMessage.Small S = new LetsPlayToolMessage.Small(message);
 
-            panel.Controls.Add(S);
+                S.TopLevel = false;
+                S.AutoScroll = true;
 
-            S.BringToFront();
+                panel.Controls.Add(S);
 
-            S.Show();
-            S.ShowMessage.Start();
+                S.BringToFront();
 
+                S.Show();
+                S.ShowMessage.Start();
+
+                messageSecurity = false;
+
+            }
 
         }
 
@@ -763,19 +808,23 @@ namespace LetsPlayTool
         private void showSmallMessage(Panel panel, string message, Color color)
         {
 
-            LetsPlayToolMessage.Small S = new LetsPlayToolMessage.Small(message, color);
+            if (messageSecurity)
+            {
+                LetsPlayToolMessage.Small S = new LetsPlayToolMessage.Small(message, color);
 
-            S.TopLevel = false;
-            S.AutoScroll = true;
+                S.TopLevel = false;
+                S.AutoScroll = true;
 
-            panel.Controls.Add(S);
+                panel.Controls.Add(S);
 
-            S.BringToFront();
+                S.BringToFront();
 
-            S.Show();
-            S.ShowMessage.Start();
+                S.Show();
+                S.ShowMessage.Start();
 
+                messageSecurity = false;
 
+            }
         }
 
         /// <summary>
@@ -801,6 +850,8 @@ namespace LetsPlayTool
 
 
         }
+
+        public bool messageSecurity;
 
         #endregion
 
@@ -862,19 +913,19 @@ namespace LetsPlayTool
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
 
-                    if (skype.Client.IsRunning)
-                    {
+                    //if (skype.Client.IsRunning)
+                    //{
 
-                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
+                    //    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
 
-                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
-                        {
+                    //    if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                    //    {
 
-                            NormalStatus = skype.CurrentUserProfile.MoodText;
-                            skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
+                    //        NormalStatus = skype.CurrentUserProfile.MoodText;
+                    //        skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
 
-                        }
-                    }
+                    //    }
+                    //}
                 }
 
                 #endregion
@@ -923,23 +974,25 @@ namespace LetsPlayTool
 
             #region Status
 
+            
+
             try
             {
 
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
+                    
 
+                    //if (skype.Client.IsRunning)
+                    //{
 
-                    if (skype.Client.IsRunning)
-                    {
+                    //    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
+                    //    setSkyeLabelStatus();
 
-                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
-                        setSkyeLabelStatus();
+                    //    if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                    //        skype.CurrentUserProfile.MoodText = NormalStatus;
 
-                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
-                            skype.CurrentUserProfile.MoodText = NormalStatus;
-
-                    }
+                    //}
 
                 }
 
@@ -1354,7 +1407,7 @@ namespace LetsPlayTool
             setSteamStatus();
 
             creatingMarkerSecurity = true;
-
+            messageSecurity = true;
 
 
         }

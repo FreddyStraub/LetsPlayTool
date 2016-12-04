@@ -108,7 +108,7 @@
             this.bFertig.IconRightVisible = true;
             this.bFertig.IconRightZoom = 0D;
             this.bFertig.IconVisible = true;
-            this.bFertig.IconZoom = 90D;
+            this.bFertig.IconZoom = 65D;
             this.bFertig.IsTab = false;
             this.bFertig.Location = new System.Drawing.Point(321, 104);
             this.bFertig.Name = "bFertig";
@@ -143,7 +143,7 @@
             this.bAbbrechen.IconRightVisible = true;
             this.bAbbrechen.IconRightZoom = 0D;
             this.bAbbrechen.IconVisible = true;
-            this.bAbbrechen.IconZoom = 90D;
+            this.bAbbrechen.IconZoom = 65D;
             this.bAbbrechen.IsTab = false;
             this.bAbbrechen.Location = new System.Drawing.Point(439, 104);
             this.bAbbrechen.Name = "bAbbrechen";

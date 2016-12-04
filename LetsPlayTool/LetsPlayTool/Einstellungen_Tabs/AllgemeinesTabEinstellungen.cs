@@ -14,6 +14,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public Keys AufnahmeStartKey;
         public Keys AufnahmeStopKey;
 
+
+ //       public bool StartStop;
+
         public bool ShowÜFenster;
         public bool ShowÜFensterTimer;
         public bool ShowÜFensterCPU;

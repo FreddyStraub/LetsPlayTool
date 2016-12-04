@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LetsPlayTool.Update
 {
@@ -13,19 +14,29 @@ namespace LetsPlayTool.Update
 
         public Updater()
         {
-            request = (HttpWebRequest)HttpWebRequest.Create(txtUrl);
-            response = (HttpWebResponse)request.GetResponse();
+
+            try
+            {
+                request = (HttpWebRequest)HttpWebRequest.Create(txtUrl);
+                response = (HttpWebResponse)request.GetResponse();
 
 
-            System.IO.StreamReader updateReader = new System.IO.StreamReader(response.GetResponseStream());
+                System.IO.StreamReader updateReader = new System.IO.StreamReader(response.GetResponseStream());
 
-            newVersion = updateReader.ReadLine();
-            downloadurl = updateReader.ReadLine();
-            updatepicurl = updateReader.ReadLine();
-            changelogurl = updateReader.ReadLine();
+                newVersion = updateReader.ReadLine();
+                downloadurl = updateReader.ReadLine();
+                updatepicurl = updateReader.ReadLine();
+                changelogurl = updateReader.ReadLine();
 
-            updateReader.Close();
+                updateReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.Exit();
 
+
+            }
         }
 
         string txtUrl = "https://www.dropbox.com/s/smfvet997p8je3s/update.txt?dl=1";

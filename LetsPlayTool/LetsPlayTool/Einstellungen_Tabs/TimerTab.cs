@@ -242,6 +242,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
                     Time t = new Time(TimeItem);
                     t.Text = TD.TimerText;
 
+                    t.Stunden = (int)TD.Stunden;
+                    t.Minuten = (int)TD.Minuten;
+                    t.Sekunden = (int)TD.Sekunden;
+                    t.Millisekunden = (int)TD.Millisekunden;
+
+                    
                     TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Add(t);
 
                 }

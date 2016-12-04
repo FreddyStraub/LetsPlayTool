@@ -27,7 +27,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             bAufnhameStop.Text = Settings.AufnahmeStopKey.ToString();
             bAufnhameStart.Text = Settings.AufnahmeStartKey.ToString();
 
-
             switchÜFenster.Value = Settings.ShowÜFenster;
             checkÜFensterTimer.Checked = Settings.ShowÜFensterTimer;
             checkÜFensterCPU.Checked = Settings.ShowÜFensterCPU;
@@ -49,6 +48,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             newSettings.AufnahmeStartKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStart.Text);
             newSettings.AufnahmeStopKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStop.Text);
+
 
             newSettings.ShowÜFenster = switchÜFenster.Value;
             newSettings.ShowÜFensterTimer = checkÜFensterTimer.Checked;

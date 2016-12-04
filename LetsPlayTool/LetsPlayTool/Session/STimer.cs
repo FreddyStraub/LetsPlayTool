@@ -32,6 +32,8 @@ namespace LetsPlayTool.Session
 
         public Stopwatch st = new Stopwatch();
         
+        
+
         public void generateTimeString()
     {
             milliseconds = st.ElapsedMilliseconds;

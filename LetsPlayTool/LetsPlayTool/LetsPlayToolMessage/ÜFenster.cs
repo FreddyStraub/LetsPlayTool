@@ -41,6 +41,8 @@ namespace LetsPlayTool.LetsPlayToolMessage
                 
                 Close();
             }
+            if (button1.Visible == false)
+                Close();
 
         }
 

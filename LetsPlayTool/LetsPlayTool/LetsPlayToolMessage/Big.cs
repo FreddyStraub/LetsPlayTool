@@ -40,6 +40,8 @@ namespace LetsPlayTool.LetsPlayToolMessage
                 Close();
             }
 
+            if (button1.Visible == false)
+                Close();
         }
 
         private void Big_Load(object sender, EventArgs e)
