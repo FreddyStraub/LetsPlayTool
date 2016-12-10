@@ -291,6 +291,20 @@ namespace LetsPlayTool.Einstellungen_Tabs
                     }
 
 
+                    if (TimerProfiles[TimerProfil].Times[realIndex].isLoop){
+
+
+                        td.Loop = true;
+                        td.checkLoop.Checked = true;
+
+                    }else
+                    {
+
+                        td.Loop = false;
+                        td.checkLoop.Checked= false;
+
+                    }
+
                     int alteStunden = Convert.ToInt32(altesLItem.Text.Substring(0,2));
                     int alteMinuten = Convert.ToInt32(altesLItem.Text.Substring(3, 2));
                     int alteSekunden= Convert.ToInt32(altesLItem.Text.Substring(6, 2));
@@ -306,6 +320,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
                     td.bFarbe.Normalcolor = altesLItem.BackColor;
 
                     td.Farbe = altesLItem.BackColor;
+
 
                     if (td.ShowDialog() == DialogResult.OK)
                     {
@@ -389,6 +404,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
                             t.Text = td.TimerText;
 
                         }
+
+                        t.isLoop = td.Loop;
 
 
                         TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)].Times.Add(t);
