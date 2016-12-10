@@ -107,6 +107,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(411, 184);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "-Neue Features!";
+            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // lbChangelog
             // 
@@ -133,6 +134,8 @@
             this.bUpdate.Iconimage_right = null;
             this.bUpdate.Iconimage_right_Selected = null;
             this.bUpdate.Iconimage_Selected = null;
+            this.bUpdate.IconMarginLeft = 0;
+            this.bUpdate.IconMarginRight = 0;
             this.bUpdate.IconRightVisible = true;
             this.bUpdate.IconRightZoom = 0D;
             this.bUpdate.IconVisible = true;
@@ -166,6 +169,8 @@
             this.bCancel.Iconimage_right = null;
             this.bCancel.Iconimage_right_Selected = null;
             this.bCancel.Iconimage_Selected = null;
+            this.bCancel.IconMarginLeft = 0;
+            this.bCancel.IconMarginRight = 0;
             this.bCancel.IconRightVisible = true;
             this.bCancel.IconRightZoom = 0D;
             this.bCancel.IconVisible = true;
