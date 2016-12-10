@@ -12,9 +12,16 @@ namespace LetsPlayTool.Update
     public class Updater
     {
 
+        public bool canUpdate { get; private set; }
+
         public Updater()
         {
+            canUpdate = initializeUpdate();
 
+        }
+
+        private bool initializeUpdate()
+        {
             try
             {
                 request = (HttpWebRequest)HttpWebRequest.Create(txtUrl);
@@ -29,12 +36,13 @@ namespace LetsPlayTool.Update
                 changelogurl = updateReader.ReadLine();
 
                 updateReader.Close();
+
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Application.Exit();
-
+                return false;
 
             }
         }

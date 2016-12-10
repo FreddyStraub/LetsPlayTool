@@ -121,10 +121,15 @@ namespace LetsPlayTool
 
             loadSettings();
 
-            Updater updater = new Updater();
 
-            if (updater.UpdateAvailable())
-                updater.update();
+                Updater updater = new Updater();
+
+            if (updater.canUpdate)
+            {
+                if (updater.UpdateAvailable())
+                    updater.update();
+
+            }
 
 
             if (System.IO.File.Exists("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe"))
