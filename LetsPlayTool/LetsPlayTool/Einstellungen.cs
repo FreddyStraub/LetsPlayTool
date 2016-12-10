@@ -39,7 +39,7 @@ namespace LetsPlayTool
             BF.Serialize(FS, this);
 
             FS.Dispose();
-
+            
 
         }
 

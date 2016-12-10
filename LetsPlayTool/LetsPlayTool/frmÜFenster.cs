@@ -165,6 +165,8 @@ namespace LetsPlayTool
             Form1 frmMain = (Form1)Application.OpenForms[0];
             frmMain.ÜFensterLocation = Location;
 
+            frmMain.Show();
+
         }
     }
 

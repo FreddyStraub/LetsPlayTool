@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -95,6 +96,9 @@ namespace LetsPlayTool.Dialogs
 
                 }
 
+            Loop = checkLoop.Checked;
+
+
                 TimerText = richTextBox1.Text;
 
             
@@ -108,6 +112,7 @@ namespace LetsPlayTool.Dialogs
         public string TimerText { get; private set; }
         public bool isBig { get; set; }
 
+        public bool Loop { get; set; }
         public Color Farbe = Color.Green;
 
         private void bFarbe_Click(object sender, EventArgs e)

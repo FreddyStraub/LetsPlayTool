@@ -127,6 +127,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             }
 
+            richTextBox1.Visible = false;
+
 
 
 
@@ -241,6 +243,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                     Time t = new Time(TimeItem);
                     t.Text = TD.TimerText;
+
+                    t.isLoop = TD.Loop;
 
                     t.Stunden = (int)TD.Stunden;
                     t.Minuten = (int)TD.Minuten;
@@ -371,7 +375,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
                         Time t = new Time(TimeItem);
 
-                        if(td.checkText.Checked == false)
+                        t.Stunden = (int)td.Stunden;
+                        t.Minuten = (int)td.Minuten;
+                        t.Sekunden = (int)td.Sekunden;
+                        t.Millisekunden = (int)td.Millisekunden;
+
+                        if (td.checkText.Checked == false)
                         {
                             t.Text = "";
 

@@ -118,9 +118,8 @@ namespace LetsPlayTool
         {
              
             ShowPanelsAnimation.Start();
-            skype = new Skype();
-            loadSettings();
 
+            loadSettings();
 
             Updater updater = new Updater();
 
@@ -169,6 +168,10 @@ namespace LetsPlayTool
             }
 
             selectedTimerProfil = einstellungen.selectedTimerProfile;
+
+            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+                skype = new Skype();
+
 
             #region Überwachung
 
@@ -256,7 +259,10 @@ namespace LetsPlayTool
             setSteamStatus();
             setTeamspeakStatus();
             setDiscordStatus();
-            setSkyeLabelStatus();
+
+            if(einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+                 setSkyeLabelStatus();
+
             setMailClientStatus();
 
             #endregion
@@ -303,8 +309,14 @@ namespace LetsPlayTool
 
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
 
-            rohPfad = mailClient.ToString().Substring(1);
-            rohPfad = rohPfad.Substring(0, rohPfad.Length - 26);
+            try
+            {
+
+                rohPfad = mailClient.ToString().Substring(1);
+                rohPfad = rohPfad.Substring(0, rohPfad.Length - 26);
+
+            }
+            catch { lbMailClient.Text = "Kein Mailclient gefunden!"; }
 
             #region Timer
 
@@ -421,64 +433,107 @@ namespace LetsPlayTool
             {
 
 
-                //#region 0 Time
+                //Unwichtig?
+                #region 0 Time
                 //if (Session.Timer.milliseconds < 100 & Session.Timer.seconds < 1)
                 //{
 
                 //    if (t.ListViewItem.Text == "00:00:00:00")
 
-                //{
-
-
-                //    if (t.Text != "")
                 //    {
 
-                //        showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
 
-                //    }else
-                //    {
-                //        showSmallMessage(panelTimer, "00:00:00:00", t.ListViewItem.BackColor);
+                //        if (t.Text != "")
+                //        {
+
+                //            showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor);
+
+                //        }
+                //        else
+                //        {
+                //            showSmallMessage(panelTimer, "00:00:00:00", t.ListViewItem.BackColor);
+
+                //        }
 
                 //    }
 
                 //}
 
-                //}
-
-                //#endregion
-
-                if (t.Stunden == Session.Timer.st.Elapsed.Hours)
+                #endregion
+                if (t.stopwatch == null)
                 {
-                    if (t.Minuten == Session.Timer.st.Elapsed.Minutes)
+
+                    #region Normale Time/Message
+
+                    if (t.Stunden == Session.Timer.st.Elapsed.Hours)
                     {
-                        if (t.Sekunden == Session.Timer.st.Elapsed.Seconds)
+                        if (t.Minuten == Session.Timer.st.Elapsed.Minutes)
                         {
+                            if (t.Sekunden == Session.Timer.st.Elapsed.Seconds)
+                            {
 
-                               
-                                    //        if (t.ListViewItem.Text == Session.Timer.TimeString)
-                                   // {
 
-                                        if (t.Text != "")
-                                        {
+                                if (t.Text != "")
+                                {
 
-                                            showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
-                                            frmÜFenster.showMessage(t.Text, t.ListViewItem.BackColor, 3);
+                                    showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
+                                    frmÜFenster.showMessage(t.Text, t.ListViewItem.BackColor, 3);
 
-                                        }
-                                        else
-                                        {
+                                }
+                                else
+                                {
 
-                                            showSmallMessage(panelTimer, t.ListViewItem.Text, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
-                                            frmÜFenster.showMessage(t.ListViewItem.Text, t.ListViewItem.BackColor, 3);
+                                    showSmallMessage(panelTimer, t.ListViewItem.Text, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
+                                    frmÜFenster.showMessage(t.ListViewItem.Text, t.ListViewItem.BackColor, 3);
 
-                                        }
-                                   // }
-                                
-                           
+                                }
+                            }
                         }
                     }
-                }
 
+                    #endregion
+
+
+                }else{ 
+                
+                    #region LoopMessage
+
+                    if(t.stopwatch.Elapsed.Hours == t.Stunden)
+                    {
+                        if (t.stopwatch.Elapsed.Minutes == t.Minuten)
+                        {
+                            if (t.stopwatch.Elapsed.Seconds == t.Sekunden)
+                            {
+
+
+                                if (t.Text != "")
+                                {
+
+                                    showSmallMessage(panelTimer, t.Text, t.ListViewItem.BackColor); //wenn Text dann text anzeigen.
+                                    frmÜFenster.showMessage(t.Text, t.ListViewItem.BackColor, 3);
+
+                                }
+                                else
+                                {
+
+                                    showSmallMessage(panelTimer, Session.Timer.TimeString, t.ListViewItem.BackColor); // wenn kein Text, dann Zeit anzeigen.
+                                    frmÜFenster.showMessage(Session.Timer.TimeString, t.ListViewItem.BackColor, 3);
+
+                                }
+
+                                t.stopwatch.Restart();
+
+                            }
+
+
+                        }
+
+                    }
+
+
+                    #endregion
+
+                }
             }
             #endregion
 
@@ -488,7 +543,7 @@ namespace LetsPlayTool
 
             #region Speicher
 
-         
+
             //Ausgabe an User
             lbBSpeicherGB.Text = Session.Überwachung.belegterSpeicherGB.ToString() + "GB";
             lbFSpeicherGB.Text = Session.Überwachung.freierSpeicherGB.ToString() + "GB";
@@ -609,6 +664,8 @@ namespace LetsPlayTool
 
         string rohPfad;
 
+        #region SetStatus
+
         private void setMailClientStatus()
         {
             //  throw new NotImplementedException();
@@ -685,13 +742,13 @@ namespace LetsPlayTool
         private void setSkyeLabelStatus()
         {
 
-            if (skype.Client.IsRunning)
-            {
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
 
-            
-                        switch (skype.CurrentUserStatus)
+                if (skype.Client.IsRunning)
+                {
+
+                    switch (skype.CurrentUserStatus)
                         {
 
                             case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
@@ -706,19 +763,19 @@ namespace LetsPlayTool
             }
                 else
                 {
-                    lbSkypeStatus.Text = "Deaktiviert!";
+
+                    lbSkypeStatus.Text = "Kein Skype Client gefunden!";
                     lbSkypeStatus.ForeColor = Color.Orange;
 
                 }
-                
+
 
             }
             else
             {
 
-                lbSkypeStatus.Text = "Kein Skype Client gefunden!";
+                lbSkypeStatus.Text = "Deaktiviert!";
                 lbSkypeStatus.ForeColor = Color.Orange;
-
 
             }
         }
@@ -741,7 +798,7 @@ namespace LetsPlayTool
           
         }
 
-        
+        #endregion
 
         private void bunifuCustomLabel1_Click(object sender, EventArgs e)
         {
@@ -868,12 +925,11 @@ namespace LetsPlayTool
 
                 Session = new LetsPlayTool.Session.Session(selectedTimerProfil, einstellungen);
 
-                //InitialisierePerformanceCounter();
 
                 ValueUpdater.Stop();
 
                 Mainactor.Start();
-                Session.Timer.st.Start(); //Startet die Stopwatch
+                Session.Timer.st.Start(); //Startet die Stopwatch für MainTimer
 
                 einstellungen.SessionValue += 1;
 
@@ -894,6 +950,17 @@ namespace LetsPlayTool
                     showBigMessage(einstellungen.Allgemeines.Erinerrungen);
                 }
 
+                //If Time.Loop --> Stopwatch Für Loop starten
+                foreach (Time t in Session.Timer.getTimes())
+                {
+
+                    if(t.isLoop)
+                    {
+                        t.stopwatch = new Stopwatch();
+                        t.stopwatch.Start();
+                    }
+
+                }
 
                 #region Get Times
 
@@ -913,19 +980,19 @@ namespace LetsPlayTool
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
 
-                    //if (skype.Client.IsRunning)
-                    //{
+                    if (skype.Client.IsRunning)
+                    {
 
-                    //    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
+                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
 
-                    //    if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
-                    //    {
+                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                        {
 
-                    //        NormalStatus = skype.CurrentUserProfile.MoodText;
-                    //        skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
+                            NormalStatus = skype.CurrentUserProfile.MoodText;
+                            skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
 
-                    //    }
-                    //}
+                        }
+                    }
                 }
 
                 #endregion
@@ -981,18 +1048,18 @@ namespace LetsPlayTool
 
                 if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
                 {
-                    
 
-                    //if (skype.Client.IsRunning)
-                    //{
 
-                    //    setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
-                    //    setSkyeLabelStatus();
+                    if (skype.Client.IsRunning)
+                    {
 
-                    //    if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
-                    //        skype.CurrentUserProfile.MoodText = NormalStatus;
+                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
+                        setSkyeLabelStatus();
 
-                    //}
+                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                            skype.CurrentUserProfile.MoodText = NormalStatus;
+
+                    }
 
                 }
 
@@ -1167,7 +1234,13 @@ namespace LetsPlayTool
                 {
 
                     stopSession();
-                    SessionRuns = false;
+                    try
+                    {
+
+                        SessionRuns = false;
+
+                    }catch(Exception ex)
+                    { MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.ToString()); }
                 }
 
 

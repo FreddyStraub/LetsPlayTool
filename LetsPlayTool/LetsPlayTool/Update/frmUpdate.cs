@@ -88,6 +88,9 @@ namespace LetsPlayTool.Update
                 wb.DownloadFile(new Uri(_download), "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
                 System.Diagnostics.Process.Start("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe");
 
+                Application.Exit();
+
+
 
             }
             catch (Exception ex)

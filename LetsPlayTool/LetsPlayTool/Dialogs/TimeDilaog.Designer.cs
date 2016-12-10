@@ -45,6 +45,8 @@
             this.panelText = new System.Windows.Forms.Panel();
             this.lbText = new System.Windows.Forms.Label();
             this.checkText = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbLoop = new System.Windows.Forms.Label();
+            this.checkLoop = new Bunifu.Framework.UI.BunifuCheckbox();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSeconds)).BeginInit();
@@ -87,7 +89,7 @@
             this.nudTimeSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeSeconds.ForeColor = System.Drawing.Color.White;
-            this.nudTimeSeconds.Location = new System.Drawing.Point(180, 74);
+            this.nudTimeSeconds.Location = new System.Drawing.Point(181, 67);
             this.nudTimeSeconds.Maximum = new decimal(new int[] {
             60,
             0,
@@ -104,7 +106,7 @@
             this.nudTimeMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeMinutes.ForeColor = System.Drawing.Color.White;
-            this.nudTimeMinutes.Location = new System.Drawing.Point(96, 74);
+            this.nudTimeMinutes.Location = new System.Drawing.Point(97, 67);
             this.nudTimeMinutes.Maximum = new decimal(new int[] {
             60,
             0,
@@ -121,7 +123,7 @@
             this.nudTimeMSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeMSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeMSeconds.ForeColor = System.Drawing.Color.White;
-            this.nudTimeMSeconds.Location = new System.Drawing.Point(264, 74);
+            this.nudTimeMSeconds.Location = new System.Drawing.Point(265, 67);
             this.nudTimeMSeconds.Maximum = new decimal(new int[] {
             60,
             0,
@@ -138,7 +140,7 @@
             this.nudTimeHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeHours.ForeColor = System.Drawing.Color.White;
-            this.nudTimeHours.Location = new System.Drawing.Point(12, 74);
+            this.nudTimeHours.Location = new System.Drawing.Point(13, 67);
             this.nudTimeHours.Maximum = new decimal(new int[] {
             60,
             0,
@@ -170,7 +172,7 @@
             this.bFarbe.IconVisible = true;
             this.bFarbe.IconZoom = 90D;
             this.bFarbe.IsTab = false;
-            this.bFarbe.Location = new System.Drawing.Point(12, 120);
+            this.bFarbe.Location = new System.Drawing.Point(12, 145);
             this.bFarbe.Name = "bFarbe";
             this.bFarbe.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bFarbe.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -206,7 +208,7 @@
             this.bAbbrechen.IconVisible = true;
             this.bAbbrechen.IconZoom = 80D;
             this.bAbbrechen.IsTab = false;
-            this.bAbbrechen.Location = new System.Drawing.Point(215, 338);
+            this.bAbbrechen.Location = new System.Drawing.Point(215, 363);
             this.bAbbrechen.Name = "bAbbrechen";
             this.bAbbrechen.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bAbbrechen.OnHovercolor = System.Drawing.Color.DarkRed;
@@ -241,7 +243,7 @@
             this.bFertig.IconVisible = true;
             this.bFertig.IconZoom = 80D;
             this.bFertig.IsTab = false;
-            this.bFertig.Location = new System.Drawing.Point(86, 338);
+            this.bFertig.Location = new System.Drawing.Point(86, 363);
             this.bFertig.Name = "bFertig";
             this.bFertig.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bFertig.OnHovercolor = System.Drawing.Color.LimeGreen;
@@ -276,7 +278,7 @@
             // 
             this.panelText.Controls.Add(this.richTextBox1);
             this.panelText.Enabled = false;
-            this.panelText.Location = new System.Drawing.Point(12, 184);
+            this.panelText.Location = new System.Drawing.Point(12, 209);
             this.panelText.Name = "panelText";
             this.panelText.Size = new System.Drawing.Size(327, 136);
             this.panelText.TabIndex = 9;
@@ -286,7 +288,7 @@
             this.lbText.AutoSize = true;
             this.lbText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.White;
-            this.lbText.Location = new System.Drawing.Point(35, 159);
+            this.lbText.Location = new System.Drawing.Point(35, 184);
             this.lbText.Name = "lbText";
             this.lbText.Size = new System.Drawing.Size(34, 16);
             this.lbText.TabIndex = 18;
@@ -300,21 +302,48 @@
             this.checkText.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.checkText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkText.ForeColor = System.Drawing.Color.White;
-            this.checkText.Location = new System.Drawing.Point(13, 157);
+            this.checkText.Location = new System.Drawing.Point(13, 182);
             this.checkText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkText.Name = "checkText";
             this.checkText.Size = new System.Drawing.Size(20, 20);
             this.checkText.TabIndex = 17;
             this.checkText.OnChange += new System.EventHandler(this.checkShift_OnChange);
             // 
+            // lbLoop
+            // 
+            this.lbLoop.AutoSize = true;
+            this.lbLoop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoop.ForeColor = System.Drawing.Color.White;
+            this.lbLoop.Location = new System.Drawing.Point(34, 114);
+            this.lbLoop.Name = "lbLoop";
+            this.lbLoop.Size = new System.Drawing.Size(39, 16);
+            this.lbLoop.TabIndex = 20;
+            this.lbLoop.Text = "Loop";
+            // 
+            // checkLoop
+            // 
+            this.checkLoop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkLoop.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkLoop.Checked = false;
+            this.checkLoop.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkLoop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkLoop.ForeColor = System.Drawing.Color.White;
+            this.checkLoop.Location = new System.Drawing.Point(12, 112);
+            this.checkLoop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkLoop.Name = "checkLoop";
+            this.checkLoop.Size = new System.Drawing.Size(20, 20);
+            this.checkLoop.TabIndex = 19;
+            // 
             // TimeDilaog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(351, 388);
+            this.ClientSize = new System.Drawing.Size(351, 417);
+            this.Controls.Add(this.lbLoop);
             this.Controls.Add(this.lbText);
             this.Controls.Add(this.checkText);
+            this.Controls.Add(this.checkLoop);
             this.Controls.Add(this.panelText);
             this.Controls.Add(this.bAbbrechen);
             this.Controls.Add(this.bFertig);
@@ -360,5 +389,7 @@
         public Bunifu.Framework.UI.BunifuCheckbox checkText;
         public System.Windows.Forms.Panel panelText;
         public System.Windows.Forms.ColorDialog cdFarbe;
+        private System.Windows.Forms.Label lbLoop;
+        public Bunifu.Framework.UI.BunifuCheckbox checkLoop;
     }
 }
