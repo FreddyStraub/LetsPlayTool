@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "00:00:01:00"}, -1, System.Drawing.Color.White, System.Drawing.Color.Red, null);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimerTab));
             this.lvTimes = new System.Windows.Forms.ListView();
@@ -42,6 +42,8 @@
             this.lbProfiles = new System.Windows.Forms.ListBox();
             this.gbText = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lbLoop = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.gbText.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.columnHeader1});
             this.lvTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvTimes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem9});
             this.lvTimes.Location = new System.Drawing.Point(291, 19);
             this.lvTimes.MultiSelect = false;
             this.lvTimes.Name = "lvTimes";
@@ -290,9 +292,9 @@
             this.gbText.Controls.Add(this.richTextBox1);
             this.gbText.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbText.ForeColor = System.Drawing.Color.White;
-            this.gbText.Location = new System.Drawing.Point(12, 361);
+            this.gbText.Location = new System.Drawing.Point(12, 401);
             this.gbText.Name = "gbText";
-            this.gbText.Size = new System.Drawing.Size(671, 180);
+            this.gbText.Size = new System.Drawing.Size(671, 140);
             this.gbText.TabIndex = 4;
             this.gbText.TabStop = false;
             this.gbText.Text = "Text";
@@ -304,12 +306,35 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 11);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(658, 155);
+            this.richTextBox1.Size = new System.Drawing.Size(665, 124);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // lbLoop
+            // 
+            this.lbLoop.AutoSize = true;
+            this.lbLoop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoop.ForeColor = System.Drawing.Color.White;
+            this.lbLoop.Location = new System.Drawing.Point(62, 366);
+            this.lbLoop.Name = "lbLoop";
+            this.lbLoop.Size = new System.Drawing.Size(582, 32);
+            this.lbLoop.TabIndex = 21;
+            this.lbLoop.Text = "Das Timerprofil, welches für die Session verwendet werden soll, kann im Hauptfens" +
+    "ter über einen \r\nRechtsklick auf den Timer ausgewählt werden.";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Lime;
+            this.label1.Location = new System.Drawing.Point(15, 372);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "TIPP:";
             // 
             // TimerTab
             // 
@@ -317,6 +342,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(695, 553);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbLoop);
             this.Controls.Add(this.gbText);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -325,6 +352,7 @@
             this.groupBox2.ResumeLayout(false);
             this.gbText.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -341,5 +369,7 @@
         private System.Windows.Forms.GroupBox gbText;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private Bunifu.Framework.UI.BunifuFlatButton bZeitBearbeiten;
+        private System.Windows.Forms.Label lbLoop;
+        private System.Windows.Forms.Label label1;
     }
 }

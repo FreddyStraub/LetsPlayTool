@@ -47,6 +47,10 @@
             this.checkText = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lbLoop = new System.Windows.Forms.Label();
             this.checkLoop = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbStunden = new System.Windows.Forms.Label();
+            this.lbMinuten = new System.Windows.Forms.Label();
+            this.lbSekunden = new System.Windows.Forms.Label();
+            this.lbMillisekunden = new System.Windows.Forms.Label();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSeconds)).BeginInit();
@@ -63,7 +67,7 @@
             this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderBar.Location = new System.Drawing.Point(0, 0);
             this.HeaderBar.Name = "HeaderBar";
-            this.HeaderBar.Size = new System.Drawing.Size(351, 52);
+            this.HeaderBar.Size = new System.Drawing.Size(383, 52);
             this.HeaderBar.TabIndex = 1;
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
             this.HeaderBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseMove);
@@ -74,7 +78,7 @@
             this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(307, 8);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(335, 8);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(35, 35);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -89,14 +93,14 @@
             this.nudTimeSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeSeconds.ForeColor = System.Drawing.Color.White;
-            this.nudTimeSeconds.Location = new System.Drawing.Point(181, 67);
+            this.nudTimeSeconds.Location = new System.Drawing.Point(196, 95);
             this.nudTimeSeconds.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
             this.nudTimeSeconds.Name = "nudTimeSeconds";
-            this.nudTimeSeconds.Size = new System.Drawing.Size(78, 31);
+            this.nudTimeSeconds.Size = new System.Drawing.Size(86, 31);
             this.nudTimeSeconds.TabIndex = 3;
             this.toolTip1.SetToolTip(this.nudTimeSeconds, "Sekunden");
             // 
@@ -106,14 +110,14 @@
             this.nudTimeMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeMinutes.ForeColor = System.Drawing.Color.White;
-            this.nudTimeMinutes.Location = new System.Drawing.Point(97, 67);
+            this.nudTimeMinutes.Location = new System.Drawing.Point(104, 95);
             this.nudTimeMinutes.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
             this.nudTimeMinutes.Name = "nudTimeMinutes";
-            this.nudTimeMinutes.Size = new System.Drawing.Size(78, 31);
+            this.nudTimeMinutes.Size = new System.Drawing.Size(86, 31);
             this.nudTimeMinutes.TabIndex = 2;
             this.toolTip1.SetToolTip(this.nudTimeMinutes, "Minuten");
             // 
@@ -123,14 +127,14 @@
             this.nudTimeMSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeMSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeMSeconds.ForeColor = System.Drawing.Color.White;
-            this.nudTimeMSeconds.Location = new System.Drawing.Point(265, 67);
+            this.nudTimeMSeconds.Location = new System.Drawing.Point(288, 95);
             this.nudTimeMSeconds.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
             this.nudTimeMSeconds.Name = "nudTimeMSeconds";
-            this.nudTimeMSeconds.Size = new System.Drawing.Size(78, 31);
+            this.nudTimeMSeconds.Size = new System.Drawing.Size(86, 31);
             this.nudTimeMSeconds.TabIndex = 4;
             this.toolTip1.SetToolTip(this.nudTimeMSeconds, "Millisekunden");
             // 
@@ -140,14 +144,14 @@
             this.nudTimeHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudTimeHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTimeHours.ForeColor = System.Drawing.Color.White;
-            this.nudTimeHours.Location = new System.Drawing.Point(13, 67);
+            this.nudTimeHours.Location = new System.Drawing.Point(12, 95);
             this.nudTimeHours.Maximum = new decimal(new int[] {
             60,
             0,
             0,
             0});
             this.nudTimeHours.Name = "nudTimeHours";
-            this.nudTimeHours.Size = new System.Drawing.Size(78, 31);
+            this.nudTimeHours.Size = new System.Drawing.Size(86, 31);
             this.nudTimeHours.TabIndex = 1;
             this.toolTip1.SetToolTip(this.nudTimeHours, "Stunden");
             // 
@@ -172,14 +176,14 @@
             this.bFarbe.IconVisible = true;
             this.bFarbe.IconZoom = 90D;
             this.bFarbe.IsTab = false;
-            this.bFarbe.Location = new System.Drawing.Point(12, 145);
+            this.bFarbe.Location = new System.Drawing.Point(12, 174);
             this.bFarbe.Name = "bFarbe";
             this.bFarbe.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bFarbe.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bFarbe.OnHoverTextColor = System.Drawing.Color.White;
             this.bFarbe.Padding = new System.Windows.Forms.Padding(129, 0, 0, 0);
             this.bFarbe.selected = false;
-            this.bFarbe.Size = new System.Drawing.Size(330, 31);
+            this.bFarbe.Size = new System.Drawing.Size(358, 31);
             this.bFarbe.TabIndex = 5;
             this.bFarbe.Text = "     Farbe";
             this.bFarbe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,7 +212,7 @@
             this.bAbbrechen.IconVisible = true;
             this.bAbbrechen.IconZoom = 80D;
             this.bAbbrechen.IsTab = false;
-            this.bAbbrechen.Location = new System.Drawing.Point(215, 363);
+            this.bAbbrechen.Location = new System.Drawing.Point(251, 397);
             this.bAbbrechen.Name = "bAbbrechen";
             this.bAbbrechen.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bAbbrechen.OnHovercolor = System.Drawing.Color.DarkRed;
@@ -243,7 +247,7 @@
             this.bFertig.IconVisible = true;
             this.bFertig.IconZoom = 80D;
             this.bFertig.IsTab = false;
-            this.bFertig.Location = new System.Drawing.Point(86, 363);
+            this.bFertig.Location = new System.Drawing.Point(122, 397);
             this.bFertig.Name = "bFertig";
             this.bFertig.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bFertig.OnHovercolor = System.Drawing.Color.LimeGreen;
@@ -270,17 +274,18 @@
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(0, 3);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(327, 128);
+            this.richTextBox1.Size = new System.Drawing.Size(362, 128);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // panelText
             // 
             this.panelText.Controls.Add(this.richTextBox1);
             this.panelText.Enabled = false;
-            this.panelText.Location = new System.Drawing.Point(12, 209);
+            this.panelText.Location = new System.Drawing.Point(12, 241);
             this.panelText.Name = "panelText";
-            this.panelText.Size = new System.Drawing.Size(327, 136);
+            this.panelText.Size = new System.Drawing.Size(362, 136);
             this.panelText.TabIndex = 9;
             // 
             // lbText
@@ -288,7 +293,7 @@
             this.lbText.AutoSize = true;
             this.lbText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.White;
-            this.lbText.Location = new System.Drawing.Point(35, 184);
+            this.lbText.Location = new System.Drawing.Point(35, 216);
             this.lbText.Name = "lbText";
             this.lbText.Size = new System.Drawing.Size(34, 16);
             this.lbText.TabIndex = 18;
@@ -302,7 +307,7 @@
             this.checkText.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.checkText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkText.ForeColor = System.Drawing.Color.White;
-            this.checkText.Location = new System.Drawing.Point(13, 182);
+            this.checkText.Location = new System.Drawing.Point(13, 214);
             this.checkText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkText.Name = "checkText";
             this.checkText.Size = new System.Drawing.Size(20, 20);
@@ -314,7 +319,7 @@
             this.lbLoop.AutoSize = true;
             this.lbLoop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoop.ForeColor = System.Drawing.Color.White;
-            this.lbLoop.Location = new System.Drawing.Point(34, 114);
+            this.lbLoop.Location = new System.Drawing.Point(34, 146);
             this.lbLoop.Name = "lbLoop";
             this.lbLoop.Size = new System.Drawing.Size(39, 16);
             this.lbLoop.TabIndex = 20;
@@ -328,18 +333,67 @@
             this.checkLoop.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.checkLoop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkLoop.ForeColor = System.Drawing.Color.White;
-            this.checkLoop.Location = new System.Drawing.Point(12, 112);
+            this.checkLoop.Location = new System.Drawing.Point(12, 144);
             this.checkLoop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkLoop.Name = "checkLoop";
             this.checkLoop.Size = new System.Drawing.Size(20, 20);
             this.checkLoop.TabIndex = 19;
+            // 
+            // lbStunden
+            // 
+            this.lbStunden.AutoSize = true;
+            this.lbStunden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStunden.ForeColor = System.Drawing.Color.White;
+            this.lbStunden.Location = new System.Drawing.Point(9, 76);
+            this.lbStunden.Name = "lbStunden";
+            this.lbStunden.Size = new System.Drawing.Size(60, 16);
+            this.lbStunden.TabIndex = 21;
+            this.lbStunden.Text = "Stunden:";
+            // 
+            // lbMinuten
+            // 
+            this.lbMinuten.AutoSize = true;
+            this.lbMinuten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMinuten.ForeColor = System.Drawing.Color.White;
+            this.lbMinuten.Location = new System.Drawing.Point(101, 76);
+            this.lbMinuten.Name = "lbMinuten";
+            this.lbMinuten.Size = new System.Drawing.Size(57, 16);
+            this.lbMinuten.TabIndex = 22;
+            this.lbMinuten.Text = "Minuten:";
+            // 
+            // lbSekunden
+            // 
+            this.lbSekunden.AutoSize = true;
+            this.lbSekunden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSekunden.ForeColor = System.Drawing.Color.White;
+            this.lbSekunden.Location = new System.Drawing.Point(193, 76);
+            this.lbSekunden.Name = "lbSekunden";
+            this.lbSekunden.Size = new System.Drawing.Size(72, 16);
+            this.lbSekunden.TabIndex = 23;
+            this.lbSekunden.Text = "Sekunden:";
+            // 
+            // lbMillisekunden
+            // 
+            this.lbMillisekunden.AutoSize = true;
+            this.lbMillisekunden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMillisekunden.ForeColor = System.Drawing.Color.White;
+            this.lbMillisekunden.Location = new System.Drawing.Point(285, 76);
+            this.lbMillisekunden.Name = "lbMillisekunden";
+            this.lbMillisekunden.Size = new System.Drawing.Size(93, 16);
+            this.lbMillisekunden.TabIndex = 24;
+            this.lbMillisekunden.Text = "Millisekunden:";
+            this.lbMillisekunden.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimeDilaog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(351, 417);
+            this.ClientSize = new System.Drawing.Size(383, 447);
+            this.Controls.Add(this.lbMillisekunden);
+            this.Controls.Add(this.lbSekunden);
+            this.Controls.Add(this.lbMinuten);
+            this.Controls.Add(this.lbStunden);
             this.Controls.Add(this.lbLoop);
             this.Controls.Add(this.lbText);
             this.Controls.Add(this.checkText);
@@ -391,5 +445,9 @@
         public System.Windows.Forms.ColorDialog cdFarbe;
         private System.Windows.Forms.Label lbLoop;
         public Bunifu.Framework.UI.BunifuCheckbox checkLoop;
+        private System.Windows.Forms.Label lbStunden;
+        private System.Windows.Forms.Label lbMinuten;
+        private System.Windows.Forms.Label lbSekunden;
+        private System.Windows.Forms.Label lbMillisekunden;
     }
 }

@@ -456,12 +456,14 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 if (realText != String.Empty & realText != null)
                 {
                     gbText.Visible = true;
+                    richTextBox1.Visible = true;
                     richTextBox1.Text = realText;
 
                 }
                 else
                 {
                     richTextBox1.Text = "";
+                    richTextBox1.Visible = false; 
                     gbText.Visible = false;
                     
                 }
@@ -470,6 +472,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
             else
             {
                 richTextBox1.Text = "";
+                richTextBox1.Visible = false; 
                 gbText.Visible = false;
 
             }
