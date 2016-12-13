@@ -574,46 +574,6 @@ namespace LetsPlayTool
                 frmÜFenster.lbCPUAuslastung.Text = lbCPUAuslastung.Text;
                 frmÜFenster.lbRAMUsed.Text = lbRAMUsed.Text;
 
-
-                #region Desgin
-                
-
-                //CPU
-                if(Session.Überwachung.cpuAuslastung > 50 & Session.Überwachung.cpuAuslastung < 90)
-                {
-                    lbCPUAuslastung.BackColor = Color.Orange;
-                    frmÜFenster.lbCPUAuslastung.BackColor = Color.Orange;
-
-                }else if(Session.Überwachung.cpuAuslastung > 90)
-                {
-                    lbCPUAuslastung.BackColor = Color.Red;
-                    frmÜFenster.lbCPUAuslastung.BackColor = Color.Red;
-                }
-                else
-                {
-                    lbCPUAuslastung.BackColor = Color.FromArgb(38,38,38);
-                    frmÜFenster.lbCPUAuslastung.BackColor = Color.FromArgb(38, 38, 38);
-                }
-
-                //Freier RAM
-                if (Session.Überwachung.freierRAM > 200 & Session.Überwachung.freierRAM < 800)
-                {
-                    lbRAMUsed.BackColor = Color.Orange;
-                    frmÜFenster.lbRAMUsed.BackColor = Color.Orange;
-
-                }
-                else if (Session.Überwachung.freierRAM < 200)
-                {
-                    lbRAMUsed.BackColor = Color.Red;
-                    frmÜFenster.lbRAMUsed.BackColor = Color.Red;
-                }
-                else
-                {
-                    lbRAMUsed.BackColor = Color.FromArgb(38, 38, 38);
-                    frmÜFenster.lbRAMUsed.BackColor = Color.FromArgb(38, 38, 38);
-                }
-                #endregion
-
             }
 
 
@@ -1091,6 +1051,7 @@ namespace LetsPlayTool
             if(labelTimer.Text != "00:00:00:00")
                 if (einstellungen.Überwachung.OpenÜberwachungOrdner)
                      Process.Start(einstellungen.Überwachung.ÜberwachungOrdner);
+
 
 
             #region Werte zurücksetzten

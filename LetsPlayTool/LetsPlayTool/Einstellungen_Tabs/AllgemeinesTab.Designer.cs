@@ -290,11 +290,12 @@
             this.lbDuration.AutoSize = true;
             this.lbDuration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDuration.ForeColor = System.Drawing.Color.White;
-            this.lbDuration.Location = new System.Drawing.Point(506, 32);
+            this.lbDuration.Location = new System.Drawing.Point(471, 32);
             this.lbDuration.Name = "lbDuration";
-            this.lbDuration.Size = new System.Drawing.Size(91, 17);
+            this.lbDuration.Size = new System.Drawing.Size(123, 17);
             this.lbDuration.TabIndex = 7;
-            this.lbDuration.Text = "Anzeigedauer:";
+            this.lbDuration.Text = "Anzeigedauer in (s):";
+            this.toolTip1.SetToolTip(this.lbDuration, "Anzeigedauer in Sekunden");
             // 
             // nudDuration
             // 
@@ -305,7 +306,7 @@
             this.nudDuration.Name = "nudDuration";
             this.nudDuration.Size = new System.Drawing.Size(56, 21);
             this.nudDuration.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.nudDuration, "Anzeigedauer der Nachricht in Sekunden");
+            this.toolTip1.SetToolTip(this.nudDuration, "Anzeigedauer in Sekunden");
             // 
             // switchIErinerrungen
             // 
@@ -340,7 +341,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(61, 32);
+            this.label7.Location = new System.Drawing.Point(59, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(403, 17);
             this.label7.TabIndex = 1;
