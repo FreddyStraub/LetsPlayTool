@@ -78,5 +78,12 @@ namespace LetsPlayTool.Einstellungen_Tabs.Messenger
             }
 
         }
+
+        private void checkStatusMeldung_OnChange_1(object sender, EventArgs e)
+        {
+
+            tbStatusmeldung.Enabled = checkStatusMeldung.Checked;
+
+        }
     }
 }

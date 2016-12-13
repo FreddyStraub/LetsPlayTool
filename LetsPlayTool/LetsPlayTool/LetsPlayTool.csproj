@@ -115,7 +115,13 @@
       <DependentUpon>MarkerTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Einstellungen_Tabs\MarkerTabEinstellungen.cs" />
-    <Compile Include="Einstellungen_Tabs\Messenger\Settings.cs" />
+    <Compile Include="Einstellungen_Tabs\MessengerTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\MessengerTab.Designer.cs">
+      <DependentUpon>MessengerTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\MessengerTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\Messenger\SkypeSettings.cs" />
     <Compile Include="Einstellungen_Tabs\Messenger\SkypeTab.cs">
       <SubType>Form</SubType>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\MarkerTab.resx">
       <DependentUpon>MarkerTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\MessengerTab.resx">
+      <DependentUpon>MessengerTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\Messenger\SkypeTab.resx">
       <DependentUpon>SkypeTab.cs</DependentUpon>

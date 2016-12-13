@@ -172,9 +172,12 @@ namespace LetsPlayTool
 
             }
 
+            einstellungen.SetMissingOptions();
+
             selectedTimerProfil = einstellungen.selectedTimerProfile;
 
-            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            
+            if (einstellungen.Messenger.Skype.active == true)
                 skype = new Skype();
 
 
@@ -233,7 +236,7 @@ namespace LetsPlayTool
             #endregion
 
 
-            if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+            if (einstellungen.Messenger.Skype.active)
             {
                 if (skype.Client.IsRunning)
                 {
@@ -245,7 +248,7 @@ namespace LetsPlayTool
                     }
                     catch
                     {
-                        einstellungen.Überwachung.MessengerSettings.skypeSettings.active = false;
+                        einstellungen.Messenger.Skype.active = false;
                         einstellungen.save();
                         einstellungen = einstellungen.load();
 
@@ -265,8 +268,8 @@ namespace LetsPlayTool
             setTeamspeakStatus();
             setDiscordStatus();
 
-            if(einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
-                 setSkyeLabelStatus();
+            if (einstellungen.Messenger.Skype.active)
+                setSkyeLabelStatus();
 
             setMailClientStatus();
 
@@ -274,7 +277,7 @@ namespace LetsPlayTool
 
             #region ShowÜFensterButton
 
-            if (einstellungen.Allgemeines.ShowÜFenster == true)
+            if (einstellungen.Überwachung.ShowÜFenster == true)
             {
 
                 bShowÜFenster.Visible = true;
@@ -707,8 +710,8 @@ namespace LetsPlayTool
         private void setSkyeLabelStatus()
         {
 
-                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
-                {
+            if (einstellungen.Messenger.Skype.active)
+            {
 
                 if (skype.Client.IsRunning)
                 {
@@ -900,7 +903,7 @@ namespace LetsPlayTool
 
                 listMarker.Items.Clear();
 
-                if (einstellungen.Allgemeines.ShowÜFenster)
+                if (einstellungen.Überwachung.ShowÜFenster)
                 {
                     frmÜFenster.Close();
                     frmÜFenster = new frmÜFenster();
@@ -942,19 +945,19 @@ namespace LetsPlayTool
 
                 #region Skype
 
-                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+                if (einstellungen.Messenger.Skype.active)
                 {
 
                     if (skype.Client.IsRunning)
                     {
 
-                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusInAufnahme);
+                        setSkypeStatus(einstellungen.Messenger.Skype.statusInAufnahme);
 
-                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                        if (einstellungen.Messenger.Skype.writeStatusmeldung)
                         {
 
                             NormalStatus = skype.CurrentUserProfile.MoodText;
-                            skype.CurrentUserProfile.MoodText = einstellungen.Überwachung.MessengerSettings.skypeSettings.Statusmeldung;
+                            skype.CurrentUserProfile.MoodText = einstellungen.Messenger.Skype.Statusmeldung;
 
                         }
                     }
@@ -1011,17 +1014,17 @@ namespace LetsPlayTool
             try
             {
 
-                if (einstellungen.Überwachung.MessengerSettings.skypeSettings.active)
+                if (einstellungen.Messenger.Skype.active)
                 {
 
 
                     if (skype.Client.IsRunning)
                     {
 
-                        setSkypeStatus(einstellungen.Überwachung.MessengerSettings.skypeSettings.statusNachAufnahme);
+                        setSkypeStatus(einstellungen.Messenger.Skype.statusNachAufnahme);
                         setSkyeLabelStatus();
 
-                        if (einstellungen.Überwachung.MessengerSettings.skypeSettings.writeStatusmeldung)
+                        if (einstellungen.Messenger.Skype.writeStatusmeldung)
                             skype.CurrentUserProfile.MoodText = NormalStatus;
 
                     }

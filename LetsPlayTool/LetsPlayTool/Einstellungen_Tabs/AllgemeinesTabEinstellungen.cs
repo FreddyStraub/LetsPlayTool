@@ -15,13 +15,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public Keys AufnahmeStopKey;
 
 
- //       public bool StartStop;
-
-        public bool ShowÜFenster;
-        public bool ShowÜFensterTimer;
-        public bool ShowÜFensterCPU;
-        public bool ShowÜFensterRAM;
-
         public bool ShowIErinerrung;
         public string Erinerrungen;
         public int ErinerrungenAnzeigeDauer;

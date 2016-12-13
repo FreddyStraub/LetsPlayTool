@@ -16,10 +16,13 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public bool ÜShowCPU;
         public bool ÜShowRAM;
 
-
-        public Messenger.Settings MessengerSettings;
-
         public bool OpenÜberwachungOrdner;
+
+        public bool ShowÜFenster;
+        public bool ShowÜFensterTimer;
+        public bool ShowÜFensterCPU;
+        public bool ShowÜFensterRAM;
+
 
 
     }

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Überwachung));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkAufnahmeOrdnerÖffnen = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbOrdnerÖffnen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbAufnahmeordner = new System.Windows.Forms.TextBox();
             this.bBrowse = new System.Windows.Forms.Button();
@@ -40,22 +41,22 @@
             this.switchRAM = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label2 = new System.Windows.Forms.Label();
             this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.bTeamspeak = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bDiscord = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panelMessengerSwitch = new System.Windows.Forms.Panel();
-            this.bSkype = new Bunifu.Framework.UI.BunifuImageButton();
             this.fbdAufnahmeordner = new Ookii.Dialogs.VistaFolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.lbOrdnerÖffnen = new System.Windows.Forms.Label();
-            this.checkAufnahmeOrdnerÖffnen = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panelÜFensterSettings = new System.Windows.Forms.Panel();
+            this.checkÜFensterRAM = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkÜFensterCPU = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbCPU = new System.Windows.Forms.Label();
+            this.checkÜFensterTimer = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bTeamspeak)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDiscord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bSkype)).BeginInit();
+            this.panelÜFensterSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,7 +66,6 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbAufnahmeordner);
             this.groupBox1.Controls.Add(this.bBrowse);
-            this.panelAnimator.SetDecoration(this.groupBox1, BunifuAnimatorNS.DecorationType.None);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -75,10 +75,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordnerüberwachung";
             // 
+            // checkAufnahmeOrdnerÖffnen
+            // 
+            this.checkAufnahmeOrdnerÖffnen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkAufnahmeOrdnerÖffnen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkAufnahmeOrdnerÖffnen.Checked = true;
+            this.checkAufnahmeOrdnerÖffnen.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkAufnahmeOrdnerÖffnen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAufnahmeOrdnerÖffnen.ForeColor = System.Drawing.Color.White;
+            this.checkAufnahmeOrdnerÖffnen.Location = new System.Drawing.Point(127, 82);
+            this.checkAufnahmeOrdnerÖffnen.Margin = new System.Windows.Forms.Padding(4);
+            this.checkAufnahmeOrdnerÖffnen.Name = "checkAufnahmeOrdnerÖffnen";
+            this.checkAufnahmeOrdnerÖffnen.Size = new System.Drawing.Size(20, 20);
+            this.checkAufnahmeOrdnerÖffnen.TabIndex = 19;
+            // 
+            // lbOrdnerÖffnen
+            // 
+            this.lbOrdnerÖffnen.AutoSize = true;
+            this.lbOrdnerÖffnen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOrdnerÖffnen.Location = new System.Drawing.Point(154, 82);
+            this.lbOrdnerÖffnen.Name = "lbOrdnerÖffnen";
+            this.lbOrdnerÖffnen.Size = new System.Drawing.Size(240, 17);
+            this.lbOrdnerÖffnen.TabIndex = 6;
+            this.lbOrdnerÖffnen.Text = "Aufnahmeordner nach Aufnahme öffnen";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.panelAnimator.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 37);
             this.label1.Name = "label1";
@@ -90,7 +113,6 @@
             // 
             this.tbAufnahmeordner.BackColor = System.Drawing.Color.DodgerBlue;
             this.tbAufnahmeordner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.panelAnimator.SetDecoration(this.tbAufnahmeordner, BunifuAnimatorNS.DecorationType.None);
             this.tbAufnahmeordner.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAufnahmeordner.ForeColor = System.Drawing.Color.White;
             this.tbAufnahmeordner.Location = new System.Drawing.Point(127, 34);
@@ -105,7 +127,6 @@
             // 
             this.bBrowse.BackColor = System.Drawing.Color.DodgerBlue;
             this.bBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelAnimator.SetDecoration(this.bBrowse, BunifuAnimatorNS.DecorationType.None);
             this.bBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBrowse.ForeColor = System.Drawing.Color.White;
             this.bBrowse.Location = new System.Drawing.Point(619, 34);
@@ -123,7 +144,6 @@
             this.groupBox2.Controls.Add(this.switchRAM);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.switchCPU);
-            this.panelAnimator.SetDecoration(this.groupBox2, BunifuAnimatorNS.DecorationType.None);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(13, 127);
@@ -136,7 +156,6 @@
             // lbFRam
             // 
             this.lbFRam.AutoSize = true;
-            this.panelAnimator.SetDecoration(this.lbFRam, BunifuAnimatorNS.DecorationType.None);
             this.lbFRam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFRam.Location = new System.Drawing.Point(119, 27);
             this.lbFRam.Name = "lbFRam";
@@ -150,7 +169,6 @@
             this.switchRAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchRAM.BackgroundImage")));
             this.switchRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchRAM.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelAnimator.SetDecoration(this.switchRAM, BunifuAnimatorNS.DecorationType.None);
             this.switchRAM.Location = new System.Drawing.Point(201, 24);
             this.switchRAM.Name = "switchRAM";
             this.switchRAM.OffColor = System.Drawing.Color.Gray;
@@ -162,7 +180,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.panelAnimator.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 27);
             this.label2.Name = "label2";
@@ -176,7 +193,6 @@
             this.switchCPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchCPU.BackgroundImage")));
             this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelAnimator.SetDecoration(this.switchCPU, BunifuAnimatorNS.DecorationType.None);
             this.switchCPU.Location = new System.Drawing.Point(54, 24);
             this.switchCPU.Name = "switchCPU";
             this.switchCPU.OffColor = System.Drawing.Color.Gray;
@@ -187,121 +203,132 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.bTeamspeak);
-            this.groupBox3.Controls.Add(this.bDiscord);
-            this.groupBox3.Controls.Add(this.panelMessengerSwitch);
-            this.groupBox3.Controls.Add(this.bSkype);
-            this.panelAnimator.SetDecoration(this.groupBox3, BunifuAnimatorNS.DecorationType.None);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Controls.Add(this.panelÜFensterSettings);
+            this.groupBox3.Controls.Add(this.switchÜFenster);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 196);
+            this.groupBox3.Location = new System.Drawing.Point(13, 196);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(670, 345);
+            this.groupBox3.Size = new System.Drawing.Size(671, 109);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Messenger";
+            this.groupBox3.Text = "Überwachungsfenster";
             // 
-            // bTeamspeak
+            // panelÜFensterSettings
             // 
-            this.bTeamspeak.BackColor = System.Drawing.Color.Crimson;
-            this.panelAnimator.SetDecoration(this.bTeamspeak, BunifuAnimatorNS.DecorationType.None);
-            this.bTeamspeak.Image = ((System.Drawing.Image)(resources.GetObject("bTeamspeak.Image")));
-            this.bTeamspeak.ImageActive = null;
-            this.bTeamspeak.Location = new System.Drawing.Point(142, 21);
-            this.bTeamspeak.Name = "bTeamspeak";
-            this.bTeamspeak.Size = new System.Drawing.Size(60, 60);
-            this.bTeamspeak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bTeamspeak.TabIndex = 3;
-            this.bTeamspeak.TabStop = false;
-            this.toolTip1.SetToolTip(this.bTeamspeak, "Nicht verfügbar");
-            this.bTeamspeak.Zoom = 5;
+            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterRAM);
+            this.panelÜFensterSettings.Controls.Add(this.label5);
+            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterCPU);
+            this.panelÜFensterSettings.Controls.Add(this.lbCPU);
+            this.panelÜFensterSettings.Controls.Add(this.checkÜFensterTimer);
+            this.panelÜFensterSettings.Controls.Add(this.label4);
+            this.panelÜFensterSettings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelÜFensterSettings.Location = new System.Drawing.Point(61, 57);
+            this.panelÜFensterSettings.Name = "panelÜFensterSettings";
+            this.panelÜFensterSettings.Size = new System.Drawing.Size(524, 46);
+            this.panelÜFensterSettings.TabIndex = 20;
             // 
-            // bDiscord
+            // checkÜFensterRAM
             // 
-            this.bDiscord.BackColor = System.Drawing.Color.Crimson;
-            this.panelAnimator.SetDecoration(this.bDiscord, BunifuAnimatorNS.DecorationType.None);
-            this.bDiscord.Image = ((System.Drawing.Image)(resources.GetObject("bDiscord.Image")));
-            this.bDiscord.ImageActive = null;
-            this.bDiscord.Location = new System.Drawing.Point(74, 21);
-            this.bDiscord.Name = "bDiscord";
-            this.bDiscord.Size = new System.Drawing.Size(60, 60);
-            this.bDiscord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bDiscord.TabIndex = 2;
-            this.bDiscord.TabStop = false;
-            this.toolTip1.SetToolTip(this.bDiscord, "Nicht verfügbar");
-            this.bDiscord.Zoom = 5;
+            this.checkÜFensterRAM.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterRAM.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkÜFensterRAM.Checked = true;
+            this.checkÜFensterRAM.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterRAM.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkÜFensterRAM.ForeColor = System.Drawing.Color.White;
+            this.checkÜFensterRAM.Location = new System.Drawing.Point(257, 13);
+            this.checkÜFensterRAM.Margin = new System.Windows.Forms.Padding(4);
+            this.checkÜFensterRAM.Name = "checkÜFensterRAM";
+            this.checkÜFensterRAM.Size = new System.Drawing.Size(20, 20);
+            this.checkÜFensterRAM.TabIndex = 22;
             // 
-            // panelMessengerSwitch
+            // label5
             // 
-            this.panelAnimator.SetDecoration(this.panelMessengerSwitch, BunifuAnimatorNS.DecorationType.None);
-            this.panelMessengerSwitch.Location = new System.Drawing.Point(6, 87);
-            this.panelMessengerSwitch.Name = "panelMessengerSwitch";
-            this.panelMessengerSwitch.Size = new System.Drawing.Size(658, 252);
-            this.panelMessengerSwitch.TabIndex = 1;
-            this.panelMessengerSwitch.Visible = false;
-            this.panelMessengerSwitch.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelMessengerSwitch_ControlAdded);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(284, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Freier RAM";
             // 
-            // bSkype
+            // checkÜFensterCPU
             // 
-            this.bSkype.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panelAnimator.SetDecoration(this.bSkype, BunifuAnimatorNS.DecorationType.None);
-            this.bSkype.Image = ((System.Drawing.Image)(resources.GetObject("bSkype.Image")));
-            this.bSkype.ImageActive = null;
-            this.bSkype.Location = new System.Drawing.Point(6, 21);
-            this.bSkype.Name = "bSkype";
-            this.bSkype.Size = new System.Drawing.Size(60, 60);
-            this.bSkype.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bSkype.TabIndex = 0;
-            this.bSkype.TabStop = false;
-            this.bSkype.Zoom = 5;
-            this.bSkype.Click += new System.EventHandler(this.bSkype_Click);
+            this.checkÜFensterCPU.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterCPU.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkÜFensterCPU.Checked = true;
+            this.checkÜFensterCPU.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterCPU.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkÜFensterCPU.ForeColor = System.Drawing.Color.White;
+            this.checkÜFensterCPU.Location = new System.Drawing.Point(135, 13);
+            this.checkÜFensterCPU.Margin = new System.Windows.Forms.Padding(4);
+            this.checkÜFensterCPU.Name = "checkÜFensterCPU";
+            this.checkÜFensterCPU.Size = new System.Drawing.Size(20, 20);
+            this.checkÜFensterCPU.TabIndex = 20;
             // 
-            // panelAnimator
+            // lbCPU
             // 
-            this.panelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
-            this.panelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.panelAnimator.DefaultAnimation = animation2;
+            this.lbCPU.AutoSize = true;
+            this.lbCPU.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPU.Location = new System.Drawing.Point(162, 15);
+            this.lbCPU.Name = "lbCPU";
+            this.lbCPU.Size = new System.Drawing.Size(88, 17);
+            this.lbCPU.TabIndex = 21;
+            this.lbCPU.Text = "CPU anzeigen";
             // 
-            // lbOrdnerÖffnen
+            // checkÜFensterTimer
             // 
-            this.lbOrdnerÖffnen.AutoSize = true;
-            this.panelAnimator.SetDecoration(this.lbOrdnerÖffnen, BunifuAnimatorNS.DecorationType.None);
-            this.lbOrdnerÖffnen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOrdnerÖffnen.Location = new System.Drawing.Point(154, 82);
-            this.lbOrdnerÖffnen.Name = "lbOrdnerÖffnen";
-            this.lbOrdnerÖffnen.Size = new System.Drawing.Size(240, 17);
-            this.lbOrdnerÖffnen.TabIndex = 6;
-            this.lbOrdnerÖffnen.Text = "Aufnahmeordner nach Aufnahme öffnen";
+            this.checkÜFensterTimer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterTimer.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkÜFensterTimer.Checked = true;
+            this.checkÜFensterTimer.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkÜFensterTimer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkÜFensterTimer.ForeColor = System.Drawing.Color.White;
+            this.checkÜFensterTimer.Location = new System.Drawing.Point(4, 13);
+            this.checkÜFensterTimer.Margin = new System.Windows.Forms.Padding(4);
+            this.checkÜFensterTimer.Name = "checkÜFensterTimer";
+            this.checkÜFensterTimer.Size = new System.Drawing.Size(20, 20);
+            this.checkÜFensterTimer.TabIndex = 18;
             // 
-            // checkAufnahmeOrdnerÖffnen
+            // label4
             // 
-            this.checkAufnahmeOrdnerÖffnen.BackColor = System.Drawing.Color.DodgerBlue;
-            this.checkAufnahmeOrdnerÖffnen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.checkAufnahmeOrdnerÖffnen.Checked = true;
-            this.checkAufnahmeOrdnerÖffnen.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.panelAnimator.SetDecoration(this.checkAufnahmeOrdnerÖffnen, BunifuAnimatorNS.DecorationType.None);
-            this.checkAufnahmeOrdnerÖffnen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkAufnahmeOrdnerÖffnen.ForeColor = System.Drawing.Color.White;
-            this.checkAufnahmeOrdnerÖffnen.Location = new System.Drawing.Point(127, 82);
-            this.checkAufnahmeOrdnerÖffnen.Margin = new System.Windows.Forms.Padding(4);
-            this.checkAufnahmeOrdnerÖffnen.Name = "checkAufnahmeOrdnerÖffnen";
-            this.checkAufnahmeOrdnerÖffnen.Size = new System.Drawing.Size(20, 20);
-            this.checkAufnahmeOrdnerÖffnen.TabIndex = 19;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(31, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 17);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Timer anzeigen";
+            // 
+            // switchÜFenster
+            // 
+            this.switchÜFenster.BackColor = System.Drawing.Color.Transparent;
+            this.switchÜFenster.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchÜFenster.BackgroundImage")));
+            this.switchÜFenster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchÜFenster.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchÜFenster.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchÜFenster.Location = new System.Drawing.Point(12, 33);
+            this.switchÜFenster.Name = "switchÜFenster";
+            this.switchÜFenster.OffColor = System.Drawing.Color.Gray;
+            this.switchÜFenster.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchÜFenster.Size = new System.Drawing.Size(43, 25);
+            this.switchÜFenster.TabIndex = 6;
+            this.switchÜFenster.Value = true;
+            this.switchÜFenster.OnValueChange += new System.EventHandler(this.switchÜFenster_OnValueChange);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(61, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(508, 17);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Kleines Überwachungsfenster welches visuelle Rückmeldung zum aktuellen Status gib" +
+    "t.";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Überwachung
             // 
@@ -312,7 +339,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.panelAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Überwachung";
             this.Text = "OrdnerüberwachungTab";
@@ -321,9 +347,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bTeamspeak)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDiscord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bSkype)).EndInit();
+            this.groupBox3.PerformLayout();
+            this.panelÜFensterSettings.ResumeLayout(false);
+            this.panelÜFensterSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,15 +365,19 @@
         private Bunifu.Framework.UI.BunifuiOSSwitch switchRAM;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchCPU;
-        private System.Windows.Forms.GroupBox groupBox3;
         private Ookii.Dialogs.VistaFolderBrowserDialog fbdAufnahmeordner;
-        private Bunifu.Framework.UI.BunifuImageButton bSkype;
-        private System.Windows.Forms.Panel panelMessengerSwitch;
-        private Bunifu.Framework.UI.BunifuImageButton bTeamspeak;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Bunifu.Framework.UI.BunifuImageButton bDiscord;
-        private BunifuAnimatorNS.BunifuTransition panelAnimator;
         private System.Windows.Forms.Label lbOrdnerÖffnen;
         private Bunifu.Framework.UI.BunifuCheckbox checkAufnahmeOrdnerÖffnen;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panelÜFensterSettings;
+        private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterRAM;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterCPU;
+        private System.Windows.Forms.Label lbCPU;
+        private Bunifu.Framework.UI.BunifuCheckbox checkÜFensterTimer;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchÜFenster;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -38,6 +38,7 @@
             this.Closeanimation = new System.Windows.Forms.Timer(this.components);
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTabs = new System.Windows.Forms.Panel();
+            this.bMessenger = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bInfo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bAbbrechen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bSpeichern = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -126,6 +127,7 @@
             // panelTabs
             // 
             this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelTabs.Controls.Add(this.bMessenger);
             this.panelTabs.Controls.Add(this.bInfo);
             this.panelTabs.Controls.Add(this.bAbbrechen);
             this.panelTabs.Controls.Add(this.bSpeichern);
@@ -139,6 +141,43 @@
             this.panelTabs.Name = "panelTabs";
             this.panelTabs.Size = new System.Drawing.Size(202, 553);
             this.panelTabs.TabIndex = 1;
+            // 
+            // bMessenger
+            // 
+            this.bMessenger.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bMessenger.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bMessenger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bMessenger.BorderRadius = 0;
+            this.bMessenger.ButtonText = "    Messenger";
+            this.bMessenger.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.bMessenger, BunifuAnimatorNS.DecorationType.None);
+            this.bMessenger.DisabledColor = System.Drawing.Color.Gray;
+            this.bMessenger.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMessenger.Iconcolor = System.Drawing.Color.Transparent;
+            this.bMessenger.Iconimage = null;
+            this.bMessenger.Iconimage_right = null;
+            this.bMessenger.Iconimage_right_Selected = null;
+            this.bMessenger.Iconimage_Selected = null;
+            this.bMessenger.IconMarginLeft = 0;
+            this.bMessenger.IconMarginRight = 0;
+            this.bMessenger.IconRightVisible = true;
+            this.bMessenger.IconRightZoom = 0D;
+            this.bMessenger.IconVisible = true;
+            this.bMessenger.IconZoom = 90D;
+            this.bMessenger.IsTab = true;
+            this.bMessenger.Location = new System.Drawing.Point(1, 252);
+            this.bMessenger.Name = "bMessenger";
+            this.bMessenger.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bMessenger.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bMessenger.OnHoverTextColor = System.Drawing.Color.White;
+            this.bMessenger.selected = false;
+            this.bMessenger.Size = new System.Drawing.Size(201, 48);
+            this.bMessenger.TabIndex = 9;
+            this.bMessenger.Text = "    Messenger";
+            this.bMessenger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bMessenger.Textcolor = System.Drawing.Color.White;
+            this.bMessenger.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMessenger.Click += new System.EventHandler(this.bMessenger_Click);
             // 
             // bInfo
             // 
@@ -163,7 +202,7 @@
             this.bInfo.IconVisible = true;
             this.bInfo.IconZoom = 90D;
             this.bInfo.IsTab = true;
-            this.bInfo.Location = new System.Drawing.Point(1, 267);
+            this.bInfo.Location = new System.Drawing.Point(1, 325);
             this.bInfo.Name = "bInfo";
             this.bInfo.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bInfo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
@@ -513,5 +552,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bSpeichern;
         private BunifuAnimatorNS.BunifuTransition panelAnimator;
         private Bunifu.Framework.UI.BunifuFlatButton bInfo;
+        private Bunifu.Framework.UI.BunifuFlatButton bMessenger;
     }
 }

@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="switchÜFenster.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="switchIErinerrungen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAA4CAYAAAALrl3YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVHhe7dFbjsIwEERRVjJrnh3DB1eyUAryshuL3JLO
@@ -134,17 +137,4 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="switchIErinerrungen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAAA4CAYAAAALrl3YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVHhe7dFbjsIwEERRVjJrnh3DB1eyUAryshuL3JLO
-        X9txqm/mAvn7v9+vgN+dM+nBV0IN30963JVRS33SY9RQU03SA7REXeOSPqp11Nc36UPajhr7JH1A+1Hn
-        uaSLdRy1Hku6UOdR7/6ky3Qe9e5Lukj9UPO2pAvUH3WvJx1Wf9T9OemgxqH290mHNA6156QDGo/6l0nD
-        Go/6X5MGVYMVvCYNqg5raElDqsMaWtKQ6rCGljSkOqzhmTSgWqzimTSgeqzDhcyCdbiQWbAOFzIL1uFC
-        ZsE6XMgsWIcLmQGraElDqsMaWtKQ6rCGljSkOqyhJQ2pDmtoSUOqwQqWScMaj/qXScMaj/pz0gGNQ+3v
-        kw5pHGr/nHRQ/VH3etJh9Ufd25IuUD/UvC/pIp1HvfuTLtN51Hss6UIdR63nki7WftTZJ+kD2o4a+yZ9
-        SOuob1zSR7VEXTVJD1BDTfVJj7kyavl+0uOuhBrmTHrwL+J3ze/mdnsAvzzl4TAiRI0AAAAASUVORK5C
-        YII=
-</value>
-  </data>
 </root>

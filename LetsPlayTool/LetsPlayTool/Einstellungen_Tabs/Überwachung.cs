@@ -34,9 +34,13 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 switchRAM.Value = Settings.ÜShowRAM;
                 checkAufnahmeOrdnerÖffnen.Checked = Settings.OpenÜberwachungOrdner;
 
-                //  überwachungTagEinstellungen = Settings;
 
-                setMessengerSettigs(Settings.MessengerSettings);
+                switchÜFenster.Value = Settings.ShowÜFenster;
+                checkÜFensterTimer.Checked = Settings.ShowÜFensterTimer;
+                checkÜFensterCPU.Checked = Settings.ShowÜFensterCPU;
+                checkÜFensterRAM.Checked = Settings.ShowÜFensterRAM;
+
+
         }
 
         /// <summary>
@@ -50,34 +54,17 @@ namespace LetsPlayTool.Einstellungen_Tabs
             newSettings.ÜberwachungOrdner = tbAufnahmeordner.Text;
             newSettings.OpenÜberwachungOrdner = checkAufnahmeOrdnerÖffnen.Checked;
 
+            newSettings.ShowÜFenster = switchÜFenster.Value;
+            newSettings.ShowÜFensterTimer = checkÜFensterTimer.Checked;
+            newSettings.ShowÜFensterCPU = checkÜFensterCPU.Checked;
+            newSettings.ShowÜFensterRAM = checkÜFensterRAM.Checked;
+
 
             newSettings.ÜShowCPU = switchCPU.Value;
             newSettings.ÜShowRAM = switchRAM.Value;
 
-            getMessengerSettings();
-
-            newSettings.MessengerSettings = getMessengerSettings();
 
             return newSettings;
-        }
-
-        /// <summary>
-        /// Speichert die Messenger-Einstellungen.
-        /// </summary>
-        private Messenger.Settings getMessengerSettings()
-        {
-            Messenger.Settings newMSettings = new Messenger.Settings();
-
-            newMSettings.skypeSettings = sk.getSettings();
-
-            return newMSettings;
-
-        }
-        private void setMessengerSettigs(Messenger.Settings mSettings)
-        {
-
-            sk.setSettings(mSettings.skypeSettings);
-
         }
 
 
@@ -119,50 +106,21 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
         }
 
-        //Messenger
-
-
-        SkypeTab sk = new SkypeTab();
-
-        private void toggleMessenger(int number)
+        private void switchÜFenster_OnValueChange(object sender, EventArgs e)
         {
-            getMessengerSettings();
-            switch (number)
+
+            if (switchÜFenster.Value == true)
+            {
+                panelÜFensterSettings.Enabled = true;
+
+            }
+            else
             {
 
-                case 0:
-
-                  //  bTimer.selected = true;
-
-                    #region Tab anzeigen
-
-                    sk.TopLevel = false;
-                    sk.AutoScroll = true;
-                    
-                    sk.setSettings(getMessengerSettings().skypeSettings);
-
-                    panelMessengerSwitch.Controls.Add(sk);
-                    sk.Show();
-
-                    #endregion
-
-                    break;
+                panelÜFensterSettings.Enabled = false;
 
             }
 
-            }
-
-        private void bSkype_Click(object sender, EventArgs e)
-        {
-            toggleMessenger(0);
-
-            
-        }
-
-        private void panelMessengerSwitch_ControlAdded(object sender, ControlEventArgs e)
-        {
-            panelMessengerSwitch.Visible = false;
-            panelAnimator.Show(panelMessengerSwitch);
         }
     }
 }

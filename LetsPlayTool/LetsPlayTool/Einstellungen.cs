@@ -1,4 +1,5 @@
 ﻿using LetsPlayTool.Einstellungen_Tabs;
+using LetsPlayTool.Einstellungen_Tabs.Messenger;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -69,6 +70,19 @@ namespace LetsPlayTool
         public void SetStandartValues()
         {
 
+            AllgemeinesStandartValues();
+            MarkerStandartValues();
+            ProgrammeStandartValues();
+            TimerStandartValues();
+            ÜberwachungStandartValues();
+            MessengerStandartValues();
+
+
+        }
+        
+
+        private void AllgemeinesStandartValues()
+        {
             #region Allgemeines
 
             AllgemeinesTabEinstellungen newAllgemeines = new AllgemeinesTabEinstellungen();
@@ -80,15 +94,13 @@ namespace LetsPlayTool
             newAllgemeines.ShowIErinerrung = false;
             newAllgemeines.ErinerrungenAnzeigeDauer = 4;
 
-            newAllgemeines.ShowÜFenster = false;
-            newAllgemeines.ShowÜFensterTimer = true;
-            newAllgemeines.ShowÜFensterCPU = true;
-            newAllgemeines.ShowÜFensterRAM = true;
-
             Allgemeines = newAllgemeines;
 
             #endregion
 
+        }
+        private void MarkerStandartValues()
+        {
             #region Marker
 
             MarkerTabEinstellungen newMarker = new MarkerTabEinstellungen();
@@ -106,16 +118,22 @@ namespace LetsPlayTool
 
             #endregion
 
+        }
+        private void ProgrammeStandartValues()
+        {
             #region Programme
 
             ProgrammeTabEinstellungen newProgramme = new ProgrammeTabEinstellungen();
 
             newProgramme.Programme = new List<string>();
-            
+
             Programme = newProgramme;
 
             #endregion
 
+        }
+        private void TimerStandartValues()
+        {
             #region Timer
 
             TimerTabEinstellungen newTimer = new TimerTabEinstellungen();
@@ -131,6 +149,9 @@ namespace LetsPlayTool
 
             #endregion
 
+        }
+        private void ÜberwachungStandartValues()
+        {
             #region Überwachung
 
             ÜberwachungTabEinstellungen newÜberwachung = new ÜberwachungTabEinstellungen();
@@ -142,33 +163,86 @@ namespace LetsPlayTool
             newÜberwachung.OpenÜberwachungOrdner = false;
 
 
+            newÜberwachung.ShowÜFenster = false;
+            newÜberwachung.ShowÜFensterTimer = true;
+            newÜberwachung.ShowÜFensterCPU = true;
+            newÜberwachung.ShowÜFensterRAM = true;
+
+
             Überwachung = newÜberwachung;
 
-            #region Messenger
-
-
-            newÜberwachung.MessengerSettings = new Einstellungen_Tabs.Messenger.Settings();
-            newÜberwachung.MessengerSettings.skypeSettings.active = false;
-
-            newÜberwachung.MessengerSettings.skypeSettings.statusInAufnahme = 2;
-            newÜberwachung.MessengerSettings.skypeSettings.statusNachAufnahme = 0;
-
-            newÜberwachung.MessengerSettings.skypeSettings.Statusmeldung = "Ich fange jetzt an aufzunehmen!!!";
-            newÜberwachung.MessengerSettings.skypeSettings.writeStatusmeldung = false;
-
-            #endregion
 
             #endregion
 
         }
 
 
+        private void MessengerStandartValues()
+        {
+            Messenger = new MessengerTabEinstellungen();
+
+            Messenger.Skype = new SkypeSettings();
+
+            Messenger.Skype.active = false;
+            Messenger.Skype.statusInAufnahme = 3;
+            Messenger.Skype.statusNachAufnahme = 0;
+            Messenger.Skype.writeStatusmeldung = false;
+            Messenger.Skype.Statusmeldung = "Ich nehme jetzt auf!";
+
+        }
+
+
+        /// <summary>
+        /// Setzt neue oder fehlende Einstellungen auf ihren Standartwert.
+        /// </summary>
+        public void SetMissingOptions()
+        {
+            //Allgemeines
+            if(Allgemeines == null)
+            {
+                AllgemeinesStandartValues();
+            }
+
+            //Marker
+            if (Marker == null)
+            {
+                MarkerStandartValues();
+            }
+
+            //Programme
+            if (Programme == null)
+            {
+                ProgrammeStandartValues();
+            }
+
+            //Timer
+            if (Timer == null)
+            {
+                TimerStandartValues();
+            }
+
+            //Überwachung
+            if (Überwachung == null)
+            {
+                ÜberwachungStandartValues();
+            }
+
+            //Messenger
+            if (Messenger == null)
+            {
+                MessengerStandartValues();
+            }
+
+
+
+        }
+
         public AllgemeinesTabEinstellungen Allgemeines;
         public MarkerTabEinstellungen Marker;
         public ProgrammeTabEinstellungen Programme;
         public TimerTabEinstellungen Timer;
         public ÜberwachungTabEinstellungen Überwachung;
-
+        public MessengerTabEinstellungen Messenger;
 
     }
 

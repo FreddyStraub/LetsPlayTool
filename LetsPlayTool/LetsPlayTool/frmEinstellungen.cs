@@ -63,8 +63,7 @@ namespace LetsPlayTool
 
             einstellungen = einstellungen.load(); //Lädt die Einstellungen.
             SetAllSettings(); //Setzt die geladen Einstellungen in den Tabs.
-
-
+            
             toggle(2);
         }
 
@@ -73,11 +72,13 @@ namespace LetsPlayTool
         /// </summary>
         private void SetAllSettings()
         {
+
             at.setSettings(einstellungen.Allgemeines);
             mt.setSettings(einstellungen.Marker);
             pt.setSettings(einstellungen.Programme);
             tt.setSettings(einstellungen.Timer);
             üt.setSettings(einstellungen.Überwachung);
+            met.setSettings(einstellungen.Messenger);
 
         }
 
@@ -92,10 +93,8 @@ namespace LetsPlayTool
             einstellungen.Programme = pt.getSettings();
             einstellungen.Timer = tt.getSettings();
             einstellungen.Überwachung = üt.getSettings();
-
-           
-
-
+            einstellungen.Messenger = met.getSettings();
+            
         }
 
         #region Move Form
@@ -163,6 +162,7 @@ namespace LetsPlayTool
         TimerTab tt = new TimerTab();
         Überwachung üt = new Überwachung();
         InfoTab it = new InfoTab();
+        MessengerTab met = new MessengerTab();
 
         /// <summary>
         /// Kümmert sich um das anzeigen der einzelnen Menüpunkte
@@ -177,6 +177,7 @@ namespace LetsPlayTool
             bProgramme.selected = false;
             bMarker.selected = false;
             bInfo.selected = false;
+            bMessenger.selected = false;
 
             //Einstellungen speichern
             einstellungen.Allgemeines = at.getSettings();
@@ -184,6 +185,7 @@ namespace LetsPlayTool
             einstellungen.Programme = pt.getSettings();
             einstellungen.Timer = tt.getSettings();
             einstellungen.Überwachung = üt.getSettings();
+            einstellungen.Messenger = met.getSettings();
 
 
             panel1.Controls.Clear();
@@ -290,7 +292,27 @@ namespace LetsPlayTool
 
                     #endregion
 
+                    break;
 
+                case 7:
+                    bMessenger.selected = true;
+
+                    #region Tab anzeigen
+
+                    met.TopLevel = false;
+                    met.AutoScroll = true;
+
+                    met.setSettings(einstellungen.Messenger);
+
+                    panel1.Controls.Add(met);
+
+                    met.Show();
+
+
+                    #endregion
+
+
+                    
                     break;
 
 
@@ -362,6 +384,11 @@ namespace LetsPlayTool
         private void bInfo_Click(object sender, EventArgs e)
         {
             toggle(6);
+        }
+
+        private void bMessenger_Click(object sender, EventArgs e)
+        {
+            toggle(7);
         }
     }
 }

@@ -57,7 +57,7 @@ namespace LetsPlayTool
             #region Design
 
             //CPU
-            if(einstellungen.Allgemeines.ShowÜFensterCPU == true)
+            if(einstellungen.Überwachung.ShowÜFensterCPU == true)
             {
 
                 lbCPU.Visible = true;
@@ -71,7 +71,7 @@ namespace LetsPlayTool
             }
 
             //RAM
-            if (einstellungen.Allgemeines.ShowÜFensterRAM == true)
+            if (einstellungen.Überwachung.ShowÜFensterRAM == true)
             {
 
                 lbRAM.Visible = true;
@@ -87,7 +87,7 @@ namespace LetsPlayTool
 
 
             //TIMER
-            if (einstellungen.Allgemeines.ShowÜFensterTimer == true)
+            if (einstellungen.Überwachung.ShowÜFensterTimer == true)
             {
 
                 lbTimer.Visible = true;

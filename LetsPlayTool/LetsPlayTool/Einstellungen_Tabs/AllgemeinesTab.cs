@@ -27,11 +27,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             bAufnhameStop.Text = Settings.AufnahmeStopKey.ToString();
             bAufnhameStart.Text = Settings.AufnahmeStartKey.ToString();
 
-            switchÜFenster.Value = Settings.ShowÜFenster;
-            checkÜFensterTimer.Checked = Settings.ShowÜFensterTimer;
-            checkÜFensterCPU.Checked = Settings.ShowÜFensterCPU;
-            checkÜFensterRAM.Checked = Settings.ShowÜFensterRAM;
-
             switchIErinerrungen.Value = Settings.ShowIErinerrung;
             tbIErinerrungen.Text = Settings.Erinerrungen;
             nudDuration.Value = Settings.ErinerrungenAnzeigeDauer;
@@ -48,12 +43,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             newSettings.AufnahmeStartKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStart.Text);
             newSettings.AufnahmeStopKey = (Keys)Enum.Parse(typeof(Keys), bAufnhameStop.Text);
-
-
-            newSettings.ShowÜFenster = switchÜFenster.Value;
-            newSettings.ShowÜFensterTimer = checkÜFensterTimer.Checked;
-            newSettings.ShowÜFensterCPU = checkÜFensterCPU.Checked;
-            newSettings.ShowÜFensterRAM= checkÜFensterRAM.Checked;
 
             newSettings.ShowIErinerrung = switchIErinerrungen.Value;
             newSettings.Erinerrungen = tbIErinerrungen.Text;
@@ -89,22 +78,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
         private void bAufnhameStop_Click(object sender, EventArgs e)
         {
             bAufnhameStop.Text = "...";
-
-        }
-
-        private void switchÜFenster_OnValueChange(object sender, EventArgs e)
-        {
-
-            if(switchÜFenster.Value == true)
-            {
-                panelÜFensterSettings.Enabled = true;
-
-            }else
-            {
-
-                panelÜFensterSettings.Enabled = false;
-
-            }
 
         }
 
