@@ -23,6 +23,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public bool ShowÜFensterCPU;
         public bool ShowÜFensterRAM;
 
+        public bool ShowSkype;
+        public bool ShowTeamspeak;
+        public bool ShowDiscord;
+        public bool ShowMail;
+        public bool ShowSteam;
+
 
 
     }

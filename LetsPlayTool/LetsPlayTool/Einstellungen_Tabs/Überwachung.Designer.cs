@@ -53,10 +53,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label6 = new System.Windows.Forms.Label();
+            this.gbDesign = new System.Windows.Forms.GroupBox();
+            this.checkSkype = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbSkype = new System.Windows.Forms.Label();
+            this.checkTeamspeal = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbTeamSpeak = new System.Windows.Forms.Label();
+            this.checkDiscord = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbDiscord = new System.Windows.Forms.Label();
+            this.checkMailclient = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbMailclient = new System.Windows.Forms.Label();
+            this.checkSteam = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lbSteam = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelÜFensterSettings.SuspendLayout();
+            this.gbDesign.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -330,12 +342,154 @@
     "t.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // gbDesign
+            // 
+            this.gbDesign.Controls.Add(this.checkSteam);
+            this.gbDesign.Controls.Add(this.lbSteam);
+            this.gbDesign.Controls.Add(this.checkMailclient);
+            this.gbDesign.Controls.Add(this.lbMailclient);
+            this.gbDesign.Controls.Add(this.checkDiscord);
+            this.gbDesign.Controls.Add(this.lbDiscord);
+            this.gbDesign.Controls.Add(this.checkTeamspeal);
+            this.gbDesign.Controls.Add(this.lbTeamSpeak);
+            this.gbDesign.Controls.Add(this.checkSkype);
+            this.gbDesign.Controls.Add(this.lbSkype);
+            this.gbDesign.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDesign.ForeColor = System.Drawing.Color.White;
+            this.gbDesign.Location = new System.Drawing.Point(11, 311);
+            this.gbDesign.Name = "gbDesign";
+            this.gbDesign.Size = new System.Drawing.Size(671, 230);
+            this.gbDesign.TabIndex = 21;
+            this.gbDesign.TabStop = false;
+            this.gbDesign.Text = "Anzeige";
+            // 
+            // checkSkype
+            // 
+            this.checkSkype.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkSkype.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkSkype.Checked = true;
+            this.checkSkype.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkSkype.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSkype.ForeColor = System.Drawing.Color.White;
+            this.checkSkype.Location = new System.Drawing.Point(15, 36);
+            this.checkSkype.Margin = new System.Windows.Forms.Padding(4);
+            this.checkSkype.Name = "checkSkype";
+            this.checkSkype.Size = new System.Drawing.Size(20, 20);
+            this.checkSkype.TabIndex = 21;
+            // 
+            // lbSkype
+            // 
+            this.lbSkype.AutoSize = true;
+            this.lbSkype.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSkype.Location = new System.Drawing.Point(42, 38);
+            this.lbSkype.Name = "lbSkype";
+            this.lbSkype.Size = new System.Drawing.Size(98, 17);
+            this.lbSkype.TabIndex = 22;
+            this.lbSkype.Text = "Skype anzeigen";
+            // 
+            // checkTeamspeal
+            // 
+            this.checkTeamspeal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkTeamspeal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkTeamspeal.Checked = true;
+            this.checkTeamspeal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkTeamspeal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkTeamspeal.ForeColor = System.Drawing.Color.White;
+            this.checkTeamspeal.Location = new System.Drawing.Point(15, 79);
+            this.checkTeamspeal.Margin = new System.Windows.Forms.Padding(4);
+            this.checkTeamspeal.Name = "checkTeamspeal";
+            this.checkTeamspeal.Size = new System.Drawing.Size(20, 20);
+            this.checkTeamspeal.TabIndex = 23;
+            // 
+            // lbTeamSpeak
+            // 
+            this.lbTeamSpeak.AutoSize = true;
+            this.lbTeamSpeak.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeamSpeak.Location = new System.Drawing.Point(42, 81);
+            this.lbTeamSpeak.Name = "lbTeamSpeak";
+            this.lbTeamSpeak.Size = new System.Drawing.Size(129, 17);
+            this.lbTeamSpeak.TabIndex = 24;
+            this.lbTeamSpeak.Text = "Teamspeak anzeigen";
+            // 
+            // checkDiscord
+            // 
+            this.checkDiscord.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkDiscord.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkDiscord.Checked = true;
+            this.checkDiscord.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkDiscord.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDiscord.ForeColor = System.Drawing.Color.White;
+            this.checkDiscord.Location = new System.Drawing.Point(15, 120);
+            this.checkDiscord.Margin = new System.Windows.Forms.Padding(4);
+            this.checkDiscord.Name = "checkDiscord";
+            this.checkDiscord.Size = new System.Drawing.Size(20, 20);
+            this.checkDiscord.TabIndex = 25;
+            // 
+            // lbDiscord
+            // 
+            this.lbDiscord.AutoSize = true;
+            this.lbDiscord.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiscord.Location = new System.Drawing.Point(42, 123);
+            this.lbDiscord.Name = "lbDiscord";
+            this.lbDiscord.Size = new System.Drawing.Size(109, 17);
+            this.lbDiscord.TabIndex = 26;
+            this.lbDiscord.Text = "Discord anzeigen";
+            // 
+            // checkMailclient
+            // 
+            this.checkMailclient.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkMailclient.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkMailclient.Checked = true;
+            this.checkMailclient.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkMailclient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkMailclient.ForeColor = System.Drawing.Color.White;
+            this.checkMailclient.Location = new System.Drawing.Point(228, 36);
+            this.checkMailclient.Margin = new System.Windows.Forms.Padding(4);
+            this.checkMailclient.Name = "checkMailclient";
+            this.checkMailclient.Size = new System.Drawing.Size(20, 20);
+            this.checkMailclient.TabIndex = 27;
+            // 
+            // lbMailclient
+            // 
+            this.lbMailclient.AutoSize = true;
+            this.lbMailclient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMailclient.Location = new System.Drawing.Point(255, 38);
+            this.lbMailclient.Name = "lbMailclient";
+            this.lbMailclient.Size = new System.Drawing.Size(119, 17);
+            this.lbMailclient.TabIndex = 28;
+            this.lbMailclient.Text = "Mailclient anzeigen";
+            // 
+            // checkSteam
+            // 
+            this.checkSteam.BackColor = System.Drawing.Color.DodgerBlue;
+            this.checkSteam.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkSteam.Checked = true;
+            this.checkSteam.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.checkSteam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSteam.ForeColor = System.Drawing.Color.White;
+            this.checkSteam.Location = new System.Drawing.Point(228, 79);
+            this.checkSteam.Margin = new System.Windows.Forms.Padding(4);
+            this.checkSteam.Name = "checkSteam";
+            this.checkSteam.Size = new System.Drawing.Size(20, 20);
+            this.checkSteam.TabIndex = 29;
+            // 
+            // lbSteam
+            // 
+            this.lbSteam.AutoSize = true;
+            this.lbSteam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSteam.Location = new System.Drawing.Point(255, 81);
+            this.lbSteam.Name = "lbSteam";
+            this.lbSteam.Size = new System.Drawing.Size(100, 17);
+            this.lbSteam.TabIndex = 30;
+            this.lbSteam.Text = "Steam anzeigen";
+            // 
             // Überwachung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(695, 553);
+            this.Controls.Add(this.gbDesign);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -350,6 +504,8 @@
             this.groupBox3.PerformLayout();
             this.panelÜFensterSettings.ResumeLayout(false);
             this.panelÜFensterSettings.PerformLayout();
+            this.gbDesign.ResumeLayout(false);
+            this.gbDesign.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -379,5 +535,16 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchÜFenster;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox gbDesign;
+        private Bunifu.Framework.UI.BunifuCheckbox checkSkype;
+        private System.Windows.Forms.Label lbSkype;
+        private Bunifu.Framework.UI.BunifuCheckbox checkTeamspeal;
+        private System.Windows.Forms.Label lbTeamSpeak;
+        private System.Windows.Forms.Label lbSteam;
+        private Bunifu.Framework.UI.BunifuCheckbox checkMailclient;
+        private System.Windows.Forms.Label lbMailclient;
+        private Bunifu.Framework.UI.BunifuCheckbox checkDiscord;
+        private System.Windows.Forms.Label lbDiscord;
+        private Bunifu.Framework.UI.BunifuCheckbox checkSteam;
     }
 }

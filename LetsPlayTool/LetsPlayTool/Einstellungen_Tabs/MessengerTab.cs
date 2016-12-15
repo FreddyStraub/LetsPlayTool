@@ -82,5 +82,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
             toggle(0);
 
         }
+
+        private void bcSkype_ControlAdded(object sender, ControlEventArgs e)
+        {
+            bcSkype.Visible = false;
+            panelAnimator.Show(bcSkype);
+
+        }
     }
 }

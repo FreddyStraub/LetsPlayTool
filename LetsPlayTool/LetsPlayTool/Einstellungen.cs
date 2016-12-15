@@ -168,6 +168,12 @@ namespace LetsPlayTool
             newÜberwachung.ShowÜFensterCPU = true;
             newÜberwachung.ShowÜFensterRAM = true;
 
+            newÜberwachung.ShowSkype = false;
+            newÜberwachung.ShowTeamspeak = false;
+            newÜberwachung.ShowDiscord = false;
+            newÜberwachung.ShowMail = false;
+            newÜberwachung.ShowSteam = false;
+
 
             Überwachung = newÜberwachung;
 

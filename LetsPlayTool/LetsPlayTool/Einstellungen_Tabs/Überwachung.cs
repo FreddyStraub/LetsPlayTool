@@ -40,6 +40,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 checkÜFensterCPU.Checked = Settings.ShowÜFensterCPU;
                 checkÜFensterRAM.Checked = Settings.ShowÜFensterRAM;
 
+                checkSkype.Checked = Settings.ShowSkype;
+                checkTeamspeal.Checked = Settings.ShowTeamspeak;
+                checkDiscord.Checked = Settings.ShowDiscord;
+                checkMailclient.Checked = Settings.ShowMail;
+                checkSteam.Checked = Settings.ShowSteam;
+
 
         }
 
@@ -62,6 +68,12 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             newSettings.ÜShowCPU = switchCPU.Value;
             newSettings.ÜShowRAM = switchRAM.Value;
+
+            newSettings.ShowSkype = checkSkype.Checked;
+            newSettings.ShowTeamspeak = checkTeamspeal.Checked;
+            newSettings.ShowDiscord = checkDiscord.Checked;
+            newSettings.ShowMail = checkMailclient.Checked;
+            newSettings.ShowSteam = checkSteam.Checked;
 
 
             return newSettings;

@@ -48,7 +48,7 @@
             this.lbStatusMeldung.AutoSize = true;
             this.lbStatusMeldung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatusMeldung.ForeColor = System.Drawing.Color.White;
-            this.lbStatusMeldung.Location = new System.Drawing.Point(40, 128);
+            this.lbStatusMeldung.Location = new System.Drawing.Point(40, 143);
             this.lbStatusMeldung.Name = "lbStatusMeldung";
             this.lbStatusMeldung.Size = new System.Drawing.Size(97, 17);
             this.lbStatusMeldung.TabIndex = 48;
@@ -76,7 +76,7 @@
             this.checkStatusMeldung.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.checkStatusMeldung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkStatusMeldung.ForeColor = System.Drawing.Color.White;
-            this.checkStatusMeldung.Location = new System.Drawing.Point(13, 126);
+            this.checkStatusMeldung.Location = new System.Drawing.Point(13, 141);
             this.checkStatusMeldung.Margin = new System.Windows.Forms.Padding(4);
             this.checkStatusMeldung.Name = "checkStatusMeldung";
             this.checkStatusMeldung.Size = new System.Drawing.Size(20, 20);
@@ -89,7 +89,7 @@
             this.tbStatusmeldung.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbStatusmeldung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbStatusmeldung.ForeColor = System.Drawing.Color.White;
-            this.tbStatusmeldung.Location = new System.Drawing.Point(12, 156);
+            this.tbStatusmeldung.Location = new System.Drawing.Point(12, 171);
             this.tbStatusmeldung.Name = "tbStatusmeldung";
             this.tbStatusmeldung.Size = new System.Drawing.Size(671, 93);
             this.tbStatusmeldung.TabIndex = 47;
@@ -107,7 +107,7 @@
         "Beschäftigt",
         "Als offline anzeigen",
         "Offline"};
-            this.cbStatusNA.Location = new System.Drawing.Point(508, 91);
+            this.cbStatusNA.Location = new System.Drawing.Point(512, 100);
             this.cbStatusNA.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatusNA.Name = "cbStatusNA";
             this.cbStatusNA.NomalColor = System.Drawing.Color.DodgerBlue;
@@ -121,7 +121,7 @@
             this.lSNA.AutoSize = true;
             this.lSNA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lSNA.ForeColor = System.Drawing.Color.White;
-            this.lSNA.Location = new System.Drawing.Point(362, 94);
+            this.lSNA.Location = new System.Drawing.Point(366, 103);
             this.lSNA.Name = "lSNA";
             this.lSNA.Size = new System.Drawing.Size(139, 17);
             this.lSNA.TabIndex = 45;
@@ -132,7 +132,7 @@
             this.lbSIA.AutoSize = true;
             this.lbSIA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSIA.ForeColor = System.Drawing.Color.White;
-            this.lbSIA.Location = new System.Drawing.Point(2, 94);
+            this.lbSIA.Location = new System.Drawing.Point(6, 103);
             this.lbSIA.Name = "lbSIA";
             this.lbSIA.Size = new System.Drawing.Size(122, 17);
             this.lbSIA.TabIndex = 44;
@@ -150,7 +150,7 @@
         "Beschäftigt",
         "Als offline anzeigen",
         "Offline"};
-            this.cbStatusIA.Location = new System.Drawing.Point(131, 91);
+            this.cbStatusIA.Location = new System.Drawing.Point(135, 100);
             this.cbStatusIA.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatusIA.Name = "cbStatusIA";
             this.cbStatusIA.NomalColor = System.Drawing.Color.DodgerBlue;
