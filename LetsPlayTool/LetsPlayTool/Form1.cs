@@ -37,8 +37,7 @@ namespace LetsPlayTool
         {
             MaximaizeAnimation.Start();
             loadSettings();
-
-
+            
 
         }
         
@@ -180,6 +179,11 @@ namespace LetsPlayTool
             if (einstellungen.Messenger.Skype.active == true)
                 skype = new Skype();
 
+            generateÜberwachungDisplays(einstellungen.Überwachung.ShowSkype,
+                einstellungen.Überwachung.ShowTeamspeak,
+                einstellungen.Überwachung.ShowDiscord,
+                einstellungen.Überwachung.ShowMail,
+                einstellungen.Überwachung.ShowSteam);
 
             #region Überwachung
 
@@ -341,6 +345,47 @@ namespace LetsPlayTool
             #endregion
         }
 
+        /// <summary>
+        /// kümmert sich um die korrekte Anzeige der Satus auf dem Hauptfenster
+        /// </summary>
+        private void generateÜberwachungDisplays(bool skype, bool teamspeak, bool discord, bool mail, bool steam)
+        {
+
+            int count = 0; //Anzahl der Disabelten Messenger
+
+            const int PANELSIZE = 39;
+            const int GRANDPANELSIZE = 198;
+
+            const int MAINSIZE = 724;
+            const int LAUTSPRECHERPOSITIONY = 650;
+
+            if (skype)
+                count++;
+            if (teamspeak)
+                count++;
+            if (discord)
+                count++;
+            if (mail)
+                count++;
+            if (steam)
+                count++;
+
+            count = 5 - count;
+
+            panelSkype.Visible = skype;
+            panelTeamspeak.Visible = teamspeak;
+            panelDiscord.Visible = discord;
+            panelMail.Visible = mail;
+            panelSteam.Visible = steam;
+
+            panelÜberwachung.Size = new Size(panelÜberwachung.Size.Width, GRANDPANELSIZE - (count * PANELSIZE));
+
+            this.Size = new Size(this.Size.Width, MAINSIZE - (count * PANELSIZE));
+
+            panelSoundÜberwachung.Location = new Point(0, LAUTSPRECHERPOSITIONY - (count * PANELSIZE));
+
+
+        }
 
         Skype skype;
         
@@ -603,28 +648,7 @@ namespace LetsPlayTool
 
         } //Mainactor!!!!!!!!!!!!!!!!!!
 
-        /// <summary>
-        /// Setzt den aktuellen TeamspeakStatus in das Label.
-        /// </summary>
-        private void setTeamspeakStatus()
-        {
 
-            if (Process.GetProcessesByName("ts3client_win64").Length > 0 | Process.GetProcessesByName("ts3client_win32").Length > 0 | Process.GetProcessesByName("ts2client_win64").Length > 0 | Process.GetProcessesByName("ts2client_win32").Length > 0)
-            {
-                lbTeamspeakStatus.Text = "Offen";
-                lbTeamspeakStatus.ForeColor = Color.Lime;
-            }
-            else
-            {
-
-                lbTeamspeakStatus.Text = "Geschlossen";
-                lbTeamspeakStatus.ForeColor = Color.Red;
-            }
-        }
-
-        /// <summary>
-        /// Setzt den aktuellen MailClientStatus in das Label.
-        /// </summary>
 
 
 
@@ -634,35 +658,63 @@ namespace LetsPlayTool
 
         #region SetStatus
 
-        private void setMailClientStatus()
+        /// <summary>
+        /// Setzt den aktuellen TeamspeakStatus in das Label.
+        /// </summary>
+        private void setTeamspeakStatus()
         {
-            //  throw new NotImplementedException();
 
-
-            try
+            if (einstellungen.Überwachung.ShowTeamspeak)
             {
-                string processname = System.IO.Path.GetFileNameWithoutExtension(rohPfad);
-
-
-                if (Process.GetProcessesByName(processname).Length > 0)
+                if (Process.GetProcessesByName("ts3client_win64").Length > 0 | Process.GetProcessesByName("ts3client_win32").Length > 0 | Process.GetProcessesByName("ts2client_win64").Length > 0 | Process.GetProcessesByName("ts2client_win32").Length > 0)
                 {
-                    lbMailClient.Text = "Gestartet";
-                    lbMailClient.ForeColor = Color.Lime;
+                    lbTeamspeakStatus.Text = "Offen";
+                    lbTeamspeakStatus.ForeColor = Color.Lime;
                 }
                 else
                 {
 
-                    lbMailClient.Text = "Geschlossen";
+                    lbTeamspeakStatus.Text = "Geschlossen";
+                    lbTeamspeakStatus.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Setzt den aktuellen MailClientStatus in das Label.
+        /// </summary>
+        private void setMailClientStatus()
+        {
+            //  throw new NotImplementedException();
+
+            if (einstellungen.Überwachung.ShowMail)
+            {
+
+                try
+                {
+                    string processname = System.IO.Path.GetFileNameWithoutExtension(rohPfad);
+
+
+                    if (Process.GetProcessesByName(processname).Length > 0)
+                    {
+                        lbMailClient.Text = "Gestartet";
+                        lbMailClient.ForeColor = Color.Lime;
+                    }
+                    else
+                    {
+
+                        lbMailClient.Text = "Geschlossen";
+                        lbMailClient.ForeColor = Color.Red;
+                    }
+
+                }
+                catch
+                {
+                    lbMailClient.Text = "Nicht kompatibel!";
                     lbMailClient.ForeColor = Color.Red;
                 }
 
             }
-            catch
-            {
-                lbMailClient.Text = "Nicht kompatibel!";
-                lbMailClient.ForeColor = Color.Red;
-            }
-
         }
 
         /// <summary>
@@ -670,19 +722,21 @@ namespace LetsPlayTool
         /// </summary>
         private void setSteamStatus()
         {
-
-            if (Process.GetProcessesByName("Steam").Length > 0 | Process.GetProcessesByName("steam").Length > 0)
-            {
-                lbSteamStatus.Text = "Läuft";
-                lbSteamStatus.ForeColor = Color.Lime;
-            }
-            else
+            if (einstellungen.Überwachung.ShowSteam)
             {
 
-                lbSteamStatus.Text = "Geschlossen";
-                lbSteamStatus.ForeColor = Color.Red;
-            }
+                if (Process.GetProcessesByName("Steam").Length > 0 | Process.GetProcessesByName("steam").Length > 0)
+                {
+                    lbSteamStatus.Text = "Läuft";
+                    lbSteamStatus.ForeColor = Color.Lime;
+                }
+                else
+                {
 
+                    lbSteamStatus.Text = "Geschlossen";
+                    lbSteamStatus.ForeColor = Color.Red;
+                }
+            }
 
         }
 
@@ -691,16 +745,20 @@ namespace LetsPlayTool
         /// </summary>
         private void setDiscordStatus()
         {
-            if (Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
-            {
-                lbDiscordSMStatus.Text = "Offen";
-                lbDiscordSMStatus.ForeColor = Color.Lime;
-            }
-            else
+            if (einstellungen.Überwachung.ShowDiscord)
             {
 
-                lbDiscordSMStatus.Text = "Geschlossen";
-                lbDiscordSMStatus.ForeColor = Color.Red;
+                if (Process.GetProcessesByName("DiscordPTB").Length > 0 | Process.GetProcessesByName("Discord").Length > 0)
+                {
+                    lbDiscordSMStatus.Text = "Offen";
+                    lbDiscordSMStatus.ForeColor = Color.Lime;
+                }
+                else
+                {
+
+                    lbDiscordSMStatus.Text = "Geschlossen";
+                    lbDiscordSMStatus.ForeColor = Color.Red;
+                }
             }
         }
 
@@ -709,14 +767,15 @@ namespace LetsPlayTool
         /// </summary>
         private void setSkyeLabelStatus()
         {
-
-            if (einstellungen.Messenger.Skype.active)
+            if (einstellungen.Überwachung.ShowSkype)
             {
-
-                if (skype.Client.IsRunning)
+                if (einstellungen.Messenger.Skype.active)
                 {
 
-                    switch (skype.CurrentUserStatus)
+                    if (skype.Client.IsRunning)
+                    {
+
+                        switch (skype.CurrentUserStatus)
                         {
 
                             case TUserStatus.cusOnline: lbSkypeStatus.Text = "Online"; break;
@@ -728,23 +787,24 @@ namespace LetsPlayTool
                         }
 
 
-            }
+                    }
+                    else
+                    {
+
+                        lbSkypeStatus.Text = "Kein Skype Client gefunden!";
+                        lbSkypeStatus.ForeColor = Color.Orange;
+
+                    }
+
+
+                }
                 else
                 {
 
-                    lbSkypeStatus.Text = "Kein Skype Client gefunden!";
+                    lbSkypeStatus.Text = "Deaktiviert!";
                     lbSkypeStatus.ForeColor = Color.Orange;
 
                 }
-
-
-            }
-            else
-            {
-
-                lbSkypeStatus.Text = "Deaktiviert!";
-                lbSkypeStatus.ForeColor = Color.Orange;
-
             }
         }
 
@@ -753,7 +813,9 @@ namespace LetsPlayTool
         /// </summary>
         private void setSkypeStatus(int status)
         {
-           
+            if (einstellungen.Überwachung.ShowSkype)
+            {
+
                 switch (status)
                 {
                     case 0: skype.ChangeUserStatus(TUserStatus.cusOnline); break;
@@ -763,7 +825,8 @@ namespace LetsPlayTool
                     case 4: skype.ChangeUserStatus(TUserStatus.cusOffline); break;
 
                 }
-          
+
+            }
         }
 
         #endregion
