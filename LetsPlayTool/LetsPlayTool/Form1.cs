@@ -457,6 +457,7 @@ namespace LetsPlayTool
 
         public bool SessionRuns = false;
 
+        public Stopwatch ShowTimeAfterRecordingWatch = new Stopwatch();
 
         int MainactorElapsedTicks = 0;
         int cpuTimervalue = 0;
@@ -1118,11 +1119,24 @@ namespace LetsPlayTool
                 if (einstellungen.Überwachung.OpenÜberwachungOrdner)
                      Process.Start(einstellungen.Überwachung.ÜberwachungOrdner);
 
+            if (einstellungen.Allgemeines.ShowTimeAfterRecording)
+            {
+
+                ShowTimeAfterRecordingWatch.Start();
+
+            }
+            else
+            {
+                labelTimer.Text = "00:00:00:00";
+                frmÜFenster.lbTimer.Text = "00:00:00:00";
+
+
+
+            }
 
 
             #region Werte zurücksetzten
 
-            labelTimer.Text = "00:00:00:00";
 
             lbCPUAuslastung.Text = "...";
             lbCPUAuslastung.BackColor = Color.Transparent;
@@ -1148,9 +1162,6 @@ namespace LetsPlayTool
 
             frmÜFenster.lbCPUAuslastung.BackColor = Color.Transparent;
             frmÜFenster.lbRAMUsed.BackColor = Color.Transparent;
-
-
-            frmÜFenster.lbTimer.Text = "00:00:00:00";
 
 
             #endregion
@@ -1501,6 +1512,23 @@ namespace LetsPlayTool
 
         private void ValueUpdater_Tick(object sender, EventArgs e)
         {
+
+            if (einstellungen.Allgemeines.ShowTimeAfterRecording)
+            {
+                if(ShowTimeAfterRecordingWatch.Elapsed.Seconds == einstellungen.Allgemeines.ShowTimeAfterRecordingDuration)
+                {
+                    if (SessionRuns == false)
+                    {
+                        labelTimer.Text = "00:00:00:00";
+                        ShowTimeAfterRecordingWatch.Stop();
+
+                        frmÜFenster.lbTimer.Text = "00:00:00:00";
+
+
+                    }
+
+                }
+            }
 
             ÜFensterLocation = frmÜFenster.Location; //Überwachungsfenster Location speichern
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();

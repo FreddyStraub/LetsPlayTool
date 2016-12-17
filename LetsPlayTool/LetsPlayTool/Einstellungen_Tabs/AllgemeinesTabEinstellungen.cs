@@ -19,6 +19,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public string Erinerrungen;
         public int ErinerrungenAnzeigeDauer;
 
+        public bool ShowTimeAfterRecording;
+        public int ShowTimeAfterRecordingDuration;
 
     }
 }

@@ -31,6 +31,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
             tbIErinerrungen.Text = Settings.Erinerrungen;
             nudDuration.Value = Settings.ErinerrungenAnzeigeDauer;
 
+            checkShowTimeAfterRecording.Value = Settings.ShowTimeAfterRecording;
+            nudShowTimeAfterRecording.Value = Settings.ShowTimeAfterRecordingDuration;
+
         }
 
         /// <summary>
@@ -47,6 +50,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
             newSettings.ShowIErinerrung = switchIErinerrungen.Value;
             newSettings.Erinerrungen = tbIErinerrungen.Text;
             newSettings.ErinerrungenAnzeigeDauer = (int)nudDuration.Value;
+
+            newSettings.ShowTimeAfterRecording = checkShowTimeAfterRecording.Value;
+            newSettings.ShowTimeAfterRecordingDuration = (int)nudShowTimeAfterRecording.Value;
 
             return newSettings;
         }

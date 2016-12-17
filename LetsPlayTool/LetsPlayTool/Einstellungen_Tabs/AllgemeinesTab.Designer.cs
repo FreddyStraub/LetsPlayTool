@@ -43,9 +43,16 @@
             this.tbIErinerrungen = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudShowTimeAfterRecording = new System.Windows.Forms.NumericUpDown();
+            this.checkShowTimeAfterRecording = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbHotkey.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudShowTimeAfterRecording)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHotkey
@@ -137,7 +144,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(12, 198);
+            this.groupBox2.Location = new System.Drawing.Point(12, 279);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(671, 228);
             this.groupBox2.TabIndex = 7;
@@ -206,12 +213,77 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.nudShowTimeAfterRecording);
+            this.groupBox1.Controls.Add(this.checkShowTimeAfterRecording);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 198);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(671, 75);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Individuelle Erinerrungen";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(285, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Anzeigedauer in (s):";
+            this.toolTip1.SetToolTip(this.label4, "Anzeigedauer in Sekunden");
+            // 
+            // nudShowTimeAfterRecording
+            // 
+            this.nudShowTimeAfterRecording.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.nudShowTimeAfterRecording.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudShowTimeAfterRecording.ForeColor = System.Drawing.Color.White;
+            this.nudShowTimeAfterRecording.Location = new System.Drawing.Point(414, 32);
+            this.nudShowTimeAfterRecording.Name = "nudShowTimeAfterRecording";
+            this.nudShowTimeAfterRecording.Size = new System.Drawing.Size(56, 21);
+            this.nudShowTimeAfterRecording.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.nudShowTimeAfterRecording, "Anzeigedauer in Sekunden");
+            // 
+            // checkShowTimeAfterRecording
+            // 
+            this.checkShowTimeAfterRecording.BackColor = System.Drawing.Color.Transparent;
+            this.checkShowTimeAfterRecording.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkShowTimeAfterRecording.BackgroundImage")));
+            this.checkShowTimeAfterRecording.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.checkShowTimeAfterRecording.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkShowTimeAfterRecording.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkShowTimeAfterRecording.Location = new System.Drawing.Point(12, 28);
+            this.checkShowTimeAfterRecording.Name = "checkShowTimeAfterRecording";
+            this.checkShowTimeAfterRecording.OffColor = System.Drawing.Color.Gray;
+            this.checkShowTimeAfterRecording.OnColor = System.Drawing.Color.DodgerBlue;
+            this.checkShowTimeAfterRecording.Size = new System.Drawing.Size(43, 25);
+            this.checkShowTimeAfterRecording.TabIndex = 5;
+            this.checkShowTimeAfterRecording.Value = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(59, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(204, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Zeit nach Aufnahmestop anzeigen";
+            // 
             // AllgemeinesTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(695, 553);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbHotkey);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -224,6 +296,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudShowTimeAfterRecording)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,5 +318,10 @@
         private System.Windows.Forms.Label lbDuration;
         private System.Windows.Forms.NumericUpDown nudDuration;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudShowTimeAfterRecording;
+        private Bunifu.Framework.UI.BunifuiOSSwitch checkShowTimeAfterRecording;
+        private System.Windows.Forms.Label label5;
     }
 }

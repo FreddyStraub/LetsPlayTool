@@ -94,6 +94,11 @@ namespace LetsPlayTool
             newAllgemeines.ShowIErinerrung = false;
             newAllgemeines.ErinerrungenAnzeigeDauer = 4;
 
+            newAllgemeines.ShowTimeAfterRecording = false;
+            newAllgemeines.ShowTimeAfterRecordingDuration = 4;
+
+
+
             Allgemeines = newAllgemeines;
 
             #endregion
