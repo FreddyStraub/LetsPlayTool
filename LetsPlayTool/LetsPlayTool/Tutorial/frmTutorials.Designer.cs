@@ -127,7 +127,7 @@
             this.lbCardTitle.AutoSize = true;
             this.lbCardTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCardTitle.ForeColor = System.Drawing.Color.White;
-            this.lbCardTitle.Location = new System.Drawing.Point(12, 73);
+            this.lbCardTitle.Location = new System.Drawing.Point(12, 85);
             this.lbCardTitle.Name = "lbCardTitle";
             this.lbCardTitle.Size = new System.Drawing.Size(48, 25);
             this.lbCardTitle.TabIndex = 3;
@@ -140,10 +140,10 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(17, 103);
+            this.richTextBox1.Location = new System.Drawing.Point(17, 126);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(369, 550);
+            this.richTextBox1.Size = new System.Drawing.Size(369, 527);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
@@ -173,6 +173,7 @@
             this.bZurück.TabIndex = 9;
             this.bZurück.Text = "Zurück";
             this.bZurück.UseVisualStyleBackColor = false;
+            this.bZurück.Click += new System.EventHandler(this.bZurück_Click);
             // 
             // frmTutorials
             // 

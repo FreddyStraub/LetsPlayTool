@@ -143,5 +143,26 @@ namespace LetsPlayTool.Tutorial
             }
 
         }
+
+        private void bZurück_Click(object sender, EventArgs e)
+        {
+
+            cardindex--;
+
+            if (cardindex > 0)
+            {
+
+                loadCard(tutorial.Cards[cardindex]);
+            }
+            else
+            {
+
+
+                cardindex = 0;
+                loadCard(tutorial.Cards[cardindex]);
+
+            }
+
+        }
     }
 }
