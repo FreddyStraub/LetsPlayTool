@@ -163,6 +163,8 @@ namespace LetsPlayTool
         Überwachung üt = new Überwachung();
         InfoTab it = new InfoTab();
         MessengerTab met = new MessengerTab();
+        TutorialTab tut = new TutorialTab();
+
 
         /// <summary>
         /// Kümmert sich um das anzeigen der einzelnen Menüpunkte
@@ -178,6 +180,7 @@ namespace LetsPlayTool
             bMarker.selected = false;
             bInfo.selected = false;
             bMessenger.selected = false;
+            bTutorials.selected = false;
 
             //Einstellungen speichern
             einstellungen.Allgemeines = at.getSettings();
@@ -315,6 +318,26 @@ namespace LetsPlayTool
                     
                     break;
 
+                case 8:
+                    bTutorials.selected = true;
+
+                    #region Tab anzeigen
+
+                    tut.TopLevel = false;
+                    tut.AutoScroll = true;
+
+                    panel1.Controls.Add(tut);
+
+                    tut.Show();
+
+
+                    #endregion
+
+
+
+                    break;
+
+
 
             }
 
@@ -389,6 +412,11 @@ namespace LetsPlayTool
         private void bMessenger_Click(object sender, EventArgs e)
         {
             toggle(7);
+        }
+
+        private void bTutorials_Click(object sender, EventArgs e)
+        {
+            toggle(8);
         }
     }
 }

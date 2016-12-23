@@ -131,6 +131,13 @@
     </Compile>
     <Compile Include="Einstellungen_Tabs\ProgrammeTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\TimerTabEinstellungen.cs" />
+    <Compile Include="Einstellungen_Tabs\TutorialTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\TutorialTab.Designer.cs">
+      <DependentUpon>TutorialTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Einstellungen_Tabs\TutorialTabEinstellungen.cs" />
     <Compile Include="Einstellungen_Tabs\Überwachung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +206,12 @@
     <Compile Include="Session\SÜberwachung.cs" />
     <Compile Include="SoundController.cs" />
     <Compile Include="TimerProfil.cs" />
+    <Compile Include="Tutorial\frmTutorials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tutorial\frmTutorials.Designer.cs">
+      <DependentUpon>frmTutorials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update\frmUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\Messenger\SkypeTab.resx">
       <DependentUpon>SkypeTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Einstellungen_Tabs\TutorialTab.resx">
+      <DependentUpon>TutorialTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen_Tabs\Überwachung.resx">
       <DependentUpon>Überwachung.cs</DependentUpon>
@@ -267,6 +283,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tutorial\frmTutorials.resx">
+      <DependentUpon>frmTutorials.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Update\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +331,13 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TutorialClasses\TutorialClasses\TutorialClasses.csproj">
+      <Project>{3377dbc1-4830-4099-a067-ad3e0d8e6539}</Project>
+      <Name>TutorialClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

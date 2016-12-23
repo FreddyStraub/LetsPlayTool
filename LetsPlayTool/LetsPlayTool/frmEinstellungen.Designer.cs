@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEinstellungen));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.lbEinstellungen = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.bTimer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.bTutorials = new Bunifu.Framework.UI.BunifuFlatButton();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
@@ -127,6 +128,7 @@
             // panelTabs
             // 
             this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelTabs.Controls.Add(this.bTutorials);
             this.panelTabs.Controls.Add(this.bMessenger);
             this.panelTabs.Controls.Add(this.bInfo);
             this.panelTabs.Controls.Add(this.bAbbrechen);
@@ -202,7 +204,7 @@
             this.bInfo.IconVisible = true;
             this.bInfo.IconZoom = 90D;
             this.bInfo.IsTab = true;
-            this.bInfo.Location = new System.Drawing.Point(1, 325);
+            this.bInfo.Location = new System.Drawing.Point(1, 377);
             this.bInfo.Name = "bInfo";
             this.bInfo.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.bInfo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
@@ -488,24 +490,61 @@
             // 
             this.panelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.panelAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.panelAnimator.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.panelAnimator.DefaultAnimation = animation2;
             this.panelAnimator.Interval = 5;
             this.panelAnimator.MaxAnimationTime = 3000;
+            // 
+            // bTutorials
+            // 
+            this.bTutorials.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bTutorials.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bTutorials.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bTutorials.BorderRadius = 0;
+            this.bTutorials.ButtonText = "    Tutorials";
+            this.bTutorials.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelAnimator.SetDecoration(this.bTutorials, BunifuAnimatorNS.DecorationType.None);
+            this.bTutorials.DisabledColor = System.Drawing.Color.Gray;
+            this.bTutorials.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTutorials.Iconcolor = System.Drawing.Color.Transparent;
+            this.bTutorials.Iconimage = null;
+            this.bTutorials.Iconimage_right = null;
+            this.bTutorials.Iconimage_right_Selected = null;
+            this.bTutorials.Iconimage_Selected = null;
+            this.bTutorials.IconMarginLeft = 0;
+            this.bTutorials.IconMarginRight = 0;
+            this.bTutorials.IconRightVisible = true;
+            this.bTutorials.IconRightZoom = 0D;
+            this.bTutorials.IconVisible = true;
+            this.bTutorials.IconZoom = 90D;
+            this.bTutorials.IsTab = true;
+            this.bTutorials.Location = new System.Drawing.Point(1, 330);
+            this.bTutorials.Name = "bTutorials";
+            this.bTutorials.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.bTutorials.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(223)))));
+            this.bTutorials.OnHoverTextColor = System.Drawing.Color.White;
+            this.bTutorials.selected = false;
+            this.bTutorials.Size = new System.Drawing.Size(201, 48);
+            this.bTutorials.TabIndex = 10;
+            this.bTutorials.Text = "    Tutorials";
+            this.bTutorials.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bTutorials.Textcolor = System.Drawing.Color.White;
+            this.bTutorials.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTutorials.Click += new System.EventHandler(this.bTutorials_Click);
             // 
             // frmEinstellungen
             // 
@@ -553,5 +592,6 @@
         private BunifuAnimatorNS.BunifuTransition panelAnimator;
         private Bunifu.Framework.UI.BunifuFlatButton bInfo;
         private Bunifu.Framework.UI.BunifuFlatButton bMessenger;
+        private Bunifu.Framework.UI.BunifuFlatButton bTutorials;
     }
 }

@@ -254,6 +254,7 @@ namespace LetsPlayTool
         public TimerTabEinstellungen Timer;
         public ÜberwachungTabEinstellungen Überwachung;
         public MessengerTabEinstellungen Messenger;
+        public TutorialTabEinstellungen Tutorials;
 
     }
 

@@ -421,6 +421,7 @@ namespace LetsPlayTool
 
                     break;
                 case 4:
+
                     ShowPanelAnimator.Show(panelSoundÜberwachung);
                     panelSoundÜberwachung.BringToFront();
 
@@ -630,6 +631,7 @@ namespace LetsPlayTool
 
             #region Messenger
 
+            setSkyeLabelStatus();
             setDiscordStatus();
             setTeamspeakStatus();
             setMailClientStatus();
@@ -649,10 +651,7 @@ namespace LetsPlayTool
 
         } //Mainactor!!!!!!!!!!!!!!!!!!
 
-
-
-
-
+                
         object mailClient = Registry.GetValue(@"HKEY_CLASSES_ROOT\mailto\shell\open\command", "", "none");
 
         string rohPfad;
@@ -1544,6 +1543,7 @@ namespace LetsPlayTool
 
 
         }
+
 
     }
  
