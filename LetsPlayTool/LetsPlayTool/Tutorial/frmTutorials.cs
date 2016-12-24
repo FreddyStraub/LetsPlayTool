@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace LetsPlayTool.Tutorial
         
         int cardindex = 0;
 
+        int pictureCount;
+
         public frmTutorials(TutorialClasses.Tutorial tutorial)
         {
             InitializeComponent();
@@ -27,6 +30,8 @@ namespace LetsPlayTool.Tutorial
             lbTitle.Text = tutorial.title;
 
             loadCard(tutorial.Cards[0]);
+
+            
 
         }
 
@@ -116,6 +121,8 @@ namespace LetsPlayTool.Tutorial
 
             lbCardTitle.Select();
 
+            System.IO.Directory.CreateDirectory("Tutorials\\Pictures");
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -162,6 +169,26 @@ namespace LetsPlayTool.Tutorial
                 loadCard(tutorial.Cards[cardindex]);
 
             }
+
+        }
+
+        private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Process.Start(e.LinkText);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            pictureCount++;
+
+            pictureBox1.Image.Save("Tutorials\\Pictures\\Show " + pictureCount + ".png");
+            Process.Start("Tutorials\\Pictures\\Show " + pictureCount + ".png");
+        }
+
+        private void frmTutorials_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.IO.Directory.Delete("Tutorials\\Pictures", true);
 
         }
     }
