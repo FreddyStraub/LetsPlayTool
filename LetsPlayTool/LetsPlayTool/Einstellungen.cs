@@ -18,7 +18,14 @@ namespace LetsPlayTool
 
         private static string EinstellungenPfad = "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool";
 
-        public Einstellungen() { }
+        public Einstellungen() {
+
+            if (isFirstRunning != false)
+                isFirstRunning = true;
+
+        }
+
+        public bool isFirstRunning = true;
 
         public int SessionValue { get; set; }
 
@@ -40,6 +47,8 @@ namespace LetsPlayTool
             BF.Serialize(FS, this);
 
             FS.Dispose();
+
+
             
 
         }
@@ -69,6 +78,8 @@ namespace LetsPlayTool
         /// </summary>
         public void SetStandartValues()
         {
+
+            isFirstRunning = true;
 
             AllgemeinesStandartValues();
             MarkerStandartValues();

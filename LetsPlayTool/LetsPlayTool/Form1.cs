@@ -142,6 +142,19 @@ namespace LetsPlayTool
             }
 
 
+            if (einstellungen.isFirstRunning)
+            {
+
+                Tutorial.frmDialog frmTutorialDialog = new Tutorial.frmDialog();
+                frmTutorialDialog.ShowDialog();
+
+                einstellungen.isFirstRunning = false;
+
+                einstellungen.save();
+                einstellungen = einstellungen.load();
+
+            }
+
 
         }
 

@@ -206,6 +206,12 @@
     <Compile Include="Session\SÜberwachung.cs" />
     <Compile Include="SoundController.cs" />
     <Compile Include="TimerProfil.cs" />
+    <Compile Include="Tutorial\frmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tutorial\frmDialog.Designer.cs">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tutorial\frmTutorials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tutorial\frmDialog.resx">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tutorial\frmTutorials.resx">
       <DependentUpon>frmTutorials.cs</DependentUpon>
     </EmbeddedResource>
