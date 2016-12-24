@@ -149,7 +149,7 @@
             this.groupBox2.Size = new System.Drawing.Size(671, 228);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Individuelle Erinerrungen";
+            this.groupBox2.Text = "Individuelle Erinnerrungen";
             // 
             // lbDuration
             // 
@@ -209,9 +209,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(59, 32);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(403, 17);
+            this.label7.Size = new System.Drawing.Size(405, 17);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Individuelle Errinerung die beim Start der Aufnahme angezeigt wird.";
+            this.label7.Text = "Individuelle Erinnerung die beim Start der Aufnahme angezeigt wird.";
             // 
             // label4
             // 

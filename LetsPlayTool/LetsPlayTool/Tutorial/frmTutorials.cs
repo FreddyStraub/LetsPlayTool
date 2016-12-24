@@ -121,6 +121,9 @@ namespace LetsPlayTool.Tutorial
 
             lbCardTitle.Select();
 
+            if(System.IO.Directory.Exists("Tutorials\\Pictures"))
+                System.IO.Directory.Delete("Tutorials\\Pictures", true);
+
             System.IO.Directory.CreateDirectory("Tutorials\\Pictures");
 
         }

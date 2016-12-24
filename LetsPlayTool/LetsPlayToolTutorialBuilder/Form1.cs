@@ -41,5 +41,25 @@ namespace LetsPlayToolTutorialBuilder
             Close();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            TutorialClasses.Tutorial oldT = new Tutorial();
+
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                oldT = oldT.load(openFileDialog1.FileName);
+
+                frmList frmList = new frmList(oldT);
+                frmList.ShowDialog();
+
+                Tutorial newt = frmList.tutorial;
+
+                newt.save(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+
+            }
+        }
     }
 }

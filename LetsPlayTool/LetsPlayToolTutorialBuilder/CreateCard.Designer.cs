@@ -107,9 +107,9 @@
 
         private System.Windows.Forms.Label lbTitel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
