@@ -113,6 +113,9 @@ namespace LetsPlayTool.Tutorial
 
         #endregion
 
+        string pfad = "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\Tutorials\\";
+
+
         private void frmTutorials_Load(object sender, EventArgs e)
         {
 
@@ -121,10 +124,10 @@ namespace LetsPlayTool.Tutorial
 
             lbCardTitle.Select();
 
-            if(System.IO.Directory.Exists("Tutorials\\Pictures"))
-                System.IO.Directory.Delete("Tutorials\\Pictures", true);
+            if(System.IO.Directory.Exists(pfad + "Pictures"))
+                System.IO.Directory.Delete(pfad + "Pictures", true);
 
-            System.IO.Directory.CreateDirectory("Tutorials\\Pictures");
+            System.IO.Directory.CreateDirectory(pfad + "Pictures");
 
         }
 
@@ -185,14 +188,19 @@ namespace LetsPlayTool.Tutorial
 
             pictureCount++;
 
-            pictureBox1.Image.Save("Tutorials\\Pictures\\Show " + pictureCount + ".png");
-            Process.Start("Tutorials\\Pictures\\Show " + pictureCount + ".png");
+            pictureBox1.Image.Save(pfad + "Pictures\\Show " + pictureCount + ".png");
+            Process.Start(pfad + "Pictures\\Show " + pictureCount + ".png");
         }
 
         private void frmTutorials_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.IO.Directory.Delete("Tutorials\\Pictures", true);
+            System.IO.Directory.Delete(pfad + "Pictures", true);
 
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

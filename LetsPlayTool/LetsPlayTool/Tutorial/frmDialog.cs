@@ -52,11 +52,14 @@ namespace LetsPlayTool.Tutorial
         private void bTutorial_Click(object sender, EventArgs e)
         {
 
+            string pfad = "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\Tutorials\\";
+
             #region Herzlich Willkommen
 
             TutorialClasses.Tutorial t = new TutorialClasses.Tutorial();
 
-            t = t.load("Tutorials\\Herzlich Willkommen.tut");
+
+            t = t.load(pfad  + "\\Herzlich Willkommen.tut");
 
             Tutorial.frmTutorials frmt = new Tutorial.frmTutorials(t);
             frmt.ShowDialog();
@@ -67,7 +70,7 @@ namespace LetsPlayTool.Tutorial
 
              t = new TutorialClasses.Tutorial();
 
-            t = t.load("Tutorials\\Übersicht.tut");
+            t = t.load(pfad + "\\Übersicht.tut");
 
             frmt = new Tutorial.frmTutorials(t);
             frmt.ShowDialog();
@@ -78,7 +81,7 @@ namespace LetsPlayTool.Tutorial
 
             t = new TutorialClasses.Tutorial();
 
-            t = t.load("Tutorials\\Einstellungen.tut");
+            t = t.load(pfad + "\\Einstellungen.tut");
 
             frmt = new Tutorial.frmTutorials(t);
             frmt.ShowDialog();

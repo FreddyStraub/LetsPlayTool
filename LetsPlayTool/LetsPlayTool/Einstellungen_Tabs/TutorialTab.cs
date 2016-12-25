@@ -36,13 +36,14 @@ namespace LetsPlayTool.Einstellungen_Tabs
             Process.Start("https://www.youtube.com/watch?v=WrO4m4dm8_U&t=1s");
         }
 
+        string pfad = "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\Tutorials\\";
+
+
         private void bÜbersicht_Click(object sender, EventArgs e)
         {
             TutorialClasses.Tutorial t = new TutorialClasses.Tutorial();
 
-            string pfad = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            t = t.load("Tutorials\\Übersicht.tut");
+            t = t.load(pfad + "Übersicht.tut");
 
             Tutorial.frmTutorials frmt = new Tutorial.frmTutorials(t);
             frmt.ShowDialog();
@@ -52,9 +53,7 @@ namespace LetsPlayTool.Einstellungen_Tabs
         {
             TutorialClasses.Tutorial t = new TutorialClasses.Tutorial();
 
-            string pfad = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            t = t.load("Tutorials\\Einstellungen.tut");
+            t = t.load(pfad + "Einstellungen.tut");
 
             Tutorial.frmTutorials frmt = new Tutorial.frmTutorials(t);
             frmt.ShowDialog();

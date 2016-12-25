@@ -184,11 +184,11 @@ namespace LetsPlayTool
             newÜberwachung.ShowÜFensterCPU = true;
             newÜberwachung.ShowÜFensterRAM = true;
 
-            newÜberwachung.ShowSkype = false;
-            newÜberwachung.ShowTeamspeak = false;
-            newÜberwachung.ShowDiscord = false;
-            newÜberwachung.ShowMail = false;
-            newÜberwachung.ShowSteam = false;
+            newÜberwachung.ShowSkype = true;
+            newÜberwachung.ShowTeamspeak = true;
+            newÜberwachung.ShowDiscord = true;
+            newÜberwachung.ShowMail = true;
+            newÜberwachung.ShowSteam = true;
 
 
             Überwachung = newÜberwachung;
@@ -253,8 +253,15 @@ namespace LetsPlayTool
             if (Messenger == null)
             {
                 MessengerStandartValues();
+
+
             }
 
+            //Skype
+            if (Messenger.Skype == null)
+            {
+                MessengerStandartValues();
+            }
 
 
         }

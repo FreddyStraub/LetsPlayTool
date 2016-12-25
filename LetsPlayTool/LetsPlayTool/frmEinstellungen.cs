@@ -62,6 +62,7 @@ namespace LetsPlayTool
             Showanimation.Start();
 
             einstellungen = einstellungen.load(); //Lädt die Einstellungen.
+            einstellungen.SetMissingOptions();
             SetAllSettings(); //Setzt die geladen Einstellungen in den Tabs.
             
             toggle(2);
