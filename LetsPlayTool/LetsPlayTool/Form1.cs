@@ -30,7 +30,8 @@ namespace LetsPlayTool
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
 
-            MinimaizeAnimation.Start();
+             MinimaizeAnimation.Start();
+
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -249,7 +250,44 @@ namespace LetsPlayTool
 
 
             #endregion
+            #region Down & UpSpeed
 
+            //ShowUpSpeed
+            if (einstellungen.Überwachung.ShowUpSpeed)
+            {
+
+
+                lbUp.Visible = true;
+                lbUPUsage.Visible = true;
+
+
+            }
+            else
+            {
+                lbUp.Visible = false;
+                lbUPUsage.Visible = false;
+
+            }
+
+            //ShowDownSpeed
+            if (einstellungen.Überwachung.ShowDownSpeed)
+            {
+
+                lbDown.Visible = true;
+                lbDownUsage.Visible = true;
+
+
+            }
+            else
+            {
+                lbDown.Visible = false;
+                lbDownUsage.Visible = false;
+
+
+            }
+
+
+            #endregion
             #endregion
 
 
@@ -475,6 +513,7 @@ namespace LetsPlayTool
 
         int MainactorElapsedTicks = 0;
         int cpuTimervalue = 0;
+        int streamTimervalue = 0;
 
         public Point ÜFensterLocation = new Point();
 
@@ -621,7 +660,7 @@ namespace LetsPlayTool
 
             #endregion
             
-            #region CPU & RAM
+            #region CPU & RAM & DOWNSTREAM & UPSTREAM
 
 
             if (MainactorElapsedTicks == cpuTimervalue + 100)
@@ -631,7 +670,8 @@ namespace LetsPlayTool
                 lbCPUAuslastung.Text = Session.Überwachung.cpuAuslastung.ToString() + "%"; //CPU-Auslastung in Prozent
                 lbRAMUsed.Text = Session.Überwachung.freierRAM.ToString() + "MB"; //Verfügbarer RAM in Megabyte
 
-                cpuTimervalue += 100;
+
+                cpuTimervalue += 50;
 
                 //ÜFenster
                 frmÜFenster.lbCPUAuslastung.Text = lbCPUAuslastung.Text;
@@ -639,7 +679,21 @@ namespace LetsPlayTool
 
             }
 
+            if (MainactorElapsedTicks == streamTimervalue + 22)
+            {
 
+                if(Session.Überwachung.DSpeed != 0) 
+                    lbDownUsage.Text = Math.Round(Session.Überwachung.DSpeed, 2).ToString() + "KBit/s"; //Anzahl empfangener KBits / sec
+
+                if (Session.Überwachung.USpeed != 0)
+                    lbUPUsage.Text = Math.Round(Session.Überwachung.USpeed, 2).ToString() + "KBit/s"; //Anzahl gesendeter KBits / sec
+
+  
+
+
+                streamTimervalue += 22;
+
+            }
             #endregion
 
             #region Messenger
@@ -1162,6 +1216,9 @@ namespace LetsPlayTool
             lbBSpeicherGB.Text = "...";
             lbBSpeicherGB.BackColor = Color.Transparent;
 
+            lbDownUsage.Text = "...";
+            lbUPUsage.Text = "...";
+            
 
             listMarker.Items.Clear();
 

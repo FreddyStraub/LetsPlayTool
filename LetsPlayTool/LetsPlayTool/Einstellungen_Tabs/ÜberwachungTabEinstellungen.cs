@@ -29,6 +29,10 @@ namespace LetsPlayTool.Einstellungen_Tabs
         public bool ShowMail;
         public bool ShowSteam;
 
+        public bool ShowDownSpeed;
+        public bool ShowUpSpeed;
+
+
 
 
     }

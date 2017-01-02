@@ -81,6 +81,10 @@ namespace LetsPlayTool
             this.Mainactor = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ValueUpdater = new System.Windows.Forms.Timer(this.components);
+            this.lbDownUsage = new System.Windows.Forms.Label();
+            this.lbDown = new System.Windows.Forms.Label();
+            this.lbUPUsage = new System.Windows.Forms.Label();
+            this.lbUp = new System.Windows.Forms.Label();
             this.HeaderBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bShowÜFenster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSettings)).BeginInit();
@@ -239,6 +243,10 @@ namespace LetsPlayTool
             // 
             this.panelOrdner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelOrdner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOrdner.Controls.Add(this.lbUPUsage);
+            this.panelOrdner.Controls.Add(this.lbUp);
+            this.panelOrdner.Controls.Add(this.lbDownUsage);
+            this.panelOrdner.Controls.Add(this.lbDown);
             this.panelOrdner.Controls.Add(this.lbRAMUsed);
             this.panelOrdner.Controls.Add(this.lbRAM);
             this.panelOrdner.Controls.Add(this.lbCPUAuslastung);
@@ -252,7 +260,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.panelOrdner, BunifuAnimatorNS.DecorationType.None);
             this.panelOrdner.Location = new System.Drawing.Point(0, 192);
             this.panelOrdner.Name = "panelOrdner";
-            this.panelOrdner.Size = new System.Drawing.Size(445, 133);
+            this.panelOrdner.Size = new System.Drawing.Size(445, 167);
             this.panelOrdner.TabIndex = 2;
             this.panelOrdner.Visible = false;
             // 
@@ -262,7 +270,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbRAMUsed, BunifuAnimatorNS.DecorationType.None);
             this.lbRAMUsed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRAMUsed.ForeColor = System.Drawing.Color.White;
-            this.lbRAMUsed.Location = new System.Drawing.Point(355, 101);
+            this.lbRAMUsed.Location = new System.Drawing.Point(337, 79);
             this.lbRAMUsed.Name = "lbRAMUsed";
             this.lbRAMUsed.Size = new System.Drawing.Size(19, 21);
             this.lbRAMUsed.TabIndex = 9;
@@ -274,7 +282,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbRAM, BunifuAnimatorNS.DecorationType.None);
             this.lbRAM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRAM.ForeColor = System.Drawing.Color.White;
-            this.lbRAM.Location = new System.Drawing.Point(267, 101);
+            this.lbRAM.Location = new System.Drawing.Point(249, 79);
             this.lbRAM.Name = "lbRAM";
             this.lbRAM.Size = new System.Drawing.Size(91, 21);
             this.lbRAM.TabIndex = 8;
@@ -286,7 +294,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbCPUAuslastung, BunifuAnimatorNS.DecorationType.None);
             this.lbCPUAuslastung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPUAuslastung.ForeColor = System.Drawing.Color.White;
-            this.lbCPUAuslastung.Location = new System.Drawing.Point(133, 101);
+            this.lbCPUAuslastung.Location = new System.Drawing.Point(290, 49);
             this.lbCPUAuslastung.Name = "lbCPUAuslastung";
             this.lbCPUAuslastung.Size = new System.Drawing.Size(19, 21);
             this.lbCPUAuslastung.TabIndex = 7;
@@ -298,7 +306,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbCPU, BunifuAnimatorNS.DecorationType.None);
             this.lbCPU.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCPU.ForeColor = System.Drawing.Color.White;
-            this.lbCPU.Location = new System.Drawing.Point(92, 101);
+            this.lbCPU.Location = new System.Drawing.Point(249, 49);
             this.lbCPU.Name = "lbCPU";
             this.lbCPU.Size = new System.Drawing.Size(43, 21);
             this.lbCPU.TabIndex = 6;
@@ -310,7 +318,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicherGB, BunifuAnimatorNS.DecorationType.None);
             this.lbBSpeicherGB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicherGB.ForeColor = System.Drawing.Color.White;
-            this.lbBSpeicherGB.Location = new System.Drawing.Point(267, 70);
+            this.lbBSpeicherGB.Location = new System.Drawing.Point(168, 79);
             this.lbBSpeicherGB.Name = "lbBSpeicherGB";
             this.lbBSpeicherGB.Size = new System.Drawing.Size(19, 21);
             this.lbBSpeicherGB.TabIndex = 5;
@@ -322,7 +330,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbBSpeicher, BunifuAnimatorNS.DecorationType.None);
             this.lbBSpeicher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBSpeicher.ForeColor = System.Drawing.Color.White;
-            this.lbBSpeicher.Location = new System.Drawing.Point(92, 69);
+            this.lbBSpeicher.Location = new System.Drawing.Point(18, 78);
             this.lbBSpeicher.Name = "lbBSpeicher";
             this.lbBSpeicher.Size = new System.Drawing.Size(134, 21);
             this.lbBSpeicher.TabIndex = 4;
@@ -334,7 +342,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicherGB, BunifuAnimatorNS.DecorationType.None);
             this.lbFSpeicherGB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicherGB.ForeColor = System.Drawing.Color.White;
-            this.lbFSpeicherGB.Location = new System.Drawing.Point(267, 40);
+            this.lbFSpeicherGB.Location = new System.Drawing.Point(168, 49);
             this.lbFSpeicherGB.Name = "lbFSpeicherGB";
             this.lbFSpeicherGB.Size = new System.Drawing.Size(19, 21);
             this.lbFSpeicherGB.TabIndex = 3;
@@ -346,7 +354,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbFSpeicher, BunifuAnimatorNS.DecorationType.None);
             this.lbFSpeicher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFSpeicher.ForeColor = System.Drawing.Color.White;
-            this.lbFSpeicher.Location = new System.Drawing.Point(92, 40);
+            this.lbFSpeicher.Location = new System.Drawing.Point(18, 49);
             this.lbFSpeicher.Name = "lbFSpeicher";
             this.lbFSpeicher.Size = new System.Drawing.Size(117, 21);
             this.lbFSpeicher.TabIndex = 2;
@@ -385,9 +393,9 @@ namespace LetsPlayTool
             this.panelMarker.Controls.Add(this.listMarker);
             this.panelMarker.Controls.Add(this.lbMarker);
             this.ShowPanelAnimator.SetDecoration(this.panelMarker, BunifuAnimatorNS.DecorationType.None);
-            this.panelMarker.Location = new System.Drawing.Point(0, 325);
+            this.panelMarker.Location = new System.Drawing.Point(0, 358);
             this.panelMarker.Name = "panelMarker";
-            this.panelMarker.Size = new System.Drawing.Size(445, 132);
+            this.panelMarker.Size = new System.Drawing.Size(445, 99);
             this.panelMarker.TabIndex = 6;
             this.panelMarker.Visible = false;
             // 
@@ -400,9 +408,9 @@ namespace LetsPlayTool
             this.listMarker.ForeColor = System.Drawing.Color.White;
             this.listMarker.FormattingEnabled = true;
             this.listMarker.ItemHeight = 21;
-            this.listMarker.Location = new System.Drawing.Point(94, 12);
+            this.listMarker.Location = new System.Drawing.Point(94, 11);
             this.listMarker.Name = "listMarker";
-            this.listMarker.Size = new System.Drawing.Size(323, 126);
+            this.listMarker.Size = new System.Drawing.Size(323, 105);
             this.listMarker.TabIndex = 1;
             this.toolTip1.SetToolTip(this.listMarker, "Erstellte Marker in dieser Session");
             // 
@@ -412,7 +420,7 @@ namespace LetsPlayTool
             this.ShowPanelAnimator.SetDecoration(this.lbMarker, BunifuAnimatorNS.DecorationType.None);
             this.lbMarker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarker.ForeColor = System.Drawing.Color.White;
-            this.lbMarker.Location = new System.Drawing.Point(12, 12);
+            this.lbMarker.Location = new System.Drawing.Point(12, 11);
             this.lbMarker.Name = "lbMarker";
             this.lbMarker.Size = new System.Drawing.Size(63, 21);
             this.lbMarker.TabIndex = 0;
@@ -699,6 +707,54 @@ namespace LetsPlayTool
             this.ValueUpdater.Interval = 1000;
             this.ValueUpdater.Tick += new System.EventHandler(this.ValueUpdater_Tick);
             // 
+            // lbDownUsage
+            // 
+            this.lbDownUsage.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbDownUsage, BunifuAnimatorNS.DecorationType.None);
+            this.lbDownUsage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDownUsage.ForeColor = System.Drawing.Color.White;
+            this.lbDownUsage.Location = new System.Drawing.Point(127, 122);
+            this.lbDownUsage.Name = "lbDownUsage";
+            this.lbDownUsage.Size = new System.Drawing.Size(19, 21);
+            this.lbDownUsage.TabIndex = 11;
+            this.lbDownUsage.Text = "...";
+            // 
+            // lbDown
+            // 
+            this.lbDown.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbDown, BunifuAnimatorNS.DecorationType.None);
+            this.lbDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDown.ForeColor = System.Drawing.Color.White;
+            this.lbDown.Location = new System.Drawing.Point(18, 122);
+            this.lbDown.Name = "lbDown";
+            this.lbDown.Size = new System.Drawing.Size(103, 21);
+            this.lbDown.TabIndex = 10;
+            this.lbDown.Text = "DownStream:";
+            // 
+            // lbUPUsage
+            // 
+            this.lbUPUsage.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbUPUsage, BunifuAnimatorNS.DecorationType.None);
+            this.lbUPUsage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUPUsage.ForeColor = System.Drawing.Color.White;
+            this.lbUPUsage.Location = new System.Drawing.Point(321, 122);
+            this.lbUPUsage.Name = "lbUPUsage";
+            this.lbUPUsage.Size = new System.Drawing.Size(19, 21);
+            this.lbUPUsage.TabIndex = 13;
+            this.lbUPUsage.Text = "...";
+            // 
+            // lbUp
+            // 
+            this.lbUp.AutoSize = true;
+            this.ShowPanelAnimator.SetDecoration(this.lbUp, BunifuAnimatorNS.DecorationType.None);
+            this.lbUp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUp.ForeColor = System.Drawing.Color.White;
+            this.lbUp.Location = new System.Drawing.Point(230, 122);
+            this.lbUp.Name = "lbUp";
+            this.lbUp.Size = new System.Drawing.Size(82, 21);
+            this.lbUp.TabIndex = 12;
+            this.lbUp.Text = "UpStream:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -802,6 +858,10 @@ namespace LetsPlayTool
         private System.Windows.Forms.Panel panelSkype;
         private System.Windows.Forms.Label lbSkype;
         private System.Windows.Forms.Label lbSkypeStatus;
+        private System.Windows.Forms.Label lbDownUsage;
+        private System.Windows.Forms.Label lbDown;
+        private System.Windows.Forms.Label lbUPUsage;
+        private System.Windows.Forms.Label lbUp;
     }
 }
 

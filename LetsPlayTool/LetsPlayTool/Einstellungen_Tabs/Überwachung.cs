@@ -19,8 +19,6 @@ namespace LetsPlayTool.Einstellungen_Tabs
             InitializeComponent();
         }
 
-      //  public ÜberwachungTabEinstellungen überwachungTagEinstellungen = new ÜberwachungTabEinstellungen();
-
         /// <summary>
         /// Lädt die Einstellungen.
         /// </summary>
@@ -46,6 +44,8 @@ namespace LetsPlayTool.Einstellungen_Tabs
                 checkMailclient.Checked = Settings.ShowMail;
                 checkSteam.Checked = Settings.ShowSteam;
 
+                switchDownSpeed.Value = Settings.ShowDownSpeed;
+                switchUpSpeed.Value = Settings.ShowUpSpeed;
 
         }
 
@@ -74,6 +74,9 @@ namespace LetsPlayTool.Einstellungen_Tabs
             newSettings.ShowDiscord = checkDiscord.Checked;
             newSettings.ShowMail = checkMailclient.Checked;
             newSettings.ShowSteam = checkSteam.Checked;
+
+            newSettings.ShowDownSpeed = switchDownSpeed.Value;
+            newSettings.ShowUpSpeed = switchUpSpeed.Value;
 
 
             return newSettings;

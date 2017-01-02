@@ -29,6 +29,8 @@ namespace LetsPlayTool.Session
         public long freierSpeicherGB = 0;
         public long belegterSpeicherGB = 0;
 
+        public float USpeed, DSpeed;
+
         /// <summary>
         /// Setzt: freierSpeicherMB, belegterSpeicherMB, freierSpeicherGB,belegterSpeicherGB mit den Systemwerten.
         /// </summary>
@@ -54,6 +56,12 @@ namespace LetsPlayTool.Session
         static PerformanceCounter cpuCounter; // globaler PerformanceCounter 
         static PerformanceCounter RAMCounter;
 
+        static PerformanceCounter performanceCounterReceived; //Down - Stream
+        static PerformanceCounter performanceCounterSent;   //UP - Stream
+        static PerformanceCounterCategory performanceCounterCategory = new PerformanceCounterCategory("Network Interface");
+
+
+
         public int cpuAuslastung = 0;
         public int freierRAM = 0;
 
@@ -66,6 +74,11 @@ namespace LetsPlayTool.Session
 
             cpuAuslastung = (int)cpuCounter.NextValue();
             freierRAM = (int)RAMCounter.NextValue();
+
+            DSpeed = (performanceCounterReceived.NextValue() / 1000);
+            USpeed = (performanceCounterSent.NextValue() / 1000);
+
+
 
 
         }
@@ -83,6 +96,14 @@ namespace LetsPlayTool.Session
             RAMCounter = new PerformanceCounter();
             RAMCounter.CategoryName = "Memory";
             RAMCounter.CounterName = "Available MBytes";
+
+
+
+            string instance = performanceCounterCategory.GetInstanceNames()[0];
+
+            performanceCounterSent = new PerformanceCounter("Network Interface", "Bytes Sent/sec", instance);
+            performanceCounterReceived = new PerformanceCounter("Network Interface", "Bytes Received/sec", instance);
+
 
 
 

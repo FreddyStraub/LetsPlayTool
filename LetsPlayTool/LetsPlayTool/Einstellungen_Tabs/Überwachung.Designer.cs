@@ -51,6 +51,8 @@
             this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.gbDesign = new System.Windows.Forms.GroupBox();
+            this.switchRAM = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.checkSteam = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lbSteam = new System.Windows.Forms.Label();
             this.checkMailclient = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -61,8 +63,10 @@
             this.lbTeamSpeak = new System.Windows.Forms.Label();
             this.checkSkype = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lbSkype = new System.Windows.Forms.Label();
-            this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.switchRAM = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switchDownSpeed = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.lbDownSpeed = new System.Windows.Forms.Label();
+            this.switchUpSpeed = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.lbUpSpeed = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelÜFensterSettings.SuspendLayout();
@@ -152,7 +156,7 @@
             // 
             this.lbFRam.AutoSize = true;
             this.lbFRam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFRam.Location = new System.Drawing.Point(286, 92);
+            this.lbFRam.Location = new System.Drawing.Point(286, 67);
             this.lbFRam.Name = "lbFRam";
             this.lbFRam.Size = new System.Drawing.Size(73, 17);
             this.lbFRam.TabIndex = 12;
@@ -299,6 +303,10 @@
             // 
             // gbDesign
             // 
+            this.gbDesign.Controls.Add(this.switchUpSpeed);
+            this.gbDesign.Controls.Add(this.lbUpSpeed);
+            this.gbDesign.Controls.Add(this.switchDownSpeed);
+            this.gbDesign.Controls.Add(this.lbDownSpeed);
             this.gbDesign.Controls.Add(this.switchRAM);
             this.gbDesign.Controls.Add(this.switchCPU);
             this.gbDesign.Controls.Add(this.lbFRam);
@@ -321,6 +329,36 @@
             this.gbDesign.TabIndex = 21;
             this.gbDesign.TabStop = false;
             this.gbDesign.Text = "Anzeige";
+            // 
+            // switchRAM
+            // 
+            this.switchRAM.BackColor = System.Drawing.Color.Transparent;
+            this.switchRAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchRAM.BackgroundImage")));
+            this.switchRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchRAM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchRAM.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchRAM.Location = new System.Drawing.Point(237, 67);
+            this.switchRAM.Name = "switchRAM";
+            this.switchRAM.OffColor = System.Drawing.Color.Gray;
+            this.switchRAM.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchRAM.Size = new System.Drawing.Size(43, 25);
+            this.switchRAM.TabIndex = 32;
+            this.switchRAM.Value = true;
+            // 
+            // switchCPU
+            // 
+            this.switchCPU.BackColor = System.Drawing.Color.Transparent;
+            this.switchCPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchCPU.BackgroundImage")));
+            this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchCPU.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchCPU.Location = new System.Drawing.Point(237, 36);
+            this.switchCPU.Name = "switchCPU";
+            this.switchCPU.OffColor = System.Drawing.Color.Gray;
+            this.switchCPU.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchCPU.Size = new System.Drawing.Size(43, 25);
+            this.switchCPU.TabIndex = 31;
+            this.switchCPU.Value = true;
             // 
             // checkSteam
             // 
@@ -442,35 +480,55 @@
             this.lbSkype.TabIndex = 22;
             this.lbSkype.Text = "Skype anzeigen";
             // 
-            // switchCPU
+            // switchDownSpeed
             // 
-            this.switchCPU.BackColor = System.Drawing.Color.Transparent;
-            this.switchCPU.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchCPU.BackgroundImage")));
-            this.switchCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchCPU.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchCPU.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchCPU.Location = new System.Drawing.Point(237, 36);
-            this.switchCPU.Name = "switchCPU";
-            this.switchCPU.OffColor = System.Drawing.Color.Gray;
-            this.switchCPU.OnColor = System.Drawing.Color.DodgerBlue;
-            this.switchCPU.Size = new System.Drawing.Size(43, 25);
-            this.switchCPU.TabIndex = 31;
-            this.switchCPU.Value = true;
+            this.switchDownSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.switchDownSpeed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchDownSpeed.BackgroundImage")));
+            this.switchDownSpeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchDownSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchDownSpeed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchDownSpeed.Location = new System.Drawing.Point(237, 115);
+            this.switchDownSpeed.Name = "switchDownSpeed";
+            this.switchDownSpeed.OffColor = System.Drawing.Color.Gray;
+            this.switchDownSpeed.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchDownSpeed.Size = new System.Drawing.Size(43, 25);
+            this.switchDownSpeed.TabIndex = 34;
+            this.switchDownSpeed.Value = true;
             // 
-            // switchRAM
+            // lbDownSpeed
             // 
-            this.switchRAM.BackColor = System.Drawing.Color.Transparent;
-            this.switchRAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchRAM.BackgroundImage")));
-            this.switchRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchRAM.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchRAM.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchRAM.Location = new System.Drawing.Point(237, 92);
-            this.switchRAM.Name = "switchRAM";
-            this.switchRAM.OffColor = System.Drawing.Color.Gray;
-            this.switchRAM.OnColor = System.Drawing.Color.DodgerBlue;
-            this.switchRAM.Size = new System.Drawing.Size(43, 25);
-            this.switchRAM.TabIndex = 32;
-            this.switchRAM.Value = true;
+            this.lbDownSpeed.AutoSize = true;
+            this.lbDownSpeed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDownSpeed.Location = new System.Drawing.Point(286, 118);
+            this.lbDownSpeed.Name = "lbDownSpeed";
+            this.lbDownSpeed.Size = new System.Drawing.Size(78, 17);
+            this.lbDownSpeed.TabIndex = 33;
+            this.lbDownSpeed.Text = "DownSpeed";
+            // 
+            // switchUpSpeed
+            // 
+            this.switchUpSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.switchUpSpeed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchUpSpeed.BackgroundImage")));
+            this.switchUpSpeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchUpSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchUpSpeed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchUpSpeed.Location = new System.Drawing.Point(237, 146);
+            this.switchUpSpeed.Name = "switchUpSpeed";
+            this.switchUpSpeed.OffColor = System.Drawing.Color.Gray;
+            this.switchUpSpeed.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchUpSpeed.Size = new System.Drawing.Size(43, 25);
+            this.switchUpSpeed.TabIndex = 36;
+            this.switchUpSpeed.Value = true;
+            // 
+            // lbUpSpeed
+            // 
+            this.lbUpSpeed.AutoSize = true;
+            this.lbUpSpeed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUpSpeed.Location = new System.Drawing.Point(286, 149);
+            this.lbUpSpeed.Name = "lbUpSpeed";
+            this.lbUpSpeed.Size = new System.Drawing.Size(62, 17);
+            this.lbUpSpeed.TabIndex = 35;
+            this.lbUpSpeed.Text = "UpSpeed";
             // 
             // Überwachung
             // 
@@ -531,5 +589,9 @@
         private Bunifu.Framework.UI.BunifuCheckbox checkSteam;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchRAM;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchCPU;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchUpSpeed;
+        private System.Windows.Forms.Label lbUpSpeed;
+        private Bunifu.Framework.UI.BunifuiOSSwitch switchDownSpeed;
+        private System.Windows.Forms.Label lbDownSpeed;
     }
 }
