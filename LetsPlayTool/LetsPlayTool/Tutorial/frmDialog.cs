@@ -58,11 +58,22 @@ namespace LetsPlayTool.Tutorial
 
             TutorialClasses.Tutorial t = new TutorialClasses.Tutorial();
 
-
-            t = t.load(pfad  + "\\Herzlich Willkommen.tut");
-
             Tutorial.frmTutorials frmt = new Tutorial.frmTutorials(t);
-            frmt.ShowDialog();
+
+            if (System.IO.File.Exists(pfad + "\\Herzlich Willkommen.tut"))
+            {
+                t = t.load(pfad + "\\Herzlich Willkommen.tut");
+
+                frmt.ShowDialog();
+
+
+            }else
+            {
+
+                MessageBox.Show("Das Tutorial konnte nicht gefunden werden!", "LetsPlayTool - Tutorialerror", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+
+            }
 
             #endregion
 
@@ -70,10 +81,21 @@ namespace LetsPlayTool.Tutorial
 
              t = new TutorialClasses.Tutorial();
 
-            t = t.load(pfad + "\\Übersicht.tut");
+            if (System.IO.File.Exists(pfad + "\\Übersicht.tut"))
+            {
 
-            frmt = new Tutorial.frmTutorials(t);
-            frmt.ShowDialog();
+
+
+                t = t.load(pfad + "\\Übersicht.tut");
+
+                frmt = new Tutorial.frmTutorials(t);
+                frmt.ShowDialog();
+
+            }else
+            {
+                MessageBox.Show("Das Tutorial konnte nicht gefunden werden!", "LetsPlayTool - Tutorialerror", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
 
             #endregion
 
@@ -81,11 +103,22 @@ namespace LetsPlayTool.Tutorial
 
             t = new TutorialClasses.Tutorial();
 
-            t = t.load(pfad + "\\Einstellungen.tut");
+            if (System.IO.File.Exists(pfad + "\\Einstellungen.tut"))
+            {
 
-            frmt = new Tutorial.frmTutorials(t);
-            frmt.ShowDialog();
 
+                t = t.load(pfad + "\\Einstellungen.tut");
+
+
+                frmt = new Tutorial.frmTutorials(t);
+                frmt.ShowDialog();
+            }else
+            {
+
+                MessageBox.Show("Das Tutorial konnte nicht gefunden werden!", "LetsPlayTool - Tutorialerror", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+            }
             #endregion
 
             Close();

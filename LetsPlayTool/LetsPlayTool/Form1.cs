@@ -30,7 +30,8 @@ namespace LetsPlayTool
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
 
-             MinimaizeAnimation.Start();
+
+            MinimaizeAnimation.Start();
 
         }
 
@@ -93,7 +94,7 @@ namespace LetsPlayTool
 
 
             WindowState = FormWindowState.Normal;
-
+            Width = 445;
 
             if (Opacity == 1)
             {
@@ -122,7 +123,7 @@ namespace LetsPlayTool
             loadSettings();
 
 
-                Updater updater = new Updater();
+            Updater updater = new Updater();
 
             if (updater.canUpdate)
             {
@@ -131,7 +132,7 @@ namespace LetsPlayTool
 
             }
 
-
+            //Löschen der runtergeladen Update-Setup.exe
             if (System.IO.File.Exists("C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\LetsPlayTool\\LetsPlayToolSetup.exe"))
             {
                 try
@@ -142,7 +143,8 @@ namespace LetsPlayTool
                 catch { }
             }
 
-
+            
+            //Code wenn Tool das erste Mal gestartet wird
             if (einstellungen.isFirstRunning)
             {
 
@@ -185,7 +187,9 @@ namespace LetsPlayTool
 
             }
 
+            //Wenn fehlerhafte oder alte Einstellungen datei, dann neue Options setzten.
             einstellungen.SetMissingOptions();
+
 
             selectedTimerProfil = einstellungen.selectedTimerProfile;
 
@@ -1584,7 +1588,7 @@ namespace LetsPlayTool
 
             if (einstellungen.Allgemeines.ShowTimeAfterRecording)
             {
-                if(ShowTimeAfterRecordingWatch.Elapsed.Seconds == einstellungen.Allgemeines.ShowTimeAfterRecordingDuration)
+                if(ShowTimeAfterRecordingWatch.Elapsed.Seconds >= einstellungen.Allgemeines.ShowTimeAfterRecordingDuration)
                 {
                     if (SessionRuns == false)
                     {

@@ -51,6 +51,10 @@
             this.switchÜFenster = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.gbDesign = new System.Windows.Forms.GroupBox();
+            this.switchUpSpeed = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.lbUpSpeed = new System.Windows.Forms.Label();
+            this.switchDownSpeed = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.lbDownSpeed = new System.Windows.Forms.Label();
             this.switchRAM = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.switchCPU = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.checkSteam = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -63,10 +67,8 @@
             this.lbTeamSpeak = new System.Windows.Forms.Label();
             this.checkSkype = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lbSkype = new System.Windows.Forms.Label();
-            this.switchDownSpeed = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.lbDownSpeed = new System.Windows.Forms.Label();
-            this.switchUpSpeed = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.lbUpSpeed = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panelÜFensterSettings.SuspendLayout();
@@ -303,6 +305,8 @@
             // 
             // gbDesign
             // 
+            this.gbDesign.Controls.Add(this.label7);
+            this.gbDesign.Controls.Add(this.label3);
             this.gbDesign.Controls.Add(this.switchUpSpeed);
             this.gbDesign.Controls.Add(this.lbUpSpeed);
             this.gbDesign.Controls.Add(this.switchDownSpeed);
@@ -329,6 +333,56 @@
             this.gbDesign.TabIndex = 21;
             this.gbDesign.TabStop = false;
             this.gbDesign.Text = "Anzeige";
+            // 
+            // switchUpSpeed
+            // 
+            this.switchUpSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.switchUpSpeed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchUpSpeed.BackgroundImage")));
+            this.switchUpSpeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchUpSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchUpSpeed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchUpSpeed.Location = new System.Drawing.Point(237, 146);
+            this.switchUpSpeed.Name = "switchUpSpeed";
+            this.switchUpSpeed.OffColor = System.Drawing.Color.Gray;
+            this.switchUpSpeed.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchUpSpeed.Size = new System.Drawing.Size(43, 25);
+            this.switchUpSpeed.TabIndex = 36;
+            this.switchUpSpeed.Value = true;
+            // 
+            // lbUpSpeed
+            // 
+            this.lbUpSpeed.AutoSize = true;
+            this.lbUpSpeed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUpSpeed.Location = new System.Drawing.Point(286, 149);
+            this.lbUpSpeed.Name = "lbUpSpeed";
+            this.lbUpSpeed.Size = new System.Drawing.Size(62, 17);
+            this.lbUpSpeed.TabIndex = 35;
+            this.lbUpSpeed.Text = "UpSpeed";
+            // 
+            // switchDownSpeed
+            // 
+            this.switchDownSpeed.BackColor = System.Drawing.Color.Transparent;
+            this.switchDownSpeed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchDownSpeed.BackgroundImage")));
+            this.switchDownSpeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switchDownSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switchDownSpeed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchDownSpeed.Location = new System.Drawing.Point(237, 115);
+            this.switchDownSpeed.Name = "switchDownSpeed";
+            this.switchDownSpeed.OffColor = System.Drawing.Color.Gray;
+            this.switchDownSpeed.OnColor = System.Drawing.Color.DodgerBlue;
+            this.switchDownSpeed.Size = new System.Drawing.Size(43, 25);
+            this.switchDownSpeed.TabIndex = 34;
+            this.switchDownSpeed.Value = true;
+            // 
+            // lbDownSpeed
+            // 
+            this.lbDownSpeed.AutoSize = true;
+            this.lbDownSpeed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDownSpeed.Location = new System.Drawing.Point(286, 118);
+            this.lbDownSpeed.Name = "lbDownSpeed";
+            this.lbDownSpeed.Size = new System.Drawing.Size(78, 17);
+            this.lbDownSpeed.TabIndex = 33;
+            this.lbDownSpeed.Text = "DownSpeed";
             // 
             // switchRAM
             // 
@@ -480,55 +534,29 @@
             this.lbSkype.TabIndex = 22;
             this.lbSkype.Text = "Skype anzeigen";
             // 
-            // switchDownSpeed
+            // label3
             // 
-            this.switchDownSpeed.BackColor = System.Drawing.Color.Transparent;
-            this.switchDownSpeed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchDownSpeed.BackgroundImage")));
-            this.switchDownSpeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchDownSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchDownSpeed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchDownSpeed.Location = new System.Drawing.Point(237, 115);
-            this.switchDownSpeed.Name = "switchDownSpeed";
-            this.switchDownSpeed.OffColor = System.Drawing.Color.Gray;
-            this.switchDownSpeed.OnColor = System.Drawing.Color.DodgerBlue;
-            this.switchDownSpeed.Size = new System.Drawing.Size(43, 25);
-            this.switchDownSpeed.TabIndex = 34;
-            this.switchDownSpeed.Value = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(370, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(257, 17);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "(Anzeige nur bei LAN-Verbindung möglich)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbDownSpeed
+            // label7
             // 
-            this.lbDownSpeed.AutoSize = true;
-            this.lbDownSpeed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDownSpeed.Location = new System.Drawing.Point(286, 118);
-            this.lbDownSpeed.Name = "lbDownSpeed";
-            this.lbDownSpeed.Size = new System.Drawing.Size(78, 17);
-            this.lbDownSpeed.TabIndex = 33;
-            this.lbDownSpeed.Text = "DownSpeed";
-            // 
-            // switchUpSpeed
-            // 
-            this.switchUpSpeed.BackColor = System.Drawing.Color.Transparent;
-            this.switchUpSpeed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switchUpSpeed.BackgroundImage")));
-            this.switchUpSpeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switchUpSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switchUpSpeed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.switchUpSpeed.Location = new System.Drawing.Point(237, 146);
-            this.switchUpSpeed.Name = "switchUpSpeed";
-            this.switchUpSpeed.OffColor = System.Drawing.Color.Gray;
-            this.switchUpSpeed.OnColor = System.Drawing.Color.DodgerBlue;
-            this.switchUpSpeed.Size = new System.Drawing.Size(43, 25);
-            this.switchUpSpeed.TabIndex = 36;
-            this.switchUpSpeed.Value = true;
-            // 
-            // lbUpSpeed
-            // 
-            this.lbUpSpeed.AutoSize = true;
-            this.lbUpSpeed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUpSpeed.Location = new System.Drawing.Point(286, 149);
-            this.lbUpSpeed.Name = "lbUpSpeed";
-            this.lbUpSpeed.Size = new System.Drawing.Size(62, 17);
-            this.lbUpSpeed.TabIndex = 35;
-            this.lbUpSpeed.Text = "UpSpeed";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(370, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(257, 17);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "(Anzeige nur bei LAN-Verbindung möglich)";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Überwachung
             // 
@@ -593,5 +621,7 @@
         private System.Windows.Forms.Label lbUpSpeed;
         private Bunifu.Framework.UI.BunifuiOSSwitch switchDownSpeed;
         private System.Windows.Forms.Label lbDownSpeed;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
     }
 }
