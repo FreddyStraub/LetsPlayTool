@@ -712,7 +712,6 @@ namespace LetsPlayTool
             this.lbLautsprecher.Size = new System.Drawing.Size(103, 21);
             this.lbLautsprecher.TabIndex = 4;
             this.lbLautsprecher.Text = "Lautsprecher:";
-            this.lbLautsprecher.Click += new System.EventHandler(this.lbLautsprecher_Click);
             // 
             // ShowPanelAnimator
             // 

@@ -295,6 +295,14 @@ namespace LetsPlayTool
             #endregion
 
 
+
+
+            ValueUpdater.Start();
+
+            #region Messenger
+
+            #region Skype initialition
+
             if (einstellungen.Messenger.Skype.active)
             {
                 if (skype.Client.IsRunning)
@@ -319,9 +327,7 @@ namespace LetsPlayTool
 
             }
 
-            ValueUpdater.Start();
-
-            #region Messenger
+            #endregion
 
             setSteamStatus();
             setTeamspeakStatus();
@@ -349,8 +355,7 @@ namespace LetsPlayTool
 
             #endregion
 
-
-            #region MarkerLabel setzen
+            #region MarkerLabelTooltip setzen
 
             string MarkerLabelTTip = "Drücke:\n";
 
@@ -374,8 +379,10 @@ namespace LetsPlayTool
             unregisterHotKeys();
             registerHotkeys();
 
+            //Setzt den Lautsprechersilder auf den aktuellen Stand der Systemlautstärke
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
 
+            #region Mailclient initialition
             try
             {
 
@@ -384,6 +391,8 @@ namespace LetsPlayTool
 
             }
             catch { lbMailClient.Text = "Kein Mailclient gefunden!"; }
+
+            #endregion
 
             #region Timer
 
@@ -401,7 +410,7 @@ namespace LetsPlayTool
         }
 
         /// <summary>
-        /// kümmert sich um die korrekte Anzeige der Satus auf dem Hauptfenster
+        /// kümmert sich um die korrekte ANZEIGE der Status auf dem Hauptfenster
         /// </summary>
         private void generateÜberwachungDisplays(bool skype, bool teamspeak, bool discord, bool mail, bool steam)
         {
@@ -504,22 +513,21 @@ namespace LetsPlayTool
             loadSettings();
         }
 
-        Session.Session Session;
-
+        Session.Session Session; 
 
         public string NormalStatus = "";
 
-        public static TimerProfil selectedTimerProfil;
+        public static TimerProfil selectedTimerProfil; //ausgewähltes Timerprofil
 
-        public bool SessionRuns = false;
+        public bool SessionRuns = false; //Gibt an ob gerade eine Session läuft.
 
-        public Stopwatch ShowTimeAfterRecordingWatch = new Stopwatch();
+        public Stopwatch ShowTimeAfterRecordingWatch = new Stopwatch(); //Stopwatch um zu ermitteln wie lange die aufgenommene Zeit nach Aufnahmestop angezeigt werden soll.
 
         int MainactorElapsedTicks = 0;
         int cpuTimervalue = 0;
         int streamTimervalue = 0;
 
-        public Point ÜFensterLocation = new Point();
+        public Point ÜFensterLocation = new Point(); //Location des Überwachungsfensters.
 
 
         private void Mainactor_Tick(object sender, EventArgs e)
@@ -717,17 +725,30 @@ namespace LetsPlayTool
 
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
 
+            //Ändert Farbe des Lautspreches (MUTE/NOt-MUTE)
+            if (LPTSound.SoundController.GetMasterVolumeMute())
+            {
+                lbLautsprecher.ForeColor = Color.DarkRed;
+
+            }
+            else
+            {
+                lbLautsprecher.ForeColor = Color.White;
+
+            }
+
+
             #endregion
 
 
         } //Mainactor!!!!!!!!!!!!!!!!!!
 
-                
+
         object mailClient = Registry.GetValue(@"HKEY_CLASSES_ROOT\mailto\shell\open\command", "", "none");
 
         string rohPfad;
 
-        #region SetStatus
+        #region SetMessengerStatus
 
         /// <summary>
         /// Setzt den aktuellen TeamspeakStatus in das Label.
@@ -1243,6 +1264,7 @@ namespace LetsPlayTool
 
         }
         
+        //Timerprofil-Auswahl
         private void bunifuCustomLabel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -1563,21 +1585,6 @@ namespace LetsPlayTool
             }
         }
 
-        private void lbLautsprecher_Click(object sender, EventArgs e)
-        {
-
-            if (LPTSound.SoundController.ToggleMasterVolumeMute())
-            {
-                lbLautsprecher.ForeColor = Color.DarkRed;
-
-            }else
-            {
-                lbLautsprecher.ForeColor = Color.White;
-
-            }
-
-        }
-
         private void Form1_LocationChanged(object sender, EventArgs e)
         {
             sliderLautsprecher.Value = (int)LPTSound.SoundController.GetMasterVolume();
@@ -1614,6 +1621,19 @@ namespace LetsPlayTool
 
             creatingMarkerSecurity = true;
             messageSecurity = true;
+
+            //Ändert Farbe des Lautspreches (MUTE/NOt-MUTE)
+            if (LPTSound.SoundController.GetMasterVolumeMute())
+            {
+                lbLautsprecher.ForeColor = Color.DarkRed;
+
+            }
+            else
+            {
+                lbLautsprecher.ForeColor = Color.White;
+
+            }
+
 
 
         }
