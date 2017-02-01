@@ -1,4 +1,5 @@
 ﻿using LetsPlayTool.Dialogs;
+using LetsPlayTool.Dialogs.Messagebox;
 using LetsPlayTool.Update;
 using Microsoft.Win32;
 using SKYPE4COMLib;
@@ -29,8 +30,7 @@ namespace LetsPlayTool
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-
-
+            
             MinimaizeAnimation.Start();
 
         }
@@ -319,8 +319,8 @@ namespace LetsPlayTool
                         einstellungen.save();
                         einstellungen = einstellungen.load();
 
-                        MessageBox.Show("Verbindung mit Skype nicht möglich!");
-
+                    //    MessageBox.Show("Verbindung mit Skype nicht möglich!");
+                        LetsPlayToolMessagebox.Show("Verbindung mit Skype nicht möglich!", "LetsPlayTool - SkypeError", LetsPlayToolMessagebox.Type.OK);
 
                     }
                 }
@@ -1378,7 +1378,7 @@ namespace LetsPlayTool
                         SessionRuns = false;
 
                     }catch(Exception ex)
-                    { MessageBox.Show("Folgender Fehler ist aufgetreten: " + ex.ToString()); }
+                    { LetsPlayToolMessagebox.Show("Folgender Fehler ist aufgetreten: " + ex.ToString(), "LetsPlayTool - Error", LetsPlayToolMessagebox.Type.OK); }
                 }
 
 
@@ -1637,7 +1637,6 @@ namespace LetsPlayTool
 
 
         }
-
 
     }
  
