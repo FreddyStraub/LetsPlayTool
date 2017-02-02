@@ -320,7 +320,7 @@ namespace LetsPlayTool
                         einstellungen = einstellungen.load();
 
                     //    MessageBox.Show("Verbindung mit Skype nicht möglich!");
-                        LetsPlayToolMessagebox.Show("Verbindung mit Skype nicht möglich!", "LetsPlayTool - SkypeError", LetsPlayToolMessagebox.Type.OK);
+                        LetsPlayToolMessagebox.Show("Verbindung mit Skype nicht möglich!", "LetsPlayTool - SkypeError", LetsPlayToolMessagebox.LetsPlayToolMessageBoxType.OK, LetsPlayToolMessagebox.LetsPlayToolMessageBoxSound.Asterisk);
 
                     }
                 }
@@ -1378,7 +1378,7 @@ namespace LetsPlayTool
                         SessionRuns = false;
 
                     }catch(Exception ex)
-                    { LetsPlayToolMessagebox.Show("Folgender Fehler ist aufgetreten: " + ex.ToString(), "LetsPlayTool - Error", LetsPlayToolMessagebox.Type.OK); }
+                    { LetsPlayToolMessagebox.Show("Folgender Fehler ist aufgetreten: " + ex.ToString(), "LetsPlayTool - Error", LetsPlayToolMessagebox.LetsPlayToolMessageBoxType.OK, LetsPlayToolMessagebox.LetsPlayToolMessageBoxSound.Asterisk); }
                 }
 
 

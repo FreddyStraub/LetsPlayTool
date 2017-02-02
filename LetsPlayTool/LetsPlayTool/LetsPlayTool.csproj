@@ -93,6 +93,12 @@
     <Compile Include="Dialogs\Messagebox\frmMessageboxOK.Designer.cs">
       <DependentUpon>frmMessageboxOK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\Messagebox\frmMessageboxYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Messagebox\frmMessageboxYesNo.Designer.cs">
+      <DependentUpon>frmMessageboxYesNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\Messagebox\LetsPlayToolMessagebox.cs" />
     <Compile Include="Dialogs\Time.cs" />
     <Compile Include="Dialogs\TimeDilaog.cs">
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\Messagebox\frmMessageboxOK.resx">
       <DependentUpon>frmMessageboxOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Messagebox\frmMessageboxYesNo.resx">
+      <DependentUpon>frmMessageboxYesNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TimeDilaog.resx">
       <DependentUpon>TimeDilaog.cs</DependentUpon>

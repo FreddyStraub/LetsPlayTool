@@ -1,4 +1,5 @@
 ﻿using LetsPlayTool.Dialogs;
+using LetsPlayTool.Dialogs.Messagebox;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -140,8 +141,15 @@ namespace LetsPlayTool.Einstellungen_Tabs
             if (lbProfiles.SelectedItems.Count != 0)
             {
 
-                TimerProfiles.Remove(TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)]);
-                lbProfiles.Items.Remove(lbProfiles.SelectedItem);
+                DialogResult delete = LetsPlayToolMessagebox.Show("Willst du dieses Timerprofiel wirklich löschen?", "LetsPlayTool - Löschen?", LetsPlayToolMessagebox.LetsPlayToolMessageBoxType.YesNo, LetsPlayToolMessagebox.LetsPlayToolMessageBoxSound.Hand);
+
+                if(delete == DialogResult.Yes)
+                {
+                    TimerProfiles.Remove(TimerProfiles[lbProfiles.Items.IndexOf(lbProfiles.SelectedItem)]);
+                    lbProfiles.Items.Remove(lbProfiles.SelectedItem);
+
+                }
+
 
             }
         }
@@ -152,7 +160,15 @@ namespace LetsPlayTool.Einstellungen_Tabs
 
             if (Name.ShowDialog() == DialogResult.OK)
             {
-                createTimerProfile(Name.Input);
+                if (Name.Input != "")
+                {
+                    createTimerProfile(Name.Input);
+                }else
+                {
+
+                    LetsPlayToolMessagebox.Show("Bitte gib einen Namen ein!", "LetsPlayTool", LetsPlayToolMessagebox.LetsPlayToolMessageBoxType.OK, LetsPlayToolMessagebox.LetsPlayToolMessageBoxSound.Exclamation);
+
+                }
 
             }
 
